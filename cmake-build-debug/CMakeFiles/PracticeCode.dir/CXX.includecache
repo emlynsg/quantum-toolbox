@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/exg103/PracticeCode/Grid.cpp
+Grid.h
+/home/exg103/PracticeCode/Grid.h
+iostream
+-
+vector
+-
+cmath
+-
+
+/home/exg103/PracticeCode/Grid.h
+vector
+-
+
