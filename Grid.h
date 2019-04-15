@@ -1,5 +1,5 @@
-#ifndef PRACTICECODE_GRID_H
-#define PRACTICECODE_GRID_H
+#ifndef GRID_H
+#define GRID_H
 #include <vector>
 typedef std::vector<double> double_vec;
 
@@ -10,27 +10,28 @@ class Grid {
   /// Constants ///
   double hbarc=197.3; /// MeV fm
   double amu=931.5;   /// MeV/c^2
-  double esq=1.44;    /// Electron charge in MeV fm
   /// Number of steps on the grid ///
-  int NStep;
-  int NPoint;
+  int n_step;
+  int n_point;
   /// Grid positions ///
-  double XMin;
-  double XMax;
-  double XStep;
-  double_vec X;
+  double x_min;
+  double x_max;
+  double x_step;
+  double_vec x;
   /// Momenta ///
-  double KScale;
-  double KStep;
-  double KMin;
-  double KMax;
-  double_vec K;
+  double k_scale;
+  double k_step;
+  double k_min;
+  double k_max;
+  double_vec k;
   /// Energies ///
   double_vec E;
+
+  /// Functions ///
   Grid(int nstep, double xmin, double xmax, double kscale);
   ~Grid();
   void TestFcn();
 
 };
 
-#endif //PRACTICECODE_GRID_H
+#endif //GRID_H

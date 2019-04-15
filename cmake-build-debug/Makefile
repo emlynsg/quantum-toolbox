@@ -48,10 +48,10 @@ RM = /home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/exg103/PracticeCode
+CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP Code"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/exg103/PracticeCode/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/exg103/PracticeCode/cmake-build-debug/CMakeFiles /home/exg103/PracticeCode/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug/CMakeFiles" "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/exg103/PracticeCode/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ Grid.cpp.s:
 	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Grid.cpp.s
 .PHONY : Grid.cpp.s
 
+Wavefunction.o: Wavefunction.cpp.o
+
+.PHONY : Wavefunction.o
+
+# target to build an object file
+Wavefunction.cpp.o:
+	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o
+.PHONY : Wavefunction.cpp.o
+
+Wavefunction.i: Wavefunction.cpp.i
+
+.PHONY : Wavefunction.i
+
+# target to preprocess a source file
+Wavefunction.cpp.i:
+	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Wavefunction.cpp.i
+.PHONY : Wavefunction.cpp.i
+
+Wavefunction.s: Wavefunction.cpp.s
+
+.PHONY : Wavefunction.s
+
+# target to generate assembly for a file
+Wavefunction.cpp.s:
+	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Wavefunction.cpp.s
+.PHONY : Wavefunction.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... Grid.o"
 	@echo "... Grid.i"
 	@echo "... Grid.s"
+	@echo "... Wavefunction.o"
+	@echo "... Wavefunction.i"
+	@echo "... Wavefunction.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

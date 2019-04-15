@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Grid.h"
+#include "Wavefunction.h"
 typedef std::vector<double> double_vec;
 
 int main() {
@@ -12,21 +13,19 @@ int main() {
   double xmax = 1.0;
   double kscale = 1.0;
 
-
-  size_t size = 10;
-  double_vec gridarray(size);
-  for(int i=0; i<size; ++i){
-    gridarray[i] = i/10.0;
-  }
-
   Grid gridObject(sizeN, xmin, xmax, kscale);
 
-  /// Checking that the class object was instantiated properly ///
+  /// Checking that the Grid class object was instantiated properly ///
 
   gridObject.TestFcn();
-  std::cout << gridObject.X[4] << std::endl;
+  std::cout << gridObject.x[4] << std::endl;
 
-
+  /// Checking the Wavefunction class object was instantiated properly ///
+  double ReducedMass = 1;
+  Wavefunction waveObject(gridObject, ReducedMass);
+  waveObject.TestFcn();
+  std::cout << waveObject.grid.x[2] << std::endl;
+  std::cout << waveObject.psi[1] << std::endl;
 
   return 0;
 

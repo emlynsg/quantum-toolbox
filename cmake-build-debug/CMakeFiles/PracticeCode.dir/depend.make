@@ -4,6 +4,11 @@
 CMakeFiles/PracticeCode.dir/Grid.cpp.o: ../Grid.cpp
 CMakeFiles/PracticeCode.dir/Grid.cpp.o: ../Grid.h
 
+CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o: ../Grid.h
+CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o: ../Wavefunction.cpp
+CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o: ../Wavefunction.h
+
 CMakeFiles/PracticeCode.dir/main.cpp.o: ../Grid.h
+CMakeFiles/PracticeCode.dir/main.cpp.o: ../Wavefunction.h
 CMakeFiles/PracticeCode.dir/main.cpp.o: ../main.cpp
 

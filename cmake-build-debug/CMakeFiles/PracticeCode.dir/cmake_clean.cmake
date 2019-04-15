@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PracticeCode.dir/main.cpp.o"
   "CMakeFiles/PracticeCode.dir/Grid.cpp.o"
+  "CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o"
   "PracticeCode.pdb"
   "PracticeCode"
 )

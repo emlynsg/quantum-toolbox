@@ -5,26 +5,25 @@
 typedef std::vector<double> double_vec;
 
 Grid::Grid(int nstep, double xmin, double xmax, double kscale) {
-  NStep = nstep;
-  NPoint = NStep + 1;
-  XMin = xmin;
-  XMax = xmax;
-  XStep = (XMax - XMin)/NStep;
-  KScale = kscale;
-  KStep = 2*M_PI/(NStep*XStep*KScale);
-  KMin = -1*NStep*KStep/2.0;
-  KMax = NStep*KStep/2.0;
-  size_t size = NPoint;
-  double_vec xarray(size);
-  double_vec karray(size);
-  double_vec earray(size);
-  for(int i=0; i<NPoint; ++i){
-    xarray[i] = i*XStep+XMin;
-    karray[i] = i*KStep+KMin;
+  n_step = nstep;
+  n_point = n_step + 1;
+  x_min = xmin;
+  x_max = xmax;
+  x_step = (x_max - x_min)/n_step;
+  k_scale = kscale;
+  k_step = 2*M_PI/(n_step*x_step*k_scale);
+  k_min = -1*n_step*k_step/2.0;
+  k_max = n_step*k_step/2.0;
+  double_vec xarray(n_point);
+  double_vec karray(n_point);
+  double_vec earray(n_point);
+  for(int i=0; i<n_point; ++i){
+    xarray[i] = i*x_step+x_min;
+    karray[i] = i*k_step+k_min;
     earray[i] = pow((hbarc*karray[i]),2)/(2.0*amu);
   }
-  X = xarray;
-  K = karray;
+  x = xarray;
+  k = karray;
   E = earray;
 }
 

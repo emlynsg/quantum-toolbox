@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/PracticeCode.dir/main.cpp.o CMakeFiles/PracticeCode.dir/Grid.cpp.o  -o PracticeCode 
+/usr/bin/c++  -g   CMakeFiles/PracticeCode.dir/main.cpp.o CMakeFiles/PracticeCode.dir/Grid.cpp.o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o  -o PracticeCode 

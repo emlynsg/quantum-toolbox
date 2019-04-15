@@ -3,4 +3,4 @@ project(PracticeCode)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PracticeCode main.cpp Grid.cpp Grid.h)
+add_executable(PracticeCode main.cpp Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h)
