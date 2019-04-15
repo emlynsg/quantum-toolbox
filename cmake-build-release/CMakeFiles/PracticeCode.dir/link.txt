@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/PracticeCode.dir/main.cpp.o CMakeFiles/PracticeCode.dir/Grid.cpp.o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o  -o PracticeCode 

@@ -20,7 +20,7 @@ Wavefunction::Wavefunction(const Grid& object, double ReducedMass) : grid(1,0.0,
 }
 
 Wavefunction::~Wavefunction() {
-  std::cout << "Object is being deleted" << std::endl;
+  std::cout << "Wavefunction deleted" << std::endl;
 }
 
 void Wavefunction::TestFcn() {

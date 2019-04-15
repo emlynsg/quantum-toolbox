@@ -28,7 +28,7 @@ Grid::Grid(int nstep, double xmin, double xmax, double kscale) {
 }
 
 Grid::~Grid() {
-  std::cout << "Object is being deleted" << std::endl;
+  std::cout << "Grid deleted" << std::endl;
 }
 
 void Grid::TestFcn() {
