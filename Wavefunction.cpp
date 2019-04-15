@@ -11,6 +11,7 @@ typedef std::complex<double> complex;
 Wavefunction::Wavefunction(const Grid& object, double ReducedMass) : grid(1,0.0,1.0,1.0) {
   grid = object;
   reduced_mass = ReducedMass*amu;
+  std::cout << grid.n_point << std::endl;
   for(int i=0; i<grid.n_point; ++i){
     psi.push_back(complex(0.0, 0.0));
     psi_k.push_back(complex(0.0, 0.0));
@@ -23,5 +24,5 @@ Wavefunction::~Wavefunction() {
 }
 
 void Wavefunction::TestFcn() {
-  std::cout << "Test Test" << std::endl;
+  std::cout << "Test Wavefunction" << std::endl;
 }

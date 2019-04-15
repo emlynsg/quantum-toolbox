@@ -32,5 +32,5 @@ Grid::~Grid() {
 }
 
 void Grid::TestFcn() {
-  std::cout << "Test Test" << std::endl;
+  std::cout << "Test Grid" << std::endl;
 }

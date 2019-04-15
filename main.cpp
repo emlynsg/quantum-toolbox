@@ -15,7 +15,7 @@ int main() {
 
   Grid gridObject(sizeN, xmin, xmax, kscale);
 
-  /// Checking that the Grid class object was instantiated properly ///
+  /// Checking that the Grid class obj ect was instantiated properly ///
 
   gridObject.TestFcn();
   std::cout << gridObject.x[4] << std::endl;
@@ -24,8 +24,14 @@ int main() {
   double ReducedMass = 1;
   Wavefunction waveObject(gridObject, ReducedMass);
   waveObject.TestFcn();
-  std::cout << waveObject.grid.x[2] << std::endl;
-  std::cout << waveObject.psi[1] << std::endl;
+  for(int i=0; i<waveObject.grid.n_point; ++i) {
+    std::cout << waveObject.grid.x[i] << " ";
+  }
+  std::cout << std::endl;
+  for(int i=0; i<waveObject.grid.n_point; ++i) {
+    std::cout << waveObject.psi[i] << " ";
+  }
+  std::cout << std::endl;
 
   return 0;
 

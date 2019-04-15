@@ -3,7 +3,6 @@
 #define WAVEFUNCTION_H
 #include <vector>
 #include <complex>
-
 #include "Grid.h"
 
 typedef std::vector<double> double_vec;
@@ -30,7 +29,6 @@ class Wavefunction {
   Wavefunction(const Grid& object, double ReducedMass);
   ~Wavefunction();
   void TestFcn();
-
 
 };
 
