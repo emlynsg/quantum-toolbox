@@ -43,10 +43,10 @@ RM = /home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP Code"
+CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP Code/cmake-build-release"
+CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PracticeCode.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/PracticeCode.dir/flags.make
 
 CMakeFiles/PracticeCode.dir/main.cpp.o: CMakeFiles/PracticeCode.dir/flags.make
 CMakeFiles/PracticeCode.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PracticeCode.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PracticeCode.dir/main.cpp.o -c "/home/exg103/Documents/Honours/CPP Code/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PracticeCode.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PracticeCode.dir/main.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp"
 
 CMakeFiles/PracticeCode.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PracticeCode.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP Code/main.cpp" > CMakeFiles/PracticeCode.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp" > CMakeFiles/PracticeCode.dir/main.cpp.i
 
 CMakeFiles/PracticeCode.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PracticeCode.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP Code/main.cpp" -o CMakeFiles/PracticeCode.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp" -o CMakeFiles/PracticeCode.dir/main.cpp.s
 
 CMakeFiles/PracticeCode.dir/Grid.cpp.o: CMakeFiles/PracticeCode.dir/flags.make
 CMakeFiles/PracticeCode.dir/Grid.cpp.o: ../Grid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PracticeCode.dir/Grid.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PracticeCode.dir/Grid.cpp.o -c "/home/exg103/Documents/Honours/CPP Code/Grid.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PracticeCode.dir/Grid.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PracticeCode.dir/Grid.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp"
 
 CMakeFiles/PracticeCode.dir/Grid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PracticeCode.dir/Grid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP Code/Grid.cpp" > CMakeFiles/PracticeCode.dir/Grid.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp" > CMakeFiles/PracticeCode.dir/Grid.cpp.i
 
 CMakeFiles/PracticeCode.dir/Grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PracticeCode.dir/Grid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP Code/Grid.cpp" -o CMakeFiles/PracticeCode.dir/Grid.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp" -o CMakeFiles/PracticeCode.dir/Grid.cpp.s
 
 CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o: CMakeFiles/PracticeCode.dir/flags.make
 CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o: ../Wavefunction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o -c "/home/exg103/Documents/Honours/CPP Code/Wavefunction.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp"
 
 CMakeFiles/PracticeCode.dir/Wavefunction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PracticeCode.dir/Wavefunction.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP Code/Wavefunction.cpp" > CMakeFiles/PracticeCode.dir/Wavefunction.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp" > CMakeFiles/PracticeCode.dir/Wavefunction.cpp.i
 
 CMakeFiles/PracticeCode.dir/Wavefunction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PracticeCode.dir/Wavefunction.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP Code/Wavefunction.cpp" -o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp" -o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.s
 
 # Object files for target PracticeCode
 PracticeCode_OBJECTS = \
@@ -109,8 +109,10 @@ PracticeCode: CMakeFiles/PracticeCode.dir/main.cpp.o
 PracticeCode: CMakeFiles/PracticeCode.dir/Grid.cpp.o
 PracticeCode: CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o
 PracticeCode: CMakeFiles/PracticeCode.dir/build.make
+PracticeCode: /usr/lib/x86_64-linux-gnu/libgsl.so
+PracticeCode: /usr/lib/x86_64-linux-gnu/libgslcblas.so
 PracticeCode: CMakeFiles/PracticeCode.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable PracticeCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable PracticeCode"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PracticeCode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +125,6 @@ CMakeFiles/PracticeCode.dir/clean:
 .PHONY : CMakeFiles/PracticeCode.dir/clean
 
 CMakeFiles/PracticeCode.dir/depend:
-	cd "/home/exg103/Documents/Honours/CPP Code/cmake-build-release" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/exg103/Documents/Honours/CPP Code" "/home/exg103/Documents/Honours/CPP Code" "/home/exg103/Documents/Honours/CPP Code/cmake-build-release" "/home/exg103/Documents/Honours/CPP Code/cmake-build-release" "/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles/PracticeCode.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/exg103/Documents/Honours/CPP/CPP Code" "/home/exg103/Documents/Honours/CPP/CPP Code" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles/PracticeCode.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/PracticeCode.dir/depend
 

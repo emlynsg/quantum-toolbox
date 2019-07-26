@@ -59,10 +59,10 @@ RM = /home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP Code"
+CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP Code/cmake-build-release"
+CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"
 
 #=============================================================================
 # Target rules for target CMakeFiles/PracticeCode.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP Code/cmake-build-release"
 CMakeFiles/PracticeCode.dir/all:
 	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/depend
 	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles" --progress-num=1,2,3,4 "Built target PracticeCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" --progress-num=1,2,3,4 "Built target PracticeCode"
 .PHONY : CMakeFiles/PracticeCode.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/PracticeCode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/PracticeCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PracticeCode.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP Code/cmake-build-release/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" 0
 .PHONY : CMakeFiles/PracticeCode.dir/rule
 
 # Convenience name for target.

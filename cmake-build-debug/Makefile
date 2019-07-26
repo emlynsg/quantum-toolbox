@@ -48,10 +48,10 @@ RM = /home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP Code"
+CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug/CMakeFiles" "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP Code/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

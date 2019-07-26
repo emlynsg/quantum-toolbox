@@ -1,4 +1,4 @@
-/home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" "/home/exg103/Documents/Honours/CPP Code"
+/home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" "/home/exg103/Documents/Honours/CPP/CPP Code"
 -- The C compiler identification is GNU 5.4.0
 -- The CXX compiler identification is GNU 5.4.0
 -- Check for working C compiler: /usr/bin/cc
@@ -13,6 +13,8 @@
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- Found GSL: /usr/include (found version "2.1") 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/exg103/Documents/Honours/CPP Code/cmake-build-release
+-- Build files have been written to: /home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release
