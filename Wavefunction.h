@@ -1,8 +1,16 @@
 
 #ifndef WAVEFUNCTION_H
 #define WAVEFUNCTION_H
+
 #include <vector>
 #include <complex>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include <gsl/gsl_blas.h>
+#include <gsl/gsl_complex_math.h>
+
 #include "Grid.h"
 
 typedef std::vector<double> double_vec;

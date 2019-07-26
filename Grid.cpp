@@ -1,7 +1,15 @@
 #include "Grid.h"
+
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include <gsl/gsl_blas.h>
+#include <gsl/gsl_complex_math.h>
+
 typedef std::vector<double> double_vec;
 
 Grid::Grid(int nstep, double xmin, double xmax, double kscale) {

@@ -1,9 +1,18 @@
 #include "Wavefunction.h"
+
 #include <iostream>
 #include <vector>
 #include <cmath>
 #include <complex>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include <gsl/gsl_blas.h>
+#include <gsl/gsl_complex_math.h>
+
 #include "Grid.h"
+
 typedef std::vector<double> double_vec;
 typedef std::vector< std::complex<double> > complex_vec;
 typedef std::complex<double> complex;

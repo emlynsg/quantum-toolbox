@@ -5,5 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(PracticeCode main.cpp Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h)
 
-find_package(GSL REQUIRED)    # See below (2)
+find_package(GSL REQUIRED)
 target_link_libraries(PracticeCode GSL::gsl GSL::gslcblas)

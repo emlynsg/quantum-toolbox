@@ -1,7 +1,17 @@
 #ifndef GRID_H
 #define GRID_H
+
 #include <vector>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+#include <gsl/gsl_blas.h>
+#include <gsl/gsl_complex_math.h>
+
 typedef std::vector<double> double_vec;
+typedef gsl_vector_complex complex_vec;
+
 
 
 class Grid {
