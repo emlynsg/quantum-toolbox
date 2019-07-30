@@ -10,7 +10,7 @@
 #include <gsl/gsl_complex_math.h>
 
 typedef std::vector<double> double_vec;
-typedef gsl_vector_complex complex_vec;
+///typedef gsl_vector_complex complex_vec;
 
 
 

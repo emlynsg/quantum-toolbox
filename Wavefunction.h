@@ -10,6 +10,8 @@
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
+#include <gsl/gsl_integration.h>
+#include <gsl/gsl_spline.h>
 
 #include "Grid.h"
 
@@ -37,6 +39,7 @@ class Wavefunction {
   Wavefunction(const Grid& object, double ReducedMass);
   ~Wavefunction();
   void TestFcn();
+  double Overlap(const Wavefunction& object);
 
 };
 
