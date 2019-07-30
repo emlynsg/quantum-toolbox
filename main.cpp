@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <numeric>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
@@ -17,18 +18,6 @@
 
 typedef std::vector<double> double_vec;
 
-template< typename F >  class gsl_function_pp : public gsl_function {
- public:
-  gsl_function_pp(const F& func) : _func(func) {
-    function = &gsl_function_pp::invoke;
-    params=this;
-  }
- private:
-  const F& _func;
-  static double invoke(double x, void *params) {
-    return static_cast<gsl_function_pp*>(params)->_func(x);
-  }
-};
 
 int main() {
 
@@ -48,28 +37,33 @@ int main() {
   /// Checking that the Grid class obj ect was instantiated properly ///
 
   gridObject.TestFcn();
-  std::cout << gridObject.x[4] << std::endl;
+  std::cout << "Check grid value: " << gridObject.x[4] << std::endl;
 
   /// How to print from the pointer
 
-  std::cout << (*gridPointer).x[4] << std::endl;
+  ///std::cout << (*gridPointer).x[4] << std::endl;
 
-
+  std::cout << std::endl;
   /// Checking the Wavefunction class object was instantiated properly ///
   double ReducedMass = 1;
   Wavefunction waveObject(gridObject, ReducedMass);
   waveObject.TestFcn();
+  std::cout << "Wavefunction grid is: ";
   for(int i=0; i<waveObject.grid.n_point; ++i) {
     std::cout << waveObject.grid.x[i] << " ";
   }
   std::cout << std::endl;
+  std::cout << "Wavefunction is: ";
   for(int i=0; i<waveObject.grid.n_point; ++i) {
     std::cout << waveObject.psi[i] << " ";
   }
   std::cout << std::endl;
-  waveObject.Overlap(waveObject);
+  std::cout << "Overlap is: " << waveObject.Overlap(waveObject) << std::endl;
 
 
+  /// GSL Matrix Check
+
+  std::cout << "GSL matrix: ";
   int i, j;
   gsl_matrix * m = gsl_matrix_alloc (10, 3);
 

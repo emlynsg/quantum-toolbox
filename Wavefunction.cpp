@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <numeric>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
@@ -19,13 +20,19 @@ typedef std::vector<double> double_vec;
 typedef std::vector< std::complex<double> > complex_vec;
 typedef std::complex<double> complex;
 
+double integrate_vector(double_vec vect, double a, double b, int n){
+  double h = (b-a)/n;
+  return (h/48.0)*(17*vect[0]+ 59*vect[1]+43*vect[2]+49*vect[3]+48*std::accumulate(vect.begin()+4,vect.end()-3,0)
+      +49*vect[n-3]+43*vect[n-2]+59*vect[n-1]+17*vect[n]);
+}
+
 Wavefunction::Wavefunction(const Grid& object, double ReducedMass) : grid(1,0.0,1.0,1.0) {
   grid = object;
   reduced_mass = ReducedMass*amu;
   std::cout << "Number of points on grid: " << grid.n_point << std::endl;
   std::cout << "Reduced mass: " << reduced_mass << std::endl;
   for(int i=0; i<grid.n_point; ++i){
-    psi.push_back(complex(0.0, 0.0));
+    psi.push_back(complex(1.0, 0.0));
     psi_k.push_back(complex(0.0, 0.0));
   }
 
@@ -41,8 +48,17 @@ void Wavefunction::TestFcn() {
 
 /// Incomplete
 
+double Wavefunction::Overlap(const Wavefunction& object) {
+  double_vec integrand;
+  for(int i=0; i<grid.n_point; ++i) {
+    integrand.push_back(std::abs(psi[i] * std::conj(object.psi[i])));
+  }
+  return integrate_vector(integrand, grid.x_min, grid.x_max, grid.n_point);
+}
 /// All GSL integration seems to need a function as input
 /// Strategy: Interpolate points, write this as a function, and then integrate
+
+/*
 double Wavefunction::Overlap(const Wavefunction& object) {
 
   struct spline_parameters{gsl_spline a; gsl_interp_accel b;};
@@ -86,3 +102,6 @@ double Wavefunction::Overlap(const Wavefunction& object) {
 
   return result;
 }
+
+
+ */

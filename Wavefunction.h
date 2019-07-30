@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <numeric>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
