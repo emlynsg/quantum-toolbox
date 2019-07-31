@@ -8,11 +8,14 @@
 #include <stdio.h>
 #include <math.h>
 #include <numeric>
+#include <functional>
+#include <algorithm>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_spline.h>
+#include <gsl/gsl_fft_complex.h>
 
 #include "Grid.h"
 
@@ -40,7 +43,11 @@ class Wavefunction {
   Wavefunction(const Grid& object, double ReducedMass);
   ~Wavefunction();
   void TestFcn();
-  double Overlap(const Wavefunction& object);
+  double Overlap(Wavefunction& object);
+  double Norm();
+  void Normalise();
+  double NormInRegion(double xmin, double xmax);
+  void ComputePsiK();
 
 };
 

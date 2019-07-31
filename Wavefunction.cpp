@@ -8,11 +8,14 @@
 #include <stdio.h>
 #include <math.h>
 #include <numeric>
+#include <functional>
+#include <algorithm>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_spline.h>
+#include <gsl/gsl_fft_complex.h>
 
 #include "Grid.h"
 
@@ -20,17 +23,51 @@ typedef std::vector<double> double_vec;
 typedef std::vector< std::complex<double> > complex_vec;
 typedef std::complex<double> complex;
 
-double integrate_vector(double_vec vect, double a, double b, int n){
-  double h = (b-a)/n;
-  return (h/48.0)*(17*vect[0]+ 59*vect[1]+43*vect[2]+49*vect[3]+48*std::accumulate(vect.begin()+4,vect.end()-3,0)
-      +49*vect[n-3]+43*vect[n-2]+59*vect[n-1]+17*vect[n]);
+#define REAL(z,i) ((z)[2*(i)]) //complex arrays stored as
+#define IMAG(z,i) ((z)[2*(i)+1])
+
+/// Simpson Rule (from Wikipedia, not sure of reference)
+/// might need changing later
+
+double simp_integrate_vector(double_vec vect, double a, double b, int n){
+  double h = 1.0*(b-a)/(1.0*(n));
+  return (h/48.0)*(17.0*vect[0]+ 59.0*vect[1]+43.0*vect[2]+49.0*vect[3]
+      +48.0*std::accumulate(vect.begin()+4,vect.begin()+(vect.size()-4),0.0)
+      +49.0*vect[n-3]+43.0*vect[n-2]+59.0*vect[n-1]+17.0*vect[n]);
 }
+/*
+void complex_vec_to_double_vec(complex_vec cvect, double_vec dvect){
+  for(auto i : cvect){
+    dvect.push_back((cvect.data()[i]).real());
+    dvect.push_back((cvect.data()[i]).imag());
+  }
+}*/
+
+ /*
+gsl_complex_packed_array create_complex_packed_array(complex_vec vect){
+  double size[2*vect.size()];
+  gsl_complex_packed_array data = size;
+  for(int i=0; i<vect.size(); ++i) {
+      REAL(data,i) = vect[i].real();
+      IMAG(data,i) = vect[i].imag();
+  }
+  return data;
+}
+
+complex_vec read_complex_packed_array(gsl_complex_packed_array array){
+  double arr = array;
+  int size = (arr.size())/2;
+  complex_vec data;
+  for(int i=0; i<size; ++i) {
+    data.push_back(complex(REAL(array, i), IMAG(array, i)));
+  }
+  return data;
+}
+*/
 
 Wavefunction::Wavefunction(const Grid& object, double ReducedMass) : grid(1,0.0,1.0,1.0) {
   grid = object;
   reduced_mass = ReducedMass*amu;
-  std::cout << "Number of points on grid: " << grid.n_point << std::endl;
-  std::cout << "Reduced mass: " << reduced_mass << std::endl;
   for(int i=0; i<grid.n_point; ++i){
     psi.push_back(complex(1.0, 0.0));
     psi_k.push_back(complex(0.0, 0.0));
@@ -46,14 +83,38 @@ void Wavefunction::TestFcn() {
   std::cout << "Test Wavefunction" << std::endl;
 }
 
+double Wavefunction::Norm() {
+  return Overlap(*this);
+}
+
+void Wavefunction::Normalise() {
+  double a = sqrt(Norm());
+  std::transform(psi.begin(), psi.end(), psi.begin(), [a](auto& c){return complex (c.real()/a, c.imag()/a);});
+}
+
+double Wavefunction::NormInRegion(double xmin, double xmax) {
+  double_vec integrand;
+  for(int i=0; i<grid.n_point; ++i) {
+    if(grid.x[i]>xmin and grid.x[i] < xmax){
+      integrand.push_back(std::abs(psi[i] * std::conj(psi[i])));
+    }
+  }
+}
+
+void Wavefunction::ComputePsiK() {
+  std::cout << psi[0].real() << psi.data()[0] << psi.data()[1] << std::endl;
+}
+
+
+
 /// Incomplete
 
-double Wavefunction::Overlap(const Wavefunction& object) {
+double Wavefunction::Overlap(Wavefunction& object) {
   double_vec integrand;
   for(int i=0; i<grid.n_point; ++i) {
     integrand.push_back(std::abs(psi[i] * std::conj(object.psi[i])));
   }
-  return integrate_vector(integrand, grid.x_min, grid.x_max, grid.n_point);
+  return simp_integrate_vector(integrand, grid.x_min, grid.x_max, grid.n_step);
 }
 /// All GSL integration seems to need a function as input
 /// Strategy: Interpolate points, write this as a function, and then integrate

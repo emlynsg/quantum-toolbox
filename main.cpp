@@ -5,12 +5,15 @@
 #include <stdio.h>
 #include <math.h>
 #include <numeric>
+#include <functional>
+#include <algorithm>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_spline.h>
+#include <gsl/gsl_fft_complex.h>
 
 
 #include "Grid.h"
@@ -58,8 +61,19 @@ int main() {
     std::cout << waveObject.psi[i] << " ";
   }
   std::cout << std::endl;
-  std::cout << "Overlap is: " << waveObject.Overlap(waveObject) << std::endl;
 
+  std::cout << "Overlap is: " << waveObject.Overlap(waveObject) << std::endl;
+  waveObject.Normalise();
+  std::cout << "Normalised wavefunction is: ";
+  for(int i=0; i<waveObject.grid.n_point; ++i) {
+    std::cout << waveObject.psi[i] << " ";
+  }
+  std::cout << std::endl;
+  std::cout << "Norm is: " << waveObject.Norm() << std::endl;
+  std::cout << "Norm from 0 to 0.5 is: " << waveObject.NormInRegion(0.0, 0.5) << std::endl;
+  waveObject.ComputePsiK();
+
+  std::cout << std::endl;
 
   /// GSL Matrix Check
 
@@ -78,6 +92,7 @@ int main() {
 
   gsl_matrix_free (m);
 
+  std::cout << std::endl;
 
   return 0;
 
