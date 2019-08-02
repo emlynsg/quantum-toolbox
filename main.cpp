@@ -68,7 +68,13 @@ int main() {
   std::cout << std::endl;
   std::cout << "Norm is: " << waveObject.Norm() << std::endl;
   std::cout << "Norm from 0 to 0.5 is: " << waveObject.NormInRegion(0.0, 0.5) << std::endl;
+
+
   waveObject.ComputePsiK();
+  waveObject.ComputePsi();
+  for(int i=0; i<waveObject.grid.n_point; ++i) {
+    std::cout << waveObject.psi[i] << " ";
+  }
 
   std::cout << std::endl;
 

@@ -154,17 +154,20 @@ double Wavefunction::NormInRegion(const double& xmin, const double& xmax) {
   }
 }
 
-/// Check ordering on PsiK output
+/// Check ordering on PsiK and Psi outputs
 /// https://www.gnu.org/software/gsl/doc/html/fft.html#overview-of-complex-data-ffts
+/// Note: Definitely wrong as ifft then fft doesn't give the original values
+
 
 void Wavefunction::ComputePsiK() {
-  /// Compute input for FFT
-  complex_vec psi_input = multiply_vecs(psi,exp_vec(scale_vec(grid.x, grid.k_min*i)));
+  // Compute input for FFT
+  complex_vec psi_input = multiply_vecs(psi,exp_vec(scale_vec(grid.x, -1.*grid.k_min*i)));
   // Need input as a double array to Fourier Transform
   double_vec dvec = complex_vec_to_double_vec_fft(psi_input);
   int n = int(psi.size());
-  double data[2*n];
-  std::copy(dvec.begin(), dvec.end(), data);
+
+  /*double data[2*n];
+  std::copy(dvec.begin(), dvec.end(), data);*/
 
   // FFT
   gsl_fft_complex_wavetable * wavetable;
@@ -172,16 +175,44 @@ void Wavefunction::ComputePsiK() {
   wavetable = gsl_fft_complex_wavetable_alloc(n);
   workspace = gsl_fft_complex_workspace_alloc(n);
   // Check FFT worked
-  int res = gsl_fft_complex_inverse(data, 1, n, wavetable, workspace);
+  int res = gsl_fft_complex_inverse(dvec.data(), 1, n, wavetable, workspace);
   if(res != 0){
     std::cout << "FFT Failed" << std::endl;
   }
   gsl_fft_complex_wavetable_free (wavetable);
   gsl_fft_complex_workspace_free (workspace);
+
+  // Convert back
+  psi_k = scale_vec(multiply_vecs(double_vec_to_complex_vec_fft(dvec),exp_vec(scale_vec(grid.k,-1.*grid.x_min*i)))
+        , grid.x_step/(sqrt(2.*M_PI)));
+
+  // Maybe need to shift entries??
+  //std::rotate(psi_k.begin(), psi_k.begin()+int(psi_k.size()/2), psi_k.end());
 }
 
 void Wavefunction::ComputePsi() {
+  // Compute input for FFT
+  complex_vec psi_input = scale_vec(multiply_vecs(psi_k,exp_vec(scale_vec(grid.k, grid.k_min*i)))
+                          ,(sqrt(2.*M_PI)/grid.x_step));
+  // Need input as a double array to Fourier Transform
+  double_vec dvec = complex_vec_to_double_vec_fft(psi_input);
+  int n = int(psi.size());
 
+  // FFT
+  gsl_fft_complex_wavetable * wavetable;
+  gsl_fft_complex_workspace * workspace;
+  wavetable = gsl_fft_complex_wavetable_alloc(n);
+  workspace = gsl_fft_complex_workspace_alloc(n);
+  // Check FFT worked
+  int res = gsl_fft_complex_forward(dvec.data(), 1, n, wavetable, workspace);
+  if(res != 0){
+    std::cout << "FFT Failed" << std::endl;
+  }
+  gsl_fft_complex_wavetable_free (wavetable);
+  gsl_fft_complex_workspace_free (workspace);
+
+  // Convert back
+  psi = multiply_vecs(double_vec_to_complex_vec_fft(dvec),exp_vec(scale_vec(grid.x,1.*grid.k_min*i)));
 }
 
 
