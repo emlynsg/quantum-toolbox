@@ -1,5 +1,8 @@
 #include "Wavefunction.h"
 
+//# define NDEBUG
+# include <assert.h>
+
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -16,56 +19,106 @@
 #include <gsl/gsl_integration.h>
 #include <gsl/gsl_spline.h>
 #include <gsl/gsl_fft_complex.h>
+#include <complex.h>
 
 #include "Grid.h"
 
-typedef std::vector<double> double_vec;
-typedef std::vector< std::complex<double> > complex_vec;
 typedef std::complex<double> complex;
+typedef std::vector< complex > complex_vec;
 
-#define REAL(z,i) ((z)[2*(i)]) //complex arrays stored as
-#define IMAG(z,i) ((z)[2*(i)+1])
+struct exponentiate{complex operator()(complex d)const{return std::exp(d);}};
+
+double_vec complex_to_double(const complex_vec& a){
+  double_vec b;
+  std::transform(a.begin(), a.end(), std::back_inserter(b), [](complex elt){return elt.real();});
+  return b;
+}
+
+
+complex_vec double_to_complex(const double_vec& a){
+  complex_vec b;
+  std::transform(a.begin(), a.end(), std::back_inserter(b),
+      [](double r) { return std::complex<double>(r, 0.0); });
+  return b;
+}
+
+complex_vec multiply_vecs(const complex_vec& a, const complex_vec& b){
+  assert(("Vector lengths don't match", a.size() == b.size()));
+  complex_vec c;
+  std::transform(a.begin(), a.end(), b.begin(), std::back_inserter(c), std::multiplies<>());
+  return c;
+}
+
+double_vec multiply_vecs(const double_vec& a, const double_vec& b){
+  assert(("Vector lengths don't match", a.size() == b.size()));
+  double_vec c;
+  std::transform(a.begin(), a.end(), b.begin(), std::back_inserter(c), std::multiplies<>());
+  return c;
+}
+
+complex_vec exp_vec(const complex_vec& a){
+  complex_vec b;
+  std::transform(a.begin(), a.end(), std::back_inserter(b), exponentiate());
+  return b;
+}
+
+complex_vec scale_vec(const complex_vec& a, const complex& b){
+  complex_vec c;
+  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  return c;
+}
+
+complex_vec scale_vec(const complex_vec& a, const double& b){
+  complex_vec c;
+  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  return c;
+}
+
+double_vec scale_vec(const double_vec& a, const double& b){
+  double_vec c;
+  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  return c;
+}
+
+complex_vec scale_vec(const double_vec& a, const complex& b){
+  complex_vec c;
+  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  return c;
+}
+
+
+double_vec complex_vec_to_double_vec_fft(const complex_vec& cvect){
+  double_vec dvect;
+  for(auto i : cvect){
+    dvect.push_back(i.real());
+    dvect.push_back(i.imag());
+  }
+  return dvect;
+}
+
+complex_vec double_vec_to_complex_vec_fft(const double_vec& dvect){
+  complex_vec cvect;
+  int range = 0;
+  while (range < dvect.size()){
+    complex c = complex (dvect[range], dvect[range+1]);
+    cvect.push_back(c);
+    range = range + 2;
+  }
+  return cvect;
+}
 
 /// Simpson Rule (from Wikipedia, not sure of reference)
 /// might need changing later
 
-double simp_integrate_vector(double_vec vect, double a, double b, int n){
+double simp_integrate_vector(const double_vec& vect, const double& a, const double& b, const int& n){
   double h = 1.0*(b-a)/(1.0*(n));
   return (h/48.0)*(17.0*vect[0]+ 59.0*vect[1]+43.0*vect[2]+49.0*vect[3]
       +48.0*std::accumulate(vect.begin()+4,vect.begin()+(vect.size()-4),0.0)
       +49.0*vect[n-3]+43.0*vect[n-2]+59.0*vect[n-1]+17.0*vect[n]);
 }
-/*
-void complex_vec_to_double_vec(complex_vec cvect, double_vec dvect){
-  for(auto i : cvect){
-    dvect.push_back((cvect.data()[i]).real());
-    dvect.push_back((cvect.data()[i]).imag());
-  }
-}*/
 
- /*
-gsl_complex_packed_array create_complex_packed_array(complex_vec vect){
-  double size[2*vect.size()];
-  gsl_complex_packed_array data = size;
-  for(int i=0; i<vect.size(); ++i) {
-      REAL(data,i) = vect[i].real();
-      IMAG(data,i) = vect[i].imag();
-  }
-  return data;
-}
 
-complex_vec read_complex_packed_array(gsl_complex_packed_array array){
-  double arr = array;
-  int size = (arr.size())/2;
-  complex_vec data;
-  for(int i=0; i<size; ++i) {
-    data.push_back(complex(REAL(array, i), IMAG(array, i)));
-  }
-  return data;
-}
-*/
-
-Wavefunction::Wavefunction(const Grid& object, double ReducedMass) : grid(1,0.0,1.0,1.0) {
+Wavefunction::Wavefunction(const Grid& object, const double& ReducedMass) : grid(1,0.0,1.0,1.0) {
   grid = object;
   reduced_mass = ReducedMass*amu;
   for(int i=0; i<grid.n_point; ++i){
@@ -92,7 +145,7 @@ void Wavefunction::Normalise() {
   std::transform(psi.begin(), psi.end(), psi.begin(), [a](auto& c){return complex (c.real()/a, c.imag()/a);});
 }
 
-double Wavefunction::NormInRegion(double xmin, double xmax) {
+double Wavefunction::NormInRegion(const double& xmin, const double& xmax) {
   double_vec integrand;
   for(int i=0; i<grid.n_point; ++i) {
     if(grid.x[i]>xmin and grid.x[i] < xmax){
@@ -101,8 +154,34 @@ double Wavefunction::NormInRegion(double xmin, double xmax) {
   }
 }
 
+/// Check ordering on PsiK output
+/// https://www.gnu.org/software/gsl/doc/html/fft.html#overview-of-complex-data-ffts
+
 void Wavefunction::ComputePsiK() {
-  std::cout << psi[0].real() << psi.data()[0] << psi.data()[1] << std::endl;
+  /// Compute input for FFT
+  complex_vec psi_input = multiply_vecs(psi,exp_vec(scale_vec(grid.x, grid.k_min*i)));
+  // Need input as a double array to Fourier Transform
+  double_vec dvec = complex_vec_to_double_vec_fft(psi_input);
+  int n = int(psi.size());
+  double data[2*n];
+  std::copy(dvec.begin(), dvec.end(), data);
+
+  // FFT
+  gsl_fft_complex_wavetable * wavetable;
+  gsl_fft_complex_workspace * workspace;
+  wavetable = gsl_fft_complex_wavetable_alloc(n);
+  workspace = gsl_fft_complex_workspace_alloc(n);
+  // Check FFT worked
+  int res = gsl_fft_complex_inverse(data, 1, n, wavetable, workspace);
+  if(res != 0){
+    std::cout << "FFT Failed" << std::endl;
+  }
+  gsl_fft_complex_wavetable_free (wavetable);
+  gsl_fft_complex_workspace_free (workspace);
+}
+
+void Wavefunction::ComputePsi() {
+
 }
 
 

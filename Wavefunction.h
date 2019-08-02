@@ -19,10 +19,8 @@
 
 #include "Grid.h"
 
-typedef std::vector<double> double_vec;
 typedef std::complex<double> complex;
 typedef std::vector< complex > complex_vec;
-
 
 class Wavefunction {
 
@@ -31,6 +29,7 @@ class Wavefunction {
   /// Constants ///
   double hbarc=197.3; /// MeV fm
   double amu=931.5;   /// MeV/c^2
+  complex i = complex (0, 1);
   /// Parameters ///
   double reduced_mass;
   /// Objects ///
@@ -40,14 +39,15 @@ class Wavefunction {
   complex_vec psi_k;
 
   /// Functions ///
-  Wavefunction(const Grid& object, double ReducedMass);
+  Wavefunction(const Grid& object, const double& ReducedMass);
   ~Wavefunction();
   void TestFcn();
   double Overlap(Wavefunction& object);
   double Norm();
   void Normalise();
-  double NormInRegion(double xmin, double xmax);
+  double NormInRegion(const double& xmin, const double& xmax);
   void ComputePsiK();
+  void ComputePsi();
 
 };
 

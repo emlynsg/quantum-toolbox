@@ -19,9 +19,6 @@
 #include "Grid.h"
 #include "Wavefunction.h"
 
-typedef std::vector<double> double_vec;
-
-
 int main() {
 
   /// We need to first make some variables for our Grid class, and then put them into the constructor ///
