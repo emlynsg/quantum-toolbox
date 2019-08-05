@@ -23,9 +23,9 @@ int main() {
 
   /// We need to first make some variables for our Grid class, and then put them into the constructor ///
 
-  int sizeN = 10;
-  double xmin = 0.0;
-  double xmax = 1.0;
+  int sizeN = 1024;
+  double xmin = -200.0;
+  double xmax = 200.0;
   double kscale = 1.0;
 
   /// Grid and a pointer to the grid
@@ -47,14 +47,15 @@ int main() {
   /// Checking the Wavefunction class object was instantiated properly ///
   double ReducedMass = 1;
   Wavefunction waveObject(gridObject, ReducedMass);
+  waveObject.Gaussian(0.0,5.0);
   waveObject.TestFcn();
   std::cout << "Wavefunction grid is: ";
-  for(int i=0; i<waveObject.grid.n_point; ++i) {
+  for(int i=0; i<10; ++i) {
     std::cout << waveObject.grid.x[i] << " ";
   }
   std::cout << std::endl;
   std::cout << "Wavefunction is: ";
-  for(int i=0; i<waveObject.grid.n_point; ++i) {
+  for(int i=sizeN/2; i<sizeN/2+10; ++i) {
     std::cout << waveObject.psi[i] << " ";
   }
   std::cout << std::endl;
@@ -62,17 +63,17 @@ int main() {
   std::cout << "Overlap is: " << waveObject.Overlap(waveObject) << std::endl;
   waveObject.Normalise();
   std::cout << "Normalised wavefunction is: ";
-  for(int i=0; i<waveObject.grid.n_point; ++i) {
+  for(int i=sizeN/2; i<sizeN/2+10; ++i) {
     std::cout << waveObject.psi[i] << " ";
   }
   std::cout << std::endl;
   std::cout << "Norm is: " << waveObject.Norm() << std::endl;
-  std::cout << "Norm from 0 to 0.5 is: " << waveObject.NormInRegion(0.0, 0.5) << std::endl;
+  std::cout << "Norm from 0 to 200 is: " << waveObject.NormInRegion(0.0, 200.0) << std::endl;
 
 
   waveObject.ComputePsiK();
   waveObject.ComputePsi();
-  for(int i=0; i<waveObject.grid.n_point; ++i) {
+  for(int i=sizeN/2; i<sizeN/2+10; ++i) {
     std::cout << waveObject.psi[i] << " ";
   }
 

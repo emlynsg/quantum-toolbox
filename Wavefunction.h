@@ -42,12 +42,15 @@ class Wavefunction {
   Wavefunction(const Grid& object, const double& ReducedMass);
   ~Wavefunction();
   void TestFcn();
-  double Overlap(Wavefunction& object);
+  double Overlap(const Wavefunction& object);
   double Norm();
   void Normalise();
   double NormInRegion(const double& xmin, const double& xmax);
   void ComputePsiK();
   void ComputePsi();
+  void Zero();
+  void Gaussian(const double& mean, const double& sigma);
+  void ZeroEdges();
 
 };
 

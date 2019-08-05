@@ -22,23 +22,24 @@ Grid::Grid(int nstep, double xmin, double xmax, double kscale) {
   k_step = 2*M_PI/(n_step*x_step*k_scale);
   k_min = -1*n_step*k_step/2.0;
   k_max = n_step*k_step/2.0;
-  double_vec xarray(n_point);
-  double_vec karray(n_point);
-  double_vec earray(n_point);
+  x.reserve(n_point);
+  k.reserve(n_point);
+  E.reserve(n_point);
   for(int i=0; i<n_point; ++i){
-    xarray[i] = i*x_step+x_min;
-    karray[i] = i*k_step+k_min;
-    earray[i] = pow((hbarc*karray[i]),2)/(2.0*amu);
+    x.push_back(i*x_step+x_min);
+    k.push_back(i*k_step+k_min);
+    E.push_back(pow((hbarc*k[i]),2.0)/(2.0*amu));
   }
-  x = xarray;
-  k = karray;
-  E = earray;
 }
 
 Grid::~Grid() {
+  double_vec().swap(x);
+  double_vec().swap(k);
+  double_vec().swap(E);
   std::cout << "Grid deleted" << std::endl;
 }
 
 void Grid::TestFcn() {
   std::cout << "Test Grid" << std::endl;
+  std::cout << "Number of grid points: " << n_point << std::endl;
 }

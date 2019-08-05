@@ -28,15 +28,18 @@ typedef std::vector< complex > complex_vec;
 
 struct exponentiate{complex operator()(complex d)const{return std::exp(d);}};
 
+double Normal(const double& x, const double& X0, const double& Sigma){
+  return exp(-pow(x-X0-Sigma,2.0)/(2*Sigma*Sigma));
+}
+
 double_vec complex_to_double(const complex_vec& a){
-  double_vec b;
-  std::transform(a.begin(), a.end(), std::back_inserter(b), [](complex elt){return elt.real();});
+  double_vec b(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), [](complex elt){return elt.real();});
   return b;
 }
 
-
 complex_vec double_to_complex(const double_vec& a){
-  complex_vec b;
+  complex_vec b(a.size());
   std::transform(a.begin(), a.end(), std::back_inserter(b),
       [](double r) { return std::complex<double>(r, 0.0); });
   return b;
@@ -44,51 +47,52 @@ complex_vec double_to_complex(const double_vec& a){
 
 complex_vec multiply_vecs(const complex_vec& a, const complex_vec& b){
   assert(("Vector lengths don't match", a.size() == b.size()));
-  complex_vec c;
-  std::transform(a.begin(), a.end(), b.begin(), std::back_inserter(c), std::multiplies<>());
+  complex_vec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::multiplies<>());
   return c;
 }
 
 double_vec multiply_vecs(const double_vec& a, const double_vec& b){
   assert(("Vector lengths don't match", a.size() == b.size()));
-  double_vec c;
-  std::transform(a.begin(), a.end(), b.begin(), std::back_inserter(c), std::multiplies<>());
+  double_vec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::multiplies<>());
   return c;
 }
 
 complex_vec exp_vec(const complex_vec& a){
-  complex_vec b;
-  std::transform(a.begin(), a.end(), std::back_inserter(b), exponentiate());
+  complex_vec b(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), exponentiate());
   return b;
 }
 
 complex_vec scale_vec(const complex_vec& a, const complex& b){
-  complex_vec c;
-  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  complex_vec c(a.size());
+  std::transform(a.begin(), a.end(), c.begin(), [b](auto& elt){return elt*b;});
   return c;
 }
 
 complex_vec scale_vec(const complex_vec& a, const double& b){
-  complex_vec c;
-  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  complex_vec c(a.size());
+  std::transform(a.begin(), a.end(), c.begin(), [b](auto& elt){return elt*b;});
   return c;
 }
 
 double_vec scale_vec(const double_vec& a, const double& b){
-  double_vec c;
-  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  double_vec c(a.size());
+  std::transform(a.begin(), a.end(), c.begin(), [b](auto& elt){return elt*b;});
   return c;
 }
 
 complex_vec scale_vec(const double_vec& a, const complex& b){
-  complex_vec c;
-  std::transform(a.begin(), a.end(), std::back_inserter(c), [b](auto& elt){return elt*b;});
+  complex_vec c(a.size());
+  std::transform(a.begin(), a.end(), c.begin(), [b](auto& elt){return elt*b;});
   return c;
 }
 
 
 double_vec complex_vec_to_double_vec_fft(const complex_vec& cvect){
   double_vec dvect;
+  dvect.reserve((2*cvect.size()));
   for(auto i : cvect){
     dvect.push_back(i.real());
     dvect.push_back(i.imag());
@@ -98,9 +102,10 @@ double_vec complex_vec_to_double_vec_fft(const complex_vec& cvect){
 
 complex_vec double_vec_to_complex_vec_fft(const double_vec& dvect){
   complex_vec cvect;
+  cvect.reserve((dvect.size())/2);
   int range = 0;
   while (range < dvect.size()){
-    complex c = complex (dvect[range], dvect[range+1]);
+    complex c = complex(dvect[range], dvect[range+1]);
     cvect.push_back(c);
     range = range + 2;
   }
@@ -111,6 +116,7 @@ complex_vec double_vec_to_complex_vec_fft(const double_vec& dvect){
 /// might need changing later
 
 double simp_integrate_vector(const double_vec& vect, const double& a, const double& b, const int& n){
+  assert(("Integration requires a minimum of 9 points", n > 9));
   double h = 1.0*(b-a)/(1.0*(n));
   return (h/48.0)*(17.0*vect[0]+ 59.0*vect[1]+43.0*vect[2]+49.0*vect[3]
       +48.0*std::accumulate(vect.begin()+4,vect.begin()+(vect.size()-4),0.0)
@@ -121,14 +127,17 @@ double simp_integrate_vector(const double_vec& vect, const double& a, const doub
 Wavefunction::Wavefunction(const Grid& object, const double& ReducedMass) : grid(1,0.0,1.0,1.0) {
   grid = object;
   reduced_mass = ReducedMass*amu;
+  psi_k.reserve(grid.n_point);
+  psi.reserve(grid.n_point);
   for(int i=0; i<grid.n_point; ++i){
     psi.push_back(complex(1.0, 0.0));
     psi_k.push_back(complex(0.0, 0.0));
   }
-
 }
 
 Wavefunction::~Wavefunction() {
+  complex_vec().swap(psi);
+  complex_vec().swap(psi_k);
   std::cout << "Wavefunction deleted" << std::endl;
 }
 
@@ -137,21 +146,24 @@ void Wavefunction::TestFcn() {
 }
 
 double Wavefunction::Norm() {
-  return Overlap(*this);
+  return Overlap((*this));
 }
 
 void Wavefunction::Normalise() {
   double a = sqrt(Norm());
-  std::transform(psi.begin(), psi.end(), psi.begin(), [a](auto& c){return complex (c.real()/a, c.imag()/a);});
+  std::transform(psi.begin(), psi.end(), psi.begin(), [a](auto& c){return complex(c.real()/a, c.imag()/a);});
 }
 
 double Wavefunction::NormInRegion(const double& xmin, const double& xmax) {
   double_vec integrand;
+  //integrand.reserve(grid.n_point);
   for(int i=0; i<grid.n_point; ++i) {
     if(grid.x[i]>xmin and grid.x[i] < xmax){
       integrand.push_back(std::abs(psi[i] * std::conj(psi[i])));
     }
   }
+  assert(("No points in this range", integrand.size() > 0));
+  return simp_integrate_vector(integrand, xmin, xmax, integrand.size());
 }
 
 /// Check ordering on PsiK and Psi outputs
@@ -160,11 +172,11 @@ double Wavefunction::NormInRegion(const double& xmin, const double& xmax) {
 
 
 void Wavefunction::ComputePsiK() {
-  // Compute input for FFT
+  // Compute input for FFT=
   complex_vec psi_input = multiply_vecs(psi,exp_vec(scale_vec(grid.x, -1.*grid.k_min*i)));
   // Need input as a double array to Fourier Transform
   double_vec dvec = complex_vec_to_double_vec_fft(psi_input);
-  int n = int(psi.size());
+  complex_vec().swap(psi_input);
 
   /*double data[2*n];
   std::copy(dvec.begin(), dvec.end(), data);*/
@@ -172,20 +184,20 @@ void Wavefunction::ComputePsiK() {
   // FFT
   gsl_fft_complex_wavetable * wavetable;
   gsl_fft_complex_workspace * workspace;
-  wavetable = gsl_fft_complex_wavetable_alloc(n);
-  workspace = gsl_fft_complex_workspace_alloc(n);
+  wavetable = gsl_fft_complex_wavetable_alloc(grid.n_point);
+  workspace = gsl_fft_complex_workspace_alloc(grid.n_point);
   // Check FFT worked
-  int res = gsl_fft_complex_inverse(dvec.data(), 1, n, wavetable, workspace);
+  int res = gsl_fft_complex_inverse(dvec.data(), 1, grid.n_point, wavetable, workspace);
   if(res != 0){
     std::cout << "FFT Failed" << std::endl;
   }
-  gsl_fft_complex_wavetable_free (wavetable);
-  gsl_fft_complex_workspace_free (workspace);
+  gsl_fft_complex_wavetable_free(wavetable);
+  gsl_fft_complex_workspace_free(workspace);
 
+  std::rotate(dvec.begin(), dvec.begin()+int(dvec.size()/2), dvec.end());
   // Convert back
-  psi_k = scale_vec(multiply_vecs(double_vec_to_complex_vec_fft(dvec),exp_vec(scale_vec(grid.k,-1.*grid.x_min*i)))
-        , grid.x_step/(sqrt(2.*M_PI)));
-
+  psi_k = scale_vec(multiply_vecs(double_vec_to_complex_vec_fft(dvec),exp_vec(scale_vec(grid.k,-1.*grid.x_min*i))), grid.x_step/(sqrt(2.*M_PI)));
+  double_vec().swap(dvec);
   // Maybe need to shift entries??
   //std::rotate(psi_k.begin(), psi_k.begin()+int(psi_k.size()/2), psi_k.end());
 }
@@ -196,35 +208,56 @@ void Wavefunction::ComputePsi() {
                           ,(sqrt(2.*M_PI)/grid.x_step));
   // Need input as a double array to Fourier Transform
   double_vec dvec = complex_vec_to_double_vec_fft(psi_input);
-  int n = int(psi.size());
+  complex_vec().swap(psi_input);
 
   // FFT
   gsl_fft_complex_wavetable * wavetable;
   gsl_fft_complex_workspace * workspace;
-  wavetable = gsl_fft_complex_wavetable_alloc(n);
-  workspace = gsl_fft_complex_workspace_alloc(n);
+  wavetable = gsl_fft_complex_wavetable_alloc(grid.n_point);
+  workspace = gsl_fft_complex_workspace_alloc(grid.n_point);
   // Check FFT worked
-  int res = gsl_fft_complex_forward(dvec.data(), 1, n, wavetable, workspace);
+  int res = gsl_fft_complex_forward(dvec.data(), 1, grid.n_point, wavetable, workspace);
   if(res != 0){
     std::cout << "FFT Failed" << std::endl;
   }
   gsl_fft_complex_wavetable_free (wavetable);
   gsl_fft_complex_workspace_free (workspace);
 
+  //std::rotate(dvec.begin(), dvec.begin()+int(dvec.size()/2), dvec.end());
+
   // Convert back
   psi = multiply_vecs(double_vec_to_complex_vec_fft(dvec),exp_vec(scale_vec(grid.x,1.*grid.k_min*i)));
+  double_vec().swap(dvec);
+
+  //std::rotate(psi_k.begin(), psi_k.begin()+int(psi_k.size()/2), psi_k.end());
 }
 
+void Wavefunction::Zero(){
+  std::fill(psi.begin(), psi.end(), 0);
+}
+
+void Wavefunction::Gaussian(const double& mean, const double& sigma){
+  std::transform(grid.x.begin(), grid.x.end(), psi.begin(), [mean, sigma](auto& elt){return Normal(elt, mean, sigma);});
+  ZeroEdges();
+  Normalise();
+}
+
+void Wavefunction::ZeroEdges(){
+  psi[0] = complex(0.0,0.0);
+  psi.back() = complex(0.0,0.0);
+}
 
 
 /// Incomplete
 
-double Wavefunction::Overlap(Wavefunction& object) {
-  double_vec integrand;
+double Wavefunction::Overlap(const Wavefunction& object) {
+  double_vec integrand(grid.n_point);
   for(int i=0; i<grid.n_point; ++i) {
-    integrand.push_back(std::abs(psi[i] * std::conj(object.psi[i])));
+    integrand.push_back(std::abs(psi[i]*std::conj(object.psi[i])));
   }
-  return simp_integrate_vector(integrand, grid.x_min, grid.x_max, grid.n_step);
+  double ret_val = simp_integrate_vector(integrand, grid.x_min, grid.x_max, grid.n_step);
+  double_vec().swap(integrand);
+  return ret_val;
 }
 /// All GSL integration seems to need a function as input
 /// Strategy: Interpolate points, write this as a function, and then integrate

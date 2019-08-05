@@ -15,7 +15,6 @@ typedef std::vector<double> double_vec;
 
 
 class Grid {
-
  public:
   /// Constants ///
   double hbarc=197.3; /// MeV fm
