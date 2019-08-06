@@ -49,8 +49,10 @@ class Wavefunction {
   void ComputePsiK();
   void ComputePsi();
   void Zero();
-  void Gaussian(const double& mean, const double& sigma);
+  void InitGaussian(const double& mean, const double& sigma);
+  void InitAsymGaussian(const double& mean, const double& sigma);
   void ZeroEdges();
+  void InitSine(const double& N);
 
 };
 
