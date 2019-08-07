@@ -18,6 +18,7 @@
 
 #include "Grid.h"
 #include "Wavefunction.h"
+#include "Potential.h"
 
 int main() {
 
@@ -54,9 +55,24 @@ int main() {
     std::cout << waveObject.grid.x[i] << " ";
   }
   std::cout << std::endl;
-  waveObject.InitSine(10);
-  waveObject.InitAsymGaussian(1.0,5.0);
-  waveObject.InitGaussian(0.0,5.0);
+  waveObject.Init_Zero();
+  waveObject.Init_Constant();
+  waveObject.Boost_WaveNumber(1.5);
+  waveObject.Boost_Energy(10.1);
+  waveObject.Init_Sine(10);
+  waveObject.Init_AsymGaussian(1.0,5.0);
+  waveObject.Init_Gaussian(0.0,5.0);
+  double_vec check = waveObject.Get_Real();
+  check = waveObject.Get_Imag();
+  check = waveObject.Get_Abs();
+  check = waveObject.Get_AbsSq();
+  check = waveObject.Get_K_Real();
+  check = waveObject.Get_K_Imag();
+  check = waveObject.Get_K_Abs();
+  check = waveObject.Get_K_AbsSq();
+  std::cout << "Avg is: " << waveObject.Get_AvgX() << std::endl;
+  Wavefunction waveObject2(gridObject, ReducedMass);
+  waveObject2.Copy(waveObject);
 
   waveObject.Normalise();
   std::cout << "Norm is: " << waveObject.Norm() << std::endl;
@@ -70,7 +86,7 @@ int main() {
   std::cout << std::endl;
   waveObject.ComputePsiK();
   waveObject.ComputePsi();
-  std::cout << "Wavefunction after FFT is: ";
+  std::cout << "Wavefunction after FFT and IFFT is: ";
   for(int i=sizeN/2; i<sizeN/2 + 10; ++i) {
     std::cout << abs(waveObject.psi[i]) << " ";
   }
@@ -97,6 +113,21 @@ int main() {
   */
 
   std::cout << std::endl;
+
+
+  std::cout << std::endl;
+  Potential pot(gridObject);
+  pot.TestFcn();
+  pot.Init_Zero();
+  check = waveObject.Get_Real();
+  check = waveObject.Get_Imag();
+  check = waveObject.Get_Abs();
+  pot.Init_ConstantInRegion(2.0, 0.0, 100.0);
+
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+
 
   return 0;
 

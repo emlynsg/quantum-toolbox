@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/PracticeCode.dir/main.cpp.o CMakeFiles/PracticeCode.dir/Grid.cpp.o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o  -o PracticeCode /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/x86_64-linux-gnu/libgslcblas.so 
+/usr/bin/c++  -g   CMakeFiles/PracticeCode.dir/main.cpp.o CMakeFiles/PracticeCode.dir/Grid.cpp.o CMakeFiles/PracticeCode.dir/Wavefunction.cpp.o CMakeFiles/PracticeCode.dir/Potential.cpp.o  -o PracticeCode /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/x86_64-linux-gnu/libgslcblas.so 

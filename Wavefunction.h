@@ -48,11 +48,26 @@ class Wavefunction {
   double NormInRegion(const double& xmin, const double& xmax);
   void ComputePsiK();
   void ComputePsi();
-  void Zero();
-  void InitGaussian(const double& mean, const double& sigma);
-  void InitAsymGaussian(const double& mean, const double& sigma);
+  void Init_Zero();
+  void Init_Gaussian(const double& mean, const double& sigma);
+  void Init_AsymGaussian(const double& mean, const double& sigma);
   void ZeroEdges();
-  void InitSine(const double& N);
+  void Init_Sine(const double& N);
+  void Init_Constant();
+  void Boost_WaveNumber(const double& WN);
+  void Boost_Energy(const double& energy);
+  double_vec Get_Real();
+  double_vec Get_Imag();
+  double_vec Get_Abs();
+  double_vec Get_AbsSq();
+  double_vec Get_K_Real();
+  double_vec Get_K_Imag();
+  double_vec Get_K_Abs();
+  double_vec Get_K_AbsSq();
+  double Get_AvgX();
+  void Copy(const Wavefunction& wf);
+
+
 
 };
 

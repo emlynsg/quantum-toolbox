@@ -6,11 +6,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+//# define NDEBUG
+# include <assert.h>
+
+#include <complex>
+#include <numeric>
+#include <functional>
+#include <algorithm>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
 
+typedef std::complex<double> complex;
 typedef std::vector<double> double_vec;
+typedef std::vector< complex > complex_vec;
 
 Grid::Grid(int nstep, double xmin, double xmax, double kscale) {
   n_step = nstep;

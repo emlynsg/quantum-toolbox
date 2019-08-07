@@ -90,6 +90,12 @@
 		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h">
 			<Option target="PracticeCode"/>
 		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp">
+			<Option target="PracticeCode"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h">
+			<Option target="PracticeCode"/>
+		</Unit>
 		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp">
 			<Option target="PracticeCode"/>
 		</Unit>

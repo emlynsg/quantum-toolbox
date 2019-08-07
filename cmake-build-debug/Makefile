@@ -150,6 +150,33 @@ Grid.cpp.s:
 	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Grid.cpp.s
 .PHONY : Grid.cpp.s
 
+Potential.o: Potential.cpp.o
+
+.PHONY : Potential.o
+
+# target to build an object file
+Potential.cpp.o:
+	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Potential.cpp.o
+.PHONY : Potential.cpp.o
+
+Potential.i: Potential.cpp.i
+
+.PHONY : Potential.i
+
+# target to preprocess a source file
+Potential.cpp.i:
+	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Potential.cpp.i
+.PHONY : Potential.cpp.i
+
+Potential.s: Potential.cpp.s
+
+.PHONY : Potential.s
+
+# target to generate assembly for a file
+Potential.cpp.s:
+	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/Potential.cpp.s
+.PHONY : Potential.cpp.s
+
 Wavefunction.o: Wavefunction.cpp.o
 
 .PHONY : Wavefunction.o
@@ -216,6 +243,9 @@ help:
 	@echo "... Grid.o"
 	@echo "... Grid.i"
 	@echo "... Grid.s"
+	@echo "... Potential.o"
+	@echo "... Potential.i"
+	@echo "... Potential.s"
 	@echo "... Wavefunction.o"
 	@echo "... Wavefunction.i"
 	@echo "... Wavefunction.s"

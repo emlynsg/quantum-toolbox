@@ -26,6 +26,10 @@
 typedef std::complex<double> complex;
 typedef std::vector< complex > complex_vec;
 
+template <typename T> int sgn(T val) {
+  return (T(0) < val) - (val < T(0));
+}
+
 struct exponentiate{complex operator()(complex d)const{return std::exp(d);}};
 
 double Sine(const double& x, const double& N, const double& xmin, const double& xmax){
@@ -96,6 +100,26 @@ complex_vec scale_vec(const double_vec& a, const complex& b){
   std::transform(a.begin(), a.end(), c.begin(), [b](auto& elt){return elt*b;});
   return c;
 }
+
+
+complex_vec add_vecs(const complex_vec& a, const complex_vec& b){
+  complex_vec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
+  return c;
+}
+
+complex_vec add_vecs(const complex_vec& a, const double_vec& b){
+  complex_vec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
+  return c;
+}
+
+complex_vec add_vecs(const double_vec& a, const complex_vec& b){
+  complex_vec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
+  return c;
+}
+
 
 
 double_vec complex_vec_to_double_vec_fft(const complex_vec& cvect){
@@ -198,7 +222,7 @@ void Wavefunction::ComputePsiK() {
   psi_k = scale_vec(multiply_vecs(double_vec_to_complex_vec_fft(dvec),exp_vec(scale_vec(grid.k,-1.*grid.x_min*i))), grid.x_step/(sqrt(2.*M_PI)));
   double_vec().swap(dvec);
   // Maybe need to shift entries??
-  std::rotate(psi_k.begin(), psi_k.begin()+int(psi_k.size()/2), psi_k.end());
+  //std::rotate(psi_k.begin(), psi_k.begin()+int(psi_k.size()/2), psi_k.end());
 }
 
 void Wavefunction::ComputePsi() {
@@ -210,6 +234,7 @@ void Wavefunction::ComputePsi() {
   complex_vec().swap(psi_input);
 
   //std::rotate(dvec.rbegin(), dvec.rbegin()+int(dvec.size()/2), dvec.rend());
+
   // FFT
   gsl_fft_complex_wavetable * wavetable;
   gsl_fft_complex_workspace * workspace;
@@ -231,17 +256,17 @@ void Wavefunction::ComputePsi() {
   //std::rotate(psi.begin(), psi.begin()+int(psi.size()/2), psi.end());
 }
 
-void Wavefunction::Zero(){
+void Wavefunction::Init_Zero(){
   std::fill(psi.begin(), psi.end(), 0.0);
 }
 
-void Wavefunction::InitGaussian(const double& mean, const double& sigma){
+void Wavefunction::Init_Gaussian(const double& mean, const double& sigma){
   std::transform(grid.x.begin(), grid.x.end(), psi.begin(), [mean, sigma](auto& elt){return Gaussian(elt, mean, sigma);});
   ZeroEdges();
   Normalise();
 }
 
-void Wavefunction::InitAsymGaussian(const double& mean, const double& sigma){
+void Wavefunction::Init_AsymGaussian(const double& mean, const double& sigma){
   std::transform(grid.x.begin(), grid.x.end(), psi.begin(), [mean, sigma](auto& elt){return AsymGaussian(elt, mean, sigma);});
   ZeroEdges();
   Normalise();
@@ -252,19 +277,105 @@ void Wavefunction::ZeroEdges(){
   psi.back() = complex(0.0,0.0);
 }
 
-void Wavefunction::InitSine(const double& N){
+void Wavefunction::Init_Sine(const double& N){
   std::transform(grid.x.begin(), grid.x.end(), psi.begin(), [N, this](auto& elt){return Sine(elt, N, grid.x_min, grid.x_max);});
   Normalise();
 }
+
+void Wavefunction::Init_Constant(){
+  std::fill(psi.begin(), psi.end(), 1.0);
+  ZeroEdges();
+  Normalise();
+}
+
+void Wavefunction::Boost_WaveNumber(const double& WN){
+  std::transform(grid.x.begin(), grid.x.end(), psi.begin(), psi.begin(), [WN, this](auto& x, auto& p){return p*exp(i*WN*x);});
+  Normalise();
+}
+
+void Wavefunction::Boost_Energy(const double& energy){
+  double WN = sgn(energy)*sqrt(2*reduced_mass*std::abs(energy))/hbarc;
+  Boost_WaveNumber(WN);
+}
+
+/// Getters
+
+double_vec Wavefunction::Get_Real(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi.begin(), psi.end(), ret_val.begin(), [](auto& elt){return elt.real();});
+  return ret_val;
+}
+
+double_vec Wavefunction::Get_Imag(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi.begin(), psi.end(), ret_val.begin(), [](auto& elt){return elt.imag();});
+  return ret_val;
+}
+
+double_vec Wavefunction::Get_Abs(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi.begin(), psi.end(), ret_val.begin(), [](auto& elt){return std::abs(elt);});
+  return ret_val;
+}
+
+double_vec Wavefunction::Get_AbsSq(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi.begin(), psi.end(), ret_val.begin(), [](auto& elt){return pow(std::abs(elt),2.0);});
+  return ret_val;
+}
+
+double_vec Wavefunction::Get_K_Real(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi_k.begin(), psi_k.end(), ret_val.begin(), [](auto& elt){return elt.real();});
+  return ret_val;
+}
+
+double_vec Wavefunction::Get_K_Imag(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi_k.begin(), psi_k.end(), ret_val.begin(), [](auto& elt){return elt.imag();});
+  return ret_val;
+}
+
+double_vec Wavefunction::Get_K_Abs(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi_k.begin(), psi_k.end(), ret_val.begin(), [](auto& elt){return std::abs(elt);});
+  return ret_val;
+}
+
+double_vec Wavefunction::Get_K_AbsSq(){
+  double_vec ret_val(grid.n_point);
+  std::transform(psi_k.begin(), psi_k.end(), ret_val.begin(), [](auto& elt){return pow(std::abs(elt),2.0);});
+  return ret_val;
+}
+
+double Wavefunction::Get_AvgX(){
+  double_vec integrand(grid.n_point);
+  for(int i=0; i<grid.n_point; ++i) {
+    integrand[i] = (std::abs(psi[i]*std::conj(psi[i])));
+  }
+  double ret_val = simp_integrate_vector(multiply_vecs(integrand,grid.x),grid.x_step,grid.n_point);
+  double_vec().swap(integrand);
+  return ret_val;
+}
+
+void Wavefunction::Copy(const Wavefunction& wf){
+  grid = wf.grid;
+  reduced_mass = wf.reduced_mass;
+  psi.reserve(wf.grid.n_point);
+  psi_k.reserve(wf.grid.n_point);
+  psi = wf.psi;
+  psi_k = wf.psi_k;
+}
+
 
 /// Incomplete
 
 double Wavefunction::Overlap(const Wavefunction& object) {
   double_vec integrand(grid.n_point);
   for(int i=0; i<grid.n_point; ++i) {
-    integrand.push_back(std::abs(psi[i]*std::conj(object.psi[i])));
+    integrand[i] = (std::abs(psi[i]*std::conj(object.psi[i])));
   }
-  double ret_val = simp_integrate_vector(integrand, grid.x_step, grid.n_step);
+  double ret_val = simp_integrate_vector(integrand, grid.x_step, grid.n_point);
   double_vec().swap(integrand);
   return ret_val;
 }
