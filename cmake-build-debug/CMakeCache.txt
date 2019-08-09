@@ -144,7 +144,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=PracticeCode
+CMAKE_PROJECT_NAME:STATIC=QuantumToolbox
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -236,6 +236,12 @@ ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
+
+//Value Computed by CMake
+QuantumToolbox_BINARY_DIR:STATIC=/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug
+
+//Value Computed by CMake
+QuantumToolbox_SOURCE_DIR:STATIC=/home/exg103/Documents/Honours/CPP/CPP Code
 
 //Path to a library.
 pkgcfg_lib_GSL_gsl:FILEPATH=/usr/lib/x86_64-linux-gnu/libgsl.so

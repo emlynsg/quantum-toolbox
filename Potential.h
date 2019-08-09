@@ -3,9 +3,9 @@
 
 #include <vector>
 #include <complex>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 #include <numeric>
 #include <functional>
 #include <algorithm>
@@ -18,34 +18,27 @@
 
 #include "Grid.h"
 
-typedef std::complex<double> complex;
-typedef std::vector< complex > complex_vec;
-
 class Potential {
  public:
-
-  /// Constants ///
-  double esq=1.44;    // Electron charge in MeV fm
   /// Objects ///
   Grid grid;
   /// Potential ///
-  complex_vec V;
-
+  complexVec V;
   /// Functions ///
-  explicit Potential(const Grid& object);
+  explicit Potential(const Grid &object);
   ~Potential();
-  void TestFcn();
-  double_vec Get_Real();
-  double_vec Get_Imag();
-  double_vec Get_Abs();
-  void Init_Zero();
-  void Init_ConstantInRegion(const double& c, const double& xmin, const double& xmax);
-  void Add_Constant(const double& c, const double& xmin, const double& xmax);
-  void Add_Parabolic(const double& xcenter, const double& c);
-  void Add_Quartic(const double& xcenter, const double& c);
-  void Add_Gaussian(const double& xcenter, const double& height, const double& sigma);
-  void Add_WoodsSaxon(const double& xcenter, const double& height, const double& xsize, const double& diffuseness);
-  void Add_CoulombSphere(const double& z1z2, const double& xcenter, const double& xsize);
+  void test();
+  doubleVec getReal();
+  doubleVec getImag();
+  doubleVec getAbs();
+  void initZero();
+  void initConstantInRegion(const double &c, const double &xmin, const double &xmax);
+  void addConstant(const double &c, const double &xmin, const double &xmax);
+  void addParabolic(const double &xCenter, const double &c);
+  void addQuartic(const double &xCenter, const double &c);
+  void addGaussian(const double &xCenter, const double &height, const double &sigma);
+  void addWoodsSaxon(const double &xCenter, const double &height, const double &xSize, const double &diffuseness);
+  void addCoulombSphere(const double &Z1Z2, const double &xCenter, const double &xSize);
 };
 
 #endif //POTENTIAL_H

@@ -65,39 +65,39 @@ CMAKE_SOURCE_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code"
 CMAKE_BINARY_DIR = "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"
 
 #=============================================================================
-# Target rules for target CMakeFiles/PracticeCode.dir
+# Target rules for target CMakeFiles/QuantumToolbox.dir
 
 # All Build rule for target.
-CMakeFiles/PracticeCode.dir/all:
-	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/depend
-	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" --progress-num=1,2,3,4,5 "Built target PracticeCode"
-.PHONY : CMakeFiles/PracticeCode.dir/all
+CMakeFiles/QuantumToolbox.dir/all:
+	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/depend
+	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target QuantumToolbox"
+.PHONY : CMakeFiles/QuantumToolbox.dir/all
 
 # Include target in all.
-all: CMakeFiles/PracticeCode.dir/all
+all: CMakeFiles/QuantumToolbox.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/PracticeCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PracticeCode.dir/all
+CMakeFiles/QuantumToolbox.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/QuantumToolbox.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles" 0
-.PHONY : CMakeFiles/PracticeCode.dir/rule
+.PHONY : CMakeFiles/QuantumToolbox.dir/rule
 
 # Convenience name for target.
-PracticeCode: CMakeFiles/PracticeCode.dir/rule
+QuantumToolbox: CMakeFiles/QuantumToolbox.dir/rule
 
-.PHONY : PracticeCode
-
-# clean rule for target.
-CMakeFiles/PracticeCode.dir/clean:
-	$(MAKE) -f CMakeFiles/PracticeCode.dir/build.make CMakeFiles/PracticeCode.dir/clean
-.PHONY : CMakeFiles/PracticeCode.dir/clean
+.PHONY : QuantumToolbox
 
 # clean rule for target.
-clean: CMakeFiles/PracticeCode.dir/clean
+CMakeFiles/QuantumToolbox.dir/clean:
+	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/clean
+.PHONY : CMakeFiles/QuantumToolbox.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/QuantumToolbox.dir/clean
 
 .PHONY : clean
 

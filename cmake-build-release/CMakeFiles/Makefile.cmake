@@ -49,5 +49,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/PracticeCode.dir/DependInfo.cmake"
+  "CMakeFiles/QuantumToolbox.dir/DependInfo.cmake"
   )

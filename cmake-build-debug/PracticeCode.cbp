@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp">
+			<Option target="PracticeCode"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Extras.h">
+			<Option target="PracticeCode"/>
+		</Unit>
 		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp">
 			<Option target="PracticeCode"/>
 		</Unit>
@@ -94,6 +100,12 @@
 			<Option target="PracticeCode"/>
 		</Unit>
 		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h">
+			<Option target="PracticeCode"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp">
+			<Option target="PracticeCode"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/System.h">
 			<Option target="PracticeCode"/>
 		</Unit>
 		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp">

@@ -1,45 +1,46 @@
+//
+// Created by Emlyn Graham on 9/08/19.
+// Includes a class for the grid upon which quantum mechanical calculations are performed.
+//
+
 #ifndef GRID_H
 #define GRID_H
 
+#include "Extras.h"
+
 #include <vector>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cmath>
 
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
 
-typedef std::vector<double> double_vec;
-///typedef gsl_vector_complex complex_vec;
-
-
+typedef std::vector<double> doubleVec;
 
 class Grid {
  public:
-  /// Constants ///
-  double hbarc=197.3; /// MeV fm
-  double amu=931.5;   /// MeV/c^2
   /// Number of steps on the grid ///
-  int n_step;
-  int n_point;
+  int nStep;
+  int nPoint;
   /// Grid positions ///
-  double x_min;
-  double x_max;
-  double x_step;
-  double_vec x;
+  double xMin;
+  double xMax;
+  double xStep;
+  doubleVec x;
   /// Momenta ///
-  double k_scale;
-  double k_step;
-  double k_min;
-  double k_max;
-  double_vec k;
+  double kScale;
+  double kStep;
+  double kMin;
+  double kMax;
+  doubleVec k;
   /// Energies ///
-  double_vec E;
+  doubleVec E;
 
   /// Functions ///
   Grid(int nstep, double xmin, double xmax, double kscale);
   ~Grid();
-  void TestFcn();
+  void test();
 
 };
 
