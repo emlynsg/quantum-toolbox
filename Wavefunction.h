@@ -40,9 +40,9 @@ class Wavefunction {
   ~Wavefunction();
   void test();
   double overlap(const Wavefunction &object);
-  double norm();
+  double getNorm();
   void normalise();
-  double normInRegion(const double &xmin, const double &xmax);
+  double getNormInRegion(const double &xmin, const double &xmax);
   void computePsiK();
   void computePsi();
   void initZero();

@@ -25,16 +25,16 @@ void Wavefunction::test() {
   std::cout << "Average value: " << getAvgX() << std::endl;
 }
 
-double Wavefunction::norm() {
+double Wavefunction::getNorm() {
   return overlap((*this));
 }
 
 void Wavefunction::normalise() {
-  double a = sqrt(norm());
+  double a = sqrt(getNorm());
   psi = vectorScale(psi, 1.0 / a);
 }
 
-double Wavefunction::normInRegion(const double &xmin, const double &xmax) {
+double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
   doubleVec integrand;
   for (int j = 0; j < grid.nPoint; ++j) {
     if (grid.x[j] >= xmin and grid.x[j] <= xmax) {
@@ -54,7 +54,7 @@ void Wavefunction::computePsiK() {
   // Compute input for FFT=
   complexVec psi_input = vectorMultiply(psi, vectorExp(vectorScale(grid.x, -1. * grid.kMin * i)));
   // Need input as a double array to Fourier Transform
-  doubleVec dvec = vectorComplexToDouble(psi_input);
+  doubleVec dvec = fourierComplexToDouble(psi_input);
   complexVec().swap(psi_input);
 
   // FFT
@@ -72,7 +72,7 @@ void Wavefunction::computePsiK() {
 
   //std::rotate(dvec.rbegin(), dvec.rbegin()+int(dvec.size()/2), dvec.rend());
   // Convert back
-  psiK = vectorScale(vectorMultiply(vectorDoubleToComplex(dvec), vectorExp(vectorScale(grid.k, -1. * grid.xMin * i))),
+  psiK = vectorScale(vectorMultiply(fourierDoubleToComplex(dvec), vectorExp(vectorScale(grid.k, -1. * grid.xMin * i))),
                      grid.xStep / (sqrt(2. * M_PI)));
   doubleVec().swap(dvec);
   // Maybe need to shift entries??
@@ -84,7 +84,7 @@ void Wavefunction::computePsi() {
   complexVec psi_input =
       vectorScale(vectorMultiply(psiK, vectorExp(vectorScale(grid.k, grid.kMin * i))), (sqrt(2. * M_PI) / grid.xStep));
   // Need input as a double array to Fourier Transform
-  doubleVec dvec = vectorComplexToDouble(psi_input);
+  doubleVec dvec = fourierComplexToDouble(psi_input);
   complexVec().swap(psi_input);
 
   //std::rotate(dvec.rbegin(), dvec.rbegin()+int(dvec.size()/2), dvec.rend());
@@ -104,7 +104,7 @@ void Wavefunction::computePsi() {
 
   //std::rotate(dvec.begin(), dvec.begin()+int(dvec.size()/2), dvec.end());
   // Convert back
-  psi = vectorMultiply(vectorDoubleToComplex(dvec), vectorExp(vectorScale(grid.x, 1. * grid.kMin * i)));
+  psi = vectorMultiply(fourierDoubleToComplex(dvec), vectorExp(vectorScale(grid.x, 1. * grid.kMin * i)));
   doubleVec().swap(dvec);
 
   //std::rotate(psi.begin(), psi.begin()+int(psi.size()/2), psi.end());

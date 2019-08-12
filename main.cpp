@@ -19,7 +19,7 @@ int main() {
 
   /// We need to first make some variables for our Grid class, and then put them into the constructor ///
 
-  int sizeN = 1024;
+  int sizeN = 32;
   double xmin = -200.0;
   double xmax = 200.0;
   double kscale = 1.0;
@@ -63,8 +63,8 @@ int main() {
   Wavefunction waveObject2(gridObject, ReducedMass);
   waveObject2.copy(waveObject);
   waveObject.normalise();
-  std::cout << "Norm is: " << waveObject.norm() << std::endl;
-  std::cout << "Norm from 0 to 200 is: " << waveObject.normInRegion(0.0, 200.0) << std::endl;
+  std::cout << "Norm is: " << waveObject.getNorm() << std::endl;
+  std::cout << "Norm from 0 to 200 is: " << waveObject.getNormInRegion(0.0, 200.0) << std::endl;
 
   std::cout << "Wavefunction before FFT is: ";
   for (int j = sizeN / 2; j < sizeN / 2 + 10; ++j) {
@@ -123,6 +123,7 @@ int main() {
 
   System sys(waveObject, pot);
   sys.test();
+  sys.evolveAll(10.0, 3);
 
   std::cout << std::endl;
   std::cout << std::endl;

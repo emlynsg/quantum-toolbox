@@ -25,13 +25,13 @@ double asymmGaussian(const double &x, const double &X0, const double &Sigma) {
 
 /// Vector functions
 
-doubleVec complexToDouble(const complexVec &a) {
+doubleVec vectorComplexToDouble(const complexVec &a) {
   doubleVec b(a.size());
   std::transform(a.begin(), a.end(), b.begin(), [](complex elt) { return elt.real(); });
   return b;
 }
 
-complexVec doubleToComplex(const doubleVec &a) {
+complexVec vectorDoubleToComplex(const doubleVec &a) {
   complexVec b(a.size());
   std::transform(a.begin(), a.end(), std::back_inserter(b),
                  [](double r) { return std::complex<double>(r, 0.0); });
@@ -100,7 +100,25 @@ complexVec vectorAdd(const doubleVec &a, const complexVec &b) {
   return c;
 }
 
-doubleVec vectorComplexToDouble(const complexVec &cvector) {
+complexVec vectorSubtract(const complexVec &a, const complexVec &b) {
+  complexVec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
+  return c;
+}
+
+complexVec vectorSubtract(const complexVec &a, const doubleVec &b) {
+  complexVec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
+  return c;
+}
+
+complexVec vectorSubtract(const doubleVec &a, const complexVec &b) {
+  complexVec c(a.size());
+  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
+  return c;
+}
+
+doubleVec fourierComplexToDouble(const complexVec &cvector) {
   doubleVec dvector;
   dvector.reserve((2 * cvector.size()));
   for (auto j : cvector) {
@@ -110,7 +128,7 @@ doubleVec vectorComplexToDouble(const complexVec &cvector) {
   return dvector;
 }
 
-complexVec vectorDoubleToComplex(const doubleVec &dvector) {
+complexVec fourierDoubleToComplex(const doubleVec &dvector) {
   complexVec cvector;
   cvector.reserve((dvector.size()) / 2);
   int range = 0;

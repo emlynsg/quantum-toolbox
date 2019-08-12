@@ -35,6 +35,8 @@ class System {
   void addPotential(Potential &pot, const int &j, const int &k);
   void evolve(int index, double timeStep, int maxOrder);
   void evolveAll(double timeStep, int maxOrder);
+  void log(double time);
+  double energy(int index);
 };
 
 #endif //SYSTEM_H

@@ -55,8 +55,8 @@ double asymmGaussian(const double &x, const double &X0, const double &Sigma);
 
 /// Vector functions
 
-doubleVec complexToDouble(const complexVec &a);
-complexVec doubleToComplex(const doubleVec &a);
+doubleVec vectorComplexToDouble(const complexVec &a);
+complexVec vectorDoubleToComplex(const doubleVec &a);
 complexVec vectorMultiply(const complexVec &a, const complexVec &b);
 doubleVec vectorMultiply(const doubleVec &a, const doubleVec &b);
 complexVec vectorExp(const complexVec &a);
@@ -67,8 +67,11 @@ complexVec vectorScale(const doubleVec &a, const complex &b);
 complexVec vectorAdd(const complexVec &a, const complexVec &b);
 complexVec vectorAdd(const complexVec &a, const doubleVec &b);
 complexVec vectorAdd(const doubleVec &a, const complexVec &b);
-doubleVec vectorComplexToDouble(const complexVec &cvector);
-complexVec vectorDoubleToComplex(const doubleVec &dvector);
+complexVec vectorSubtract(const complexVec &a, const complexVec &b);
+complexVec vectorSubtract(const complexVec &a, const doubleVec &b);
+complexVec vectorSubtract(const doubleVec &a, const complexVec &b);
+doubleVec fourierComplexToDouble(const complexVec &cvector);
+complexVec fourierDoubleToComplex(const doubleVec &dvector);
 double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int &n);
 
 #endif //EXTRAS_H
