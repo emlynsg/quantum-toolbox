@@ -37,6 +37,7 @@ class System {
   void evolveAll(double timeStep, int maxOrder);
   void log(double time);
   double energy(int index);
+  double hamiltonianElement(int indexI, int indexJ);
 };
 
 #endif //SYSTEM_H

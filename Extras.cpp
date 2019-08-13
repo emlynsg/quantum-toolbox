@@ -140,6 +140,11 @@ complexVec fourierDoubleToComplex(const doubleVec &dvector) {
   return cvector;
 }
 
+double vectorTrapezoidIntegrate(const doubleVec &vect, const double &h, const int &n) {
+  assert(("Integration requires a minimum of 9 points", n > 9));
+  return (h / 2.0) * (vect[0] + 2.0 * std::accumulate(vect.begin() + 1, vect.begin() + (vect.size() - 1), 0.0)
+      + vect[n]);
+}
 
 /// Simpson Rule (from Wikipedia, not sure of reference)
 /// TODO: Fix integration approach
@@ -150,3 +155,4 @@ double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int 
       + 48.0 * std::accumulate(vect.begin() + 4, vect.begin() + (vect.size() - 4), 0.0)
       + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
 }
+

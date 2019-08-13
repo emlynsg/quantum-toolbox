@@ -84,5 +84,35 @@ void System::log(double time){
 }
 
 double System::energy(int index){
-  ;
+  double A = pow(HBARC/wavefunctions[index].grid.xStep,2.0)/(2.0*wavefunctions[index].reducedMass);
+  complexVec psiRotLeft = wavefunctions[index].psi;
+  complexVec psiRotRight = wavefunctions[index].psi;
+  complexVec psiOverlap = vectorAdd(vectorScale(vectorSubtract(vectorSubtract(vectorScale(wavefunctions[index].psi, 2.0)
+      , psiRotLeft), psiRotRight),A),vectorMultiply(potMatrix[index][index].V,wavefunctions[index].psi));
+  psiOverlap[0] = 0.0;
+  psiOverlap.back() = 0.0;
+  doubleVec integrand(wavefunctions[index].grid.nPoint);
+  for (int j = 0; j < wavefunctions[index].grid.nPoint; ++j) {
+    integrand[j] = (std::abs(wavefunctions[index].psi[j] * std::conj(psiOverlap[j])));
+  }
+  double returnValue = vectorSimpsonIntegrate(integrand, wavefunctions[index].grid.xStep, wavefunctions[index].grid.nPoint);
+  doubleVec().swap(integrand);
+  return returnValue;
+}
+
+double System::hamiltonianElement(int indexI, int indexJ){
+  double A = pow(HBARC/wavefunctions[indexI].grid.xStep,2.0)/(2.0*wavefunctions[indexI].reducedMass);
+  complexVec psiRotLeft = wavefunctions[indexI].psi;
+  complexVec psiRotRight = wavefunctions[indexI].psi;
+  complexVec psiOverlap = vectorAdd(vectorScale(vectorSubtract(vectorSubtract(vectorScale(wavefunctions[indexI].psi, 2.0)
+      , psiRotLeft), psiRotRight),A),vectorMultiply(potMatrix[indexI][indexJ].V,wavefunctions[indexI].psi));
+  psiOverlap[0] = 0.0;
+  psiOverlap.back() = 0.0;
+  doubleVec integrand(wavefunctions[indexI].grid.nPoint);
+  for (int j = 0; j < wavefunctions[indexI].grid.nPoint; ++j) {
+    integrand[j] = (std::abs(wavefunctions[indexJ].psi[j] * std::conj(psiOverlap[j])));
+  }
+  double returnValue = vectorSimpsonIntegrate(integrand, wavefunctions[indexI].grid.xStep, wavefunctions[indexI].grid.nPoint);
+  doubleVec().swap(integrand);
+  return returnValue;
 }

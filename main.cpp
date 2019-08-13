@@ -4,6 +4,7 @@
 //
 
 //Standard includes
+
 #include <vector>
 
 // GSL includes
@@ -19,7 +20,7 @@ int main() {
 
   /// We need to first make some variables for our Grid class, and then put them into the constructor ///
 
-  int sizeN = 32;
+  int sizeN = 1024;
   double xmin = -200.0;
   double xmax = 200.0;
   double kscale = 1.0;
@@ -124,6 +125,8 @@ int main() {
   System sys(waveObject, pot);
   sys.test();
   sys.evolveAll(10.0, 3);
+  std::cout << "Check Hamiltonian element: " << sys.hamiltonianElement(0,0) << std::endl;
+
 
   std::cout << std::endl;
   std::cout << std::endl;

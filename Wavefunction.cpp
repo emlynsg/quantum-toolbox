@@ -1,6 +1,3 @@
-
-//# define NDEBUG
-
 #include <iostream>
 #include <vector>
 #include <complex>
@@ -25,25 +22,12 @@ void Wavefunction::test() {
   std::cout << "Average value: " << getAvgX() << std::endl;
 }
 
-double Wavefunction::getNorm() {
-  return overlap((*this));
-}
 
 void Wavefunction::normalise() {
   double a = sqrt(getNorm());
   psi = vectorScale(psi, 1.0 / a);
 }
 
-double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
-  doubleVec integrand;
-  for (int j = 0; j < grid.nPoint; ++j) {
-    if (grid.x[j] >= xmin and grid.x[j] <= xmax) {
-      integrand.push_back(std::norm(psi[j]));
-    }
-  }
-  assert(("No points in this range", !integrand.empty()));
-  return vectorSimpsonIntegrate(integrand, grid.xStep, int(integrand.size()));
-}
 
 /// Check ordering on PsiK and Psi outputs
 /// https://www.gnu.org/software/gsl/doc/html/fft.html#overview-of-complex-data-ffts
@@ -166,6 +150,21 @@ void Wavefunction::boostEnergy(const double &energy) {
 }
 
 /// Getters
+
+double Wavefunction::getNorm() {
+  return overlap((*this));
+}
+
+double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
+  doubleVec integrand;
+  for (int j = 0; j < grid.nPoint; ++j) {
+    if (grid.x[j] >= xmin and grid.x[j] <= xmax) {
+      integrand.push_back(std::norm(psi[j]));
+    }
+  }
+  assert(("No points in this range", !integrand.empty()));
+  return vectorSimpsonIntegrate(integrand, grid.xStep, int(integrand.size()));
+}
 
 doubleVec Wavefunction::getReal() {
   doubleVec returnValue(grid.nPoint);
