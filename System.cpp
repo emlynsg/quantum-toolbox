@@ -1,6 +1,6 @@
 #include "System.h"
 
-System::System(Wavefunction &wf, Potential &pot) {
+System::System(Wavefunction wf, Potential pot) {
   addWavefunction(wf);
   addPotential(pot, 0, 0);
 }

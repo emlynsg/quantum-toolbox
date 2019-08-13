@@ -28,7 +28,7 @@ class System {
   intVec potRight;
   potentialMatrix potMatrix;
   /// Functions ///
-  System(Wavefunction &wf, Potential &pot);
+  System(Wavefunction wf, Potential pot);
   ~System();
   void test();
   void addWavefunction(Wavefunction &wf);

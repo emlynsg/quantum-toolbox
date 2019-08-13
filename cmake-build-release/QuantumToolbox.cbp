@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="QuantumToolbox"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="QuantumToolbox">
+				<Option output="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/QuantumToolbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 QuantumToolbox"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="QuantumToolbox/fast">
+				<Option output="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/QuantumToolbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 QuantumToolbox/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/exg103/Documents/Honours/CPP/CPP\ Code/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Extras.h">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/System.h">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp">
+			<Option target="QuantumToolbox"/>
+		</Unit>
+		<Unit filename="/home/exg103/Documents/Honours/CPP/CPP Code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

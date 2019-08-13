@@ -13,6 +13,7 @@
 #include "Wavefunction.h"
 #include "Potential.h"
 #include "System.h"
+#include "Plotter.h"
 
 int main() {
 
@@ -126,6 +127,15 @@ int main() {
   sys.test();
   sys.evolveAll(10.0, 3);
   std::cout << "Check Hamiltonian element: " << sys.hamiltonianElement(0,0) << std::endl;
+
+
+
+  std::cout << std::endl;
+
+  std::cout << std::endl;
+
+  Plotter plot(sys);
+  plot.test();
 
 
   std::cout << std::endl;
