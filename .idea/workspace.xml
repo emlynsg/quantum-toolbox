@@ -13,32 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.h" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plotter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plotter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wavefunction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Wavefunction.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/QuantumToolbox" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/QuantumToolbox.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/QuantumToolbox.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/QuantumToolbox.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/QuantumToolbox.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnuplot-iostream" beforeDir="false" afterPath="$PROJECT_DIR$/gnuplot-iostream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gnuplot-iostream/.gitignore" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
@@ -119,7 +95,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="18261" />
+          <entry key="cpp" value="18262" />
           <entry key="h" value="2533" />
           <entry key="txt" value="116" />
         </counts>
@@ -128,7 +104,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="116" />
           <entry key="Doxygen file" value="21" />
-          <entry key="ObjectiveC" value="20773" />
+          <entry key="ObjectiveC" value="20774" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -165,7 +141,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -174,11 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Plotter.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+            <state relative-caret-position="391">
+              <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
               <folding>
                 <element signature="e#84#103#0" expanded="true" />
               </folding>
@@ -189,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Plotter.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -347,11 +323,11 @@
         <option value="$PROJECT_DIR$/System.h" />
         <option value="$PROJECT_DIR$/System.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Plotter.cpp" />
-        <option value="$PROJECT_DIR$/Plotter.h" />
         <option value="$PROJECT_DIR$/Grid.h" />
         <option value="$PROJECT_DIR$/Wavefunction.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Plotter.cpp" />
+        <option value="$PROJECT_DIR$/Plotter.h" />
       </list>
     </option>
   </component>
@@ -373,6 +349,11 @@
             <path>
               <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+              <item name="gnuplot-iostream" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -438,30 +419,29 @@
       <workItem from="1564366391820" duration="62614000" />
       <workItem from="1564982557814" duration="7183000" />
       <workItem from="1564990441545" duration="214000" />
-      <workItem from="1565592193760" duration="26370000" />
+      <workItem from="1565592193760" duration="26634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154176000" />
+    <option name="totallyTimeSpent" value="154440000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09397457" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13266999" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.035564855" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.035564855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38493723" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.28451884" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3588362" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3587866" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286638" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.3297414" />
@@ -630,26 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Plotter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Plotter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="e#84#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Grid.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -688,6 +648,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="79" lean-forward="true" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+          <folding>
+            <element signature="e#84#103#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
