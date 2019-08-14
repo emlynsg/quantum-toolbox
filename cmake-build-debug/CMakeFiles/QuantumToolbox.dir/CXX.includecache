@@ -46,53 +46,13 @@ gsl/gsl_blas.h
 gsl/gsl_complex_math.h
 -
 
-/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp
-Plotter.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
-System.h
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
-System.h
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-gnuplot-cpp/include/gnuplot.h
-/home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-cpp/include/gnuplot.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp
+iostream
+-
 vector
 -
 complex
 -
-cstdlib
--
-cstdio
--
-cmath
--
-numeric
--
-functional
--
-algorithm
--
-gsl/gsl_blas.h
--
-gsl/gsl_complex_math.h
--
-gsl/gsl_integration.h
--
-gsl/gsl_spline.h
--
-gsl/gsl_fft_complex.h
--
-Grid.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-System.h
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-Potential.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
 Wavefunction.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
 
@@ -124,17 +84,5 @@ gsl/gsl_integration.h
 gsl/gsl_spline.h
 -
 gsl/gsl_fft_complex.h
--
-
-/home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-cpp/include/gnuplot.h
-stdio.h
--
-string
--
-vector
--
-iostream
--
-fstream
 -
 

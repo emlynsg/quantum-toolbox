@@ -6,7 +6,7 @@
 #define PLOTTER_H
 
 #include "System.h"
-#include "gnuplot-cpp/include/gnuplot.h"
+#include "gnuplot-iostream/gnuplot-iostream.h"
 
 class Plotter {
  public:
@@ -26,7 +26,7 @@ class Plotter {
   ~Plotter();
   void test();
   void plot();
-  void setPlotStyle(GnuplotPipe &g, int stylenum=0);
+  void setPlotStyle(Gnuplot &g, int stylenum=0);
 
 };
 

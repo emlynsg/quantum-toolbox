@@ -171,6 +171,9 @@ QuantumToolbox: CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o
 QuantumToolbox: CMakeFiles/QuantumToolbox.dir/build.make
 QuantumToolbox: /usr/lib/x86_64-linux-gnu/libgsl.so
 QuantumToolbox: /usr/lib/x86_64-linux-gnu/libgslcblas.so
+QuantumToolbox: /usr/lib/x86_64-linux-gnu/libboost_system.so
+QuantumToolbox: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+QuantumToolbox: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
 QuantumToolbox: CMakeFiles/QuantumToolbox.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable QuantumToolbox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/QuantumToolbox.dir/link.txt --verbose=$(VERBOSE)

@@ -39,15 +39,14 @@ void Wavefunction::computePsiK() {
   complexVec psi_input = vectorMultiply(psi, vectorExp(vectorScale(grid.x, -1. * grid.kMin * i)));
   // Need input as a double array to Fourier Transform
   doubleVec dvec = fourierComplexToDouble(psi_input);
-  complexVec().swap(psi_input);
 
   // FFT
   gsl_fft_complex_wavetable *wavetable;
   gsl_fft_complex_workspace *workspace;
   wavetable = gsl_fft_complex_wavetable_alloc(grid.nPoint);
   workspace = gsl_fft_complex_workspace_alloc(grid.nPoint);
-  // Check FFT worked
-  int res = gsl_fft_complex_inverse(dvec.data(), 1, grid.nPoint, wavetable, workspace);
+  /// TODO: Check FFT worked
+  int res = gsl_fft_complex_forward(dvec.data(), 1, grid.nPoint, wavetable, workspace);
   if (res != 0) {
     std::cout << "FFT Failed" << std::endl;
   }
@@ -79,7 +78,7 @@ void Wavefunction::computePsi() {
   wavetable = gsl_fft_complex_wavetable_alloc(grid.nPoint);
   workspace = gsl_fft_complex_workspace_alloc(grid.nPoint);
   // Check FFT worked
-  int res = gsl_fft_complex_forward(dvec.data(), 1, grid.nPoint, wavetable, workspace);
+  int res = gsl_fft_complex_inverse(dvec.data(), 1, grid.nPoint, wavetable, workspace);
   if (res != 0) {
     std::cout << "FFT Failed" << std::endl;
   }

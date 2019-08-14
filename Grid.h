@@ -21,8 +21,8 @@ typedef std::vector<double> doubleVec;
 class Grid {
  public:
   /// Number of steps on the grid ///
-  int nStep;
-  int nPoint;
+  unsigned int nStep;
+  unsigned int nPoint;
   /// Grid positions ///
   double xMin;
   double xMax;
