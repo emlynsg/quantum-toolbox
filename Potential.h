@@ -38,7 +38,7 @@ class Potential {
   void addQuartic(const double &xCenter, const double &c);
   void addGaussian(const double &xCenter, const double &height, const double &sigma);
   void addWoodsSaxon(const double &xCenter, const double &height, const double &xSize, const double &diffuseness);
-  void addCoulombSphere(const double &Z1Z2, const double &xCenter, const double &xSize);
+  void addCoulomb(const double &Z1Z2, const double &xCenter, const double &xSize);
 };
 
 #endif //POTENTIAL_H

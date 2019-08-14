@@ -35,17 +35,16 @@ void Wavefunction::normalise() {
 
 
 void Wavefunction::computePsiK() {
-  // Compute input for FFT=
+  // Compute input for FFT
   complexVec psi_input = vectorMultiply(psi, vectorExp(vectorScale(grid.x, -1. * grid.kMin * i)));
-  // Need input as a double array to Fourier Transform
-  doubleVec dvec = fourierComplexToDouble(psi_input);
+  doubleVec dvec = fourierComplexToDouble(psi_input);  // Need input as a double array to Fourier Transform
+
 
   // FFT
   gsl_fft_complex_wavetable *wavetable;
   gsl_fft_complex_workspace *workspace;
   wavetable = gsl_fft_complex_wavetable_alloc(grid.nPoint);
   workspace = gsl_fft_complex_workspace_alloc(grid.nPoint);
-  /// TODO: Check FFT worked
   int res = gsl_fft_complex_forward(dvec.data(), 1, grid.nPoint, wavetable, workspace);
   if (res != 0) {
     std::cout << "FFT Failed" << std::endl;
@@ -63,20 +62,16 @@ void Wavefunction::computePsi() {
   // Compute input for FFT
   complexVec psi_input =
       vectorScale(vectorMultiply(psiK, vectorExp(vectorScale(grid.k, grid.xMin * i))), (sqrt(2. * M_PI) / grid.xStep));
-  // Rotate to match ordering of FFT
-  std::rotate(psi_input.begin(), psi_input.begin()+int((psi_input.size()+1)/2), psi_input.end());
+  std::rotate(psi_input.begin(), psi_input.begin()+int((psi_input.size()+1)/2), psi_input.end());  // Rotate to match ordering of FFT
+  doubleVec dvec = fourierComplexToDouble(psi_input);  // Need input as a double array to Fourier Transform
 
-  // Need input as a double array to Fourier Transform
-  doubleVec dvec = fourierComplexToDouble(psi_input);
-
-  // FFT
+  // IFFT
   gsl_fft_complex_wavetable *wavetable;
   gsl_fft_complex_workspace *workspace;
   wavetable = gsl_fft_complex_wavetable_alloc(grid.nPoint);
   workspace = gsl_fft_complex_workspace_alloc(grid.nPoint);
-  // Check FFT worked
   int res = gsl_fft_complex_inverse(dvec.data(), 1, grid.nPoint, wavetable, workspace);
-  if (res != 0) {
+  if (res != 0) {// Check IFFT worked
     std::cout << "FFT Failed" << std::endl;
   }
   gsl_fft_complex_wavetable_free(wavetable);

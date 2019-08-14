@@ -99,12 +99,12 @@ void Potential::addWoodsSaxon(const double &xCenter,
                  });
 }
 
-void Potential::addCoulombSphere(const double &Z1Z2, const double &xCenter, const double &xSize) {
+void Potential::addCoulomb(const double &Z1Z2, const double &xCenter, const double &xSize) {
   for (int j = 0; j < grid.nPoint; ++j) {
-    if (grid.x[j] - xCenter < xSize) {
+    if (std::abs(grid.x[j] - xCenter) < xSize) {
       V[j] = V[j] + complex(Z1Z2 * ESQ * (3.0 - pow(std::abs(grid.x[j] - xCenter) / xSize, 2.0) / (2.0 * xSize)), 0.0);
     } else {
-      V[j] = V[j] + complex(Z1Z2 * ESQ / (std::abs(grid.x[j] - xCenter)), 0.0);
+      V[j] = V[j] + complex(((Z1Z2 * ESQ) / (std::abs(grid.x[j] - xCenter))), 0.0);
     }
   }
 }

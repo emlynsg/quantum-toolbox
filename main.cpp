@@ -21,7 +21,7 @@ int main() {
 
   /// We need to first make some variables for our Grid class, and then put them into the constructor ///
 
-  int sizeN = 1024;
+  int sizeN = 1023;
   double xmin = -200.0;
   double xmax = 200.0;
   double kscale = 1.0;
@@ -111,13 +111,19 @@ int main() {
 //  check = pot.getImag();
 //  check = pot.getAbs();
   pot.initConstantInRegion(2.0, -200.0, 200.0);
+  std::cout << "Check potential value: " << pot.V[1] << std::endl;
   pot.addConstant(2.0, -200.0, 100.0);
+  std::cout << "Check potential value: " << pot.V[1] << std::endl;
   pot.addParabolic(-199.0, 2.0);
+  std::cout << "Check potential value: " << pot.V[1] << std::endl;
   pot.addQuartic(-199.0, 2.0);
   std::cout << "Check potential value: " << pot.V[1] << std::endl;
   pot.addGaussian(-198.0, 2.0, 1.0);
+  std::cout << "Check potential value: " << pot.V[1] << std::endl;
   pot.addWoodsSaxon(-198.0, 2.0, 1.0, 1.0);
-  pot.addCoulombSphere(16.0, -190.0, 0.1);
+  std::cout << "Check potential value: " << pot.V[1] << std::endl;
+  pot.addCoulomb(4.0, -199.5, 0.1);
+  std::cout << "Check potential value: " << pot.V[1] << std::endl;
 
   std::cout << std::endl;
 
