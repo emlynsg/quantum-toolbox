@@ -12,10 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Plotter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plotter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/test.pdf" afterDir="false" />
-    </list>
+    <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -157,7 +154,7 @@
         <entry file="file://$PROJECT_DIR$/Plotter.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -322,11 +319,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="992" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="928" />
-    <option name="height" value="1056" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -340,6 +337,23 @@
             <path>
               <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+              <item name="gnuplot-cpp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+              <item name="gnuplot-cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+              <item name="gnuplot-cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -405,30 +419,29 @@
       <workItem from="1564366391820" duration="62614000" />
       <workItem from="1564982557814" duration="7183000" />
       <workItem from="1564990441545" duration="214000" />
-      <workItem from="1565592193760" duration="22909000" />
+      <workItem from="1565592193760" duration="23156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150715000" />
+    <option name="totallyTimeSpent" value="150962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="992" y="24" width="928" height="1056" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19274376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3294979" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42672414" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42672414" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38493723" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.28556034" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3588362" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3588362" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286638" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.3297414" />
@@ -651,7 +664,7 @@
     <entry file="file://$PROJECT_DIR$/Plotter.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
