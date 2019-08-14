@@ -48,35 +48,35 @@ int main() {
   Wavefunction waveObject(gridObject, ReducedMass);
   waveObject.test();
   waveObject.initZero();
-  waveObject.initConstant();
-  waveObject.boostWaveNumber(1.1);
-  waveObject.boostEnergy(1.1);
-  waveObject.initSine(2.5);
-  waveObject.initAsymmGaussian(1.0, 1.0);
-  waveObject.initGaussian(0.0, 1.0);
-  doubleVec check = waveObject.getReal();
-  check = waveObject.getImag();
-  check = waveObject.getAbs();
-  check = waveObject.getAbsSq();
-  check = waveObject.getKReal();
-  check = waveObject.getKImag();
-  check = waveObject.getKAbs();
-  check = waveObject.getKAbsSq();
+  //waveObject.initConstant();
+  //waveObject.boostWaveNumber(1.1);
+  //waveObject.boostEnergy(1.1);
+  //waveObject.initSine(2.5);
+  //waveObject.initAsymmGaussian(1.0, 1.0);
+  waveObject.initGaussian(0.0, 5.0);
+//  doubleVec check = waveObject.getReal();
+//  check = waveObject.getImag();
+//  check = waveObject.getAbs();
+//  check = waveObject.getAbsSq();
+//  check = waveObject.getKReal();
+//  check = waveObject.getKImag();
+//  check = waveObject.getKAbs();
+//  check = waveObject.getKAbsSq();
   Wavefunction waveObject2(gridObject, ReducedMass);
   waveObject2.copy(waveObject);
   waveObject.normalise();
-  std::cout << "Norm is: " << waveObject.getNorm() << std::endl;
-  std::cout << "Norm from 0 to 200 is: " << waveObject.getNormInRegion(0.0, 200.0) << std::endl;
+//  std::cout << "Norm is: " << waveObject.getNorm() << std::endl;
+//  std::cout << "Norm from 0 to 200 is: " << waveObject.getNormInRegion(0.0, 200.0) << std::endl;
 
   std::cout << "Wavefunction before FFT is: ";
-  for (int j = sizeN / 2; j < sizeN / 2 + 10; ++j) {
+  for (int j = sizeN / 2; j < sizeN / 2 + 5; ++j) {
     std::cout << abs(waveObject.psi[j]) << " ";
   }
   std::cout << std::endl;
   waveObject.computePsiK();
   waveObject.computePsi();
   std::cout << "Wavefunction after FFT and IFFT is: ";
-  for (int j = sizeN / 2; j < sizeN / 2 + 10; ++j) {
+  for (int j = sizeN / 2; j < sizeN / 2 + 5; ++j) {
     std::cout << abs(waveObject.psi[j]) << " ";
   }
   /// Need to fix this Fourier ordering stuff
@@ -107,9 +107,9 @@ int main() {
   Potential pot(gridObject);
   pot.test();
   pot.initZero();
-  check = pot.getReal();
-  check = pot.getImag();
-  check = pot.getAbs();
+//  check = pot.getReal();
+//  check = pot.getImag();
+//  check = pot.getAbs();
   pot.initConstantInRegion(2.0, -200.0, 200.0);
   pot.addConstant(2.0, -200.0, 100.0);
   pot.addParabolic(-199.0, 2.0);
@@ -125,8 +125,8 @@ int main() {
 
   System sys(waveObject, pot);
   sys.test();
-  sys.evolveAll(10.0, 3);
-  std::cout << "Check Hamiltonian element: " << sys.hamiltonianElement(0,0) << std::endl;
+//  sys.evolveAll(10.0, 3);
+//  std::cout << "Check Hamiltonian element: " << sys.hamiltonianElement(0,0) << std::endl;
 
 
 
@@ -135,7 +135,7 @@ int main() {
   std::cout << std::endl;
 
   Plotter plot(sys);
-  plot.test();
+  plot.plotPsi();
 
 
   std::cout << std::endl;

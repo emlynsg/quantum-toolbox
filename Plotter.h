@@ -25,9 +25,10 @@ class Plotter {
           const bool &showNorm=false, const bool &showAvgX=false, const bool &showPsiK=false);
   ~Plotter();
   void test();
+  /// TODO: Figure out best way to do this
   void plot();
+  void plotPsi();
   void setPlotStyle(Gnuplot &g, int stylenum=0);
-
 };
 
 #endif //PLOTTER_H

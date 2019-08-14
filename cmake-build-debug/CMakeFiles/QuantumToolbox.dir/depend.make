@@ -15,7 +15,6 @@ CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: ../Plotter.h
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: ../Potential.h
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: ../System.h
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: ../Wavefunction.h
-CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: ../gnuplot-cpp/include/gnuplot.h
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: ../gnuplot-iostream/gnuplot-iostream.h
 
 CMakeFiles/QuantumToolbox.dir/Potential.cpp.o: ../Extras.h
@@ -41,7 +40,6 @@ CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../Plotter.h
 CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../Potential.h
 CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../System.h
 CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../Wavefunction.h
-CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../gnuplot-cpp/include/gnuplot.h
 CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../gnuplot-iostream/gnuplot-iostream.h
 CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../main.cpp
 

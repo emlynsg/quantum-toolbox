@@ -19,24 +19,6 @@ Plotter::~Plotter(){
   std::cout << "Plotter deleted" << std::endl;
 }
 
-void Plotter::test(){
-  std::cout << "Test Plotter" << std::endl;
-  Gnuplot gp;
-  setPlotStyle(gp, 0);
-  gp << "set output 'test.pdf'\n";
-  gp << "set xlabel 'x axis label'\n";
-  gp << "set ylabel 'y axis label'\n";
-  gp << "set key top right\n";
-  gp << "plot [-pi/2:pi] cos(x),-(sin(x) > sin(x+1) ? sin(x) : sin(x+1)))\n";
-  gp << "set terminal pop\n";
-  gp << "set output\n";
-  gp << "replot\n";
-}
-
-void Plotter::plot(){
-
-}
-
 void Plotter::setPlotStyle(Gnuplot &g, int stylenum){
   if (stylenum == 1) {
     g << "cd '..'\n";
@@ -73,5 +55,40 @@ void Plotter::setPlotStyle(Gnuplot &g, int stylenum){
     g << "set style line 3 lt rgb '#5060D0' lw 2 pt 2\n";
     g << "set style line 4 lt rgb '#F25900' lw 2 pt 9\n";
   }
+}
 
+void Plotter::test(){
+  std::cout << "Test Plotter" << std::endl;
+  Gnuplot gp;
+  setPlotStyle(gp, 0);
+  gp << "set output 'test.pdf'\n";
+  gp << "set xlabel 'x axis label'\n";
+  gp << "set ylabel 'y axis label'\n";
+  gp << "set key top right\n";
+  gp << "plot [-pi/2:pi] cos(x),-(sin(x) > sin(x+1) ? sin(x) : sin(x+1)))\n";
+  gp << "set terminal pop\n";
+  gp << "set output\n";
+  gp << "replot\n";
+}
+
+void Plotter::plot(){
+  ;
+}
+
+void Plotter::plotPsi(){
+  doublePairVec x_psi;
+  for(int j = 0; j < system.wavefunctions[0].grid.nPoint; ++j){
+    x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x[j], system.wavefunctions[0].getAbs()[j]));
+  }
+  Gnuplot gp;
+  setPlotStyle(gp, 0);
+  gp << "set output 'psi.pdf'\n";
+  gp << "set xlabel 'x'\n";
+  gp << "set ylabel 'psi'\n";
+  gp << "set key top right\n";
+  gp << "plot '-' with lines\n";
+  gp.send(x_psi);
+  gp << "set terminal pop\n";
+  gp << "set output\n";
+  gp << "replot\n";
 }

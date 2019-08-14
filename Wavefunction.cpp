@@ -53,24 +53,21 @@ void Wavefunction::computePsiK() {
   gsl_fft_complex_wavetable_free(wavetable);
   gsl_fft_complex_workspace_free(workspace);
 
-  //std::rotate(dvec.rbegin(), dvec.rbegin()+int(dvec.size()/2), dvec.rend());
+  std::rotate(dvec.begin(), dvec.begin() + int(dvec.size()/2), dvec.end());
   // Convert back
   psiK = vectorScale(vectorMultiply(fourierDoubleToComplex(dvec), vectorExp(vectorScale(grid.k, -1. * grid.xMin * i))),
                      grid.xStep / (sqrt(2. * M_PI)));
-  doubleVec().swap(dvec);
-  // Maybe need to shift entries??
-  //std::rotate(psiK.begin(), psiK.begin()+int(psiK.size()/2), psiK.end());
 }
 
 void Wavefunction::computePsi() {
   // Compute input for FFT
   complexVec psi_input =
-      vectorScale(vectorMultiply(psiK, vectorExp(vectorScale(grid.k, grid.kMin * i))), (sqrt(2. * M_PI) / grid.xStep));
+      vectorScale(vectorMultiply(psiK, vectorExp(vectorScale(grid.k, grid.xMin * i))), (sqrt(2. * M_PI) / grid.xStep));
+  // Rotate to match ordering of FFT
+  std::rotate(psi_input.begin(), psi_input.begin()+int((psi_input.size()+1)/2), psi_input.end());
+
   // Need input as a double array to Fourier Transform
   doubleVec dvec = fourierComplexToDouble(psi_input);
-  complexVec().swap(psi_input);
-
-  //std::rotate(dvec.rbegin(), dvec.rbegin()+int(dvec.size()/2), dvec.rend());
 
   // FFT
   gsl_fft_complex_wavetable *wavetable;
@@ -85,12 +82,8 @@ void Wavefunction::computePsi() {
   gsl_fft_complex_wavetable_free(wavetable);
   gsl_fft_complex_workspace_free(workspace);
 
-  //std::rotate(dvec.begin(), dvec.begin()+int(dvec.size()/2), dvec.end());
   // Convert back
   psi = vectorMultiply(fourierDoubleToComplex(dvec), vectorExp(vectorScale(grid.x, 1. * grid.kMin * i)));
-  doubleVec().swap(dvec);
-
-  //std::rotate(psi.begin(), psi.begin()+int(psi.size()/2), psi.end());
 }
 
 void Wavefunction::initZero() {
@@ -219,7 +212,6 @@ double Wavefunction::getAvgX() {
     integrand[j] = (std::abs(psi[j] * std::conj(psi[j])));
   }
   double returnValue = vectorSimpsonIntegrate(vectorMultiply(integrand, grid.x), grid.xStep, grid.nPoint);
-  doubleVec().swap(integrand);
   return returnValue;
 }
 
@@ -241,7 +233,6 @@ double Wavefunction::overlap(const Wavefunction &object) {
     integrand[j] = (std::abs(psi[j] * std::conj(object.psi[j])));
   }
   double returnValue = vectorSimpsonIntegrate(integrand, grid.xStep, grid.nPoint);
-  doubleVec().swap(integrand);
   return returnValue;
 }
 

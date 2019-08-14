@@ -26,6 +26,7 @@ typedef std::vector<double> doubleVec;
 typedef std::vector<complex> complexVec;
 typedef std::vector<complexVec> complexVecVec;
 typedef std::vector<doubleVec> doubleVecVec;
+typedef std::vector<std::pair<double, double> > doublePairVec;
 
 /// Constants ///
 extern complex i;

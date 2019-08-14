@@ -96,7 +96,6 @@ double System::energy(int index){
     integrand[j] = (std::abs(wavefunctions[index].psi[j] * std::conj(psiOverlap[j])));
   }
   double returnValue = vectorSimpsonIntegrate(integrand, wavefunctions[index].grid.xStep, wavefunctions[index].grid.nPoint);
-  doubleVec().swap(integrand);
   return returnValue;
 }
 
@@ -113,6 +112,5 @@ double System::hamiltonianElement(int indexI, int indexJ){
     integrand[j] = (std::abs(wavefunctions[indexJ].psi[j] * std::conj(psiOverlap[j])));
   }
   double returnValue = vectorSimpsonIntegrate(integrand, wavefunctions[indexI].grid.xStep, wavefunctions[indexI].grid.nPoint);
-  doubleVec().swap(integrand);
   return returnValue;
 }
