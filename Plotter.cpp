@@ -40,7 +40,6 @@ void Plotter::plot(){
 void Plotter::setPlotStyle(GnuplotPipe &g, int stylenum){
   if (stylenum == 1) {
     g.sendLine(R"(cd "..")");
-    g.sendLine(R"(pwd)");
     g.sendLine(R"(set encoding utf8)");
     g.sendLine(R"(set style line 1 lc rgb '#E41A1C' pt 1 ps 1 lt 1 lw 2)");
     g.sendLine(R"(set style line 2 lc rgb '#377EB8' pt 6 ps 1 lt 1 lw 2)");
@@ -63,7 +62,6 @@ rounded size 16 cm, 9.6 cm)");
   }
   else {
     g.sendLine(R"(cd "..")");
-    g.sendLine(R"(pwd)");
     g.sendLine(R"(set terminal pdfcairo font "Gill Sans,7" linewidth 3 rounded fontscale 1.0)");
     g.sendLine(R"(set style line 80 lt rgb "#808080")");
     g.sendLine(R"(set style line 81 lt 0)");
