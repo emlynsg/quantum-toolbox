@@ -49,7 +49,7 @@ void System::addPotential(Potential &pot, const int &j, const int &k) {
 void System::evolve(int index, double timeStep, int maxOrder){
   /// Taylor expansion method
   /// TODO: Figure approach, label usefully.
-  double A = pow(HBARC/wavefunctions[index].grid.xStep,2.0)/(2.0*wavefunctions[index].reducedMass);
+  double A = pow((HBARC/(1.0*wavefunctions[index].grid.xStep)),2.0)/(2.0*wavefunctions[index].reducedMass);
   complex B = -1.0*i*timeStep/HBARC;
   complexVec psiPart = wavefunctions[index].psi;
   complexVec psiTemp = wavefunctions[index].psi;
@@ -61,7 +61,7 @@ void System::evolve(int index, double timeStep, int maxOrder){
     psiPart = vectorAdd(vectorScale(vectorSubtract(vectorSubtract(vectorScale(psiTemp, 2.0)
               , psiRotLeft), psiRotRight),A),vectorMultiply(potMatrix[index][index].V,psiTemp));
     psiPart[0] = 0.0;
-    psiPart[-1] = 0.0;
+    psiPart.back() = 0.0;
     psiTemp = vectorScale(vectorScale(psiPart,B),1.0/order);
     wavefunctions[index].psi = vectorAdd(wavefunctions[index].psi, psiTemp);
   }
@@ -69,7 +69,7 @@ void System::evolve(int index, double timeStep, int maxOrder){
 }
 
 void System::evolveAll(double timeStep, int maxOrder){
-  for (int j = 1; j < wavefunctions.size(); ++j) {
+  for (int j = 0; j < wavefunctions.size(); ++j) {
     evolve(j, timeStep, maxOrder);
   }
 }

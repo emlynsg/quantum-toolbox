@@ -46,13 +46,21 @@ gsl/gsl_blas.h
 gsl/gsl_complex_math.h
 -
 
-/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp
-iostream
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp
+Plotter.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+gnuplot-iostream/gnuplot-iostream.h
+/home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-iostream/gnuplot-iostream.h
+windows.h
 -
-vector
+unistd.h
 -
-Potential.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
 
 /home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
 vector
@@ -83,4 +91,112 @@ gsl/gsl_fft_complex.h
 -
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
+
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+Potential.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
+Wavefunction.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
+
+/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
+Grid.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
+vector
+-
+complex
+-
+cstdlib
+-
+cstdio
+-
+cmath
+-
+numeric
+-
+functional
+-
+algorithm
+-
+gsl/gsl_blas.h
+-
+gsl/gsl_complex_math.h
+-
+gsl/gsl_integration.h
+-
+gsl/gsl_spline.h
+-
+gsl/gsl_fft_complex.h
+-
+
+/home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-iostream/gnuplot-iostream.h
+cstdio
+-
+termios.h
+-
+unistd.h
+-
+util.h
+-
+pty.h
+-
+fstream
+-
+iostream
+-
+sstream
+-
+stdexcept
+-
+string
+-
+utility
+-
+iomanip
+-
+vector
+-
+complex
+-
+cstdlib
+-
+cmath
+-
+tuple
+-
+boost/iostreams/device/file_descriptor.hpp
+-
+boost/iostreams/stream.hpp
+-
+boost/version.hpp
+-
+boost/utility.hpp
+-
+boost/tuple/tuple.hpp
+-
+boost/mpl/bool.hpp
+-
+boost/filesystem.hpp
+-
+boost/cstdint.hpp
+-
+blitz/array.h
+-
+windows.h
+-
+
+/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp
+vector
+-
+Grid.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
+Wavefunction.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
+Potential.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+Plotter.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
 

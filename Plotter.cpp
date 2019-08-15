@@ -92,3 +92,22 @@ void Plotter::plotPsi(){
   gp << "set output\n";
   gp << "replot\n";
 }
+
+void Plotter::animatePsi(int nSteps, double stepSize, int evolveOrder) {
+  Gnuplot gp;
+  gp << "set xlabel 'x'\n";
+  gp << "set ylabel 'psi'\n";
+  gp << "set key top right\n";
+  for (int j = 0; j < nSteps; ++j) {
+    system.evolveAll(stepSize, evolveOrder);
+    doublePairVec x_psi;
+    for(int k = 0; k < system.wavefunctions[0].grid.nPoint; ++k){
+      x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x[k], system.wavefunctions[0].getAbs()[k]));
+    }
+    gp << "plot '-' with lines\n";
+    gp.send(x_psi);
+    gp.flush();
+    pause(pauseTime);
+
+  }
+}

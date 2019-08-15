@@ -8,6 +8,20 @@
 #include "System.h"
 #include "gnuplot-iostream/gnuplot-iostream.h"
 
+// http://stackoverflow.com/a/1658429
+#ifdef _WIN32
+#include <windows.h>
+	inline void pause(unsigned millis) {
+		::Sleep(millis);
+	}
+#else
+#include <unistd.h>
+inline void pause(unsigned millis) {
+  ::usleep(millis * 1000);
+}
+#endif
+
+
 class Plotter {
  public:
   // Attributes
@@ -19,6 +33,7 @@ class Plotter {
   bool showNorm;
   bool showAvgX;
   bool showPsiK;
+  int pauseTime = 2;
   //Functions
   Plotter(System sys, const int &nColumns=2, const bool &showPsi=true,
           const bool &showPotential=false, const bool &showEnergy=false,
@@ -28,6 +43,7 @@ class Plotter {
   /// TODO: Figure out best way to do this
   void plot();
   void plotPsi();
+  void animatePsi(int nSteps, double stepSize, int evolveOrder);
   void setPlotStyle(Gnuplot &g, int stylenum=0);
 };
 
