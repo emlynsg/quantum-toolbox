@@ -53,11 +53,11 @@ void System::evolve(int index, double timeStep, int maxOrder){
   complex B = -1.0*i*timeStep/HBARC;
   complexVec psiPart = wavefunctions[index].psi;
   complexVec psiTemp = wavefunctions[index].psi;
-  complexVec psiRotLeft = wavefunctions[index].psi;
-  complexVec psiRotRight = wavefunctions[index].psi;
-  std::rotate(psiRotLeft.begin(), psiRotLeft.begin()+1, psiRotLeft.end());
-  std::rotate(psiRotRight.begin(), psiRotRight.begin() + psiRotRight.size()-1, psiRotRight.end());
   for (int order = 1; order < maxOrder+1; ++order) {
+    complexVec psiRotLeft = psiTemp;
+    complexVec psiRotRight = psiTemp;
+    std::rotate(psiRotLeft.begin(), psiRotLeft.begin()+1, psiRotLeft.end());
+    std::rotate(psiRotRight.begin(), psiRotRight.begin() + psiRotRight.size()-1, psiRotRight.end());
     psiPart = vectorAdd(vectorScale(vectorSubtract(vectorSubtract(vectorScale(psiTemp, 2.0)
               , psiRotLeft), psiRotRight),A),vectorMultiply(potMatrix[index][index].V,psiTemp));
     psiPart[0] = 0.0;
@@ -95,7 +95,7 @@ double System::energy(int index){
   for (int j = 0; j < wavefunctions[index].grid.nPoint; ++j) {
     integrand[j] = (std::abs(wavefunctions[index].psi[j] * std::conj(psiOverlap[j])));
   }
-  double returnValue = vectorSimpsonIntegrate(integrand, wavefunctions[index].grid.xStep, wavefunctions[index].grid.nPoint);
+  double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[index].grid.xStep, wavefunctions[index].grid.nPoint);
   return returnValue;
 }
 
@@ -111,6 +111,6 @@ double System::hamiltonianElement(int indexI, int indexJ){
   for (int j = 0; j < wavefunctions[indexI].grid.nPoint; ++j) {
     integrand[j] = (std::abs(wavefunctions[indexJ].psi[j] * std::conj(psiOverlap[j])));
   }
-  double returnValue = vectorSimpsonIntegrate(integrand, wavefunctions[indexI].grid.xStep, wavefunctions[indexI].grid.nPoint);
+  double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[indexI].grid.xStep, wavefunctions[indexI].grid.nPoint);
   return returnValue;
 }

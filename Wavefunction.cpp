@@ -150,7 +150,7 @@ double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
     }
   }
   assert(("No points in this range", !integrand.empty()));
-  return vectorSimpsonIntegrate(integrand, grid.xStep, int(integrand.size()));
+  return vectorTrapezoidIntegrate(integrand, grid.xStep, int(integrand.size()));
 }
 
 doubleVec Wavefunction::getReal() {
@@ -206,7 +206,7 @@ double Wavefunction::getAvgX() {
   for (int j = 0; j < grid.nPoint; ++j) {
     integrand[j] = (std::abs(psi[j] * std::conj(psi[j])));
   }
-  double returnValue = vectorSimpsonIntegrate(vectorMultiply(integrand, grid.x), grid.xStep, grid.nPoint);
+  double returnValue = vectorTrapezoidIntegrate(vectorMultiply(integrand, grid.x), grid.xStep, grid.nPoint);
   return returnValue;
 }
 
@@ -227,7 +227,7 @@ double Wavefunction::overlap(const Wavefunction &object) {
   for (int j = 0; j < grid.nPoint; ++j) {
     integrand[j] = (std::abs(psi[j] * std::conj(object.psi[j])));
   }
-  double returnValue = vectorSimpsonIntegrate(integrand, grid.xStep, grid.nPoint);
+  double returnValue = vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nPoint);
   return returnValue;
 }
 

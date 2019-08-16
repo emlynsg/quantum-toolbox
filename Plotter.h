@@ -33,7 +33,7 @@ class Plotter {
   bool showNorm;
   bool showAvgX;
   bool showPsiK;
-  int pauseTime = 2;
+  double pauseTime = 0.01;
   //Functions
   Plotter(System sys, const int &nColumns=2, const bool &showPsi=true,
           const bool &showPotential=false, const bool &showEnergy=false,
@@ -43,6 +43,7 @@ class Plotter {
   /// TODO: Figure out best way to do this
   void plot();
   void plotPsi();
+  void animate(int nSteps, double stepSize, int evolveOrder);
   void animatePsi(int nSteps, double stepSize, int evolveOrder);
   void setPlotStyle(Gnuplot &g, int stylenum=0);
 };

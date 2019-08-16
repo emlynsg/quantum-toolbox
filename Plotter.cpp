@@ -12,7 +12,6 @@ Plotter::Plotter(System sys, const int &ncols, const bool &showpsi, const bool &
   showNorm = shownorm;
   showAvgX = showavgx;
   showPsiK = showpsik;
-
 }
 
 Plotter::~Plotter(){
@@ -93,10 +92,25 @@ void Plotter::plotPsi(){
   gp << "replot\n";
 }
 
+void Plotter::animate(int nSteps, double stepSize, int evolveOrder){
+  Gnuplot gp;
+  gp << "set xlabel 'x'\n";
+  gp << "set key top right\n";
+  for (int j = 0; j < nSteps; ++j) {
+    system.evolveAll(stepSize, evolveOrder);
+    gp << "plot '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary'\n";
+    gp.send(boost::make_tuple(system.wavefunctions[0].grid.x, system.wavefunctions[0].getAbs()));
+    gp.send(boost::make_tuple(system.wavefunctions[0].grid.x, system.wavefunctions[0].getReal()));
+    gp.send(boost::make_tuple(system.wavefunctions[0].grid.x, system.wavefunctions[0].getImag()));
+    gp.flush();
+//    pause(pauseTime);
+  }
+}
+
 void Plotter::animatePsi(int nSteps, double stepSize, int evolveOrder) {
   Gnuplot gp;
   gp << "set xlabel 'x'\n";
-  gp << "set ylabel 'psi'\n";
+//  gp << "set ylabel 'psi'\n";
   gp << "set key top right\n";
   for (int j = 0; j < nSteps; ++j) {
     system.evolveAll(stepSize, evolveOrder);
@@ -104,10 +118,9 @@ void Plotter::animatePsi(int nSteps, double stepSize, int evolveOrder) {
     for(int k = 0; k < system.wavefunctions[0].grid.nPoint; ++k){
       x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x[k], system.wavefunctions[0].getAbs()[k]));
     }
-    gp << "plot '-' with lines\n";
+    gp << "plot '-' with lines title 'Abs(Psi)'\n";
     gp.send(x_psi);
     gp.flush();
     pause(pauseTime);
-
   }
 }

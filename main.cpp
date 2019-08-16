@@ -17,7 +17,7 @@
 
 int main() {
 
-  int sizeN = 1023;
+  int sizeN = 4095;
   double xmin = -200.0;
   double xmax = 200.0;
   double kscale = 1.0;
@@ -32,11 +32,10 @@ int main() {
   pot.initZero();
 
   System sys(waveObject, pot);
-  sys.evolveAll(10.0, 10);
 
 
   Plotter plot(sys);
-  plot.animatePsi(1000, 0.1, 20);
+  plot.animate(30000, 0.1, 20);
 
 
   /*

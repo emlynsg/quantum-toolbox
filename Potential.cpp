@@ -52,37 +52,37 @@ void Potential::initConstantInRegion(const double &c, const double &xmin, const 
 
 /// Add to potential
 
-void Potential::addConstant(const double &c, const double &xmin, const double &xmax) {
+void Potential::addConstant(const complex &c, const double &xmin, const double &xmax) {
   for (int j = 0; j < grid.nPoint; ++j) {
     if (grid.x[j] >= xmin and grid.x[j] <= xmax) {
-      V[j] = V[j] + complex(c, 0.0);
+      V[j] = V[j] + c;
     }
   }
 }
 
-void Potential::addParabolic(const double &xCenter, const double &c) {
+void Potential::addParabolic(const double &xCenter, const complex &c) {
   std::transform(V.begin(),
                  V.end(),
                  grid.x.begin(),
                  V.begin(),
-                 [c, xCenter](auto &v, auto &x) { return v + complex((c * pow(x - xCenter, 2.0)), 0.0); });
+                 [c, xCenter](auto &v, auto &x) { return v + (c * pow(x - xCenter, 2.0)); });
 }
 
-void Potential::addQuartic(const double &xCenter, const double &c) {
+void Potential::addQuartic(const double &xCenter, const complex &c) {
   std::transform(V.begin(),
                  V.end(),
                  grid.x.begin(),
                  V.begin(),
-                 [c, xCenter](auto &v, auto &x) { return v + complex((c * pow(x - xCenter, 4.0)), 0.0); });
+                 [c, xCenter](auto &v, auto &x) { return v + (c * pow(x - xCenter, 4.0)); });
 }
 
-void Potential::addGaussian(const double &xCenter, const double &height, const double &sigma) {
+void Potential::addGaussian(const double &xCenter, const complex &height, const complex &sigma) {
   std::transform(V.begin(),
                  V.end(),
                  grid.x.begin(),
                  V.begin(),
                  [xCenter, height, sigma](auto &v, auto &x) {
-                   return v + complex(exp(-pow(x - xCenter, 2.0) / (2.0 * sigma * sigma)), 0.0);
+                   return v + std::exp(-std::pow(x - xCenter, 2.0) / (2.0 * sigma * sigma));
                  });
 }
 

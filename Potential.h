@@ -33,10 +33,10 @@ class Potential {
   doubleVec getAbs();
   void initZero();
   void initConstantInRegion(const double &c, const double &xmin, const double &xmax);
-  void addConstant(const double &c, const double &xmin, const double &xmax);
-  void addParabolic(const double &xCenter, const double &c);
-  void addQuartic(const double &xCenter, const double &c);
-  void addGaussian(const double &xCenter, const double &height, const double &sigma);
+  void addConstant(const complex &c, const double &xmin, const double &xmax);
+  void addParabolic(const double &xCenter, const complex &c);
+  void addQuartic(const double &xCenter, const complex &c);
+  void addGaussian(const double &xCenter, const complex &height, const complex &sigma);
   void addWoodsSaxon(const double &xCenter, const double &height, const double &xSize, const double &diffuseness);
   void addCoulomb(const double &Z1Z2, const double &xCenter, const double &xSize);
 };
