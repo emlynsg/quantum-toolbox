@@ -14,46 +14,62 @@
 #include "Potential.h"
 #include "System.h"
 #include "Plotter.h"
+#include "eigen/Eigen/Dense"
+#include <chrono>
+
+using namespace Eigen;
+using namespace std;
 
 std::array<double, 1024> transformArray(std::array<double, 1024> &array){
   std::array<double, 1024> ret;
   std::transform(array.begin(), array.end(), ret.begin(), [](auto &elt) { return 2.5*elt; });
+  return ret;
 }
 
-void alterArray(std::array<double, 1024> &array){
-  std::transform(array.begin(), array.end(), array.begin(), [](auto &elt) { return 2.5*elt; });
+void alterArray(std::array<double, 1024> &array, std::array<double, 1024> &out){
+  std::transform(array.begin(), array.end(), out.begin(), [](auto &elt) { return 2.5*elt; });
 }
 
 std::vector<double> transformVector(std::vector<double> &vec){
   std::vector<double> ret(1024);
   std::transform(vec.begin(), vec.end(), ret.begin(), [](auto &elt) { return 2.5*elt; });
+  return ret;
 }
 
-void alterVector(std::vector<double> &vec){
-  std::transform(vec.begin(), vec.end(), vec.begin(), [](auto &elt) { return 2.5*elt; });
+void alterVector(std::vector<double> &vec, std::vector<double> &out){
+  std::transform(vec.begin(), vec.end(), out.begin(), [](auto &elt) { return 2.5*elt; });
+}
+
+ArrayXd transformEigen(ArrayXd &eig){
+  ArrayXd ret = 2.5*eig;
+  return ret;
+}
+
+void alterEigen(ArrayXd &eig, ArrayXd &out){
+  out = 2.5*eig;
 }
 
 void test(){
-  for (int k = 0; k < 100; ++k) {
-    std::vector<double> testvec(1024);
-    std::array<double, 1024> testarray ;
-    for (int j = 0; j < 1024; ++j) {
-      testvec[j] = j;
-      testarray[j] = j;
-    }
-    testarray = transformArray(testarray);
-    testvec = transformVector(testvec);
-    alterArray(testarray);
-    alterVector(testvec);
+  auto starteig = std::chrono::high_resolution_clock::now();
+  for (int k = 0; k < 100000; ++k) {
+    ArrayXd testeig = ArrayXd::LinSpaced(1, 0, 1023);
+    ArrayXd outeig;
+    alterEigen(testeig, outeig);
   }
-
+  auto finisheig = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> teig = finisheig - starteig;
+  auto starteig2 = std::chrono::high_resolution_clock::now();
+  for (int k = 0; k < 100000; ++k) {
+    ArrayXd testeig = ArrayXd::LinSpaced(1, 0, 1023);
+    ArrayXd outeig;
+    outeig = transformEigen(testeig);
+  }
+  auto finisheig2 = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> teig2 = finisheig2 - starteig2;
+  std::cout << " Eigen inplace: " << teig.count() << " Eigen out-of-place: " << teig2.count() << std::endl;
 }
 
 int main() {
-  /// Consider using C++17 for the parallel operations
-  /// https://www.bfilipek.com/2018/11/parallel-alg-perf.html
-
-
   /// Error example: Seems to go wrong when changing psiPart inside the Taylor expansion loop in evolve from System.cpp
   int sizeN = 1023;
   double xmin = -200.0;
