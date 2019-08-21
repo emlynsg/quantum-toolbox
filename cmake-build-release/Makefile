@@ -177,87 +177,6 @@ Grid.cpp.s:
 	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/Grid.cpp.s
 .PHONY : Grid.cpp.s
 
-Plotter.o: Plotter.cpp.o
-
-.PHONY : Plotter.o
-
-# target to build an object file
-Plotter.cpp.o:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o
-.PHONY : Plotter.cpp.o
-
-Plotter.i: Plotter.cpp.i
-
-.PHONY : Plotter.i
-
-# target to preprocess a source file
-Plotter.cpp.i:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/Plotter.cpp.i
-.PHONY : Plotter.cpp.i
-
-Plotter.s: Plotter.cpp.s
-
-.PHONY : Plotter.s
-
-# target to generate assembly for a file
-Plotter.cpp.s:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/Plotter.cpp.s
-.PHONY : Plotter.cpp.s
-
-Potential.o: Potential.cpp.o
-
-.PHONY : Potential.o
-
-# target to build an object file
-Potential.cpp.o:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/Potential.cpp.o
-.PHONY : Potential.cpp.o
-
-Potential.i: Potential.cpp.i
-
-.PHONY : Potential.i
-
-# target to preprocess a source file
-Potential.cpp.i:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/Potential.cpp.i
-.PHONY : Potential.cpp.i
-
-Potential.s: Potential.cpp.s
-
-.PHONY : Potential.s
-
-# target to generate assembly for a file
-Potential.cpp.s:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/Potential.cpp.s
-.PHONY : Potential.cpp.s
-
-System.o: System.cpp.o
-
-.PHONY : System.o
-
-# target to build an object file
-System.cpp.o:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/System.cpp.o
-.PHONY : System.cpp.o
-
-System.i: System.cpp.i
-
-.PHONY : System.i
-
-# target to preprocess a source file
-System.cpp.i:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/System.cpp.i
-.PHONY : System.cpp.i
-
-System.s: System.cpp.s
-
-.PHONY : System.s
-
-# target to generate assembly for a file
-System.cpp.s:
-	$(MAKE) -f CMakeFiles/QuantumToolbox.dir/build.make CMakeFiles/QuantumToolbox.dir/System.cpp.s
-.PHONY : System.cpp.s
-
 Wavefunction.o: Wavefunction.cpp.o
 
 .PHONY : Wavefunction.o
@@ -327,15 +246,6 @@ help:
 	@echo "... Grid.o"
 	@echo "... Grid.i"
 	@echo "... Grid.s"
-	@echo "... Plotter.o"
-	@echo "... Plotter.i"
-	@echo "... Plotter.s"
-	@echo "... Potential.o"
-	@echo "... Potential.i"
-	@echo "... Potential.s"
-	@echo "... System.o"
-	@echo "... System.i"
-	@echo "... System.s"
 	@echo "... Wavefunction.o"
 	@echo "... Wavefunction.i"
 	@echo "... Wavefunction.s"

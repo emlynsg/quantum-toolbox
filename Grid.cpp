@@ -1,6 +1,9 @@
 #include "Grid.h"
 
-Grid::Grid(int nstep, double xmin, double xmax, double kscale) {
+using namespace Eigen;
+using namespace std;
+
+Grid::Grid(unsigned int nstep, double xmin, double xmax, double kscale) {
   nStep = nstep;
   nPoint = nStep + 1;
   xMin = xmin;
@@ -10,21 +13,16 @@ Grid::Grid(int nstep, double xmin, double xmax, double kscale) {
   kStep = 2 * M_PI / (nStep * xStep * kScale);
   kMin = -1 * nStep * kStep / 2.0;
   kMax = nStep * kStep / 2.0;
-  x.reserve(nPoint);
-  k.reserve(nPoint);
-  E.reserve(nPoint);
-  for (int j = 0; j < nPoint; ++j) {
-    x.push_back(j * xStep + xMin);
-    k.push_back(j * kStep + kMin);
-    E.push_back(pow((HBARC * k[j]), 2.0) / (2.0 * AMU));
-  }
+  x.resize(nPoint, Eigen::NoChange);
+  k.resize(nPoint, Eigen::NoChange);
+  E.resize(nPoint, Eigen::NoChange);
+  x = ArrayXd::LinSpaced(nPoint, xMin, xMax);
+  k = ArrayXd::LinSpaced(nPoint, kMin, kMax);
+  E = ArrayXd::LinSpaced(nPoint, pow((HBARC * k[0]), 2.0) / (2.0 * AMU), pow((HBARC * k[1023]), 2.0) / (2.0 * AMU));
 }
 
 Grid::~Grid() {
-  doubleVec().swap(x);
-  doubleVec().swap(k);
-  doubleVec().swap(E);
-  std::cout << "Grid deleted" << std::endl;
+//  std::cout << "Grid deleted" << std::endl;
 }
 
 void Grid::test() {

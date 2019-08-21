@@ -32,8 +32,8 @@ class Wavefunction {
   /// Objects ///
   Grid grid;
   /// Psi ///
-  complexVec psi;
-  complexVec psiK;
+  cVec psi;
+  cVec psiK;
 
   /// Functions ///
   Wavefunction(const Grid &object, const double &ReducedMass);
@@ -53,14 +53,14 @@ class Wavefunction {
   void initConstant();
   void boostWaveNumber(const double &WN);
   void boostEnergy(const double &energy);
-  doubleVec getReal();
-  doubleVec getImag();
-  doubleVec getAbs();
-  doubleVec getAbsSq();
-  doubleVec getKReal();
-  doubleVec getKImag();
-  doubleVec getKAbs();
-  doubleVec getKAbsSq();
+  dVec getReal();
+  dVec getImag();
+  dVec getAbs();
+  dVec getAbsSq();
+  dVec getKReal();
+  dVec getKImag();
+  dVec getKAbs();
+  dVec getKAbsSq();
   double getAvgX();
   void copy(const Wavefunction &wf);
 };

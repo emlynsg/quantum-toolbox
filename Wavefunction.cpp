@@ -1,19 +1,19 @@
 #include <iostream>
 #include <vector>
 #include <complex>
+#include "eigen/Eigen/Core"
+#include "eigen/unsupported/Eigen/FFT"
 
 #include "Wavefunction.h"
 
 Wavefunction::Wavefunction(const Grid &object, const double &ReducedMass) : grid(1, 0.0, 1.0, 1.0) {
   grid = object;
   reducedMass = ReducedMass * AMU;
-  psiK.resize(grid.nPoint, 0.0);
-  psi.resize(grid.nPoint, 0.0);
+  psiK.resize(grid.nPoint, Eigen::NoChange);
+  psi.resize(grid.nPoint, Eigen::NoChange);
 }
 
 Wavefunction::~Wavefunction() {
-  complexVec().swap(psi);
-  complexVec().swap(psiK);
   std::cout << "Wavefunction deleted" << std::endl;
 }
 
@@ -24,8 +24,7 @@ void Wavefunction::test() {
 
 
 void Wavefunction::normalise() {
-  double a = sqrt(getNorm());
-  psi = vectorScale(psi, 1.0 / a);
+  psi = (1.0/sqrt(getNorm()))*psi;
 }
 
 
@@ -82,52 +81,43 @@ void Wavefunction::computePsi() {
 }
 
 void Wavefunction::initZero() {
-  std::fill(psi.begin(), psi.end(), 0.0);
+  psi.setZero(grid.nPoint);
 }
 
 void Wavefunction::initGaussian(const double &mean, const double &sigma) {
-  std::transform(grid.x.begin(),
-                 grid.x.end(),
-                 psi.begin(),
-                 [mean, sigma](auto &elt) { return gaussian(elt, mean, sigma); });
+  //exp(-pow(x - X0, 2.0) / (2 * Sigma * Sigma));
+  psi = (((grid.x - mean).square()).exp())/(2*sigma*sigma);
   zeroEdges();
   normalise();
 }
 
 void Wavefunction::initAsymmGaussian(const double &mean, const double &sigma) {
-  std::transform(grid.x.begin(),
-                 grid.x.end(),
-                 psi.begin(),
-                 [mean, sigma](auto &elt) { return asymmGaussian(elt, mean, sigma); });
+  1.0
+      * (exp(-pow(x - X0 - Sigma, 2.0) / (2 * Sigma * Sigma)) - exp(-pow(x - X0 + Sigma, 2.0) / (2 * Sigma * Sigma)));
+  psi = ((((grid.x-mean-sigma).square()).exp()) - (((grid.x-mean+sigma).square()).exp()))/(2*sigma*sigma);
   zeroEdges();
   normalise();
 }
 
 void Wavefunction::zeroEdges() {
-  psi[0] = complex(0.0, 0.0);
-  psi.back() = complex(0.0, 0.0);
+  psi(0) = cd(0.0, 0.0);
+  psi(grid.nStep) = cd(0.0, 0.0);
 }
 
 void Wavefunction::initSine(const double &N) {
-  std::transform(grid.x.begin(),
-                 grid.x.end(),
-                 psi.begin(),
-                 [N, this](auto &elt) { return sine(elt, N, grid.xMin, grid.xMax); });
+  sin(N * M_PI * (x - xmin) / (xmax - xmin));
+  psi = (N*M_PI*(grid.x-grid.xMin)/(grid.xMax-grid.xMin)).sin();
   normalise();
 }
 
 void Wavefunction::initConstant() {
-  std::fill(psi.begin(), psi.end(), 1.0);
+  psi.setConstant(1.0);
   zeroEdges();
   normalise();
 }
 
 void Wavefunction::boostWaveNumber(const double &WN) {
-  std::transform(grid.x.begin(),
-                 grid.x.end(),
-                 psi.begin(),
-                 psi.begin(),
-                 [WN, this](auto &x, auto &p) { return p * exp(i * WN * x); });
+  psi *= (i*WN*grid.x).exp();
   normalise();
 }
 
@@ -153,49 +143,49 @@ double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
   return vectorTrapezoidIntegrate(integrand, grid.xStep, int(integrand.size()));
 }
 
-doubleVec Wavefunction::getReal() {
+dVec Wavefunction::getReal() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return elt.real(); });
   return returnValue;
 }
 
-doubleVec Wavefunction::getImag() {
+dVec Wavefunction::getImag() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return elt.imag(); });
   return returnValue;
 }
 
-doubleVec Wavefunction::getAbs() {
+dVec Wavefunction::getAbs() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return std::abs(elt); });
   return returnValue;
 }
 
-doubleVec Wavefunction::getAbsSq() {
+dVec Wavefunction::getAbsSq() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return pow(std::abs(elt), 2.0); });
   return returnValue;
 }
 
-doubleVec Wavefunction::getKReal() {
+dVec Wavefunction::getKReal() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return elt.real(); });
   return returnValue;
 }
 
-doubleVec Wavefunction::getKImag() {
+dVec Wavefunction::getKImag() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return elt.imag(); });
   return returnValue;
 }
 
-doubleVec Wavefunction::getKAbs() {
+dVec Wavefunction::getKAbs() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return std::abs(elt); });
   return returnValue;
 }
 
-doubleVec Wavefunction::getKAbsSq() {
+dVec Wavefunction::getKAbsSq() {
   doubleVec returnValue(grid.nPoint);
   std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return pow(std::abs(elt), 2.0); });
   return returnValue;

@@ -2,7 +2,7 @@
 
 /// Variables
 
-complex i = complex(0, 1);
+cd i = cd(0.0, 1.0);
 double HBARC = 197.3; // MeV fm
 double AMU = 931.5;   // MeV/c^2
 double ESQ = 1.44;    // Electron charge in MeV fm

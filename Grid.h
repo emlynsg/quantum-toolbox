@@ -16,7 +16,10 @@
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
 
-typedef std::vector<double> doubleVec;
+#include "eigen/Eigen/Dense"
+
+using namespace Eigen;
+using namespace std;
 
 class Grid {
  public:
@@ -27,18 +30,18 @@ class Grid {
   double xMin;
   double xMax;
   double xStep;
-  doubleVec x;
+  dVec x;
   /// Momenta ///
   double kScale;
   double kStep;
   double kMin;
   double kMax;
-  doubleVec k;
+  dVec k;
   /// Energies ///
-  doubleVec E;
+  dVec E;
 
   /// Functions ///
-  Grid(int nstep, double xmin, double xmax, double kscale);
+  Grid(unsigned int nstep, double xmin, double xmax, double kscale);
   ~Grid();
   void test();
 

@@ -15,21 +15,30 @@
 #include <functional>
 #include <algorithm>
 
+#include "eigen/Eigen/Dense"
+
+
 #ifndef EXTRAS_H
 #define EXTRAS_H
 
+using namespace Eigen;
+using namespace std;
+
 /// Typedefs
 
-typedef std::complex<double> complex;
+typedef ArrayXd dVec;
+typedef ArrayXcd cVec;
+
+typedef std::complex<double> cd;
 typedef std::vector<int> intVec;
 typedef std::vector<double> doubleVec;
-typedef std::vector<complex> complexVec;
+typedef std::vector<std::complex<double>> complexVec;
 typedef std::vector<complexVec> complexVecVec;
 typedef std::vector<doubleVec> doubleVecVec;
 typedef std::vector<std::pair<double, double> > doublePairVec;
 
 /// Constants ///
-extern complex i;
+extern std::complex<double> i;
 extern double HBARC; // MeV fm
 extern double AMU;   // MeV/c^2
 extern double ESQ;    // Electron charge in MeV fm
@@ -44,7 +53,7 @@ int sgn(T val) {
 
 /// Structs
 
-struct expVec { complex operator()(complex d) const { return std::exp(d); }};
+struct expVec { std::complex<double> operator()(std::complex<double> d) const { return std::exp(d); }};
 
 
 /// Distribution functions
@@ -61,10 +70,10 @@ complexVec vectorDoubleToComplex(const doubleVec &a);
 complexVec vectorMultiply(const complexVec &a, const complexVec &b);
 doubleVec vectorMultiply(const doubleVec &a, const doubleVec &b);
 complexVec vectorExp(const complexVec &a);
-complexVec vectorScale(const complexVec &a, const complex &b);
+complexVec vectorScale(const complexVec &a, const std::complex<double> &b);
 complexVec vectorScale(const complexVec &a, const double &b);
 doubleVec vectorScale(const doubleVec &a, const double &b);
-complexVec vectorScale(const doubleVec &a, const complex &b);
+complexVec vectorScale(const doubleVec &a, const std::complex<double> &b);
 complexVec vectorAdd(const complexVec &a, const complexVec &b);
 complexVec vectorAdd(const complexVec &a, const doubleVec &b);
 complexVec vectorAdd(const doubleVec &a, const complexVec &b);
