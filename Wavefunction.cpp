@@ -85,15 +85,12 @@ void Wavefunction::initZero() {
 }
 
 void Wavefunction::initGaussian(const double &mean, const double &sigma) {
-  //exp(-pow(x - X0, 2.0) / (2 * Sigma * Sigma));
   psi = (((grid.x - mean).square()).exp())/(2*sigma*sigma);
   zeroEdges();
   normalise();
 }
 
 void Wavefunction::initAsymmGaussian(const double &mean, const double &sigma) {
-  1.0
-      * (exp(-pow(x - X0 - Sigma, 2.0) / (2 * Sigma * Sigma)) - exp(-pow(x - X0 + Sigma, 2.0) / (2 * Sigma * Sigma)));
   psi = ((((grid.x-mean-sigma).square()).exp()) - (((grid.x-mean+sigma).square()).exp()))/(2*sigma*sigma);
   zeroEdges();
   normalise();
@@ -105,7 +102,6 @@ void Wavefunction::zeroEdges() {
 }
 
 void Wavefunction::initSine(const double &N) {
-  sin(N * M_PI * (x - xmin) / (xmax - xmin));
   psi = (N*M_PI*(grid.x-grid.xMin)/(grid.xMax-grid.xMin)).sin();
   normalise();
 }
@@ -134,6 +130,7 @@ double Wavefunction::getNorm() {
 
 double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
   doubleVec integrand;
+  integrand.reserve(grid.nPoint);
   for (int j = 0; j < grid.nPoint; ++j) {
     if (grid.x[j] >= xmin and grid.x[j] <= xmax) {
       integrand.push_back(std::norm(psi[j]));
@@ -144,128 +141,50 @@ double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
 }
 
 dVec Wavefunction::getReal() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return elt.real(); });
-  return returnValue;
+  return psi.real();
 }
 
 dVec Wavefunction::getImag() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return elt.imag(); });
-  return returnValue;
+  return psi.imag();
 }
 
 dVec Wavefunction::getAbs() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return std::abs(elt); });
-  return returnValue;
+  return psi.abs();
 }
 
 dVec Wavefunction::getAbsSq() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psi.begin(), psi.end(), returnValue.begin(), [](auto &elt) { return pow(std::abs(elt), 2.0); });
-  return returnValue;
+  return psi.abs2();
 }
 
 dVec Wavefunction::getKReal() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return elt.real(); });
-  return returnValue;
+  return psiK.real();
 }
 
 dVec Wavefunction::getKImag() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return elt.imag(); });
-  return returnValue;
+  return psiK.imag();
 }
 
 dVec Wavefunction::getKAbs() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return std::abs(elt); });
-  return returnValue;
+  return psiK.abs();
 }
 
 dVec Wavefunction::getKAbsSq() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(psiK.begin(), psiK.end(), returnValue.begin(), [](auto &elt) { return pow(std::abs(elt), 2.0); });
-  return returnValue;
+  return psiK.abs2();
 }
 
 double Wavefunction::getAvgX() {
-  doubleVec integrand(grid.nPoint);
-  for (int j = 0; j < grid.nPoint; ++j) {
-    integrand[j] = (std::abs(psi[j] * std::conj(psi[j])));
-  }
-  double returnValue = vectorTrapezoidIntegrate(vectorMultiply(integrand, grid.x), grid.xStep, grid.nPoint);
-  return returnValue;
+  dVec integrand = (psi.abs2())*grid.x;
+  return vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nPoint);
 }
 
 void Wavefunction::copy(const Wavefunction &wf) {
   grid = wf.grid;
   reducedMass = wf.reducedMass;
-  psi.reserve(wf.grid.nPoint);
-  psiK.reserve(wf.grid.nPoint);
   psi = wf.psi;
   psiK = wf.psiK;
 }
 
-
-/// TODO: Fix overlap by completing integration approach
-
 double Wavefunction::overlap(const Wavefunction &object) {
-  doubleVec integrand(grid.nPoint);
-  for (int j = 0; j < grid.nPoint; ++j) {
-    integrand[j] = (std::abs(psi[j] * std::conj(object.psi[j])));
-  }
-  double returnValue = vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nPoint);
-  return returnValue;
+  dVec integrand = psi.abs2();
+  return vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nPoint);
 }
-
-
-
-/// All GSL integration seems to need a function as input
-/// TODO: Interpolate points, write this as a function, and then integrate
-
-//double Wavefunction::overlap(const Wavefunction& object) {
-//
-//  struct spline_parameters{gsl_spline a; gsl_interp_accel b;};
-//
-//  double grid_array[grid.nPoint];
-//  double integrand[grid.nPoint];
-//  for(int j=0; j<grid.nPoint; ++j) {
-//    grid_array[j] = grid.x[j];
-//    integrand[j] = std::abs(psi[j] * std::conj(object.psi[j]));
-//  }
-//  gsl_interp_accel *acc = gsl_interp_accel_alloc();
-//  gsl_spline *spline = gsl_spline_alloc(gsl_interp_cspline, grid.nPoint);
-//  gsl_spline_init(spline, grid_array, integrand, grid.nPoint);
-//
-//  double integrand_value = [](double xi, void * parameters) {
-//    struct spline_parameters *params = (struct spline_parameters *)parameters;
-//    gsl_spline *splin = &(params->a);
-//    gsl_interp_accel *ac = &(params->b);
-//    double integrand_val = gsl_spline_eval(splin, xi, ac);
-//    return integrand_val;
-//  };
-//
-//  gsl_integration_workspace * w
-//      = gsl_integration_workspace_alloc (1000);
-//
-//  double result, error;
-//  gsl_function F;
-//  struct spline_parameters params;
-//  params.a = *spline;
-//  params.b = *acc;
-//  F.function = &integrand_value;
-//  F.params = &params;
-//
-//  gsl_integration_qag(&F, grid.xMin, grid.xMax, 0, 1e-5
-//                       , grid.nPoint, 6, w, &result, &error);
-//
-//  std::cout << "Result and error: " << result << ", " << error << std::endl;
-//
-//  gsl_spline_free (spline);
-//  gsl_interp_accel_free (acc);
-//
-//  return result;
-//}

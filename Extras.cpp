@@ -128,6 +128,16 @@ doubleVec fourierComplexToDouble(const complexVec &cvector) {
   return dvector;
 }
 
+dVec fourierComplexToDouble(cVec &cvector) {
+  dVec dvector;
+  dvector.resize(2*cvector.size());
+  for (int k = 0; k < cvector.size(); ++k) {
+    dvector[2*k] = (cvector[k].real());
+    dvector[2*k+1] = (cvector[k].imag());
+  }
+  return dvector;
+}
+
 complexVec fourierDoubleToComplex(const doubleVec &dvector) {
   complexVec cvector;
   cvector.reserve((dvector.size()) / 2);
@@ -140,10 +150,24 @@ complexVec fourierDoubleToComplex(const doubleVec &dvector) {
   return cvector;
 }
 
+cVec fourierDoubleToComplex(dVec &dvector) {
+  cVec cvector;
+  cvector.resize(dvector.size()/2);
+  for (int k = 0; k < 2*cvector.size(); k=k+2) {
+    cvector[k] = cd(dvector[k], dvector[k+1]);
+  }
+  return cvector;
+}
+
 double vectorTrapezoidIntegrate(const doubleVec &vect, const double &h, const int &n) {
   assert(("Integration requires a minimum of 9 points", n > 9));
   return (h / 2.0) * (vect[0] + 2.0 * std::accumulate(vect.begin() + 1, vect.begin() + (vect.size() - 1), 0.0)
       + vect[n]);
+}
+
+double vectorTrapezoidIntegrate(dVec &vect, const double &h, const int &n) {
+  assert(("Integration requires a minimum of 9 points", n > 9));
+  return (h / 2.0) * (vect[0] + 2.0 * vect.segment(1,n).sum() + vect[n]);
 }
 
 /// Simpson Rule (from Wikipedia, not sure of reference)
@@ -153,6 +177,13 @@ double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int 
   assert(("Integration requires a minimum of 9 points", n > 9));
   return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
       + 48.0 * std::accumulate(vect.begin() + 4, vect.begin() + (vect.size() - 4), 0.0)
+      + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
+}
+
+double vectorSimpsonIntegrate(dVec &vect, const double &h, const int &n) {
+  assert(("Integration requires a minimum of 9 points", n > 9));
+  return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
+      + 48.0 * vect.segment(4,n-3).sum()
       + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
 }
 

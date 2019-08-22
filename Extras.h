@@ -81,8 +81,12 @@ complexVec vectorSubtract(const complexVec &a, const complexVec &b);
 complexVec vectorSubtract(const complexVec &a, const doubleVec &b);
 complexVec vectorSubtract(const doubleVec &a, const complexVec &b);
 doubleVec fourierComplexToDouble(const complexVec &cvector);
+dVec fourierComplexToDouble(cVec &cvector);
 complexVec fourierDoubleToComplex(const doubleVec &dvector);
+cVec fourierDoubleToComplex(dVec &dvector);
 double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int &n);
+double vectorSimpsonIntegrate(dVec &vect, const double &h, const int &n);
 double vectorTrapezoidIntegrate(const doubleVec &vect, const double &h, const int &n);
+double vectorTrapezoidIntegrate(dVec &vect, const double &h, const int &n);
 
 #endif //EXTRAS_H
