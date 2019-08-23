@@ -27,7 +27,7 @@ double asymmGaussian(const double &x, const double &X0, const double &Sigma) {
 
 doubleVec vectorComplexToDouble(const complexVec &a) {
   doubleVec b(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), [](complex elt) { return elt.real(); });
+  std::transform(a.begin(), a.end(), b.begin(), [](cd elt) { return elt.real(); });
   return b;
 }
 
@@ -58,7 +58,7 @@ complexVec vectorExp(const complexVec &a) {
   return b;
 }
 
-complexVec vectorScale(const complexVec &a, const complex &b) {
+complexVec vectorScale(const complexVec &a, const cd &b) {
   complexVec c(a.size());
   std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
   return c;
@@ -76,7 +76,7 @@ doubleVec vectorScale(const doubleVec &a, const double &b) {
   return c;
 }
 
-complexVec vectorScale(const doubleVec &a, const complex &b) {
+complexVec vectorScale(const doubleVec &a, const cd &b) {
   complexVec c(a.size());
   std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
   return c;
@@ -128,8 +128,8 @@ doubleVec fourierComplexToDouble(const complexVec &cvector) {
   return dvector;
 }
 
-dVec fourierComplexToDouble(cVec &cvector) {
-  dVec dvector;
+dArray fourierComplexToDouble(cArray &cvector) {
+  dArray dvector;
   dvector.resize(2*cvector.size());
   for (int k = 0; k < cvector.size(); ++k) {
     dvector[2*k] = (cvector[k].real());
@@ -143,15 +143,15 @@ complexVec fourierDoubleToComplex(const doubleVec &dvector) {
   cvector.reserve((dvector.size()) / 2);
   int range = 0;
   while (range < dvector.size()) {
-    complex c = complex(dvector[range], dvector[range + 1]);
+    cd c = cd(dvector[range], dvector[range + 1]);
     cvector.push_back(c);
     range = range + 2;
   }
   return cvector;
 }
 
-cVec fourierDoubleToComplex(dVec &dvector) {
-  cVec cvector;
+cArray fourierDoubleToComplex(dArray &dvector) {
+  cArray cvector;
   cvector.resize(dvector.size()/2);
   for (int k = 0; k < 2*cvector.size(); k=k+2) {
     cvector[k] = cd(dvector[k], dvector[k+1]);
@@ -159,13 +159,13 @@ cVec fourierDoubleToComplex(dVec &dvector) {
   return cvector;
 }
 
-double vectorTrapezoidIntegrate(const doubleVec &vect, const double &h, const int &n) {
+double vectorTrapezoidIntegrate(doubleVec &vect, const double &h, const int &n) {
   assert(("Integration requires a minimum of 9 points", n > 9));
   return (h / 2.0) * (vect[0] + 2.0 * std::accumulate(vect.begin() + 1, vect.begin() + (vect.size() - 1), 0.0)
       + vect[n]);
 }
 
-double vectorTrapezoidIntegrate(dVec &vect, const double &h, const int &n) {
+double vectorTrapezoidIntegrate(dArray &vect, const double &h, const int &n) {
   assert(("Integration requires a minimum of 9 points", n > 9));
   return (h / 2.0) * (vect[0] + 2.0 * vect.segment(1,n).sum() + vect[n]);
 }
@@ -173,14 +173,14 @@ double vectorTrapezoidIntegrate(dVec &vect, const double &h, const int &n) {
 /// Simpson Rule (from Wikipedia, not sure of reference)
 /// TODO: Fix integration approach
 
-double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int &n) {
+double vectorSimpsonIntegrate(doubleVec &vect, double &h, int &n) {
   assert(("Integration requires a minimum of 9 points", n > 9));
   return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
       + 48.0 * std::accumulate(vect.begin() + 4, vect.begin() + (vect.size() - 4), 0.0)
       + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
 }
 
-double vectorSimpsonIntegrate(dVec &vect, const double &h, const int &n) {
+double vectorSimpsonIntegrate(dArray &vect, double &h, int &n) {
   assert(("Integration requires a minimum of 9 points", n > 9));
   return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
       + 48.0 * vect.segment(4,n-3).sum()

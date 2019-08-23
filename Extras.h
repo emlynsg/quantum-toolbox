@@ -26,8 +26,10 @@ using namespace std;
 
 /// Typedefs
 
-typedef ArrayXd dVec;
-typedef ArrayXcd cVec;
+typedef ArrayXd dArray;
+typedef ArrayXcd cArray;
+typedef VectorXd dVector;
+typedef VectorXcd cVector;
 
 typedef std::complex<double> cd;
 typedef std::vector<int> intVec;
@@ -81,12 +83,12 @@ complexVec vectorSubtract(const complexVec &a, const complexVec &b);
 complexVec vectorSubtract(const complexVec &a, const doubleVec &b);
 complexVec vectorSubtract(const doubleVec &a, const complexVec &b);
 doubleVec fourierComplexToDouble(const complexVec &cvector);
-dVec fourierComplexToDouble(cVec &cvector);
+dArray fourierComplexToDouble(cArray &cvector);
 complexVec fourierDoubleToComplex(const doubleVec &dvector);
-cVec fourierDoubleToComplex(dVec &dvector);
+cArray fourierDoubleToComplex(dArray &dvector);
 double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int &n);
-double vectorSimpsonIntegrate(dVec &vect, const double &h, const int &n);
-double vectorTrapezoidIntegrate(const doubleVec &vect, const double &h, const int &n);
-double vectorTrapezoidIntegrate(dVec &vect, const double &h, const int &n);
+double vectorSimpsonIntegrate(dArray &vect, const double &h, const int &n);
+double vectorTrapezoidIntegrate(doubleVec &vect, const double &h, const int &n);
+double vectorTrapezoidIntegrate(dArray &vect, const double &h, const int &n);
 
 #endif //EXTRAS_H

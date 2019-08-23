@@ -32,12 +32,22 @@ void Wavefunction::normalise() {
 /// https://www.gnu.org/software/gsl/doc/html/fft.html#overview-of-complex-data-ffts
 /// Note: Definitely wrong as ifft then fft doesn't give the original values
 
+//void Wavefunction::computePsiK(){
+//  cVector psi_input = (psi*((-1.0*i*grid.kMin*grid.x).exp())).matrix();
+//  // FFT
+//  Eigen::FFT<double> fft;
+//  cVector psi_output;
+//  psi_output.setZero(grid.nPoint);
+//  fft.fwd(psi_output, psi_input);
+//  //
+//  psiK = (psi_output.array())*((-1.0*i*grid.xMin*grid.k).exp())*grid.xStep/(sqrt(2.0 * M_PI));
+//}
 
 void Wavefunction::computePsiK() {
   // Compute input for FFT
-  complexVec psi_input = vectorMultiply(psi, vectorExp(vectorScale(grid.x, -1. * grid.kMin * i)));
+  cVector step1 = (psi*((-1.0*i*grid.kMin*grid.x).exp())).matrix();
+  complexVec psi_input(step1.data(), step1.data() + step1.size());
   doubleVec dvec = fourierComplexToDouble(psi_input);  // Need input as a double array to Fourier Transform
-
 
   // FFT
   gsl_fft_complex_wavetable *wavetable;
@@ -52,10 +62,22 @@ void Wavefunction::computePsiK() {
   gsl_fft_complex_workspace_free(workspace);
 
   std::rotate(dvec.begin(), dvec.begin() + int(dvec.size()/2), dvec.end());
+  psi_input = fourierDoubleToComplex(dvec);
+  cArray psi_output = Map<cArray>(psi_input.data(), psi_input.size());
   // Convert back
-  psiK = vectorScale(vectorMultiply(fourierDoubleToComplex(dvec), vectorExp(vectorScale(grid.k, -1. * grid.xMin * i))),
-                     grid.xStep / (sqrt(2. * M_PI)));
+  psiK = (psi_output)*((-1.0*i*grid.xMin*grid.k).exp())*grid.xStep/(sqrt(2.0 * M_PI));
 }
+
+//void Wavefunction::computePsi() {
+//  cVector psi_input = psiK*((i*grid.xMin*grid.k).exp())*(sqrt(2.0* M_PI) / grid.xStep);
+//  // FFT
+//  Eigen::FFT<double> fft;
+//  cVector psi_output;
+//  psi_output.setZero(grid.nPoint);
+//  fft.inv(psi_output, psi_input);
+//  //
+//  psi = (psi_output.array())*((i*grid.kMin*grid.x).exp());
+//}
 
 void Wavefunction::computePsi() {
   // Compute input for FFT
@@ -85,13 +107,13 @@ void Wavefunction::initZero() {
 }
 
 void Wavefunction::initGaussian(const double &mean, const double &sigma) {
-  psi = (((grid.x - mean).square()).exp())/(2*sigma*sigma);
+  psi = exp(-1.0*(square(grid.x - mean))/(2.0*sigma*sigma));
   zeroEdges();
   normalise();
 }
 
 void Wavefunction::initAsymmGaussian(const double &mean, const double &sigma) {
-  psi = ((((grid.x-mean-sigma).square()).exp()) - (((grid.x-mean+sigma).square()).exp()))/(2*sigma*sigma);
+  psi = exp(-1.0*(square(grid.x - mean - sigma))/(2.0*sigma*sigma)) - exp(-1.0*(square(grid.x - mean + sigma))/(2.0*sigma*sigma));
   zeroEdges();
   normalise();
 }
@@ -137,44 +159,45 @@ double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
     }
   }
   assert(("No points in this range", !integrand.empty()));
-  return vectorTrapezoidIntegrate(integrand, grid.xStep, int(integrand.size()));
+  dArray integrandA = Map<dArray>(integrand.data(), integrand.size());
+  return vectorTrapezoidIntegrate(integrandA, grid.xStep, int(integrand.size())-1);
 }
 
-dVec Wavefunction::getReal() {
+dArray Wavefunction::getReal() {
   return psi.real();
 }
 
-dVec Wavefunction::getImag() {
+dArray Wavefunction::getImag() {
   return psi.imag();
 }
 
-dVec Wavefunction::getAbs() {
+dArray Wavefunction::getAbs() {
   return psi.abs();
 }
 
-dVec Wavefunction::getAbsSq() {
+dArray Wavefunction::getAbsSq() {
   return psi.abs2();
 }
 
-dVec Wavefunction::getKReal() {
+dArray Wavefunction::getKReal() {
   return psiK.real();
 }
 
-dVec Wavefunction::getKImag() {
+dArray Wavefunction::getKImag() {
   return psiK.imag();
 }
 
-dVec Wavefunction::getKAbs() {
+dArray Wavefunction::getKAbs() {
   return psiK.abs();
 }
 
-dVec Wavefunction::getKAbsSq() {
+dArray Wavefunction::getKAbsSq() {
   return psiK.abs2();
 }
 
 double Wavefunction::getAvgX() {
-  dVec integrand = (psi.abs2())*grid.x;
-  return vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nPoint);
+  dArray integrand = (psi.abs2())*grid.x;
+  return vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nStep);
 }
 
 void Wavefunction::copy(const Wavefunction &wf) {
@@ -185,6 +208,6 @@ void Wavefunction::copy(const Wavefunction &wf) {
 }
 
 double Wavefunction::overlap(const Wavefunction &object) {
-  dVec integrand = psi.abs2();
-  return vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nPoint);
+  dArray integrand = psi.abs2();
+  return vectorTrapezoidIntegrate(integrand, grid.xStep, grid.nStep);
 }

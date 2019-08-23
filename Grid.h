@@ -30,15 +30,15 @@ class Grid {
   double xMin;
   double xMax;
   double xStep;
-  dVec x;
+  dArray x;
   /// Momenta ///
   double kScale;
   double kStep;
   double kMin;
   double kMax;
-  dVec k;
+  dArray k;
   /// Energies ///
-  dVec E;
+  dArray E;
 
   /// Functions ///
   Grid(unsigned int nstep, double xmin, double xmax, double kscale);

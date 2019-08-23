@@ -10,15 +10,15 @@ Grid::Grid(unsigned int nstep, double xmin, double xmax, double kscale) {
   xMax = xmax;
   xStep = (xMax - xMin) / nStep;
   kScale = kscale;
-  kStep = 2 * M_PI / (nStep * xStep * kScale);
-  kMin = -1 * nStep * kStep / 2.0;
+  kStep = 2.0 * M_PI / (nStep * xStep * kScale);
+  kMin = -1.0 * nStep * kStep / 2.0;
   kMax = nStep * kStep / 2.0;
   x.resize(nPoint, Eigen::NoChange);
   k.resize(nPoint, Eigen::NoChange);
   E.resize(nPoint, Eigen::NoChange);
   x = ArrayXd::LinSpaced(nPoint, xMin, xMax);
   k = ArrayXd::LinSpaced(nPoint, kMin, kMax);
-  E = ArrayXd::LinSpaced(nPoint, pow((HBARC * k[0]), 2.0) / (2.0 * AMU), pow((HBARC * k[1023]), 2.0) / (2.0 * AMU));
+  E = ((HBARC*k).square())/(2.0*AMU);
 }
 
 Grid::~Grid() {
