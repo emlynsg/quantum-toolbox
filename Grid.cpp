@@ -27,5 +27,5 @@ Grid::~Grid() {
 
 void Grid::test() {
   std::cout << "Test Grid" << std::endl;
-  std::cout << "Number of grid points: " << nPoint << std::endl;
+  std::cout << "Grid is: " << x << std::endl;
 }

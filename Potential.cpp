@@ -5,106 +5,79 @@
 
 Potential::Potential(const Grid &object) : grid(1, 0.0, 1.0, 1.0) {
   grid = object;
-  V.resize(grid.nPoint, 0.0);
+  V.resize(grid.nPoint, Eigen::NoChange);
 }
 
 Potential::~Potential() {
-  complexVec().swap(V);
   std::cout << "Potential deleted" << std::endl;
 }
 
 void Potential::test() {
   std::cout << "Test Potential" << std::endl;
-  std::cout << "First element: " << V[0] << std::endl;
+  std::cout << "Potential is: " << V << std::endl;
 }
 
 /// Getters
 
-doubleVec Potential::getReal() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(V.begin(), V.end(), returnValue.begin(), [](auto &elt) { return elt.real(); });
-  return returnValue;
+dArray Potential::getReal() {
+  return V.real();
 }
 
-doubleVec Potential::getImag() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(V.begin(), V.end(), returnValue.begin(), [](auto &elt) { return elt.imag(); });
-  return returnValue;
+dArray Potential::getImag() {
+  return V.imag();
 }
 
-doubleVec Potential::getAbs() {
-  doubleVec returnValue(grid.nPoint);
-  std::transform(V.begin(), V.end(), returnValue.begin(), [](auto &elt) { return std::abs(elt); });
-  return returnValue;
+dArray Potential::getAbs() {
+  return V.abs();
 }
 
 void Potential::initZero() {
-  std::fill(V.begin(), V.end(), 0.0);
+  V.setZero(grid.nPoint);
 }
 
 void Potential::initConstantInRegion(const double &c, const double &xmin, const double &xmax) {
   for (int j = 0; j < grid.nPoint; ++j) {
-    if (grid.x[j] >= xmin and grid.x[j] <= xmax) {
-      V[j] = complex(c, 0.0);
+    if (grid.x(j) >= xmin and grid.x(j) <= xmax) {
+      V(j) = cd(c, 0.0);
     }
   }
 }
 
 /// Add to potential
 
-void Potential::addConstant(const complex &c, const double &xmin, const double &xmax) {
+void Potential::addConstant(const cd &c, const double &xmin, const double &xmax) {
   for (int j = 0; j < grid.nPoint; ++j) {
-    if (grid.x[j] >= xmin and grid.x[j] <= xmax) {
-      V[j] = V[j] + c;
+    if (grid.x(j) >= xmin and grid.x(j) <= xmax) {
+      V(j) = V(j) + c;
     }
   }
 }
 
-void Potential::addParabolic(const double &xCenter, const complex &c) {
-  std::transform(V.begin(),
-                 V.end(),
-                 grid.x.begin(),
-                 V.begin(),
-                 [c, xCenter](auto &v, auto &x) { return v + (c * pow(x - xCenter, 2.0)); });
+void Potential::addParabolic(const double &xCentre, const cd &c) {
+  V += c*(grid.x - xCentre).square();
 }
 
-void Potential::addQuartic(const double &xCenter, const complex &c) {
-  std::transform(V.begin(),
-                 V.end(),
-                 grid.x.begin(),
-                 V.begin(),
-                 [c, xCenter](auto &v, auto &x) { return v + (c * pow(x - xCenter, 4.0)); });
+void Potential::addQuartic(const double &xCentre, const cd &c) {
+  V += c*(grid.x - xCentre).pow(4.0);
 }
 
-void Potential::addGaussian(const double &xCenter, const complex &height, const complex &sigma) {
-  std::transform(V.begin(),
-                 V.end(),
-                 grid.x.begin(),
-                 V.begin(),
-                 [xCenter, height, sigma](auto &v, auto &x) {
-                   return v + std::exp(-std::pow(x - xCenter, 2.0) / (2.0 * sigma * sigma));
-                 });
+void Potential::addGaussian(const double &xCentre, const cd &height, const cd &sigma) {
+  V += exp(-pow(grid.x - xCentre, 2.0)/(2.0*sigma*sigma));
 }
 
-void Potential::addWoodsSaxon(const double &xCenter,
+void Potential::addWoodsSaxon(const double &xCentre,
                               const double &height,
                               const double &xSize,
                               const double &diffuseness) {
-  std::transform(V.begin(),
-                 V.end(),
-                 grid.x.begin(),
-                 V.begin(),
-                 [xCenter, height, xSize, diffuseness](auto &v, auto &x) {
-                   return v + complex((1 + exp((abs(x - xCenter) - xSize) / diffuseness)), 0.0);
-                 });
+  V += 1+exp(((grid.x-xCentre).abs() - xSize)/diffuseness);
 }
 
-void Potential::addCoulomb(const double &Z1Z2, const double &xCenter, const double &xSize) {
+void Potential::addCoulomb(const double &Z1Z2, const double &xCentre, const double &xSize) {
   for (int j = 0; j < grid.nPoint; ++j) {
-    if (std::abs(grid.x[j] - xCenter) < xSize) {
-      V[j] = V[j] + complex(Z1Z2 * ESQ * (3.0 - pow(std::abs(grid.x[j] - xCenter) / xSize, 2.0) / (2.0 * xSize)), 0.0);
+    if (std::abs(grid.x(j) - xCentre) < xSize) {
+      V(j) = V(j) + cd(Z1Z2 * ESQ * (3.0 - pow(std::abs(grid.x(j) - xCentre) / xSize, 2.0) / (2.0 * xSize)), 0.0);
     } else {
-      V[j] = V[j] + complex(((Z1Z2 * ESQ) / (std::abs(grid.x[j] - xCenter))), 0.0);
+      V(j) = V(j) + cd(((Z1Z2 * ESQ) / (std::abs(grid.x(j) - xCentre))), 0.0);
     }
   }
 }

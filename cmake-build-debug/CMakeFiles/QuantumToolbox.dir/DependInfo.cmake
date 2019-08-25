@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Extras.cpp.o"
   "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o"
+  "/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o"
   "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o"
   "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp" "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/QuantumToolbox.dir/main.cpp.o"
   )

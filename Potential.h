@@ -23,22 +23,22 @@ class Potential {
   /// Objects ///
   Grid grid;
   /// Potential ///
-  complexVec V;
+  cArray V;
   /// Functions ///
   explicit Potential(const Grid &object);
   ~Potential();
   void test();
-  doubleVec getReal();
-  doubleVec getImag();
-  doubleVec getAbs();
+  dArray getReal();
+  dArray getImag();
+  dArray getAbs();
   void initZero();
   void initConstantInRegion(const double &c, const double &xmin, const double &xmax);
-  void addConstant(const complex &c, const double &xmin, const double &xmax);
-  void addParabolic(const double &xCenter, const complex &c);
-  void addQuartic(const double &xCenter, const complex &c);
-  void addGaussian(const double &xCenter, const complex &height, const complex &sigma);
-  void addWoodsSaxon(const double &xCenter, const double &height, const double &xSize, const double &diffuseness);
-  void addCoulomb(const double &Z1Z2, const double &xCenter, const double &xSize);
+  void addConstant(const cd &c, const double &xmin, const double &xmax);
+  void addParabolic(const double &xCentre, const cd &c);
+  void addQuartic(const double &xCentre, const cd &c);
+  void addGaussian(const double &xCentre, const cd &height, const cd &sigma);
+  void addWoodsSaxon(const double &xCentre, const double &height, const double &xSize, const double &diffuseness);
+  void addCoulomb(const double &Z1Z2, const double &xCentre, const double &xSize);
 };
 
 #endif //POTENTIAL_H

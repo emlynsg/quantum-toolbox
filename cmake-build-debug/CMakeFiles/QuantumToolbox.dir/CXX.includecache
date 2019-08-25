@@ -50,19 +50,35 @@ gsl/gsl_complex_math.h
 eigen/Eigen/Dense
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/Dense
 
-/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp
-iostream
--
+/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
 vector
 -
 complex
 -
-eigen/Eigen/Core
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/Core
-eigen/unsupported/Eigen/FFT
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/FFT
-Wavefunction.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
+cstdlib
+-
+cstdio
+-
+cmath
+-
+numeric
+-
+functional
+-
+algorithm
+-
+gsl/gsl_blas.h
+-
+gsl/gsl_complex_math.h
+-
+gsl/gsl_integration.h
+-
+gsl/gsl_spline.h
+-
+gsl/gsl_fft_complex.h
+-
+Grid.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
 
 /home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
 Grid.h
@@ -1154,25 +1170,13 @@ lapacke_mangling.h
 
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/FFT
-complex
--
+/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp
 vector
 -
-map
--
-eigen/Eigen/Core
--
-fftw3.h
--
-src/FFT/ei_fftw_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_fftw_impl.h
-src/FFT/ei_imklfft_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_imklfft_impl.h
-src/FFT/ei_kissfft_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_fftw_impl.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
+Grid.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
+Wavefunction.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
+Potential.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
 

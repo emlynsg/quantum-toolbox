@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/QuantumToolbox.dir/main.cpp.o"
   "CMakeFiles/QuantumToolbox.dir/Grid.cpp.o"
   "CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o"
+  "CMakeFiles/QuantumToolbox.dir/Potential.cpp.o"
   "CMakeFiles/QuantumToolbox.dir/Extras.cpp.o"
   "QuantumToolbox.pdb"
   "QuantumToolbox"
