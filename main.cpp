@@ -9,15 +9,15 @@
 #include "Grid.h"
 #include "Wavefunction.h"
 #include "Potential.h"
-//#include "System.h"
-//#include "Plotter.h"
+#include "System.h"
+#include "Plotter.h"
 
 using namespace Eigen;
 using namespace std;
 
 int main() {
   /// Error example: Seems to go wrong when changing psiPart inside the Taylor expansion loop in evolve from System.cpp
-  unsigned int sizeN = 1024;
+  unsigned int sizeN = 1023;
   double xmin = -200.0;
   double xmax = 200.0;
   double kscale = 1.0;
@@ -27,10 +27,11 @@ int main() {
   wavefunction.initGaussian(0.0, 10.0);
   Potential potential(grid);
   potential.initZero();
-  potential.addParabolic(0.0, 20.0);
-//  System sys(waveObject, pot);
-//  Plotter plot(sys);
-//  plot.animate(10, 0.1, 20);
+//  potential.addParabolic(0.0, 20.0);
+  System system(wavefunction, potential);
+  system.evolveAll(0.01, 20);
+  Plotter plot(system);
+  plot.animate(10000, 0.01, 20);
 
 
   /*

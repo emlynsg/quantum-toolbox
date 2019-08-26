@@ -80,6 +80,18 @@ gsl/gsl_fft_complex.h
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
 
+/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+Potential.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
+Wavefunction.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
+
 /home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
@@ -1169,14 +1181,4 @@ lapacke_mangling.h
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp
-vector
--
-Grid.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
-Wavefunction.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
-Potential.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
 

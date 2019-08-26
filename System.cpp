@@ -50,20 +50,22 @@ void System::evolve(int index, double timeStep, int maxOrder){
   /// Taylor expansion method
   /// TODO: Figure approach, label usefully.
   double A = pow((HBARC/(1.0*wavefunctions[index].grid.xStep)),2.0)/(2.0*wavefunctions[index].reducedMass);
-  complex B = -1.0*i*timeStep/HBARC;
-  complexVec psiPart = wavefunctions[index].psi;
-  complexVec psiTemp = wavefunctions[index].psi;
+  cd B = -1.0*i*timeStep/HBARC;
+  cArray psiPart = wavefunctions[index].psi;
+  cArray psiTemp = wavefunctions[index].psi;
   for (int order = 1; order < maxOrder+1; ++order) {
-    complexVec psiRotLeft = psiTemp;
-    complexVec psiRotRight = psiTemp;
-    std::rotate(psiRotLeft.begin(), psiRotLeft.begin()+1, psiRotLeft.end());
-    std::rotate(psiRotRight.begin(), psiRotRight.begin() + psiRotRight.size()-1, psiRotRight.end());
-    psiPart = vectorAdd(vectorScale(vectorSubtract(vectorSubtract(vectorScale(psiTemp, 2.0)
-              , psiRotLeft), psiRotRight),A),vectorMultiply(potMatrix[index][index].V,psiTemp));
-    psiPart[0] = 0.0;
-    psiPart.back() = 0.0;
-    psiTemp = vectorScale(vectorScale(psiPart,B),1.0/order);
-    wavefunctions[index].psi = vectorAdd(wavefunctions[index].psi, psiTemp);
+    cArray psiRotLeft = psiTemp;
+    cArray psiRotRight = psiTemp;
+    psiRotLeft(wavefunctions[index].grid.nStep) = psiTemp(0);
+    psiRotRight(0) = psiTemp(wavefunctions[index].grid.nStep);
+    for (int j = 0; j < wavefunctions[index].grid.nStep; ++j) {
+      psiRotLeft(j) = psiTemp(j+1);
+      psiRotRight(j+1) = psiTemp(j);
+    }
+    psiPart = A*(2.0*psiTemp - psiRotLeft - psiRotRight)+ psiTemp*potMatrix[index][index].V;
+    psiPart(0) = 0.0;
+    psiPart(wavefunctions[index].grid.nStep) = 0.0;
+    wavefunctions[index].psi += psiPart*B/order;
   }
   wavefunctions[index].zeroEdges();
 }
@@ -85,32 +87,36 @@ void System::log(double time){
 
 double System::energy(int index){
   double A = pow(HBARC/wavefunctions[index].grid.xStep,2.0)/(2.0*wavefunctions[index].reducedMass);
-  complexVec psiRotLeft = wavefunctions[index].psi;
-  complexVec psiRotRight = wavefunctions[index].psi;
-  complexVec psiOverlap = vectorAdd(vectorScale(vectorSubtract(vectorSubtract(vectorScale(wavefunctions[index].psi, 2.0)
-      , psiRotLeft), psiRotRight),A),vectorMultiply(potMatrix[index][index].V,wavefunctions[index].psi));
-  psiOverlap[0] = 0.0;
-  psiOverlap.back() = 0.0;
-  doubleVec integrand(wavefunctions[index].grid.nPoint);
-  for (int j = 0; j < wavefunctions[index].grid.nPoint; ++j) {
-    integrand[j] = (std::abs(wavefunctions[index].psi[j] * std::conj(psiOverlap[j])));
+  cArray psiRotLeft = wavefunctions[index].psi;
+  cArray psiRotRight = wavefunctions[index].psi;
+  psiRotLeft(wavefunctions[index].grid.nStep) = wavefunctions[index].psi(0);
+  psiRotRight(0) = wavefunctions[index].psi(wavefunctions[index].grid.nStep);
+  for (int j = 0; j < wavefunctions[index].grid.nStep; ++j) {
+    psiRotLeft(j) = wavefunctions[index].psi(j+1);
+    psiRotRight(j+1) = wavefunctions[index].psi(j);
   }
+  cArray psiOverlap = A*(2.0*wavefunctions[index].psi-psiRotLeft-psiRotRight)+wavefunctions[index].psi*potMatrix[index][index].V;
+  psiOverlap(0) = 0.0;
+  psiOverlap(wavefunctions[index].grid.nStep) = 0.0;
+  dArray integrand = abs(wavefunctions[index].psi*(psiOverlap.conjugate()));
   double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[index].grid.xStep, wavefunctions[index].grid.nPoint);
   return returnValue;
 }
 
 double System::hamiltonianElement(int indexI, int indexJ){
   double A = pow(HBARC/wavefunctions[indexI].grid.xStep,2.0)/(2.0*wavefunctions[indexI].reducedMass);
-  complexVec psiRotLeft = wavefunctions[indexI].psi;
-  complexVec psiRotRight = wavefunctions[indexI].psi;
-  complexVec psiOverlap = vectorAdd(vectorScale(vectorSubtract(vectorSubtract(vectorScale(wavefunctions[indexI].psi, 2.0)
-      , psiRotLeft), psiRotRight),A),vectorMultiply(potMatrix[indexI][indexJ].V,wavefunctions[indexI].psi));
-  psiOverlap[0] = 0.0;
-  psiOverlap.back() = 0.0;
-  doubleVec integrand(wavefunctions[indexI].grid.nPoint);
-  for (int j = 0; j < wavefunctions[indexI].grid.nPoint; ++j) {
-    integrand[j] = (std::abs(wavefunctions[indexJ].psi[j] * std::conj(psiOverlap[j])));
+  cArray psiRotLeft = wavefunctions[indexI].psi;
+  cArray psiRotRight = wavefunctions[indexI].psi;
+  psiRotLeft(wavefunctions[indexI].grid.nStep) = wavefunctions[indexI].psi(0);
+  psiRotRight(0) = wavefunctions[indexI].psi(wavefunctions[indexI].grid.nStep);
+  for (int j = 0; j < wavefunctions[indexI].grid.nStep; ++j) {
+    psiRotLeft(j) = wavefunctions[indexI].psi(j+1);
+    psiRotRight(j+1) = wavefunctions[indexI].psi(j);
   }
+  cArray psiOverlap = A*(2.0*wavefunctions[indexI].psi-psiRotLeft-psiRotRight)+wavefunctions[indexI].psi*potMatrix[indexI][indexJ].V;
+  psiOverlap(0) = 0.0;
+  psiOverlap(wavefunctions[indexI].grid.nStep) = 0.0;
+  dArray integrand = abs(wavefunctions[indexI].psi*(psiOverlap.conjugate()));
   double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[indexI].grid.xStep, wavefunctions[indexI].grid.nPoint);
   return returnValue;
 }

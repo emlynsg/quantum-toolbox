@@ -77,7 +77,7 @@ void Plotter::plot(){
 void Plotter::plotPsi(){
   doublePairVec x_psi;
   for(int j = 0; j < system.wavefunctions[0].grid.nPoint; ++j){
-    x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x[j], system.wavefunctions[0].getAbs()[j]));
+    x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x(j), system.wavefunctions[0].getAbs()(j)));
   }
   Gnuplot gp;
   setPlotStyle(gp, 0);
@@ -98,12 +98,22 @@ void Plotter::animate(int nSteps, double stepSize, int evolveOrder){
   gp << "set key top right\n";
   for (int j = 0; j < nSteps; ++j) {
     system.evolveAll(stepSize, evolveOrder);
-    gp << "plot '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary'\n";
-    gp.send(boost::make_tuple(system.wavefunctions[0].grid.x, system.wavefunctions[0].getAbs()));
-    gp.send(boost::make_tuple(system.wavefunctions[0].grid.x, system.wavefunctions[0].getReal()));
-    gp.send(boost::make_tuple(system.wavefunctions[0].grid.x, system.wavefunctions[0].getImag()));
-    gp.flush();
+    if (j % 50 == 0){
+      std::vector<double> xGrid(system.wavefunctions[0].grid.nPoint);
+      std::vector<double> psiAbs(system.wavefunctions[0].grid.nPoint);
+      std::vector<double> psiReal(system.wavefunctions[0].grid.nPoint);
+      std::vector<double> psiImag(system.wavefunctions[0].grid.nPoint);
+      VectorXd::Map(&xGrid[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].grid.x;
+      VectorXd::Map(&psiAbs[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getAbs();
+      VectorXd::Map(&psiReal[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getReal();
+      VectorXd::Map(&psiImag[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getImag();
+      gp << "plot '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary'\n";
+      gp.send(boost::make_tuple(xGrid, psiAbs));
+      gp.send(boost::make_tuple(xGrid, psiReal));
+      gp.send(boost::make_tuple(xGrid, psiImag));
+      gp.flush();
 //    pause(pauseTime);
+    }
   }
 }
 
@@ -116,7 +126,7 @@ void Plotter::animatePsi(int nSteps, double stepSize, int evolveOrder) {
     system.evolveAll(stepSize, evolveOrder);
     doublePairVec x_psi;
     for(int k = 0; k < system.wavefunctions[0].grid.nPoint; ++k){
-      x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x[k], system.wavefunctions[0].getAbs()[k]));
+      x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x(k), system.wavefunctions[0].getAbs()(k)));
     }
     gp << "plot '-' with lines title 'Abs(Psi)'\n";
     gp.send(x_psi);
