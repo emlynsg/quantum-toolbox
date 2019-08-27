@@ -92,13 +92,15 @@ void Plotter::plotPsi(){
   gp << "replot\n";
 }
 
-void Plotter::animate(int nSteps, double stepSize, int evolveOrder){
+void Plotter::animate(int nSteps, double stepSize, int evolveOrder, int updateRate){
   Gnuplot gp;
   gp << "set xlabel 'x'\n";
   gp << "set key top right\n";
+  gp << "set yrange [-0.5:0.5]\n";
+//  gp << "set log y\n";
   for (int j = 0; j < nSteps; ++j) {
     system.evolveAll(stepSize, evolveOrder);
-    if (j % 50 == 0){
+    if (j % updateRate == 0){
       std::vector<double> xGrid(system.wavefunctions[0].grid.nPoint);
       std::vector<double> psiAbs(system.wavefunctions[0].grid.nPoint);
       std::vector<double> psiReal(system.wavefunctions[0].grid.nPoint);

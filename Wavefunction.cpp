@@ -87,8 +87,7 @@ double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
     }
   }
   assert(("No points in this range", !integrand.empty()));
-  dArray integrandA = Map<dArray>(integrand.data(), integrand.size());
-  return vectorTrapezoidIntegrate(integrandA, grid.xStep, int(integrand.size())-1);
+  return vectorTrapezoidIntegrate(integrand, grid.xStep, int(integrand.size())-1);
 }
 
 dArray Wavefunction::getReal() {

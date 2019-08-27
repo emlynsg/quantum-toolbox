@@ -35,14 +35,6 @@ void Potential::initZero() {
   V.setZero(grid.nPoint);
 }
 
-void Potential::initConstantInRegion(const double &c, const double &xmin, const double &xmax) {
-  for (int j = 0; j < grid.nPoint; ++j) {
-    if (grid.x(j) >= xmin and grid.x(j) <= xmax) {
-      V(j) = cd(c, 0.0);
-    }
-  }
-}
-
 /// Add to potential
 
 void Potential::addConstant(const cd &c, const double &xmin, const double &xmax) {
@@ -62,7 +54,7 @@ void Potential::addQuartic(const double &xCentre, const cd &c) {
 }
 
 void Potential::addGaussian(const double &xCentre, const cd &height, const cd &sigma) {
-  V += exp(-pow(grid.x - xCentre, 2.0)/(2.0*sigma*sigma));
+  V += height*exp(-pow(grid.x - xCentre, 2.0)/(2.0*sigma*sigma));
 }
 
 void Potential::addWoodsSaxon(const double &xCentre,

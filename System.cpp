@@ -65,7 +65,8 @@ void System::evolve(int index, double timeStep, int maxOrder){
     psiPart = A*(2.0*psiTemp - psiRotLeft - psiRotRight)+ psiTemp*potMatrix[index][index].V;
     psiPart(0) = 0.0;
     psiPart(wavefunctions[index].grid.nStep) = 0.0;
-    wavefunctions[index].psi += psiPart*B/order;
+    psiTemp = psiPart*B/order;
+    wavefunctions[index].psi += psiTemp;
   }
   wavefunctions[index].zeroEdges();
 }
@@ -73,6 +74,16 @@ void System::evolve(int index, double timeStep, int maxOrder){
 void System::evolveAll(double timeStep, int maxOrder){
   for (int j = 0; j < wavefunctions.size(); ++j) {
     evolve(j, timeStep, maxOrder);
+  }
+}
+
+void System::evolveCC(int index, double timeStep){
+  ;
+}
+
+void System::evolveCCAll(double timeStep){
+  for (int j = 0; j < wavefunctions.size(); ++j) {
+    evolveCC(j, timeStep);
   }
 }
 

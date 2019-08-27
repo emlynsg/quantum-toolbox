@@ -32,7 +32,6 @@ class Potential {
   dArray getImag();
   dArray getAbs();
   void initZero();
-  void initConstantInRegion(const double &c, const double &xmin, const double &xmax);
   void addConstant(const cd &c, const double &xmin, const double &xmax);
   void addParabolic(const double &xCentre, const cd &c);
   void addQuartic(const double &xCentre, const cd &c);

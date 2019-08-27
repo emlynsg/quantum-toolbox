@@ -615,3 +615,18 @@ make[1]: Leaving directory '/home/exg103/Documents/Honours/CPP/CPP Code/cmake-bu
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing C++ SOURCE FILE Test COMPILER_OPT_ARCH_NATIVE_SUPPORTED succeeded with the following output:
+Change Dir: /home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a3e10/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a3e10.dir/build.make CMakeFiles/cmTC_a3e10.dir/build
+make[1]: Entering directory '/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a3e10.dir/src.cxx.o
+/usr/bin/c++    -DCOMPILER_OPT_ARCH_NATIVE_SUPPORTED   -march=native -std=gnu++14 -o CMakeFiles/cmTC_a3e10.dir/src.cxx.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles/CMakeTmp/src.cxx"
+Linking CXX executable cmTC_a3e10
+/home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3e10.dir/link.txt --verbose=1
+/usr/bin/c++   -DCOMPILER_OPT_ARCH_NATIVE_SUPPORTED    CMakeFiles/cmTC_a3e10.dir/src.cxx.o  -o cmTC_a3e10 
+make[1]: Leaving directory '/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-release/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
