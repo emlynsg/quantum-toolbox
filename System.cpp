@@ -51,11 +51,11 @@ void System::evolve(int index, double timeStep, int maxOrder){
   /// TODO: Figure approach, label usefully.
   double A = pow((HBARC/(1.0*wavefunctions[index].grid.xStep)),2.0)/(2.0*wavefunctions[index].reducedMass);
   cd B = -1.0*i*timeStep/HBARC;
-  cArray psiPart = wavefunctions[index].psi;
-  cArray psiTemp = wavefunctions[index].psi;
+  cdArray psiPart = wavefunctions[index].psi;
+  cdArray psiTemp = wavefunctions[index].psi;
   for (int order = 1; order < maxOrder+1; ++order) {
-    cArray psiRotLeft = psiTemp;
-    cArray psiRotRight = psiTemp;
+    cdArray psiRotLeft = psiTemp;
+    cdArray psiRotRight = psiTemp;
     psiRotLeft(wavefunctions[index].grid.nStep) = psiTemp(0);
     psiRotRight(0) = psiTemp(wavefunctions[index].grid.nStep);
     for (int j = 0; j < wavefunctions[index].grid.nStep; ++j) {
@@ -77,14 +77,34 @@ void System::evolveAll(double timeStep, int maxOrder){
   }
 }
 
-void System::evolveCC(int index, double timeStep){
-  ;
+void System::initCC() {
+  /// Assuming all based on the same grid, with same size
+  psiTensor = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  psiTensor.setZero();
+  cout << psiTensor << endl;
+  for (int j = 0; j < wavefunctions.size(); ++j){
+    cdVector psiMatrix = wavefunctions[j].psi.matrix();
+    psiTensor.chip(j,0) = Matrix_to_Tensor(psiMatrix, wavefunctions[j].grid.nPoint);
+  }
+  U = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  U.setZero();
+  Udagger = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  Udagger.setZero();
+  expD = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  expD.setZero();
+  expP = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  expP.setZero();
+  /// Set up U, Udagger and expD by diagonalization
+  for (int j = 0; j < wavefunctions[0].grid.nPoint; ++j) {
+//    blah;
+//    U.chip(j,2) = ;
+//    Udagger.chip(j,2) = ;
+//    expD.chip(j,1) = ;
+  }
 }
 
-void System::evolveCCAll(double timeStep){
-  for (int j = 0; j < wavefunctions.size(); ++j) {
-    evolveCC(j, timeStep);
-  }
+void System::evolveCC(double timeStep){
+  ;
 }
 
 void System::log(double time){
@@ -98,15 +118,15 @@ void System::log(double time){
 
 double System::energy(int index){
   double A = pow(HBARC/wavefunctions[index].grid.xStep,2.0)/(2.0*wavefunctions[index].reducedMass);
-  cArray psiRotLeft = wavefunctions[index].psi;
-  cArray psiRotRight = wavefunctions[index].psi;
+  cdArray psiRotLeft = wavefunctions[index].psi;
+  cdArray psiRotRight = wavefunctions[index].psi;
   psiRotLeft(wavefunctions[index].grid.nStep) = wavefunctions[index].psi(0);
   psiRotRight(0) = wavefunctions[index].psi(wavefunctions[index].grid.nStep);
   for (int j = 0; j < wavefunctions[index].grid.nStep; ++j) {
     psiRotLeft(j) = wavefunctions[index].psi(j+1);
     psiRotRight(j+1) = wavefunctions[index].psi(j);
   }
-  cArray psiOverlap = A*(2.0*wavefunctions[index].psi-psiRotLeft-psiRotRight)+wavefunctions[index].psi*potMatrix[index][index].V;
+  cdArray psiOverlap = A*(2.0*wavefunctions[index].psi-psiRotLeft-psiRotRight)+wavefunctions[index].psi*potMatrix[index][index].V;
   psiOverlap(0) = 0.0;
   psiOverlap(wavefunctions[index].grid.nStep) = 0.0;
   dArray integrand = abs(wavefunctions[index].psi*(psiOverlap.conjugate()));
@@ -116,15 +136,15 @@ double System::energy(int index){
 
 double System::hamiltonianElement(int indexI, int indexJ){
   double A = pow(HBARC/wavefunctions[indexI].grid.xStep,2.0)/(2.0*wavefunctions[indexI].reducedMass);
-  cArray psiRotLeft = wavefunctions[indexI].psi;
-  cArray psiRotRight = wavefunctions[indexI].psi;
+  cdArray psiRotLeft = wavefunctions[indexI].psi;
+  cdArray psiRotRight = wavefunctions[indexI].psi;
   psiRotLeft(wavefunctions[indexI].grid.nStep) = wavefunctions[indexI].psi(0);
   psiRotRight(0) = wavefunctions[indexI].psi(wavefunctions[indexI].grid.nStep);
   for (int j = 0; j < wavefunctions[indexI].grid.nStep; ++j) {
     psiRotLeft(j) = wavefunctions[indexI].psi(j+1);
     psiRotRight(j+1) = wavefunctions[indexI].psi(j);
   }
-  cArray psiOverlap = A*(2.0*wavefunctions[indexI].psi-psiRotLeft-psiRotRight)+wavefunctions[indexI].psi*potMatrix[indexI][indexJ].V;
+  cdArray psiOverlap = A*(2.0*wavefunctions[indexI].psi-psiRotLeft-psiRotRight)+wavefunctions[indexI].psi*potMatrix[indexI][indexJ].V;
   psiOverlap(0) = 0.0;
   psiOverlap(wavefunctions[indexI].grid.nStep) = 0.0;
   dArray integrand = abs(wavefunctions[indexI].psi*(psiOverlap.conjugate()));

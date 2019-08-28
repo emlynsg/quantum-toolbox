@@ -15,8 +15,12 @@
 #include <functional>
 #include <algorithm>
 
+//#include "eigen/Eigen/Dense"
+//#include "eigen/unsupported/Eigen/CXX11/Tensor"
+//#include "Eigen/Dense"
+//#include "unsupported/Eigen/CXX11/Tensor"
 #include "eigen/Eigen/Dense"
-
+#include "eigen/unsupported/Eigen/CXX11/Tensor"
 
 #ifndef EXTRAS_H
 #define EXTRAS_H
@@ -26,18 +30,28 @@ using namespace std;
 
 /// Typedefs
 
-typedef ArrayXd dArray;
-typedef ArrayXcd cArray;
-typedef VectorXd dVector;
-typedef VectorXcd cVector;
-
 typedef std::complex<double> cd;
 typedef std::vector<int> intVec;
 typedef std::vector<double> doubleVec;
 typedef std::vector<std::complex<double>> complexVec;
-typedef std::vector<complexVec> complexVecVec;
+//typedef std::vector<complexVec> complexVecVec;
 typedef std::vector<doubleVec> doubleVecVec;
 typedef std::vector<std::pair<double, double> > doublePairVec;
+
+typedef ArrayXd dArray;
+typedef ArrayXcd cdArray;
+typedef VectorXd dVector;
+typedef VectorXcd cdVector;
+typedef MatrixXcd cdMatrix;
+typedef MatrixXd dMatrix;
+typedef Eigen::Tensor<double, 3> dMatrixTensor;
+typedef Eigen::Tensor<cd, 3> cdMatrixTensor;
+typedef Eigen::Tensor<double, 2> dVectorTensor;
+typedef Eigen::Tensor<cd, 2> cdVectorTensor;
+typedef std::vector<cdVector> cdArrayVector;
+typedef std::vector<cdMatrix> cdMatrixVector;
+typedef std::vector<dVector> dArrayVector;
+typedef std::vector<dMatrix> dMatrixVector;
 
 /// Constants ///
 extern std::complex<double> i;
@@ -50,6 +64,23 @@ extern double ESQ;    // Electron charge in MeV fm
 template<typename T>
 int sgn(T val) {
   return (T(0) < val) - (val < T(0));
+}
+
+template<typename T>
+using  MatrixType = Eigen::Matrix<T,Eigen::Dynamic, Eigen::Dynamic>;
+
+template<typename Scalar,int rank, typename sizeType>
+auto Tensor_to_Matrix(const Eigen::Tensor<Scalar,rank> &tensor,const sizeType rows,const sizeType cols)
+{
+  return Eigen::Map<const MatrixType<Scalar>> (tensor.data(), rows,cols);
+}
+
+
+template<typename Scalar, typename... Dims>
+auto Matrix_to_Tensor(const MatrixType<Scalar> &matrix, Dims... dims)
+{
+  constexpr int rank = sizeof... (Dims);
+  return Eigen::TensorMap<Eigen::Tensor<const Scalar, rank>>(matrix.data(), {dims...});
 }
 
 
@@ -82,12 +113,12 @@ complexVec vectorAdd(const doubleVec &a, const complexVec &b);
 complexVec vectorSubtract(const complexVec &a, const complexVec &b);
 complexVec vectorSubtract(const complexVec &a, const doubleVec &b);
 complexVec vectorSubtract(const doubleVec &a, const complexVec &b);
-doubleVec fourierComplexToDouble(const complexVec &cvector);
-dArray fourierComplexToDouble(cArray &cvector);
+doubleVec fourierComplexToDouble(const complexVec &cdVector);
+dArray fourierComplexToDouble(cdArray &cdVector);
 complexVec fourierDoubleToComplex(const doubleVec &dvector);
-cArray fourierDoubleToComplex(dArray &dvector);
-double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int &n);
-double vectorSimpsonIntegrate(dArray &vect, const double &h, const int &n);
+cdArray fourierDoubleToComplex(dArray &dvector);
+//double vectorSimpsonIntegrate(const doubleVec &vect, const double &h, const int &n);
+//double vectorSimpsonIntegrate(dArray &vect, const double &h, const int &n);
 double vectorTrapezoidIntegrate(doubleVec &vect, const double &h, const int &n);
 double vectorTrapezoidIntegrate(dArray &vect, const double &h, const int &n);
 

@@ -1,17 +1,9 @@
 #include "Plotter.h"
 #include "System.h"
 
-Plotter::Plotter(System sys, const int &ncols, const bool &showpsi, const bool &showpotential,
-                 const bool &showenergy, const bool &shownorm, const bool &showavgx, const bool &showpsik)
+Plotter::Plotter(System sys)
                  : system(Wavefunction(Grid(1, 0.0, 1.0, 1.0), 1.0), Potential(Grid(1, 0.0, 1.0, 1.0))) {
   system = sys;
-  nColumns = ncols;
-  showPsi = showpsi;
-  showPotential = showpotential;
-  showEnergy = showenergy;
-  showNorm = shownorm;
-  showAvgX = showavgx;
-  showPsiK = showpsik;
 }
 
 Plotter::~Plotter(){
@@ -101,6 +93,7 @@ void Plotter::animate(int nSteps, double stepSize, int evolveOrder, int updateRa
   for (int j = 0; j < nSteps; ++j) {
     system.evolveAll(stepSize, evolveOrder);
     if (j % updateRate == 0){
+      system.log(j*stepSize);
       std::vector<double> xGrid(system.wavefunctions[0].grid.nPoint);
       std::vector<double> psiAbs(system.wavefunctions[0].grid.nPoint);
       std::vector<double> psiReal(system.wavefunctions[0].grid.nPoint);
@@ -128,11 +121,11 @@ void Plotter::animatePsi(int nSteps, double stepSize, int evolveOrder) {
     system.evolveAll(stepSize, evolveOrder);
     doublePairVec x_psi;
     for(int k = 0; k < system.wavefunctions[0].grid.nPoint; ++k){
-      x_psi.push_back(std::make_pair(system.wavefunctions[0].grid.x(k), system.wavefunctions[0].getAbs()(k)));
+      x_psi.push_back(std::make_pair((system.wavefunctions[0].grid.x)(k), (system.wavefunctions[0].getAbs())(k)));
     }
     gp << "plot '-' with lines title 'Abs(Psi)'\n";
     gp.send(x_psi);
     gp.flush();
-    pause(pauseTime);
+//    pause(pauseTime);
   }
 }

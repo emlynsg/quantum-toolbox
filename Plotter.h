@@ -26,18 +26,9 @@ class Plotter {
  public:
   // Attributes
   System system;
-  int nColumns;
-  bool showPsi;
-  bool showPotential;
-  bool showEnergy;
-  bool showNorm;
-  bool showAvgX;
-  bool showPsiK;
-  double pauseTime = 0.01;
+  double pauseTime = 1;
   //Functions
-  Plotter(System sys, const int &nColumns=2, const bool &showPsi=true,
-          const bool &showPotential=false, const bool &showEnergy=false,
-          const bool &showNorm=false, const bool &showAvgX=false, const bool &showPsiK=false);
+  explicit Plotter(System sys);
   ~Plotter();
   void test();
   /// TODO: Figure out best way to do this

@@ -118,45 +118,45 @@ complexVec vectorSubtract(const doubleVec &a, const complexVec &b) {
   return c;
 }
 
-doubleVec fourierComplexToDouble(const complexVec &cvector) {
+doubleVec fourierComplexToDouble(const complexVec &cdVector) {
   doubleVec dvector;
-  dvector.reserve((2 * cvector.size()));
-  for (auto j : cvector) {
+  dvector.reserve((2 * cdVector.size()));
+  for (auto j : cdVector) {
     dvector.push_back(j.real());
     dvector.push_back(j.imag());
   }
   return dvector;
 }
 
-dArray fourierComplexToDouble(cArray &cvector) {
+dArray fourierComplexToDouble(cdArray &cdvector) {
   dArray dvector;
-  dvector.resize(2*cvector.size());
-  for (int k = 0; k < cvector.size(); ++k) {
-    dvector[2*k] = (cvector[k].real());
-    dvector[2*k+1] = (cvector[k].imag());
+  dvector.resize(2*cdvector.size());
+  for (int k = 0; k < cdvector.size(); ++k) {
+    dvector[2*k] = (cdvector[k].real());
+    dvector[2*k+1] = (cdvector[k].imag());
   }
   return dvector;
 }
 
 complexVec fourierDoubleToComplex(const doubleVec &dvector) {
-  complexVec cvector;
-  cvector.reserve((dvector.size()) / 2);
+  complexVec cdvector;
+  cdvector.reserve((dvector.size()) / 2);
   int range = 0;
   while (range < dvector.size()) {
     cd c = cd(dvector[range], dvector[range + 1]);
-    cvector.push_back(c);
+    cdvector.push_back(c);
     range = range + 2;
   }
-  return cvector;
+  return cdvector;
 }
 
-cArray fourierDoubleToComplex(dArray &dvector) {
-  cArray cvector;
-  cvector.resize(dvector.size()/2);
-  for (int k = 0; k < 2*cvector.size(); k=k+2) {
-    cvector[k] = cd(dvector[k], dvector[k+1]);
+cdArray fourierDoubleToComplex(dArray &dvector) {
+  cdArray cdVector;
+  cdVector.resize(dvector.size()/2);
+  for (int k = 0; k < 2*cdVector.size(); k=k+2) {
+    cdVector[k] = cd(dvector[k], dvector[k+1]);
   }
-  return cvector;
+  return cdVector;
 }
 
 double vectorTrapezoidIntegrate(doubleVec &vect, const double &h, const int &n) {
@@ -173,17 +173,17 @@ double vectorTrapezoidIntegrate(dArray &vect, const double &h, const int &n) {
 /// Simpson Rule (from Wikipedia, not sure of reference)
 /// TODO: Fix integration approach
 
-double vectorSimpsonIntegrate(doubleVec &vect, double &h, int &n) {
-  assert(("Integration requires a minimum of 9 points", n > 9));
-  return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
-      + 48.0 * std::accumulate(vect.begin() + 4, vect.begin() + (vect.size() - 4), 0.0)
-      + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
-}
-
-double vectorSimpsonIntegrate(dArray &vect, double &h, int &n) {
-  assert(("Integration requires a minimum of 9 points", n > 9));
-  return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
-      + 48.0 * vect.segment(4,n-3).sum()
-      + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
-}
+//double vectorSimpsonIntegrate(doubleVec &vect, double &h, int &n) {
+//  assert(("Integration requires a minimum of 9 points", n > 9));
+//  return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
+//      + 48.0 * std::accumulate(vect.begin() + 4, vect.begin() + (vect.size() - 4), 0.0)
+//      + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
+//}
+//
+//double vectorSimpsonIntegrate(dArray &vect, double &h, int &n) {
+//  assert(("Integration requires a minimum of 9 points", n > 9));
+//  return (h / 48.0) * (17.0 * vect[0] + 59.0 * vect[1] + 43.0 * vect[2] + 49.0 * vect[3]
+//      + 48.0 * vect.segment(4,n-3).sum()
+//      + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
+//}
 

@@ -23,7 +23,7 @@ class Potential {
   /// Objects ///
   Grid grid;
   /// Potential ///
-  cArray V;
+  cdArray V;
   /// Functions ///
   explicit Potential(const Grid &object);
   ~Potential();

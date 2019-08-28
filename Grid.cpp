@@ -18,7 +18,7 @@ Grid::Grid(unsigned int nstep, double xmin, double xmax, double kscale) {
   E.resize(nPoint, Eigen::NoChange);
   x = ArrayXd::LinSpaced(nPoint, xMin, xMax);
   k = ArrayXd::LinSpaced(nPoint, kMin, kMax);
-  E = ((HBARC*k).square())/(2.0*AMU);
+  E = ((HBARC*k).abs2())/(2.0*AMU);
 }
 
 Grid::~Grid() {

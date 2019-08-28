@@ -27,9 +27,6 @@ void Wavefunction::normalise() {
   psi = (1.0/sqrt(getNorm()))*psi;
 }
 
-
-
-
 void Wavefunction::initZero() {
   psi.setZero(grid.nPoint);
 }
@@ -63,7 +60,7 @@ void Wavefunction::initConstant() {
 }
 
 void Wavefunction::boostWaveNumber(const double &WN) {
-  psi *= (i*WN*grid.x).exp();
+  psi *= (exp(i*WN*grid.x));
   normalise();
 }
 
@@ -142,34 +139,34 @@ double Wavefunction::overlap(const Wavefunction &object) {
 /// TODO: Fix introduced error of ~1e-16 in computations
 
 void Wavefunction::computePsi() {
-  cVector psi_input = psiK*((i*grid.xMin*grid.k).exp())*(sqrt(2.0* M_PI) / grid.xStep);
+  cdVector psi_input = (psiK*((i*grid.xMin*grid.k).exp())*(sqrt(2.0* M_PI) / grid.xStep)).matrix();
   // FFT
   Eigen::FFT<double> fft;
-  cVector psi_output;
+  cdVector psi_output;
   psi_output.setZero(grid.nPoint);
   fft.inv(psi_output, psi_input);
   //
-  psi = (psi_output.array())*((i*grid.kMin*grid.x).exp());
+  psi = (psi_output.array())*(exp(i*grid.kMin*grid.x));
 }
 
 void Wavefunction::computePsiK(){
-  cVector psi_input = (psi*((-1.0*i*grid.kMin*grid.x).exp())).matrix();
+  cdVector psi_input = (psi*((-1.0*i*grid.kMin*grid.x).exp())).matrix();
   // FFT
   Eigen::FFT<double> fft;
-  cVector psi_output;
+  cdVector psi_output;
   psi_output.setZero(grid.nPoint);
   fft.fwd(psi_output, psi_input);
   //
-  psiK = (psi_output.array())*((-1.0*i*grid.xMin*grid.k).exp())*grid.xStep/(sqrt(2.0 * M_PI));
+  psiK = (psi_output.array())*(exp(-1.0*i*grid.xMin*grid.k))*grid.xStep/(sqrt(2.0 * M_PI));
 }
 
 
 //void Wavefunction::computePsiK() {
 //  // Compute input for FFT
-//  cVector step1 = (psi*(exp(-1.0*i*grid.kMin*grid.x))).matrix();
+//  cdVector step1 = (psi*(exp(-1.0*i*grid.kMin*grid.x))).matrix();
 //  complexVec psi_input;
 //  psi_input.resize(step1.size());
-//  cVector::Map(&psi_input[0], step1.size()) = step1;
+//  cdVector::Map(&psi_input[0], step1.size()) = step1;
 //  doubleVec dvec = fourierComplexToDouble(psi_input);  // Need input as a double array to Fourier Transform
 //
 //  // FFT
@@ -186,17 +183,17 @@ void Wavefunction::computePsiK(){
 //
 //  std::rotate(dvec.begin(), dvec.begin() + int(dvec.size()/2), dvec.end());
 //  psi_input = fourierDoubleToComplex(dvec);
-//  cArray psi_output = Map<cArray>(psi_input.data(), psi_input.size());
+//  cdArray psi_output = Map<cdArray>(psi_input.data(), psi_input.size());
 //  // Convert back
 //  psiK = (psi_output)*((-1.0*i*grid.xMin*grid.k).exp())*grid.xStep/(sqrt(2.0 * M_PI));
 //}
 
 //void Wavefunction::computePsi() {
 //  // Compute input for FFT
-//  cVector step1 = (psiK*((i*grid.xMin*grid.k).exp())*(sqrt(2.0* M_PI) / grid.xStep)).matrix();
+//  cdVector step1 = (psiK*((i*grid.xMin*grid.k).exp())*(sqrt(2.0* M_PI) / grid.xStep)).matrix();
 //  complexVec psi_input;
 //  psi_input.resize(step1.size());
-//  cVector::Map(&psi_input[0], step1.size()) = step1;
+//  cdVector::Map(&psi_input[0], step1.size()) = step1;
 //  std::rotate(psi_input.begin(), psi_input.begin()+int((psi_input.size()+1)/2), psi_input.end());  // Rotate to match ordering of FFT
 //  doubleVec dvec = fourierComplexToDouble(psi_input);  // Need input as a double array to Fourier Transform
 //
@@ -213,7 +210,7 @@ void Wavefunction::computePsiK(){
 //  gsl_fft_complex_workspace_free(workspace);
 //
 //  psi_input = fourierDoubleToComplex(dvec);
-//  cArray psi_output = Map<cArray>(psi_input.data(), psi_input.size());
+//  cdArray psi_output = Map<cdArray>(psi_input.data(), psi_input.size());
 //  // Convert back
 //  psi = (psi_output)*((i*grid.kMin*grid.x).exp());
 //}

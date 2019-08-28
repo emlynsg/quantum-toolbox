@@ -32,8 +32,8 @@ class Wavefunction {
   /// Objects ///
   Grid grid;
   /// Psi ///
-  cArray psi;
-  cArray psiK;
+  cdArray psi;
+  cdArray psiK;
 
   /// Functions ///
   Wavefunction(const Grid &object, const double &ReducedMass);
