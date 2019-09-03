@@ -1,3 +1,8 @@
+//
+// Created by Emlyn Graham on 9/08/19.
+// Includes a class for the potentials used in quantum mechanical calculations.
+//
+
 #include <iostream>
 #include <vector>
 
@@ -74,3 +79,7 @@ void Potential::addCoulomb(const double &Z1Z2, const double &xCentre, const doub
   }
 }
 
+void Potential::copy(const Potential &pot){
+  grid.copy(pot.grid);
+  V = pot.V;
+}

@@ -44,7 +44,7 @@ class Grid {
   Grid(unsigned int nstep, double xmin, double xmax, double kscale);
   ~Grid();
   void test();
-
+  void copy(const Grid &gr);
 };
 
 #endif //GRID_H

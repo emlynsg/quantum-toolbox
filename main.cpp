@@ -18,7 +18,9 @@ using namespace std;
 
 int main() {
 //  Eigen::internal::set_is_malloc_allowed(false);
-  unsigned int sizeN = 31;
+/// TODO: Fix System so you can add potentials and wavefunctions freely
+/// Currently need to add wavefunctions first
+  unsigned int sizeN = 4095;
   double xmin = -150.0;
   double xmax = 150.0;
   double kscale = 1.0;
@@ -32,13 +34,15 @@ int main() {
   potential.addGaussian(0.0, 80.0, 5.0);
 //  potential.addGaussian(100.0, -80.0*i, 10.0);
   System system(wavefunction, potential);
+  system.addWavefunction(wavefunction);
   Potential potential0(grid);
   potential0.initZero();
   potential0.addConstant(0.1, -5.0, 5.0);
   system.addPotential(potential0, 1, 0);
+  system.addPotential(potential0, 0, 1);
   system.addPotential(potential, 1, 1);
-  system.addWavefunction(wavefunction);
   system.initCC();
+  system.evolveAll(0.1, 20);
 //  Plotter plot(system);
 //  plot.animate(100000, 0.1, 20, 100);
   return 0;

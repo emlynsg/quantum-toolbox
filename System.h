@@ -31,6 +31,7 @@ class System {
   intVec potRight;
   potentialMatrix potMatrix;
   /// Coupled Channels Objects ///
+  cdMatrixTensor potentialTensor;
   cdMatrixTensor U; // Diagonalisation of potential operator
   cdVectorTensor expD;
   cdMatrixTensor Udagger;

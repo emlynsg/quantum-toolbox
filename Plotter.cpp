@@ -33,18 +33,7 @@ void Plotter::setPlotStyle(Gnuplot &g, int stylenum){
   }
   else {
     g << "cd '..'\n";
-    g << "set terminal pdfcairo font 'Gill Sans,7' linewidth 3 rounded fontscale 1.0\n";
-    g << "set style line 80 lt rgb '#808080'\n";
-    g << "set style line 81 lt 0\n";
-    g << "set style line 81 lt rgb '#808080'\n";
-    g << "set grid back linestyle 81\n";
-    g << "set border 3 back linestyle 80\n";
-    g << "set xtics nomirror\n";
-    g << "set ytics nomirror\n";
-    g << "set style line 1 lt rgb '#A00000' lw 2 pt 1\n";
-    g << "set style line 2 lt rgb '#00A000' lw 2 pt 6\n";
-    g << "set style line 3 lt rgb '#5060D0' lw 2 pt 2\n";
-    g << "set style line 4 lt rgb '#F25900' lw 2 pt 9\n";
+    g << "load 'stylefile.gp'\n";
   }
 }
 

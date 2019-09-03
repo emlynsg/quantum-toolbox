@@ -68,6 +68,9 @@ int sgn(T val) {
 
 template<typename T>
 using  MatrixType = Eigen::Matrix<T,Eigen::Dynamic, Eigen::Dynamic>;
+template<typename T>
+using  VectorType = Eigen::Matrix<T,Eigen::Dynamic, 1>;
+
 
 template<typename Scalar,int rank, typename sizeType>
 auto Tensor_to_Matrix(const Eigen::Tensor<Scalar,rank> &tensor,const sizeType rows,const sizeType cols)
@@ -75,6 +78,11 @@ auto Tensor_to_Matrix(const Eigen::Tensor<Scalar,rank> &tensor,const sizeType ro
   return Eigen::Map<const MatrixType<Scalar>> (tensor.data(), rows,cols);
 }
 
+template<typename Scalar, typename sizeType>
+auto Tensor_to_Vector(const Eigen::Tensor<Scalar,1> &tensor,const sizeType rows)
+{
+  return Eigen::Map<const MatrixType<Scalar>> (tensor.data(), rows);
+}
 
 template<typename Scalar, typename... Dims>
 auto Matrix_to_Tensor(const MatrixType<Scalar> &matrix, Dims... dims)
@@ -82,7 +90,24 @@ auto Matrix_to_Tensor(const MatrixType<Scalar> &matrix, Dims... dims)
   constexpr int rank = sizeof... (Dims);
   return Eigen::TensorMap<Eigen::Tensor<const Scalar, rank>>(matrix.data(), {dims...});
 }
+template<typename Scalar, typename sizeType>
+auto Vector_to_Tensor(const VectorType<Scalar> &matrix, const sizeType rows)
+{
+  return Eigen::TensorMap<Eigen::Tensor<const Scalar, 1>>(matrix.data(), rows);
+}
 
+template<typename T>
+ostream& operator<< (ostream& out, const vector<T>& v) {
+  out << "{";
+  size_t last = v.size() - 1;
+  for(size_t i = 0; i < v.size(); ++i) {
+    out << v[i];
+    if (i != last)
+      out << ", ";
+  }
+  out << "}";
+  return out;
+}
 
 /// Structs
 

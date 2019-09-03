@@ -38,6 +38,7 @@ class Potential {
   void addGaussian(const double &xCentre, const cd &height, const cd &sigma);
   void addWoodsSaxon(const double &xCentre, const double &height, const double &xSize, const double &diffuseness);
   void addCoulomb(const double &Z1Z2, const double &xCentre, const double &xSize);
+  void copy(const Potential &pot);
 };
 
 #endif //POTENTIAL_H

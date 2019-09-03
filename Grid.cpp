@@ -29,3 +29,18 @@ void Grid::test() {
   std::cout << "Test Grid" << std::endl;
   std::cout << "Grid is: " << x << std::endl;
 }
+
+void Grid::copy(const Grid &gr){
+  nStep = gr.nStep;
+  nPoint = gr.nPoint;
+  xMin = gr.xMin;
+  xMax = gr.xMax;
+  xStep = gr.xStep;
+  kScale = gr.kScale;
+  kStep = gr.kStep;
+  kMin = gr.kMin;
+  kMax = gr.kMax;
+  x = gr.x;
+  k = gr.k;
+  E = gr.E;
+}

@@ -1,4 +1,5 @@
 #include "System.h"
+#include <eigen/Eigen/Eigenvalues>
 
 System::System(Wavefunction wf, Potential pot) {
   addWavefunction(wf);
@@ -6,15 +7,6 @@ System::System(Wavefunction wf, Potential pot) {
 }
 
 System::~System() {
-  wavefunctionVec().swap(wavefunctions);
-  doubleVecVec().swap(times);
-  doubleVecVec().swap(energies);
-  doubleVecVec().swap(norms);
-  doubleVecVec().swap(averages);
-  potentialVec().swap(potentials);
-  intVec().swap(potLeft);
-  intVec().swap(potRight);
-  potentialMatrix().swap(potMatrix);
   std::cout << "System deleted" << std::endl;
 }
 
@@ -32,17 +24,25 @@ void System::addWavefunction(Wavefunction &wf) {
 
 void System::addPotential(Potential &pot, const int &j, const int &k) {
   potentials.push_back(pot);
-  potLeft.push_back(k);
-  potRight.push_back(j);
-  potMatrix.resize(wavefunctions.size(), potentialVec(wavefunctions.size(), Potential(Grid(1, 0.0, 1.0, 1.0))));
+  potLeft.push_back(j);
+  potRight.push_back(k);
+  potMatrix.resize(wavefunctions.size());
+  for (int j = 0; j < wavefunctions.size(); ++j)
+    potMatrix[j].resize(wavefunctions.size(), Potential(wavefunctions[0].grid));
   for (int a = 0; a < wavefunctions.size(); ++a) {
     for (int b = 0; b < wavefunctions.size(); ++b) {
       for (int c = 0; c < potentials.size(); ++c) {
-        if ((potLeft[c] == a and potRight[c] == b) or (potLeft[c] == b and potRight[c] == a)) {
-          potMatrix[a][b] = potentials[c];
+        if (potLeft[c] == a and potRight[c] == b) {
+          potMatrix[a][b].copy(potentials[c]);
         }
       }
     }
+  }
+  potentialTensor = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  potentialTensor.setZero();
+  for (int l = 0; l < potentials.size(); ++l) {
+    cdMatrix potL = potentials[l].V.matrix();
+    (potentialTensor.chip(potLeft[l],0)).chip(potRight[l],0) = Matrix_to_Tensor(potL, wavefunctions[0].grid.nPoint);
   }
 }
 
@@ -81,9 +81,8 @@ void System::initCC() {
   /// Assuming all based on the same grid, with same size
   psiTensor = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
   psiTensor.setZero();
-  cout << psiTensor << endl;
   for (int j = 0; j < wavefunctions.size(); ++j){
-    cdVector psiMatrix = wavefunctions[j].psi.matrix();
+    cdMatrix psiMatrix = wavefunctions[j].psi.matrix();
     psiTensor.chip(j,0) = Matrix_to_Tensor(psiMatrix, wavefunctions[j].grid.nPoint);
   }
   U = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
@@ -92,6 +91,16 @@ void System::initCC() {
   Udagger.setZero();
   expD = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
   expD.setZero();
+  for (int j = 0; j < wavefunctions[0].grid.nPoint; ++j){
+    cdVectorTensor potChip = potentialTensor.chip(j,2);
+    cdMatrix potMat = Tensor_to_Matrix(potChip, wavefunctions.size(), wavefunctions.size());
+    ComplexEigenSolver<MatrixXcf> ces;
+    ces.compute(potMat);
+    U.chip(j,2) = Matrix_to_Tensor(ces.eigenvectors(), wavefunctions.size(), wavefunctions.size()) ;// U
+    expD.chip(j,1) = Vector_to_Tensor(ces.eigenvalues(), wavefunctions.size()) ;// D
+    cdMatrix Uinv = ces.eigenvectors().inverse();
+    Udagger.chip(j,2) = Matrix_to_Tensor(Uinv, wavefunctions.size(), wavefunctions.size()) ;// Udagger
+  }
   expP = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
   expP.setZero();
   /// Set up U, Udagger and expD by diagonalization
@@ -130,7 +139,7 @@ double System::energy(int index){
   psiOverlap(0) = 0.0;
   psiOverlap(wavefunctions[index].grid.nStep) = 0.0;
   dArray integrand = abs(wavefunctions[index].psi*(psiOverlap.conjugate()));
-  double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[index].grid.xStep, wavefunctions[index].grid.nPoint);
+  double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[index].grid.xStep, wavefunctions[index].grid.nStep);
   return returnValue;
 }
 
@@ -148,6 +157,6 @@ double System::hamiltonianElement(int indexI, int indexJ){
   psiOverlap(0) = 0.0;
   psiOverlap(wavefunctions[indexI].grid.nStep) = 0.0;
   dArray integrand = abs(wavefunctions[indexI].psi*(psiOverlap.conjugate()));
-  double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[indexI].grid.xStep, wavefunctions[indexI].grid.nPoint);
+  double returnValue = vectorTrapezoidIntegrate(integrand, wavefunctions[indexI].grid.xStep, wavefunctions[indexI].grid.nStep);
   return returnValue;
 }

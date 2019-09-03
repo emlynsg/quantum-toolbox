@@ -167,7 +167,7 @@ double vectorTrapezoidIntegrate(doubleVec &vect, const double &h, const int &n) 
 
 double vectorTrapezoidIntegrate(dArray &vect, const double &h, const int &n) {
   assert(("Integration requires a minimum of 9 points", n > 9));
-  return (h / 2.0) * (vect[0] + 2.0 * vect.segment(1,n).sum() + vect[n]);
+  return (h / 2.0) * (vect[0] + 2.0 * vect.segment(1,n-1).sum() + vect[n]);
 }
 
 /// Simpson Rule (from Wikipedia, not sure of reference)
