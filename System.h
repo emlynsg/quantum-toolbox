@@ -37,6 +37,9 @@ class System {
   cdMatrixTensor Udagger;
   cdVectorTensor expP; // Fourier transformed kinetic operator
   cdVectorTensor psiTensor;
+  cdMatrixTensor potentialOperator;
+  Eigen::array<Eigen::IndexPair<int>, 1> matrixContraction;
+
 
   /// Functions ///
   System(Wavefunction wf, Potential pot);
@@ -46,8 +49,8 @@ class System {
   void addPotential(Potential &pot, const int &j, const int &k);
   void evolve(int index, double timeStep, int maxOrder);
   void evolveAll(double timeStep, int maxOrder);
-  void initCC();
-  void evolveCC(double timeStep);
+  void initCC(double timeStep);
+  void evolveCC();
   void log(double time);
   double energy(int index);
   double hamiltonianElement(int indexI, int indexJ);
