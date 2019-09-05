@@ -35,10 +35,10 @@ int main() {
   potential.addGaussian(100.0, -80.0*i, 10.0);
   System system(wavefunction, potential);
   system.initCC(0.1);
-  system.evolveCC();
-  system.updateFromCC();
+//  system.evolveCC();
+//  system.updateFromCC();
   Plotter plot(system);
-//  plot.animateCC(100000, 100);
+  plot.animateCC(100000, 100);
 //  plot.animate(100000, 0.1, 20, 100);
   return 0;
 

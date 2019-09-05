@@ -113,7 +113,8 @@ void System::initCC(double tStep) {
   expD = ((-i*timeStep*0.5)*D).exp();
   // Fourier Transform of Laplacian is momentum operator.
   for (int j = 0; j < nChannel; ++j){
-    expP.push_back(exp((-i*timeStep/(2*wavefunctions[0].reducedMass*HBARC*HBARC))*square(wavefunctions[0].grid.k)));
+    expP.emplace_back(exp((-i*timeStep/(2*wavefunctions[0].reducedMass*HBARC*HBARC))*square(wavefunctions[0].grid.k)));
+//    expP.emplace_back(exp((i*timeStep/(2*wavefunctions[0].reducedMass))*square(wavefunctions[0].grid.k)));
   }
   potentialOperator = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
   cdMatrixTensor UexpD = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
