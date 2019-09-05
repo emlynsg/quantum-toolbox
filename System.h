@@ -35,10 +35,14 @@ class System {
   cdMatrixTensor U; // Diagonalisation of potential operator
   cdVectorTensor expD;
   cdMatrixTensor Udagger;
-  cdVectorTensor expP; // Fourier transformed kinetic operator
+  std::vector<cdArray> expP; // Fourier transformed kinetic operator
   cdVectorTensor psiTensor;
   cdMatrixTensor potentialOperator;
   Eigen::array<Eigen::IndexPair<int>, 1> matrixContraction;
+  Eigen::array<int, 1> rows;
+  Eigen::array<int, 1> columns;
+  unsigned int nChannel;
+  double timeStep;
 
 
   /// Functions ///
@@ -51,6 +55,7 @@ class System {
   void evolveAll(double timeStep, int maxOrder);
   void initCC(double timeStep);
   void evolveCC();
+  void updateFromCC();
   void log(double time);
   double energy(int index);
   double hamiltonianElement(int indexI, int indexJ);

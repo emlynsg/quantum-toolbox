@@ -81,7 +81,7 @@ auto Tensor_to_Matrix(const Eigen::Tensor<Scalar,rank> &tensor,const sizeType ro
 template<typename Scalar, typename sizeType>
 auto Tensor_to_Vector(const Eigen::Tensor<Scalar,1> &tensor,const sizeType rows)
 {
-  return Eigen::Map<const MatrixType<Scalar>> (tensor.data(), rows);
+  return Eigen::Map<const VectorType<Scalar>> (tensor.data(), rows);
 }
 
 template<typename Scalar, typename... Dims>

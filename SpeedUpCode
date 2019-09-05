@@ -1,0 +1,4 @@
+Avoiding the intermediate memory is the main purpose that Eigen use expression templates. So Eigen provides a macro EIGEN_RUNTIME_NO_MALLOC and a simple function to enable you check whether an intermediate memory is allocated during calculating the expression. You can find a sample code here. Please note this may only work in debug mode.
+
+    EIGEN_RUNTIME_NO_MALLOC - if defined, a new switch is introduced which can be turned on and off by calling set_is_malloc_allowed(bool). If malloc is not allowed and Eigen tries to allocate memory dynamically anyway, an assertion failure results. Not defined by default.
+

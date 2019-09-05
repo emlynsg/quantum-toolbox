@@ -35,6 +35,7 @@ class Plotter {
   void plot();
   void plotPsi();
   void animate(int nSteps, double stepSize, int evolveOrder, int updateRate);
+  void animateCC(int nSteps, int updateRate);
   void animatePsi(int nSteps, double stepSize, int evolveOrder);
   void setPlotStyle(Gnuplot &g, int stylenum=0);
 };

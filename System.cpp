@@ -1,8 +1,12 @@
 #include "System.h"
 #include <eigen/Eigen/Eigenvalues>
+#include "eigen/unsupported/Eigen/FFT"
+#define EIGEN_FFTW_DEFAULT
 
 System::System(Wavefunction wf, Potential pot) {
   matrixContraction = { Eigen::IndexPair<int>(1, 0) };
+  rows = {0};
+  columns = {1};
   addWavefunction(wf);
   addPotential(pot, 0, 0);
 }
@@ -78,51 +82,90 @@ void System::evolveAll(double timeStep, int maxOrder){
   }
 }
 
-void System::initCC(double timeStep) {
+void System::initCC(double tStep) {
   /// Assuming all based on the same grid, with same size
   /// Initialise with the timestep that will be used for evolution
-  psiTensor = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  timeStep = tStep;
+  nChannel = unsigned(wavefunctions.size());
+  psiTensor = cdVectorTensor(nChannel, wavefunctions[0].grid.nPoint);
   psiTensor.setZero();
-  for (int j = 0; j < wavefunctions.size(); ++j){
+  for (int j = 0; j < nChannel; ++j){
     cdMatrix psiMatrix = wavefunctions[j].psi.matrix();
     psiTensor.chip(j,0) = Matrix_to_Tensor(psiMatrix, wavefunctions[j].grid.nPoint);
   }
-  U = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  U = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
   U.setZero();
-  Udagger = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  Udagger = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
   Udagger.setZero();
-  cdVectorTensor D = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
+  cdVectorTensor D = cdVectorTensor(nChannel, wavefunctions[0].grid.nPoint);
   D.setZero();
   // Diagonalisation for finding U, Udagger and expD
   for (int j = 0; j < wavefunctions[0].grid.nPoint; ++j){
     cdVectorTensor potChip = potentialTensor.chip(j,2);
-    cdMatrix potMat = Tensor_to_Matrix(potChip, wavefunctions.size(), wavefunctions.size());
+    cdMatrix potMat = Tensor_to_Matrix(potChip, nChannel, nChannel);
     ComplexEigenSolver<MatrixXcd> ces;
     ces.compute(potMat);
-    U.chip(j,2) = Matrix_to_Tensor(ces.eigenvectors(), unsigned(wavefunctions.size()), unsigned(wavefunctions.size())) ;// U
-    D.chip(j,1) = Vector_to_Tensor(ces.eigenvalues(), unsigned(wavefunctions.size())) ;// D
+    U.chip(j,2) = Matrix_to_Tensor(ces.eigenvectors(), nChannel, nChannel) ;// U
+    D.chip(j,1) = Vector_to_Tensor(ces.eigenvalues(), nChannel) ;// D
     cdMatrix Uinv = ces.eigenvectors().inverse();
-    Udagger.chip(j,2) = Matrix_to_Tensor(Uinv, unsigned(wavefunctions.size()), unsigned(wavefunctions.size())) ;// Udagger
+    Udagger.chip(j,2) = Matrix_to_Tensor(Uinv, nChannel, nChannel) ;// Udagger
   }
   expD = ((-i*timeStep*0.5)*D).exp();
-  expP = cdVectorTensor(wavefunctions.size(), wavefunctions[0].grid.nPoint);
-  expP.setZero();
   // Fourier Transform of Laplacian is momentum operator.
-  for (int j = 0; j < wavefunctions.size(); ++j){
-    cdVector pVec = (exp((-i*timeStep/(2*wavefunctions[0].reducedMass*HBARC*HBARC))*square(wavefunctions[0].grid.k))).matrix();
-    expP.chip(j,0) = Vector_to_Tensor(pVec, wavefunctions[0].grid.nPoint);
+  for (int j = 0; j < nChannel; ++j){
+    expP.push_back(exp((-i*timeStep/(2*wavefunctions[0].reducedMass*HBARC*HBARC))*square(wavefunctions[0].grid.k)));
   }
-  potentialOperator = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
-  cdMatrixTensor UexpD = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
-  for (int row = 0; row < wavefunctions.size(); ++row) {
+  potentialOperator = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
+  cdMatrixTensor UexpD = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
+  for (int row = 0; row < nChannel; ++row) {
     UexpD.chip(row, 0) = (U.chip(row, 0))*expD;
   }
-  cout << UexpD.contract(Udagger, matrixContraction) << endl;
-//  potentialOperator = UexpD.contract(Udagger, matrixContraction);
+  for (int k = 0; k < nChannel; ++k) {
+    for (int j = 0; j < nChannel; ++j) {
+      potentialOperator.chip(k,0).chip(j,0) = (UexpD.chip(k,0)*Udagger.chip(j,1)).sum(rows);
+    }
+  }
 }
 
 void System::evolveCC(){
-  potentialOperator.contract(psiTensor, matrixContraction);
+  // Apply half potential step
+  cdVectorTensor step = cdVectorTensor(nChannel ,wavefunctions[0].grid.nPoint);
+  for (int j = 0; j < nChannel; ++j) {
+    step.chip(j,0) = (potentialOperator.chip(j,0)*psiTensor).sum(rows);
+  }
+  // Apply kinetic step
+  for (int k = 0; k < nChannel; ++k) {
+    Eigen::Tensor<cd, 1> step1Chip = step.chip(k,0);
+    cdVector psi = Tensor_to_Vector(step1Chip, wavefunctions[0].grid.nPoint);
+    // FFT
+    cdVector psi_input = (psi.array()*((-1.0*i*wavefunctions[0].grid.kMin*wavefunctions[0].grid.x).exp())).matrix();
+    Eigen::FFT<double> fft;
+    cdVector psi_output;
+    psi_output.setZero(wavefunctions[0].grid.nPoint);
+    fft.fwd(psi_output, psi_input);
+    cdArray psiK = (psi_output.array())*(exp(-1.0*i*wavefunctions[0].grid.xMin*wavefunctions[0].grid.k))*wavefunctions[0].grid.xStep/(sqrt(2.0 * M_PI));
+    // Apply momentum operator
+    psiK *= expP[k];
+    // IFFT
+    psi_input = (psiK*((i*wavefunctions[0].grid.xMin*wavefunctions[0].grid.k).exp())*(sqrt(2.0* M_PI) / wavefunctions[0].grid.xStep)).matrix();
+    psi_output.setZero(wavefunctions[0].grid.nPoint);
+    fft.inv(psi_output, psi_input);
+    //
+    psi = ((psi_output.array())*(exp(i*wavefunctions[0].grid.kMin*wavefunctions[0].grid.x))).matrix();
+    step.chip(k,0) = Vector_to_Tensor(psi, wavefunctions[0].grid.nPoint);
+  }
+  // Apply other half potential step
+  for (int j = 0; j < nChannel; ++j) {
+    psiTensor.chip(j,0) = (potentialOperator.chip(j,0)*step).sum(rows);
+  }
+}
+
+void System::updateFromCC(){
+  for (int k = 0; k < nChannel; ++k) {
+    Eigen::Tensor<cd, 1> psiTensorChip = psiTensor.chip(k,0);
+    cdVector psi = Tensor_to_Vector(psiTensorChip, wavefunctions[0].grid.nPoint);
+    wavefunctions[k].psi = psi.array();
+  }
 }
 
 void System::log(double time){
