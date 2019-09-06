@@ -52,6 +52,16 @@ gsl/gsl_complex_math.h
 eigen/Eigen/Dense
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/Dense
 
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+gnuplot-iostream/gnuplot-iostream.h
+/home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-iostream/gnuplot-iostream.h
+windows.h
+-
+unistd.h
+-
+
 /home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
 vector
 -
@@ -81,14 +91,6 @@ gsl/gsl_fft_complex.h
 -
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp
-System.h
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-eigen/Eigen/Eigenvalues
--
-eigen/unsupported/Eigen/FFT
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/FFT
 
 /home/exg103/Documents/Honours/CPP/CPP Code/System.h
 eigen/unsupported/Eigen/CXX11/Tensor
@@ -1604,24 +1606,6 @@ array
 
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/CXX11/src/util/MaxSizeVector.h
 
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/FFT
-complex
--
-vector
--
-map
--
-eigen/Eigen/Core
--
-fftw3.h
--
-src/FFT/ei_fftw_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_fftw_impl.h
-src/FFT/ei_imklfft_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_imklfft_impl.h
-src/FFT/ei_kissfft_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
-
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/SpecialFunctions
 math.h
 -
@@ -1644,10 +1628,6 @@ src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
 ../../Eigen/src/Core/util/ReenableStupidWarnings.h
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_fftw_impl.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
-
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsArrayAPI.h
 
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsFunctors.h
@@ -1659,4 +1639,74 @@ src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsPacketMath.h
 
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
+
+/home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-iostream/gnuplot-iostream.h
+cstdio
+-
+termios.h
+-
+unistd.h
+-
+util.h
+-
+pty.h
+-
+fstream
+-
+iostream
+-
+sstream
+-
+stdexcept
+-
+string
+-
+utility
+-
+iomanip
+-
+vector
+-
+complex
+-
+cstdlib
+-
+cmath
+-
+tuple
+-
+boost/iostreams/device/file_descriptor.hpp
+-
+boost/iostreams/stream.hpp
+-
+boost/version.hpp
+-
+boost/utility.hpp
+-
+boost/tuple/tuple.hpp
+-
+boost/mpl/bool.hpp
+-
+boost/filesystem.hpp
+-
+boost/cstdint.hpp
+-
+blitz/array.h
+-
+windows.h
+-
+
+/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp
+vector
+-
+Grid.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
+Wavefunction.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
+Potential.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+Plotter.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
 

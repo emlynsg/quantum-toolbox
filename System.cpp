@@ -110,11 +110,10 @@ void System::initCC(double tStep) {
     cdMatrix Uinv = ces.eigenvectors().inverse();
     Udagger.chip(j,2) = Matrix_to_Tensor(Uinv, nChannel, nChannel) ;// Udagger
   }
-  expD = ((-i*timeStep*0.5)*D).exp();
+  expD = ((-i*timeStep*HBARC*0.5)*D).exp();
   // Fourier Transform of Laplacian is momentum operator.
   for (int j = 0; j < nChannel; ++j){
-    expP.emplace_back(exp((-i*timeStep/(2*wavefunctions[0].reducedMass*HBARC*HBARC))*square(wavefunctions[0].grid.k)));
-//    expP.emplace_back(exp((i*timeStep/(2*wavefunctions[0].reducedMass))*square(wavefunctions[0].grid.k)));
+    expP.emplace_back(exp((-i*timeStep*HBARC*HBARC/(2.0*wavefunctions[j].reducedMass))*square(wavefunctions[j].grid.k)));
   }
   potentialOperator = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
   cdMatrixTensor UexpD = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
@@ -134,7 +133,11 @@ void System::evolveCC(){
   for (int j = 0; j < nChannel; ++j) {
     step.chip(j,0) = (potentialOperator.chip(j,0)*psiTensor).sum(rows);
   }
-  // Apply kinetic step
+  step.chip(0,1).setZero();
+  step.chip(1,1).setZero();
+  step.chip(wavefunctions[0].grid.nStep-1,1).setZero();
+  step.chip(wavefunctions[0].grid.nStep,1).setZero();
+// Apply kinetic step
   for (int k = 0; k < nChannel; ++k) {
     Eigen::Tensor<cd, 1> step1Chip = step.chip(k,0);
     cdVector psi = Tensor_to_Vector(step1Chip, wavefunctions[0].grid.nPoint);
@@ -155,10 +158,18 @@ void System::evolveCC(){
     psi = ((psi_output.array())*(exp(i*wavefunctions[0].grid.kMin*wavefunctions[0].grid.x))).matrix();
     step.chip(k,0) = Vector_to_Tensor(psi, wavefunctions[0].grid.nPoint);
   }
+  step.chip(0,1).setZero();
+  step.chip(1,1).setZero();
+  step.chip(wavefunctions[0].grid.nStep-1,1).setZero();
+  step.chip(wavefunctions[0].grid.nStep,1).setZero();
   // Apply other half potential step
   for (int j = 0; j < nChannel; ++j) {
     psiTensor.chip(j,0) = (potentialOperator.chip(j,0)*step).sum(rows);
   }
+  step.chip(0,1).setZero();
+  step.chip(1,1).setZero();
+  step.chip(wavefunctions[0].grid.nStep-1,1).setZero();
+  step.chip(wavefunctions[0].grid.nStep,1).setZero();
 }
 
 void System::updateFromCC(){
