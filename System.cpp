@@ -1,5 +1,4 @@
 #include "System.h"
-#include <eigen/Eigen/Eigenvalues>
 #include "eigen/unsupported/Eigen/FFT"
 #define EIGEN_FFTW_DEFAULT
 
@@ -110,10 +109,10 @@ void System::initCC(double tStep) {
     cdMatrix Uinv = ces.eigenvectors().inverse();
     Udagger.chip(j,2) = Matrix_to_Tensor(Uinv, nChannel, nChannel) ;// Udagger
   }
-  expD = ((-i*timeStep*HBARC*0.5)*D).exp();
+  expD = ((-i*timeStep*0.5/HBARC)*D).exp();
   // Fourier Transform of Laplacian is momentum operator.
   for (int j = 0; j < nChannel; ++j){
-    expP.emplace_back(exp((-i*timeStep*HBARC*HBARC/(2.0*wavefunctions[j].reducedMass))*square(wavefunctions[j].grid.k)));
+    expP.emplace_back(exp((-i*timeStep*HBARC/(2.0*wavefunctions[j].reducedMass))*square(wavefunctions[j].grid.k)));
   }
   potentialOperator = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
   cdMatrixTensor UexpD = cdMatrixTensor(nChannel, nChannel, wavefunctions[0].grid.nPoint);
