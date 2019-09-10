@@ -8,6 +8,7 @@ System::System(Wavefunction wf, Potential pot) {
   columns = {1};
   addWavefunction(wf);
   addPotential(pot, 0, 0);
+  timeStep = 0.0;
 }
 
 System::~System() {
@@ -50,7 +51,7 @@ void System::addPotential(Potential &pot, const int &j, const int &k) {
   }
 }
 
-void System::evolve(int index, double timeStep, int maxOrder){
+void System::evolveStep(int index, double timeStep, int maxOrder){
   /// Taylor expansion method
   /// TODO: Figure approach, label usefully.
   double A = pow((HBARC/(1.0*wavefunctions[index].grid.xStep)),2.0)/(2.0*wavefunctions[index].reducedMass);
@@ -75,9 +76,15 @@ void System::evolve(int index, double timeStep, int maxOrder){
   wavefunctions[index].zeroEdges();
 }
 
-void System::evolveAll(double timeStep, int maxOrder){
+void System::evolveAllStep(double timeStep, int maxOrder){
   for (int j = 0; j < wavefunctions.size(); ++j) {
-    evolve(j, timeStep, maxOrder);
+    evolveStep(j, timeStep, maxOrder);
+  }
+}
+
+void System::evolveAll(int nSteps, double timeStep, int maxOrder) {
+  for (int j = 0; j < nSteps; ++j) {
+    evolveAllStep(timeStep, maxOrder);
   }
 }
 
@@ -126,7 +133,7 @@ void System::initCC(double tStep) {
   }
 }
 
-void System::evolveCC(){
+void System::evolveCCStep(){
   // Apply half potential step
   cdVectorTensor step = cdVectorTensor(nChannel ,wavefunctions[0].grid.nPoint);
   for (int j = 0; j < nChannel; ++j) {
@@ -171,6 +178,12 @@ void System::evolveCC(){
   step.chip(wavefunctions[0].grid.nStep,1).setZero();
 }
 
+void System::evolveCC(int nSteps) {
+  for (int j = 0; j < nSteps; ++j) {
+    evolveCCStep();
+  }
+}
+
 void System::updateFromCC(){
   for (int k = 0; k < nChannel; ++k) {
     Eigen::Tensor<cd, 1> psiTensorChip = psiTensor.chip(k,0);
@@ -180,6 +193,9 @@ void System::updateFromCC(){
 }
 
 void System::log(double time){
+  if(timeStep != 0.0){
+    updateFromCC();
+  }
   for (int j = 0; j < wavefunctions.size(); ++j) {
     times[j].push_back(std::abs(time));
     energies[j].push_back(energy(j));

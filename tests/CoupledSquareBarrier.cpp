@@ -31,9 +31,9 @@ int main() {
   V0.addConstant(75.0, -2.0, -1.0);
   Potential VC(grid);
   VC.initZero();
-  VC.addConstant(2.0, -2.0, -1.0)
+  VC.addConstant(2.0, -2.0, -1.0);
   System system(ground, V0);
-  system.addWavefunction(excited)
+  system.addWavefunction(excited);
   system.addPotential(V0, 1, 1);
   system.addPotential(VC, 0, 1);
   system.addPotential(VC, 1, 0);

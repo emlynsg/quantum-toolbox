@@ -79,7 +79,7 @@ double Wavefunction::getNormInRegion(const double &xmin, const double &xmax) {
   doubleVec integrand;
   integrand.reserve(grid.nPoint);
   for (int j = 0; j < grid.nPoint; ++j) {
-    if (grid.x(j) >= xmin and grid.x(j) <= xmax) {
+    if (grid.x(j) > xmin and grid.x(j) < xmax) {
       integrand.push_back(std::norm(psi(j)));
     }
   }

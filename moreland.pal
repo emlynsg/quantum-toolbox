@@ -13,7 +13,6 @@ set style line 7 lt 1 lc rgb '#e36a53' #
 set style line 8 lt 1 lc rgb '#b40426' #
 
 # palette
-# TODO: check if the short version gives the same results
 set palette defined (\
 0 0.2298057 0.298717966 0.753683153,\
 0.00390625 0.234299935 0.305559204 0.759874796,\

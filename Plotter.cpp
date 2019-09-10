@@ -80,7 +80,7 @@ void Plotter::animate(int nSteps, double stepSize, int evolveOrder, int updateRa
   gp << "set yrange [-0.5:0.5]\n";
 //  gp << "set log y\n";
   for (int j = 0; j < nSteps; ++j) {
-    system.evolveAll(stepSize, evolveOrder);
+    system.evolveAllStep(stepSize, evolveOrder);
     if (j % updateRate == 0){
       system.log(j*stepSize);
       std::vector<double> xGrid(system.wavefunctions[0].grid.nPoint);
@@ -108,7 +108,7 @@ void Plotter::animateCC(int nSteps, int updateRate){
   gp << "set yrange [-0.5:0.5]\n";
 //  gp << "set log y\n";
   for (int j = 0; j < nSteps; ++j) {
-    system.evolveCC();
+    system.evolveCCStep();
     if (j % updateRate == 0){
       system.updateFromCC();
       system.log(j*system.timeStep);
@@ -136,7 +136,7 @@ void Plotter::animatePsi(int nSteps, double stepSize, int evolveOrder) {
 //  gp << "set ylabel 'psi'\n";
   gp << "set key top right\n";
   for (int j = 0; j < nSteps; ++j) {
-    system.evolveAll(stepSize, evolveOrder);
+    system.evolveAllStep(stepSize, evolveOrder);
     doublePairVec x_psi;
     for(int k = 0; k < system.wavefunctions[0].grid.nPoint; ++k){
       x_psi.push_back(std::make_pair((system.wavefunctions[0].grid.x)(k), (system.wavefunctions[0].getAbs())(k)));

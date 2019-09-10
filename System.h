@@ -51,10 +51,12 @@ class System {
   void test();
   void addWavefunction(Wavefunction &wf);
   void addPotential(Potential &pot, const int &j, const int &k);
-  void evolve(int index, double timeStep, int maxOrder);
-  void evolveAll(double timeStep, int maxOrder);
-  void initCC(double timeStep);
-  void evolveCC();
+  void evolveStep(int index, double timeStep, int maxOrder);
+  void evolveAllStep(double timeStep, int maxOrder);
+  void evolveAll(int nSteps, double timeStep, int maxOrder);
+  void initCC(double tStep);
+  void evolveCCStep();
+  void evolveCC(int nSteps);
   void updateFromCC();
   void log(double time);
   double energy(int index);

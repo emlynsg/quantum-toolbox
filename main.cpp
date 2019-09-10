@@ -3,7 +3,12 @@
 // Main tests all aspects of the Quantum Toolbox library
 //
 #include <vector>
-
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <vector>
+#include <fstream>
+#include <cmath>
 
 #include "Grid.h"
 #include "Wavefunction.h"
@@ -20,30 +25,47 @@ int main() {
 //  Eigen::internal::set_is_malloc_allowed(false);
 /// TODO: Fix System so you can add potentials and wavefunctions freely
 /// Currently need to add wavefunctions first
-  unsigned int sizeN = 1023;
-  double xmin = -150.0;
-  double xmax = 150.0;
-  double kscale = 1.0;
-  Grid grid(sizeN, xmin, xmax, kscale);
-  double ReducedMass = 1.0;
-  Wavefunction wavefunction(grid, ReducedMass);
-  wavefunction.initGaussian(-100.0, 10.0);
-  wavefunction.boostEnergy(80.0);
-  Potential potential(grid);
-  potential.initZero();
-  potential.addGaussian(0.0, 80.0, 5.0);
-//  potential.addGaussian(100.0, -80.0*i, 10.0);
-  System system(wavefunction, potential);
 
-  // Taylor Evolution
-  Plotter plot(system);
-  plot.animate(100000, 0.1, 20, 100);
+  std::vector<double> energies;
+  std::vector<double> transmissions;
+  std::vector<double> norms;
 
-  // CC Evolution
-//  system.initCC(0.1);
-//  Plotter plot(system);
-//  plot.animateCC(100000, 100);
+  for (int j = 50; j < 51; ++j) {
+    unsigned int sizeN = 4095;
+    double xmin = -150.0;
+    double xmax = 150.0;
+    double kscale = 1.0;
+    Grid grid(sizeN, xmin, xmax, kscale);
+    double ReducedMass = 1.0;
+    Wavefunction wavefunction(grid, ReducedMass);
+    wavefunction.initGaussian(-100.0, 10.0);
+    wavefunction.boostEnergy(1.0*j);
+    Potential potential(grid);
+    potential.initZero();
+    potential.addConstant(75.0, -2.0, -1.0);
+    System system(wavefunction, potential);
+    // CC Evolution
+    system.initCC(0.1);
+    system.evolveCC(4200);
+    system.updateFromCC();
+    // Add values to vectors
+    energies.push_back(1.0*j);
+    transmissions.push_back(system.wavefunctions[0].getNormInRegion(-1.0, 150.0));
+    norms.push_back(system.wavefunctions[0].getNorm());
+    Plotter plot(system);
+    plot.animateCC(1, 1);
+  }
+
+  // Output
+  std::ofstream Es("SQ_E.txt");
+  std::ofstream Ts("SQ_T.txt");
+  std::ofstream Ns("SQ_Norm.txt");
+
+  // Push it out
+  for (const auto &e : energies) Es << e << "\n";
+  for (const auto &e : transmissions) Ts << e << "\n";
+  for (const auto &e : norms) Ns << e << "\n";
+
   return 0;
-
 }
 
