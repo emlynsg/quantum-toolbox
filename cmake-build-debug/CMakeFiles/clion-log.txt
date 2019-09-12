@@ -1,9 +1,0 @@
-/home/exg103/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/182.3684.76/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/exg103/Documents/Honours/CPP/CPP Code"
--- Boost version: 1.58.0
--- Found the following Boost libraries:
---   system
---   regex
---   iostreams
--- Configuring done
--- Generating done
--- Build files have been written to: /home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug

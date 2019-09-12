@@ -1,0 +1,13 @@
+Copy up to date libQuantumToolbox.a to lib folder
+Copy all header files to include folder
+
+Use cmake files for any project
+
+For executable CMakeLists.txt:
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+
+include(FindPkgConfig)
+find_package(QuantumToolbox REQUIRED)
+include_directories(${QUANTUMTOOLBOX_INCLUDE_DIR})
+target_link_libraries(${PROJECT_NAME} ${QUANTUMTOOLBOX_LIBRARY})

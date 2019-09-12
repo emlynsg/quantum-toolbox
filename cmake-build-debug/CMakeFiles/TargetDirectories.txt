@@ -1,3 +1,0 @@
-/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/exg103/Documents/Honours/CPP/CPP Code/cmake-build-debug/CMakeFiles/QuantumToolbox.dir

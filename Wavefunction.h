@@ -51,6 +51,7 @@ class Wavefunction {
   void zeroEdges();
   void initSine(const double &N);
   void initConstant();
+  void initConstantInRegion(const double &xmin, const double &xmax);
   void boostWaveNumber(const double &WN);
   void boostEnergy(const double &energy);
   dArray getReal();

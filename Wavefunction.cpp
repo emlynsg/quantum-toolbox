@@ -59,6 +59,17 @@ void Wavefunction::initConstant() {
   normalise();
 }
 
+void Wavefunction::initConstantInRegion(const double &xmin, const double &xmax) {
+  psi.setZero(grid.nPoint);
+  for (int j = 0; j < grid.nPoint; ++j) {
+    if (grid.x(j) > xmin and grid.x(j) < xmax) {
+      psi(j) = 1.0;
+    }
+  }
+  zeroEdges();
+  normalise();
+}
+
 void Wavefunction::boostWaveNumber(const double &WN) {
   psi *= (exp(i*WN*grid.x));
   normalise();

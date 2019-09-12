@@ -1,0 +1,3 @@
+Make the system the base class, with the plotting functionality inbuilt
+This means you can add potentials, wavefunctions etc from system
+
