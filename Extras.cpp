@@ -1,5 +1,8 @@
 #include "Extras.h"
 
+#define PBSTR "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+#define PBWIDTH 60
+
 /// Variables
 
 cd i = cd(0.0, 1.0);
@@ -187,3 +190,11 @@ double vectorTrapezoidIntegrate(dArray &vect, const double &h, const int &n) {
 //      + 49.0 * vect[n - 3] + 43.0 * vect[n - 2] + 59.0 * vect[n - 1] + 17.0 * vect[n]);
 //}
 
+void printProgress(double percentage)
+{
+  int val = (int) (percentage * 100);
+  int lpad = (int) (percentage * PBWIDTH);
+  int rpad = PBWIDTH - lpad;
+  printf ("\r%3d%% [%.*s%*s]", val, lpad, PBSTR, rpad, "");
+  fflush (stdout);
+}

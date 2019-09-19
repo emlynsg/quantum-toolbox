@@ -7,6 +7,7 @@
 #include <vector>
 #include <cmath>
 #include <cstdlib>
+#include <stdio.h>
 #include <cstdio>
 #include <cmath>
 #include <cassert>
@@ -14,6 +15,8 @@
 #include <numeric>
 #include <functional>
 #include <algorithm>
+
+#include <boost/progress.hpp>
 
 //#include "eigen/Eigen/Dense"
 //#include "eigen/unsupported/Eigen/CXX11/Tensor"
@@ -64,6 +67,22 @@ extern double ESQ;    // Electron charge in MeV fm
 template<typename T>
 int sgn(T val) {
   return (T(0) < val) - (val < T(0));
+}
+
+template<typename T>
+std::string tostring(const T &n) {
+  std::ostringstream oss;
+  oss << n;
+  string s =  oss.str();
+  int dotpos = s.find_first_of('.');
+  if(dotpos!=std::string::npos){
+    int ipos = s.size()-1;
+    while(s[ipos]=='0' && ipos>dotpos){
+      --ipos;
+    }
+    s.erase ( ipos + 1, std::string::npos );
+  }
+  return s;
 }
 
 template<typename T>
@@ -146,5 +165,6 @@ cdArray fourierDoubleToComplex(dArray &dvector);
 //double vectorSimpsonIntegrate(dArray &vect, const double &h, const int &n);
 double vectorTrapezoidIntegrate(doubleVec &vect, const double &h, const int &n);
 double vectorTrapezoidIntegrate(dArray &vect, const double &h, const int &n);
+void printProgress(double percentage);
 
 #endif //EXTRAS_H

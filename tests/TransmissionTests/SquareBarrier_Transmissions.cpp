@@ -21,58 +21,49 @@ using namespace Eigen;
 using namespace std;
 
 int main() {
-  int barrier = 40;
-  double eMax = 6*barrier;
-  double V0 = barrier*1.0;
+  omp_set_num_threads(4);
+  Eigen::setNbThreads(4);
+//  Eigen::internal::set_is_malloc_allowed(false);
+/// TODO: Fix System so you can add potentials and wavefunctions freely
+/// Currently need to add wavefunctions first
 
-  int nEnergies = 50*eMax/barrier + 1;
+  std::ofstream Out("SQ_Barrier_V0_100.csv");
+  std::vector<cd> initPsiK;
 
-  std::vector<double> energies(nEnergies);
-  std::vector<double> transmissions;
-  std::vector<double> reflections;
-  std::vector<double> norms;
-
-  std::generate(energies.begin(), energies.end(), [n = 0] () mutable { return n++; });
-  omp_set_num_threads(6);
-  OMP_PROC_BIND="FALSE";
-  GOMP_CPU_AFFINITY="1 2 3:2";
-  #pragma omp parallel for
-  for (auto en: energies) {
-    // Time checked for E=80 as 4500 steps, base others on this
-    int nSteps = int(4500/sqrt(1.0*en/80.0));
-    unsigned int sizeN = 4095;
-    double xmin = -200.0;
-    double xmax = 200.0;
-    double kscale = 1.0;
-    Grid grid(sizeN, xmin, xmax, kscale);
-    double ReducedMass = 1.0;
-    Wavefunction wavefunction(grid, ReducedMass);
-    wavefunction.initGaussian(-100.0, 10.0);
-    wavefunction.boostEnergy(en);
-    Potential potential(grid);
-    potential.initZero();
-    potential.addConstant(V0, -2.0, -1.0);
-    System system(wavefunction, potential);
-    // CC Evolution
-    system.initCC(0.1);
-    system.evolveCC(nSteps);
-    system.updateFromCC();
-    // Add values to vectors
-    transmissions.push_back(system.wavefunctions[0].getNormInRegion(-1.0, 200.0));
-    reflections.push_back(system.wavefunctions[0].getNormInRegion(-200.0, -2.0));
-    norms.push_back(system.wavefunctions[0].getNorm());}
+  unsigned int sizeN = 16383;
+  double xmin = -600.0;
+  double xmax = 600.0;
+  double kscale = 1.0;
+  Grid grid(sizeN, xmin, xmax, kscale);
+  double ReducedMass = 1.0;
+  Wavefunction wavefunction(grid, ReducedMass);
+  wavefunction.initGaussian(-70.0, 2.5);
+  wavefunction.boostEnergy(12.0);
+  wavefunction.computePsiK();
+  for (int k = 0; k < grid.nPoint; ++k) {
+    initPsiK.push_back(wavefunction.psiK(k));
+  }
+  Potential potential(grid);
+  potential.initZero();
+  potential.addConstant(100.0, -2.5, 2.5);
+  System system(wavefunction, potential);
+  // CC Evolution
+  system.initCC(0.01);
+  system.evolveCC(68000);
+  system.updateFromCC();
 
   // Output
-  std::ofstream Es("SQ_Barrier_Energies_V0_40.txt");
-  std::ofstream Ts("SQ_Barrier_Transmissions_V0_40.txt");
-  std::ofstream Rs("SQ_Barrier_Reflections_V0_40.txt");
-  std::ofstream Ns("SQ_Barrier_Norms_V0_40.txt");
+  std::vector<double> kGrid(system.wavefunctions[0].grid.nPoint);
+  std::vector<double> eGrid(system.wavefunctions[0].grid.nPoint);
+  std::vector<double> psiKReal(system.wavefunctions[0].grid.nPoint);
+  std::vector<double> psiKImag(system.wavefunctions[0].grid.nPoint);
+  VectorXd::Map(&kGrid[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].grid.k;
+  VectorXd::Map(&eGrid[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].grid.E;
+  VectorXd::Map(&psiKReal[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getKReal();
+  VectorXd::Map(&psiKImag[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getKImag();
+  Out << "k" << "," << "E" << "," << "RePsiKi" << "," << "ImPsiKi" << "," << "RePsiKf" << "," << "ImPsiKf" << "\n";
+  for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
+    Out << kGrid[j] << "," << eGrid[j] << "," << initPsiK[j].real() << "," << initPsiK[j].imag() << "," << psiKReal[j] << "," << psiKImag[j] << "\n";
+  }
 
-  // Push it out
-  for (const auto &e : energies) Es << e << "\n";
-  for (const auto &e : transmissions) Ts << e << "\n";
-  for (const auto &e : reflections) Rs << e << "\n";
-  for (const auto &e : norms) Ns << e << "\n";
-
-  return 0;
 }

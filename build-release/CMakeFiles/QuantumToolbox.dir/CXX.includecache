@@ -15,6 +15,8 @@ cmath
 -
 cstdlib
 -
+stdio.h
+-
 cstdio
 -
 cmath
@@ -28,6 +30,8 @@ numeric
 functional
 -
 algorithm
+-
+boost/progress.hpp
 -
 eigen/Eigen/Dense
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/Dense
@@ -1713,6 +1717,8 @@ cmath
 -
 omp.h
 /home/exg103/Documents/Honours/CPP/CPP Code/omp.h
+string
+-
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
 Wavefunction.h

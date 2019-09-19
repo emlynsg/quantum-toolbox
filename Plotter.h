@@ -34,8 +34,8 @@ class Plotter {
   /// TODO: Figure out best way to do this
   void plot();
   void plotPsi();
-  void animate(int nSteps, double stepSize, int evolveOrder, int updateRate);
-  void animateCC(int nSteps, int updateRate);
+  void animate(int nSteps, double stepSize, int evolveOrder, int updateRate, bool logY);
+  void animateCC(int nSteps, int updateRate, bool logY, bool k);
   void animatePsi(int nSteps, double stepSize, int evolveOrder);
   void setPlotStyle(Gnuplot &g, int stylenum=0);
 };

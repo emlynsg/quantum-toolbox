@@ -2,6 +2,7 @@
 #include "eigen/unsupported/Eigen/FFT"
 #define EIGEN_FFTW_DEFAULT
 
+
 System::System(Wavefunction wf, Potential pot) {
   matrixContraction = { Eigen::IndexPair<int>(1, 0) };
   rows = {0};
@@ -179,8 +180,10 @@ void System::evolveCCStep(){
 }
 
 void System::evolveCC(int nSteps) {
+  boost::progress_display show_progress(nSteps);
   for (int j = 0; j < nSteps; ++j) {
     evolveCCStep();
+    ++show_progress;
   }
 }
 
@@ -189,6 +192,7 @@ void System::updateFromCC(){
     Eigen::Tensor<cd, 1> psiTensorChip = psiTensor.chip(k,0);
     cdVector psi = Tensor_to_Vector(psiTensorChip, wavefunctions[0].grid.nPoint);
     wavefunctions[k].psi = psi.array();
+    wavefunctions[k].computePsiK();
   }
 }
 
