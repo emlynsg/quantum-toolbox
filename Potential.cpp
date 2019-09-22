@@ -14,7 +14,7 @@ Potential::Potential(const Grid &object) : grid(1, 0.0, 1.0, 1.0) {
 }
 
 Potential::~Potential() {
-  std::cout << "Potential deleted" << std::endl;
+//  std::cout << "Potential deleted" << std::endl;
 }
 
 void Potential::test() {

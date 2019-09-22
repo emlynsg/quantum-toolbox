@@ -43,6 +43,7 @@ class System {
   Eigen::array<int, 1> columns;
   unsigned int nChannel;
   double timeStep;
+  double threshold;
 
 
   /// Functions ///
@@ -58,6 +59,7 @@ class System {
   void evolveCCStep();
   void evolveCC(int nSteps);
   void updateFromCC();
+  void updateK();
   void log(double time);
   double energy(int index);
   double hamiltonianElement(int indexI, int indexJ);

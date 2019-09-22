@@ -6,15 +6,24 @@
 #define EIGEN_FFTW_DEFAULT
 #include "Wavefunction.h"
 
+Wavefunction::Wavefunction(const Grid &object, const double &ReducedMass, const double &Epsilon) : grid(1, 0.0, 1.0, 1.0) {
+  grid = object;
+  reducedMass = ReducedMass * AMU;
+  psiK.resize(grid.nPoint, Eigen::NoChange);
+  psi.resize(grid.nPoint, Eigen::NoChange);
+  epsilon = Epsilon;
+}
+
 Wavefunction::Wavefunction(const Grid &object, const double &ReducedMass) : grid(1, 0.0, 1.0, 1.0) {
   grid = object;
   reducedMass = ReducedMass * AMU;
   psiK.resize(grid.nPoint, Eigen::NoChange);
   psi.resize(grid.nPoint, Eigen::NoChange);
+  epsilon = 0.0;
 }
 
 Wavefunction::~Wavefunction() {
-  std::cout << "Wavefunction deleted" << std::endl;
+//  std::cout << "Wavefunction deleted" << std::endl;
 }
 
 void Wavefunction::test() {

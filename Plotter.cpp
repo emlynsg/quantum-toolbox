@@ -120,7 +120,7 @@ void Plotter::animate(int nSteps, double stepSize, int evolveOrder, int updateRa
   }
 }
 
-void Plotter::animateCC(int nSteps, int updateRate, bool logY = false, bool k = false){
+void Plotter::animateCC(int nSteps, int updateRate, bool logY = false, bool k = false, bool cc = false){
   Gnuplot gp;
   gp << "set xlabel 'x'\n";
   gp << "set key top right\n";
@@ -164,6 +164,43 @@ void Plotter::animateCC(int nSteps, int updateRate, bool logY = false, bool k = 
         VectorXd::Map(&psiAbs[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getAbs();
         gp << "plot '-' with lines title 'Norm'\n";
         gp.send(boost::make_tuple(xGrid, psiAbs));
+        gp.flush();
+      }
+    }
+    system.updateFromCC();
+  }
+  else if (cc){
+    gp << "set yrange [-0.5:0.5]\n";
+    for (int j = 0; j < nSteps; ++j) {
+      system.evolveCCStep();
+      if (j % updateRate == 0){
+        system.log(j*system.timeStep);
+        gp << "set title 't="+tostring(j*system.timeStep)+"'\n";
+        std::vector<double> xGrid(system.wavefunctions[0].grid.nPoint);
+        std::vector<double> pot(system.wavefunctions[0].grid.nPoint);
+        std::vector<double> psiAbs(system.wavefunctions[0].grid.nPoint);
+        std::vector<double> psiReal(system.wavefunctions[0].grid.nPoint);
+        std::vector<double> psiImag(system.wavefunctions[0].grid.nPoint);
+        std::vector<double> psiAbs2(system.wavefunctions[0].grid.nPoint);
+        std::vector<double> psiReal2(system.wavefunctions[0].grid.nPoint);
+        std::vector<double> psiImag2(system.wavefunctions[0].grid.nPoint);
+        VectorXd::Map(&xGrid[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].grid.x;
+        VectorXd::Map(&psiAbs[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getAbs();
+        VectorXd::Map(&psiReal[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getReal();
+        VectorXd::Map(&psiImag[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getImag();
+        VectorXd::Map(&psiAbs2[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[1].getAbs();
+        VectorXd::Map(&psiReal2[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[1].getReal();
+        VectorXd::Map(&psiImag2[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[1].getImag();
+        VectorXd::Map(&pot[0], system.wavefunctions[0].grid.nPoint) = system.potentials[0].V.real().matrix().normalized().array();
+//        gp << "plot '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary', '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary'\n";
+        gp << "plot '-' with lines title 'Ground', '-' with lines title 'Excited', '-' with lines title 'Potential'\n";
+        gp.send(boost::make_tuple(xGrid, psiAbs));
+//        gp.send(boost::make_tuple(xGrid, psiReal));
+//        gp.send(boost::make_tuple(xGrid, psiImag));
+        gp.send(boost::make_tuple(xGrid, psiAbs2));
+//        gp.send(boost::make_tuple(xGrid, psiReal2));
+//        gp.send(boost::make_tuple(xGrid, psiImag2));
+        gp.send(boost::make_tuple(xGrid, pot));
         gp.flush();
       }
     }

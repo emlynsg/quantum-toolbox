@@ -4,5 +4,5 @@ set xlabel 'x (a.u.)'
 set key top right
 set yrange [-0.2:0.5]
 
-plot "<paste ErrorTest_x_dt_0.01_dx_0.01.txt ErrorTest_norm_dt_0.01_dx_0.01.txt" using ($1):($2) with lines title '$\left\|\psi(x)\right\|$', "<paste ErrorTest_x_dt_0.01_dx_0.01.txt ErrorTest_real_dt_0.01_dx_0.01.txt" using ($1):($2) with lines title '$\Re(\psi(x))$', "<paste ErrorTest_x_dt_0.01_dx_0.01.txt ErrorTest_imag_dt_0.01_dx_0.01.txt" using ($1):($2) with lines title '$\Im(\psi(x))$'
+plot "<paste cN_x_dt_1.000000dx_1.000000.txt cN_norm_dt_1.000000dx_1.000000.txt" using ($1):($2) with lines title 'dt 0.01 dx 0.01'
 

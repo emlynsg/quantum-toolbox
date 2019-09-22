@@ -29,6 +29,7 @@ class Wavefunction {
   /// Constants ///
   /// Parameters ///
   double reducedMass;
+  double epsilon;
   /// Objects ///
   Grid grid;
   /// Psi ///
@@ -36,6 +37,7 @@ class Wavefunction {
   cdArray psiK;
 
   /// Functions ///
+  Wavefunction(const Grid &object, const double &ReducedMass, const double &Epsilon);
   Wavefunction(const Grid &object, const double &ReducedMass);
   ~Wavefunction();
   void test();

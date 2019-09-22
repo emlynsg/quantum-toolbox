@@ -1,6 +1,6 @@
 //
 // Created by Emlyn Graham on 9/08/19.
-// Main tests all aspects of the Quantum Toolbox library
+// Test for the Quantum Toolbox library
 //
 #include <vector>
 #include <algorithm>
@@ -8,9 +8,6 @@
 #include <iterator>
 #include <vector>
 #include <fstream>
-#include <cmath>
-#include "omp.h"
-#include <string>
 
 #include "Grid.h"
 #include "Wavefunction.h"
@@ -18,11 +15,8 @@
 #include "System.h"
 #include "Plotter.h"
 
-//#define EIGEN_RUNTIME_NO_MALLOC
 using namespace Eigen;
 using namespace std;
-
-
 
 int main() {
   omp_set_num_threads(4);

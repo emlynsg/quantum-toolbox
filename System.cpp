@@ -10,6 +10,8 @@ System::System(Wavefunction wf, Potential pot) {
   addWavefunction(wf);
   addPotential(pot, 0, 0);
   timeStep = 0.0;
+  threshold = 1e-150;
+  nChannel = 1;
 }
 
 System::~System() {
@@ -26,6 +28,7 @@ void System::addWavefunction(Wavefunction &wf) {
   energies.push_back(doubleVec());
   norms.push_back(doubleVec());
   averages.push_back(doubleVec());
+  nChannel += 1;
 }
 
 void System::addPotential(Potential &pot, const int &j, const int &k) {
@@ -110,7 +113,21 @@ void System::initCC(double tStep) {
   for (int j = 0; j < wavefunctions[0].grid.nPoint; ++j){
     cdVectorTensor potChip = potentialTensor.chip(j,2);
     cdMatrix potMat = Tensor_to_Matrix(potChip, nChannel, nChannel);
+    for (int m = 0; m < nChannel; ++m) {
+      potMat(m,m) += wavefunctions[m].epsilon;
+    }
     ComplexEigenSolver<MatrixXcd> ces;
+    // Threshold values
+    for (int k = 0; k < nChannel; ++k) {
+      for (int l = 0; l < nChannel; ++l) {
+        if(potMat.real()(k,l) < threshold){
+          potMat.real()(k,l) = 0.0;
+        }
+        if(potMat.imag()(k,l) < threshold){
+          potMat.imag()(k,l) = 0.0;
+        }
+      }
+    }
     ces.compute(potMat);
     U.chip(j,2) = Matrix_to_Tensor(ces.eigenvectors(), nChannel, nChannel) ;// U
     D.chip(j,1) = Vector_to_Tensor(ces.eigenvalues(), nChannel) ;// D
@@ -193,6 +210,12 @@ void System::updateFromCC(){
     cdVector psi = Tensor_to_Vector(psiTensorChip, wavefunctions[0].grid.nPoint);
     wavefunctions[k].psi = psi.array();
     wavefunctions[k].computePsiK();
+  }
+}
+
+void System::updateK(){
+  for (int j = 0; j < nChannel; ++j) {
+    wavefunctions[j].computePsiK();
   }
 }
 
