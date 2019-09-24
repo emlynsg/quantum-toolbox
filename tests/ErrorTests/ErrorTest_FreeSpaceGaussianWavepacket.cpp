@@ -20,96 +20,58 @@ int main() {
 /// TODO: Fix System so you can add potentials and wavefunctions freely
 /// Currently need to add wavefunctions first
 
-  // Choose gridstep DeltaX and timestep DeltaT
-  std::vector<double> DeltaXs = {0.01, 0.1, 1.0};
-  std::vector<double> DeltaTs = {0.01, 0.1, 1.0};
+  // Test for machine error over time
+  double DeltaX = 1.0;
+  double DeltaT = 1.0;
+  unsigned int sizeN = 2*int(lround(1000.0/DeltaX));
+  double xmin = -1000.0;
+  double xmax = 1000.0;
+  double kscale = 1.0;
+  Grid grid(sizeN, xmin, xmax, kscale);
+  double ReducedMass = 1.0;
+  Wavefunction wavefunction(grid, ReducedMass);
+  wavefunction.initGaussian(0.0, 20.0);
+  Potential potential(grid);
+  potential.initZero();
 
-#pragma omp parallel for
-  for (int k = 0; k < DeltaXs.size(); ++k){
-    double DeltaX = DeltaXs[k];
-#pragma omp parallel for
-    for (int l = 0; l < DeltaTs.size(); ++l) {
-      double DeltaT = DeltaTs[l];
-      unsigned int sizeN = 2*int(lround(100.0/DeltaX));
-      double xmin = -100.0;
-      double xmax = 100.0;
-      double kscale = 1.0;
-      Grid grid(sizeN, xmin, xmax, kscale);
-      double ReducedMass = 1.0;
-      Wavefunction wavefunction(grid, ReducedMass);
-      wavefunction.initGaussian(0.0, 5.0);
-      Potential potential(grid);
-      potential.initZero();
-      System system(wavefunction, potential);
-      // CC Evolution
-      system.initCC(DeltaT);
-      system.evolveCC(int(lround(1000/DeltaT)));
-      system.updateFromCC();
+  // Save initial wavefunction
+  dArray initPsi = wavefunction.psi.abs();
 
-      // Output
-      std::ofstream Xs("ErrorTest2_x_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
-      std::ofstream Norms("ErrorTest2_norm_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
-      std::ofstream Reals("ErrorTest2_real_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
-      std::ofstream Imags("ErrorTest2_imag_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
+  System system(wavefunction, potential);
+  // CC Evolution
+  system.initCC(DeltaT);
+  system.evolveCCStep();
+  system.updateFromCC();
 
-      std::vector<double> psiAbs(system.wavefunctions[0].grid.nPoint);
-      std::vector<double> psiReal(system.wavefunctions[0].grid.nPoint);
-      std::vector<double> psiImag(system.wavefunctions[0].grid.nPoint);
-      VectorXd::Map(&psiAbs[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getAbs();
-      VectorXd::Map(&psiReal[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getReal();
-      VectorXd::Map(&psiImag[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getImag();
-      // Push it out
-      for (int j = 0; j < system.wavefunctions[0].grid.nPoint; ++j) {
-        Xs << system.wavefunctions[0].grid.x(j) << "\n";
-        Norms << psiAbs[j] << "\n";
-        Reals << psiReal[j] << "\n";
-        Imags << psiImag[j] << "\n";
-      }
-    }
+  // Save 1-step wavefunction
+  dArray Onestep = system.wavefunctions[0].psi.abs();
+
+  system.evolveCC(int(10000/DeltaT));
+  system.updateFromCC();
+
+  // Save 1-step wavefunction
+  dArray finalPsi = system.wavefunctions[0].psi.abs();
+
+
+  std::ofstream init("BasicError_InitWF.csv");
+  std::ofstream onestep("BasicError_OneStepWF.csv");
+  std::ofstream final("BasicError_FinalWF.csv");
+
+
+  init << "x" << "," << "AbsPsi" << "\n";
+  for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
+    init << system.wavefunctions[0].grid.x(j) << "," << initPsi(j) << "\n";
   }
 
-#pragma omp parallel for
-  for (int k = 0; k < DeltaXs.size(); ++k){
-    double DeltaX = DeltaXs[k];
-#pragma omp parallel for
-    for (int l = 0; l < DeltaTs.size(); ++l) {
-      double DeltaT = DeltaTs[l];
-      unsigned int sizeN = 2*int(lround(100.0/DeltaX));
-      double xmin = -100.0;
-      double xmax = 100.0;
-      double kscale = 1.0;
-      Grid grid(sizeN, xmin, xmax, kscale);
-      double ReducedMass = 1.0;
-      Wavefunction wavefunction(grid, ReducedMass);
-      wavefunction.initGaussian(0.0, 5.0);
-      Potential potential(grid);
-      potential.initZero();
-      System system(wavefunction, potential);
-      // CC Evolution
-      system.initCC(DeltaT);
-      system.evolveCC(100000);
-      system.updateFromCC();
+  onestep << "x" << "," << "AbsPsi" << "\n";
+  for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
+    onestep << system.wavefunctions[0].grid.x(j) << "," << initPsi(j) << "\n";
+  }
 
-      // Output
-      std::ofstream Xs("ErrorTest_x_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
-      std::ofstream Norms("ErrorTest_norm_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
-      std::ofstream Reals("ErrorTest_real_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
-      std::ofstream Imags("ErrorTest_imag_dt_"+to_string(DeltaT)+"dx_"+to_string(DeltaX)+".txt");
-
-      std::vector<double> psiAbs(system.wavefunctions[0].grid.nPoint);
-      std::vector<double> psiReal(system.wavefunctions[0].grid.nPoint);
-      std::vector<double> psiImag(system.wavefunctions[0].grid.nPoint);
-      VectorXd::Map(&psiAbs[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getAbs();
-      VectorXd::Map(&psiReal[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getReal();
-      VectorXd::Map(&psiImag[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[0].getImag();
-      // Push it out
-      for (int j = 0; j < system.wavefunctions[0].grid.nPoint; ++j) {
-        Xs << system.wavefunctions[0].grid.x(j) << "\n";
-        Norms << psiAbs[j] << "\n";
-        Reals << psiReal[j] << "\n";
-        Imags << psiImag[j] << "\n";
-      }
-    }
+  final << "x" << "," << "AbsPsi" << "\n";
+  for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
+    final << system.wavefunctions[0].grid.x(j) << "," << initPsi(j) << "\n";
   }
 }
+
 

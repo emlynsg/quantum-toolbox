@@ -69,5 +69,4 @@ int main() {
   for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
     Out << kGrid[j] << "," << eGrid[j] << "," << initPsiK[j].real() << "," << initPsiK[j].imag() << "," << psiKReal[j] << "," << psiKImag[j] << "\n";
   }
-
 }

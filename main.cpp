@@ -22,8 +22,6 @@
 using namespace Eigen;
 using namespace std;
 
-
-
 int main() {
   omp_set_num_threads(4);
   Eigen::setNbThreads(4);
@@ -31,72 +29,57 @@ int main() {
 /// TODO: Fix System so you can add potentials and wavefunctions freely
 /// Currently need to add wavefunctions first
 
-  // First case in Dasso et al. 1983 'Channel coupling effects in heavy ion fusion reactions'
-
-  string name = "DassoFig2";
-
-  int time = 2100;
-//  double timestep = 0.1;
-  double timestep = 0.01;
-
-  std::vector<double> Fs = {0.0, 2.0};
-
-//  unsigned int sizeN = 1023;
-  unsigned int sizeN = 16383;
-  double xmin = -400.0;
-  double xmax = 400.0;
+  // Test for machine error over time
+  double DeltaX = 0.1;
+  double DeltaT = 0.1;
+  unsigned int sizeN = 2*int(lround(1000.0/DeltaX));
+  double xmin = -1000.0;
+  double xmax = 1000.0;
   double kscale = 1.0;
   Grid grid(sizeN, xmin, xmax, kscale);
-  for (int j = 0; j < Fs.size(); ++j) {
-    std::vector<cd> initPsiK;
-    double mu = 1.0;
-    double V1 = 10.0;
-    double V2 = 10.0;
-    double sigma1 = 6.0;
-    double sigma2 = 6.0;
-    double F = Fs[j]; // coupling potential amplitude
-    std::ofstream Out("DassoFig2"+tostring(int(F))+".csv");
+  double ReducedMass = 1.0;
+  Wavefunction wavefunction(grid, ReducedMass);
+  wavefunction.initGaussian(0.0, 20.0);
+  Potential potential(grid);
+  potential.initZero();
 
-    Wavefunction ground(grid, mu);
+  // Save initial wavefunction
+  dArray initPsi = wavefunction.psi.abs();
 
-    ground.initGaussian(-100.0, 10.0);
-    ground.boostEnergy(V1);
-    Wavefunction excited(grid, mu);
-    excited.initZero();
+  System system(wavefunction, potential);
+  // CC Evolution
+  system.initCC(DeltaT);
+  system.evolveCCStep();
+  system.updateFromCC();
 
-    Potential U1(grid);
-    U1.initZero();
-    U1.addGaussian(0.0, V1, 6.0);
+  // Save 1-step wavefunction
+  dArray Onestep = system.wavefunctions[0].psi.abs();
 
-    Potential U2(grid);
-    U2.initZero();
-    U2.addGaussian(0.0, V2, 6.0);
+  system.evolveCC(int(10000/DeltaT));
+  system.updateFromCC();
 
-    Potential VC(grid);
-    VC.initZero();
-    VC.addGaussian(0.0, V2, 6.0);
+  // Save 1-step wavefunction
+  dArray finalPsi = system.wavefunctions[0].psi.abs();
 
-    System system(ground, U1);
-    system.addWavefunction(excited);
-    system.addPotential(VC, 0, 1);
-    system.addPotential(VC, 1, 0);
-    system.addPotential(U2, 1, 1);
 
-    system.updateK();
-    cdArray groundPsiK_init = system.wavefunctions[0].psiK;
-    cdArray excitedPsiK_init = system.wavefunctions[1].psiK;
+  std::ofstream init("BasicError_InitWF.csv");
+  std::ofstream onestep("BasicError_OneStepWF.csv");
+  std::ofstream final("BasicError_FinalWF.csv");
 
-    // CC Evolution
-    system.initCC(timestep);
-    Plotter plot(system);
-    system.evolveCC(int(time/timestep));
-    system.updateFromCC();
 
-    dArray T = (abs(system.wavefunctions[0].psiK)+abs(system.wavefunctions[1].psiK))/(abs(groundPsiK_init)+abs(excitedPsiK_init));
-
-    Out << "E" << "," << "T\n";
-    for (int j = ground.grid.nPoint/2 - 1; j < ground.grid.nPoint; ++j) {
-      Out << system.wavefunctions[0].grid.E(j) << "," << T(j) << "\n";
-    }
+  init << "x" << "," << "AbsPsi" << "\n";
+  for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
+    init << system.wavefunctions[0].grid.x(j) << "," << initPsi(j) << "\n";
   }
+
+  onestep << "x" << "," << "AbsPsi" << "\n";
+  for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
+    onestep << system.wavefunctions[0].grid.x(j) << "," << Onestep(j) << "\n";
+  }
+
+  final << "x" << "," << "AbsPsi" << "\n";
+  for (int j = 0; j < wavefunction.grid.nPoint; ++j) {
+    final << system.wavefunctions[0].grid.x(j) << "," << finalPsi(j) << "\n";
+  }
+
 }

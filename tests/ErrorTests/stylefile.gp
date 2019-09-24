@@ -1,5 +1,5 @@
-#set term svg enhanced size 647,400 dynamic
 set key top right box opaque
+set datafile separator ","
 
 # line styles
 set linetype 1 dt 1 lc rgb 'black' lw 2#
