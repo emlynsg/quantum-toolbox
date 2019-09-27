@@ -17,14 +17,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/System.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/System.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/BasicError_FinalWF.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/BasicError_InitWF.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/BasicError_OneStepWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
@@ -114,7 +113,7 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="42294" />
+          <entry key="cpp" value="43003" />
           <entry key="gp" value="340" />
           <entry key="h" value="4770" />
           <entry key="py" value="55" />
@@ -125,7 +124,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="653" />
           <entry key="Doxygen file" value="35" />
-          <entry key="ObjectiveC" value="47059" />
+          <entry key="ObjectiveC" value="47768" />
           <entry key="PLAIN_TEXT" value="919" />
           <entry key="Python" value="55" />
         </counts>
@@ -133,32 +132,33 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Build All (disassembly)" value="39" />
+          <entry key="CoupledWFcsv" value="1" />
           <entry key="FFT" value="5" />
           <entry key="INSTALL" value="2" />
-          <entry key="QuantumToolbox (disassembly)" value="70" />
+          <entry key="QuantumToolbox (disassembly)" value="74" />
           <entry key="SpeedUpCode" value="1" />
           <entry key="Tensor" value="6" />
           <entry key="cmake" value="2" />
           <entry key="complex" value="7" />
-          <entry key="cpp" value="132" />
-          <entry key="csv" value="23" />
+          <entry key="cpp" value="136" />
+          <entry key="csv" value="25" />
           <entry key="gnuplot" value="1" />
           <entry key="gp" value="2" />
-          <entry key="h" value="232" />
+          <entry key="h" value="233" />
           <entry key="pal" value="3" />
           <entry key="py" value="2" />
           <entry key="svg" value="2" />
           <entry key="tcc" value="7" />
-          <entry key="txt" value="24" />
+          <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CMakeLists.txt" value="19" />
-          <entry key="CSV" value="21" />
-          <entry key="Disassembly" value="109" />
-          <entry key="ObjectiveC" value="389" />
-          <entry key="PLAIN_TEXT" value="18" />
+          <entry key="CMakeLists.txt" value="20" />
+          <entry key="CSV" value="23" />
+          <entry key="Disassembly" value="113" />
+          <entry key="ObjectiveC" value="394" />
+          <entry key="PLAIN_TEXT" value="19" />
           <entry key="Python" value="2" />
           <entry key="SVG" value="2" />
         </counts>
@@ -175,8 +175,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+            <state relative-caret-position="389">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
               <folding>
                 <element signature="e#109#126#0" expanded="true" />
               </folding>
@@ -185,13 +185,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Potential.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/SquareBarrier.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="96" column="7" selection-start-line="96" selection-end-line="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/System.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+            <state relative-caret-position="167">
+              <caret line="116" column="46" selection-start-line="116" selection-start-column="46" selection-end-line="116" selection-end-column="46" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -293,7 +329,6 @@
         <option value="$PROJECT_DIR$/Grid.h" />
         <option value="$PROJECT_DIR$/Grid.cpp" />
         <option value="$PROJECT_DIR$/tests/GaussianBarrierWithAbsorbingPotential.cpp" />
-        <option value="$PROJECT_DIR$/tests/SquareBarrier.cpp" />
         <option value="$PROJECT_DIR$/qmtoybox tests/03_tunnelling.py" />
         <option value="$PROJECT_DIR$/moreland.pal" />
         <option value="$PROJECT_DIR$/qmtoybox tests/squarebarrier.py" />
@@ -311,7 +346,6 @@
         <option value="$PROJECT_DIR$/Plotter.h" />
         <option value="$PROJECT_DIR$/Plotter.cpp" />
         <option value="$PROJECT_DIR$/System.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tests/TransmissionTests/CoupledSquareBarrier_Transmissions.cpp" />
         <option value="$PROJECT_DIR$/Wavefunction.h" />
         <option value="$PROJECT_DIR$/Wavefunction.cpp" />
@@ -319,9 +353,11 @@
         <option value="$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp" />
         <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp" />
         <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" />
-        <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" />
         <option value="$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp" />
+        <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" />
         <option value="$PROJECT_DIR$/System.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/tests/SquareBarrier.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -332,7 +368,7 @@
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="false" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
-    <option name="y" value="-1084" />
+    <option name="y" value="-4" />
     <option name="width" value="1855" />
     <option name="height" value="1084" />
   </component>
@@ -358,25 +394,7 @@
             <path>
               <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="TransmissionTests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="TransmissionTests" type="462c0819:PsiDirectoryNode" />
-              <item name="Proper Transmission" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,9 +412,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/tests/CouplingTests" />
       <recent name="$PROJECT_DIR$/library/QuantumToolbox" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -446,12 +464,12 @@
       <workItem from="1567668497378" duration="14936000" />
       <workItem from="1568090046642" duration="64261000" />
       <workItem from="1568699318493" duration="45274000" />
-      <workItem from="1569046553999" duration="43426000" />
+      <workItem from="1569046553999" duration="53743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="466087000" />
+    <option name="totallyTimeSpent" value="476404000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,14 +552,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testsvg.svg" />
-    <entry file="file://$PROJECT_DIR$/Todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpeedUpCode">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -570,13 +580,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/SquareBarrier_Transmissions.cpp" />
-    <entry file="file://$PROJECT_DIR$/tests/SquareBarrier.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="23" column="47" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/moreland.pal">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -627,13 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/x86_64-linux-gnu/bits/string3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
@@ -694,13 +690,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Grid.h">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Potential.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -778,20 +767,6 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Grid.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-46">
@@ -799,27 +774,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="17" lean-forward="true" selection-end-line="157" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
           <caret line="69" column="82" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,10 +829,75 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3285">
+          <caret line="148" column="38" lean-forward="true" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/UncoupledWF.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="388">
+          <caret line="4097" lean-forward="true" selection-start-line="4097" selection-end-line="4097" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/bits/string3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="116" column="46" selection-start-line="116" selection-start-column="46" selection-end-line="116" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="96" column="7" selection-start-line="96" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/SquareBarrier.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/CoupledWFcsv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Potential.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+        <state relative-caret-position="389">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
           <folding>
             <element signature="e#109#126#0" expanded="true" />
           </folding>

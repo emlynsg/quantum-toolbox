@@ -41,121 +41,70 @@ double AnalyticTransmission(double RelativeE, double V0, double width, double ma
 int main() {
   omp_set_num_threads(4);
   Eigen::setNbThreads(4);
-  // Might want to even increase the number of points more for testing
+//  Eigen::internal::set_is_malloc_allowed(false);
+/// TODO: Fix System so you can add potentials and wavefunctions freely
+/// Currently need to add wavefunctions first
+  int time = 1000;
+  double timestep = 0.1;
+//  double timestep = 0.01;
 
-  // Testing DeltaX differences
-  std::vector<unsigned int> sizeNs = {1024, 2048, 4096, 8192, 16384};
-#pragma omp parallel for
-  for (int k = 0; k < sizeNs.size(); ++k) {
-    unsigned int sizeN = sizeNs[k] - 1;
-    std::ofstream Out("DeltaX_"+tostring(1200.0/sizeN)+".csv");
-    double en = 100.0;
-    int time = int(770*sqrt(100.0/en));
-    double timestep = 0.01;
-    double xmin = -600.0;
-    double xmax = 600.0;
-    double kscale = 1.0;
-    Grid grid(sizeN, xmin, xmax, kscale);
-    double ReducedMass = 1.0;
-    Wavefunction wavefunction(grid, ReducedMass);
-    wavefunction.initGaussian(-70.0, 2.5);
-    wavefunction.boostEnergy(en);
-    wavefunction.computePsiK();
+//  std::vector<double> Fs = {0.0, 2.0};
 
-    // Initial psiK
-    cdArray initPsiK = wavefunction.psiK;
+  unsigned int sizeN = 2047;
+//  unsigned int sizeN = 16383;
+  double xmin = -200.0;
+  double xmax = 200.0;
+  double kscale = 1.0;
+  Grid grid(sizeN, xmin, xmax, kscale);
+  std::vector<cd> initPsiK;
+  double mu = 1.0;
+  double V1 = 10.0;
+  double V2 = 10.0;
+  double sigma1 = 6.0;
+  double sigma2 = 6.0;
+  double F = 2.0; // coupling potential amplitude
+  std::ofstream Out("CoupledWF.csv");
 
-    Potential potential(grid);
-    potential.initZero();
-    potential.addConstant(en, -2.5, 2.5);
-    System system(wavefunction, potential);
-    // CC Evolution
-    system.initCC(timestep);
-//    system.evolveCC(int(time/timestep));
-//    system.updateFromCC();
-    Plotter plot(system);
-    plot.animateCC(int(time/timestep), 100, false, false, false);
-    // Output
-    Out << "E/V0" << "," << "AbsPsiKi" << "," << "AbsPsiKf" << "," << "T" << "," << "T_An" << "," << "Error" << "," << "RelError" << "\n";
-    dArray T = (abs2(system.wavefunctions[0].psiK))/(abs2(initPsiK));
-    for (int j = wavefunction.grid.nPoint/2 - 1; j < wavefunction.grid.nPoint; ++j) {
-      Out << system.wavefunctions[0].grid.E(j)/en << "," << initPsiK.abs()(j) << "," << system.wavefunctions[0].psiK.abs()(j) << "," << T(j) << "," << AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU)) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU))/AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "\n";
-    }
+  Wavefunction ground(grid, mu);
+
+  ground.initGaussian(-50.0, 10.0);
+  ground.boostEnergy(V1);
+  Wavefunction excited(grid, mu);
+  excited.initZero();
+
+  Potential U1(grid);
+  U1.initZero();
+  U1.addGaussian(0.0, V1, 6.0);
+
+  Potential U2(grid);
+  U2.initZero();
+  U2.addGaussian(0.0, V2, 6.0);
+
+  Potential VC(grid);
+  VC.initZero();
+  VC.addGaussian(0.0, V2, 6.0);
+
+  System system(ground, U1);
+  system.addWavefunction(excited);
+  system.addPotential(VC, 0, 1);
+  system.addPotential(VC, 1, 0);
+  system.addPotential(U2, 1, 1);
+
+  system.updateK();
+  dArray groundPsiK_init = system.wavefunctions[0].psiK.abs();
+  dArray excitedPsiK_init = system.wavefunctions[1].psiK.abs();
+
+  // CC Evolution
+  system.initCC(timestep);
+  system.evolveCC(int(time/timestep));
+  system.updateFromCC();
+//
+//  Plotter plot(system);
+//  plot.animateCC(int(time/timestep), 100, false, false, true);
+  Out << "x" << "," << "InitGround" << "," << "InitExcited" << "," << "FinalGround" << "," << "FinalExcited\n";
+  for (int j = 0; j < grid.nPoint; ++j) {
+    Out << grid.x(j) << "," << groundPsiK_init(j) << "," << excitedPsiK_init(j) << "," << system.wavefunctions[0].psi.abs()(j) << "," << system.wavefunctions[1].psi.abs()(j) << "\n";
   }
 
-  // Testing DeltaT differences
-  std::vector<double> DeltaTs = {0.01, 0.1, 1.0, 10.0};
-#pragma omp parallel for
-  for (int k = 0; k < DeltaTs.size(); ++k) {
-    double timestep = DeltaTs[k];
-    std::ofstream Out("DeltaT_"+tostring(timestep)+".csv");
-    double en = 100.0;
-    int time = int(770*sqrt(100.0/en));
-    unsigned int sizeN = 16384; // Fix detail in x
-    double xmin = -600.0;
-    double xmax = 600.0;
-    double kscale = 1.0;
-    Grid grid(sizeN, xmin, xmax, kscale);
-    double ReducedMass = 1.0;
-    Wavefunction wavefunction(grid, ReducedMass);
-    wavefunction.initGaussian(-70.0, 2.5);
-    wavefunction.boostEnergy(en);
-    wavefunction.computePsiK();
 
-    // Initial psiK
-    cdArray initPsiK = wavefunction.psiK;
-
-    Potential potential(grid);
-    potential.initZero();
-    potential.addConstant(en, -2.5, 2.5);
-    System system(wavefunction, potential);
-    // CC Evolution
-    system.initCC(timestep);
-    system.evolveCC(int(time/timestep));
-    system.updateFromCC();
-    // Output
-    Out << "E/V0" << "," << "AbsPsiKi" << "," << "AbsPsiKf" << "," << "T" << "," << "T_An" << "," << "Error" << "," << "RelError" << "\n";
-    dArray T = (abs2(system.wavefunctions[0].psiK))/(abs2(initPsiK));
-    for (int j = wavefunction.grid.nPoint/2 - 1; j < wavefunction.grid.nPoint; ++j) {
-      Out << system.wavefunctions[0].grid.E(j)/en << "," << initPsiK.abs()(j) << "," << system.wavefunctions[0].psiK.abs()(j) << "," << T(j) << "," << AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU)) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU))/AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "\n";
-    }
-  }
-
-  // Testing total time differences
-  std::vector<double> energies = {40.0, 60.0, 80.0, 100.0, 120.0};
-#pragma omp parallel for
-  for (int k = 0; k < energies.size(); ++k) {
-    double en = energies[k];
-    int time = int(770*sqrt(100.0/en));
-    std::ofstream Out("TotalT_"+tostring(time)+".csv");
-    double timestep = 0.01;
-    unsigned int sizeN = 16384;
-    double xmin = -600.0;
-    double xmax = 600.0;
-    double kscale = 1.0;
-    Grid grid(sizeN, xmin, xmax, kscale);
-    double ReducedMass = 1.0;
-    Wavefunction wavefunction(grid, ReducedMass);
-    wavefunction.initGaussian(-30.0, 2.5);
-    wavefunction.boostEnergy(en);
-    wavefunction.computePsiK();
-
-    // Initial psiK
-    cdArray initPsiK = wavefunction.psiK;
-
-    Potential potential(grid);
-    potential.initZero();
-    potential.addConstant(en, -2.5, 2.5);
-    System system(wavefunction, potential);
-    // CC Evolution
-    system.initCC(timestep);
-    system.evolveCC(int(time/timestep));
-    system.updateFromCC();
-    // Output
-    Out << "E/V0" << "," << "AbsPsiKi" << "," << "AbsPsiKf" << "," << "T" << "," << "T_An" << "," << "Error" << "," << "RelError" << "\n";
-    dArray T = (abs2(system.wavefunctions[0].psiK))/(abs2(initPsiK));
-    for (int j = wavefunction.grid.nPoint/2 - 1; j < wavefunction.grid.nPoint; ++j) {
-      Out << system.wavefunctions[0].grid.E(j)/en << "," << initPsiK.abs()(j) << "," << system.wavefunctions[0].psiK.abs()(j) << "," << T(j) << "," << AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU)) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU))/AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "\n";
-    }
-  }
 }
