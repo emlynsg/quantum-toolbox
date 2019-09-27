@@ -1,6 +1,6 @@
 //
 // Created by Emlyn Graham on 9/08/19.
-// Test for the Quantum Toolbox library
+// Main tests all aspects of the Quantum Toolbox library
 //
 #include <vector>
 #include <algorithm>
@@ -8,6 +8,9 @@
 #include <iterator>
 #include <vector>
 #include <fstream>
+#include <cmath>
+#include "omp.h"
+#include <string>
 
 #include "Grid.h"
 #include "Wavefunction.h"
@@ -15,6 +18,7 @@
 #include "System.h"
 #include "Plotter.h"
 
+//#define EIGEN_RUNTIME_NO_MALLOC
 using namespace Eigen;
 using namespace std;
 
@@ -29,16 +33,16 @@ int main() {
 
   string name = "DassoFig2";
 
-  int time = 2100;
-//  double timestep = 0.1;
-  double timestep = 0.01;
+  int time = 2900;
+  double timestep = 0.1;
+//  double timestep = 0.01;
 
   std::vector<double> Fs = {0.0, 2.0};
 
-//  unsigned int sizeN = 1023;
-  unsigned int sizeN = 16383;
-  double xmin = -400.0;
-  double xmax = 400.0;
+  unsigned int sizeN = 2047;
+//  unsigned int sizeN = 16383;
+  double xmin = -800.0;
+  double xmax = 800.0;
   double kscale = 1.0;
   Grid grid(sizeN, xmin, xmax, kscale);
   for (int j = 0; j < Fs.size(); ++j) {
@@ -53,7 +57,7 @@ int main() {
 
     Wavefunction ground(grid, mu);
 
-    ground.initGaussian(-100.0, 10.0);
+    ground.initGaussian(-50.0, 5.0);
     ground.boostEnergy(V1);
     Wavefunction excited(grid, mu);
     excited.initZero();
@@ -77,20 +81,22 @@ int main() {
     system.addPotential(U2, 1, 1);
 
     system.updateK();
-    cdArray groundPsiK_init = system.wavefunctions[0].psiK;
-    cdArray excitedPsiK_init = system.wavefunctions[1].psiK;
+    dArray groundPsiK_init = system.wavefunctions[0].psiK.abs();
+    dArray excitedPsiK_init = system.wavefunctions[1].psiK.abs();
 
     // CC Evolution
     system.initCC(timestep);
-    Plotter plot(system);
     system.evolveCC(int(time/timestep));
     system.updateFromCC();
+//
+//    Plotter plot(system);
+//    plot.animateCC(int(time/timestep), 100, false, false, true);
 
-    dArray T = (abs(system.wavefunctions[0].psiK)+abs(system.wavefunctions[1].psiK))/(abs(groundPsiK_init)+abs(excitedPsiK_init));
+    dArray T = sqrt(((system.wavefunctions[0].psiK).abs2()+(system.wavefunctions[1].psiK).abs2())/((groundPsiK_init).abs2()+(excitedPsiK_init).abs2()));
 
-    Out << "E" << "," << "T\n";
-    for (int j = ground.grid.nPoint/2 - 1; j < ground.grid.nPoint; ++j) {
-      Out << system.wavefunctions[0].grid.E(j) << "," << T(j) << "\n";
+    Out << "E" << "," << "InitGround" << "," << "InitExcited" << "," << "FinalGround" << "," << "FinalExcited" << "," << "T\n";
+    for (int j = ground.grid.nPoint/2; j < ground.grid.nPoint; ++j) {
+      Out << system.wavefunctions[0].grid.E(j) << "," << groundPsiK_init(j) << "," << excitedPsiK_init(j) << "," << abs(system.wavefunctions[0].psiK)(j) << "," << abs(system.wavefunctions[1].psiK)(j) << "," <<  T(j) << "\n";
     }
   }
 }

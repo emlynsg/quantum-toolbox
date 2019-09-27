@@ -17,95 +17,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/System.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/System.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/BasicError_FinalWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/BasicError_InitWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/BasicError_OneStepWF.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CouplingTests/DassoFig20.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_imag_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_norm_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_real_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cN_x_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_imag_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_norm_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_real_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_0.010000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_0.010000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_0.010000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_0.100000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_0.100000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_0.100000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_1.000000dx_0.010000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_1.000000dx_0.100000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/cT_x_dt_1.000000dx_1.000000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/errortest_constT_or_constN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/logplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/plot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/stylefile.gp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ErrorTests/stylefile.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/wavepacket_log.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
@@ -195,7 +114,7 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="41751" />
+          <entry key="cpp" value="42294" />
           <entry key="gp" value="340" />
           <entry key="h" value="4770" />
           <entry key="py" value="55" />
@@ -206,7 +125,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="653" />
           <entry key="Doxygen file" value="35" />
-          <entry key="ObjectiveC" value="46516" />
+          <entry key="ObjectiveC" value="47059" />
           <entry key="PLAIN_TEXT" value="919" />
           <entry key="Python" value="55" />
         </counts>
@@ -221,8 +140,8 @@
           <entry key="Tensor" value="6" />
           <entry key="cmake" value="2" />
           <entry key="complex" value="7" />
-          <entry key="cpp" value="125" />
-          <entry key="csv" value="12" />
+          <entry key="cpp" value="132" />
+          <entry key="csv" value="23" />
           <entry key="gnuplot" value="1" />
           <entry key="gp" value="2" />
           <entry key="h" value="232" />
@@ -236,9 +155,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="19" />
-          <entry key="CSV" value="10" />
+          <entry key="CSV" value="21" />
           <entry key="Disassembly" value="109" />
-          <entry key="ObjectiveC" value="382" />
+          <entry key="ObjectiveC" value="389" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="2" />
           <entry key="SVG" value="2" />
@@ -253,50 +172,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+            <state relative-caret-position="228">
+              <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
               <folding>
-                <element signature="e#102#119#0" expanded="true" />
+                <element signature="e#109#126#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp">
+        <entry file="file://$PROJECT_DIR$/System.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-177">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="116" column="23" selection-start-line="116" selection-end-line="117" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="216">
+              <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -419,13 +314,14 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/tests/TransmissionTests/CoupledSquareBarrier_Transmissions.cpp" />
         <option value="$PROJECT_DIR$/Wavefunction.h" />
-        <option value="$PROJECT_DIR$/System.cpp" />
         <option value="$PROJECT_DIR$/Wavefunction.cpp" />
         <option value="$PROJECT_DIR$/Potential.cpp" />
         <option value="$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp" />
-        <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" />
         <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp" />
         <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" />
+        <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" />
+        <option value="$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp" />
+        <option value="$PROJECT_DIR$/System.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -436,8 +332,8 @@
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="false" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="928" />
+    <option name="y" value="-1084" />
+    <option name="width" value="1855" />
     <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -457,23 +353,30 @@
             <path>
               <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
-              <item name="build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
               <item name="build-release" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="ErrorTests" type="462c0819:PsiDirectoryNode" />
+              <item name="TransmissionTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="TransmissionTests" type="462c0819:PsiDirectoryNode" />
+              <item name="Proper Transmission" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -543,12 +446,12 @@
       <workItem from="1567668497378" duration="14936000" />
       <workItem from="1568090046642" duration="64261000" />
       <workItem from="1568699318493" duration="45274000" />
-      <workItem from="1569046553999" duration="24003000" />
+      <workItem from="1569046553999" duration="43426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446664000" />
+    <option name="totallyTimeSpent" value="466087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -560,10 +463,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16030957" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25760087" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -631,32 +534,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/GaussianBarrierWithAbsorbingPotential.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/qmtoybox tests/03_tunnelling.py" />
-    <entry file="file://$PROJECT_DIR$/qmtoybox tests/squarebarrier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CoupledSquareBarrier.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/SQ_E.txt" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/SQ_Norm.txt" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/SQ_T.txt" />
-    <entry file="file://$PROJECT_DIR$/tests/CoupledSquareBarrier_Transmissions.cpp" />
     <entry file="file://$PROJECT_DIR$/testsvg.svg" />
     <entry file="file://$PROJECT_DIR$/Todo.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -832,30 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Grid.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="206" column="13" selection-start-line="206" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/System.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -863,13 +716,6 @@
           <folding>
             <element signature="e#229#248#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -890,18 +736,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="116" column="23" selection-start-line="116" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-177">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/DeltaX_1.17302.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="294">
+          <caret line="508" column="61" lean-forward="true" selection-start-line="508" selection-start-column="61" selection-end-line="508" selection-end-column="61" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/DeltaX_0.29304.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="258">
+          <caret line="426" column="35" lean-forward="true" selection-start-line="426" selection-start-column="35" selection-end-line="426" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/TotalT_666.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-15840" />
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -911,20 +785,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/tests/CouplingTests/CoupledSquareBarrier_Transmissions.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="38" column="39" lean-forward="true" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+        <state relative-caret-position="165">
+          <caret line="88" column="40" lean-forward="true" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grid.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="17" lean-forward="true" selection-end-line="157" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="69" column="82" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
-            <element signature="e#102#119#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp">
+    <entry file="file://$PROJECT_DIR$/build-release/DeltaX_0.146502.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="294">
+          <caret line="410" column="65" lean-forward="true" selection-start-line="410" selection-start-column="65" selection-end-line="410" selection-end-column="65" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/DeltaT_0.01.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="1362">
+          <caret line="416" column="37" lean-forward="true" selection-start-line="416" selection-start-column="37" selection-end-line="416" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/TotalT_1217.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="168">
+          <caret line="265" column="64" selection-start-line="265" selection-start-column="64" selection-end-line="265" selection-end-column="64" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/DeltaX_0.0732467.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-3792">
+          <caret line="308" column="77" lean-forward="true" selection-start-line="308" selection-start-column="77" selection-end-line="308" selection-end-column="77" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/DeltaT_10.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-10512" />
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+        <state relative-caret-position="228">
+          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding>
+            <element signature="e#109#126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
