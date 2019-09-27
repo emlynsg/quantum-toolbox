@@ -50,15 +50,16 @@ int main() {
     unsigned int sizeN = sizeNs[k] - 1;
     std::ofstream Out("DeltaX_"+tostring(1200.0/sizeN)+".csv");
     double en = 100.0;
-    int time = int(770*sqrt(100.0/en));
+    int time = int(880*sqrt(100.0/en));
     double timestep = 0.01;
+//    double timestep = 0.1;
     double xmin = -600.0;
     double xmax = 600.0;
     double kscale = 1.0;
     Grid grid(sizeN, xmin, xmax, kscale);
     double ReducedMass = 1.0;
     Wavefunction wavefunction(grid, ReducedMass);
-    wavefunction.initGaussian(-70.0, 2.5);
+    wavefunction.initGaussian(-70.0, 5.0);
     wavefunction.boostEnergy(en);
     wavefunction.computePsiK();
 
@@ -71,10 +72,10 @@ int main() {
     System system(wavefunction, potential);
     // CC Evolution
     system.initCC(timestep);
-//    system.evolveCC(int(time/timestep));
-//    system.updateFromCC();
-    Plotter plot(system);
-    plot.animateCC(int(time/timestep), 100, false, false, false);
+    system.evolveCC(int(time/timestep));
+    system.updateFromCC();
+//    Plotter plot(system);
+//    plot.animateCC(int(time/timestep), 100, false, false, false);
     // Output
     Out << "E/V0" << "," << "AbsPsiKi" << "," << "AbsPsiKf" << "," << "T" << "," << "T_An" << "," << "Error" << "," << "RelError" << "\n";
     dArray T = (abs2(system.wavefunctions[0].psiK))/(abs2(initPsiK));
@@ -90,7 +91,7 @@ int main() {
     double timestep = DeltaTs[k];
     std::ofstream Out("DeltaT_"+tostring(timestep)+".csv");
     double en = 100.0;
-    int time = int(770*sqrt(100.0/en));
+    int time = int(880*sqrt(100.0/en));
     unsigned int sizeN = 16384; // Fix detail in x
     double xmin = -600.0;
     double xmax = 600.0;
@@ -98,7 +99,7 @@ int main() {
     Grid grid(sizeN, xmin, xmax, kscale);
     double ReducedMass = 1.0;
     Wavefunction wavefunction(grid, ReducedMass);
-    wavefunction.initGaussian(-70.0, 2.5);
+    wavefunction.initGaussian(-70.0, 5.0);
     wavefunction.boostEnergy(en);
     wavefunction.computePsiK();
 
@@ -126,7 +127,7 @@ int main() {
 #pragma omp parallel for
   for (int k = 0; k < energies.size(); ++k) {
     double en = energies[k];
-    int time = int(770*sqrt(100.0/en));
+    int time = int(880*sqrt(100.0/en));
     std::ofstream Out("TotalT_"+tostring(time)+".csv");
     double timestep = 0.01;
     unsigned int sizeN = 16384;
@@ -136,7 +137,7 @@ int main() {
     Grid grid(sizeN, xmin, xmax, kscale);
     double ReducedMass = 1.0;
     Wavefunction wavefunction(grid, ReducedMass);
-    wavefunction.initGaussian(-30.0, 2.5);
+    wavefunction.initGaussian(-70.0, 5.0);
     wavefunction.boostEnergy(en);
     wavefunction.computePsiK();
 
@@ -154,7 +155,7 @@ int main() {
     // Output
     Out << "E/V0" << "," << "AbsPsiKi" << "," << "AbsPsiKf" << "," << "T" << "," << "T_An" << "," << "Error" << "," << "RelError" << "\n";
     dArray T = (abs2(system.wavefunctions[0].psiK))/(abs2(initPsiK));
-    for (int j = wavefunction.grid.nPoint/2 - 1; j < wavefunction.grid.nPoint; ++j) {
+    for (int j = wavefunction.grid.nPoint/2 + 1; j < wavefunction.grid.nPoint; ++j) {
       Out << system.wavefunctions[0].grid.E(j)/en << "," << initPsiK.abs()(j) << "," << system.wavefunctions[0].psiK.abs()(j) << "," << T(j) << "," << AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU)) << "," << abs(T(j) - AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU))/AnalyticTransmission(system.wavefunctions[0].grid.E(j)/en, en, 5.0, ReducedMass*AMU) << "\n";
     }
   }

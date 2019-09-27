@@ -3,8 +3,8 @@
 // System class for performing system evolution.
 //
 
-//#include "eigen/unsupported/Eigen/CXX11/Tensor"
 #include "eigen/unsupported/Eigen/CXX11/Tensor"
+#include "mlinterp/mlinterp.hpp"
 
 #ifndef SYSTEM_H
 #define SYSTEM_H
@@ -43,7 +43,9 @@ class System {
   Eigen::array<int, 1> columns;
   unsigned int nChannel;
   double timeStep;
-  double threshold;
+  double threshold; // Sets values below this to zero. For stability of diagonalisation routine.
+  /// Transmission Objects ///
+  std::vector<dArray> initialPsiKs;
 
 
   /// Functions ///
@@ -63,6 +65,7 @@ class System {
   void log(double time);
   double energy(int index);
   double hamiltonianElement(int indexI, int indexJ);
+  dArray getTransmission();
 };
 
 #endif //SYSTEM_H

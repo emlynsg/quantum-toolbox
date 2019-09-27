@@ -1,5 +1,6 @@
 set key top right box opaque
 set datafile separator ","
+set key autotitle columnhead
 
 # line styles
 set linetype 1 dt 1 lc rgb 'black' lw 2#

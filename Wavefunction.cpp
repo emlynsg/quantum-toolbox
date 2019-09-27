@@ -20,6 +20,7 @@ Wavefunction::Wavefunction(const Grid &object, const double &ReducedMass) : grid
   psiK.resize(grid.nPoint, Eigen::NoChange);
   psi.resize(grid.nPoint, Eigen::NoChange);
   epsilon = 0.0;
+  E = ((HBARC*grid.k).abs2())/(2.0*reducedMass);
 }
 
 Wavefunction::~Wavefunction() {
