@@ -33,31 +33,32 @@ int main() {
 
   string name = "DassoFig8";
 
-  int time = 29000;
-  double timestep = 1.0;
+  int time = 2900;
+  double timestep = 0.1;
 //  double timestep = 0.01;
 
-  std::vector<double> Qs = {0.0, 2.0, -2.0};
+  std::vector<double> Qs = {-2.0, 0.0, 2.0};
 
   unsigned int sizeN = 2047;
 //  unsigned int sizeN = 16383;
-  double xmin = -400.0;
-  double xmax = 400.0;
+  double xmin = -800.0;
+  double xmax = 800.0;
   double kscale = 1.0;
   Grid grid(sizeN, xmin, xmax, kscale);
-  for (auto Q: Qs) {
-    double mu = 1.0;
+  for (int j = 0; j < Qs.size(); ++j) {
+    double mu = 29.0;
     double V1 = 100.0;
     double V2 = 100.0;
     double sigma1 = 3.0;
     double sigma2 = 3.0;
     double sigmaF = 3.0;
     double F = 2.0; // coupling potential amplitude
+    double Q = Qs[j]; // Q-value
     std::ofstream Out("DassoFig8"+tostring(int(Q))+".csv");
 
     Wavefunction ground(grid, mu);
 
-    ground.initGaussian(-150.0, 10.0);
+    ground.initGaussian(-50.0, 5.0);
     ground.boostEnergy(V1);
     Wavefunction excited(grid, mu, Q);
     excited.initZero();

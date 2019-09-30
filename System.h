@@ -4,7 +4,6 @@
 //
 
 #include "eigen/unsupported/Eigen/CXX11/Tensor"
-#include "mlinterp/mlinterp.hpp"
 
 #ifndef SYSTEM_H
 #define SYSTEM_H
@@ -45,7 +44,7 @@ class System {
   double timeStep;
   double threshold; // Sets values below this to zero. For stability of diagonalisation routine.
   /// Transmission Objects ///
-  std::vector<dArray> initialPsiKs;
+  std::vector<cdArray> initialPsiKs;
 
 
   /// Functions ///

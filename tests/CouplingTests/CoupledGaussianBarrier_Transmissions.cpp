@@ -1,6 +1,6 @@
 //
-// Created by Emlyn Graham on 9/08/19.
-// Main tests all aspects of the Quantum Toolbox library
+// Created by Emlyn Graham on 22/09/19.
+// Tests error differences for various time and position steps
 //
 #include <vector>
 #include <algorithm>
@@ -34,13 +34,13 @@ int main() {
   string name = "DassoFig2";
 
   int time = 2900;
-  double timestep = 0.1;
-//  double timestep = 0.01;
+//  double timestep = 0.1;
+  double timestep = 0.01;
 
   std::vector<double> Fs = {0.0, 2.0};
 
-  unsigned int sizeN = 2047;
-//  unsigned int sizeN = 16383;
+//  unsigned int sizeN = 2047;
+  unsigned int sizeN = 16383;
   double xmin = -800.0;
   double xmax = 800.0;
   double kscale = 1.0;
@@ -72,7 +72,7 @@ int main() {
 
     Potential VC(grid);
     VC.initZero();
-    VC.addGaussian(0.0, V2, 6.0);
+    VC.addGaussian(0.0, F, 6.0);
 
     System system(ground, U1);
     system.addWavefunction(excited);
@@ -92,11 +92,11 @@ int main() {
 //    Plotter plot(system);
 //    plot.animateCC(int(time/timestep), 100, false, false, true);
 
-    dArray T = sqrt(((system.wavefunctions[0].psiK).abs2()+(system.wavefunctions[1].psiK).abs2())/((groundPsiK_init).abs2()+(excitedPsiK_init).abs2()));
+    dArray T = ((system.wavefunctions[0].psiK).abs2()+(system.wavefunctions[1].psiK).abs2())/((groundPsiK_init).abs2()+(excitedPsiK_init).abs2());
 
     Out << "E" << "," << "InitGround" << "," << "InitExcited" << "," << "FinalGround" << "," << "FinalExcited" << "," << "T\n";
     for (int j = ground.grid.nPoint/2; j < ground.grid.nPoint; ++j) {
-      Out << system.wavefunctions[0].grid.E(j) << "," << groundPsiK_init(j) << "," << excitedPsiK_init(j) << "," << abs(system.wavefunctions[0].psiK)(j) << "," << abs(system.wavefunctions[1].psiK)(j) << "," <<  T(j) << "\n";
+      Out << system.wavefunctions[0].E(j) << "," << groundPsiK_init(j) << "," << excitedPsiK_init(j) << "," << abs(system.wavefunctions[0].psiK)(j) << "," << abs(system.wavefunctions[1].psiK)(j) << "," <<  T(j) << "\n";
     }
   }
 }

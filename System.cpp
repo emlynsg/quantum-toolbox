@@ -149,6 +149,11 @@ void System::initCC(double tStep) {
       potentialOperator.chip(k,0).chip(j,0) = (UexpD.chip(k,0)*Udagger.chip(j,1)).sum(rows);
     }
   }
+  // Save the initial wavefunctions for Transmission computations
+  for (auto wf: wavefunctions){
+    wf.computePsiK();
+    initialPsiKs.push_back(wf.psiK);
+  }
 }
 
 void System::evolveCCStep(){
@@ -268,37 +273,34 @@ double System::hamiltonianElement(int indexI, int indexJ){
 }
 
 dArray System::getTransmission(){
-  for (int j = 0; j < wavefunctions.size(); ++j) {
-    if (wavefunctions[j].epsilon != 0.0){
-      // Do the interpolation
-      // Boundaries of the interval [-pi, pi]
-      constexpr double b = 3.14159265358979323846, a = -b;
-
-      // Subdivide the interval [-pi, pi] using 15 evenly-spaced points and
-      // evaluate sin(x) at each of those points
-      constexpr int nxd = 15, nd[] = { nxd };
-      double xd[nxd];
-      double yd[nxd];
-      for(int n = 0; n < nxd; ++n) {
-        xd[n] = a + (b - a) / (nxd - 1) * n;
-        yd[n] = sin(xd[n]);
+  /// TODO: Consider using Splinter for interpolation (easy splines to sample, but requires compilation)
+  dArray T(int((wavefunctions[0].grid.nPoint+1)/2));
+  for (auto wf: wavefunctions){
+    if (wf.epsilon==0.0){
+      for (int m = int((wf.grid.nPoint+1)/2); m < wf.grid.nPoint; ++m) {
+        int Tindex = m-int((wf.grid.nPoint+1)/2);
+        T(Tindex) += wf.psiK.abs2()(m);
       }
-
-      // Subdivide the interval [-pi, pi] using 100 evenly-spaced points
-      // (these are the points at which we interpolate)
-      constexpr int ni = 100;
-      double xi[ni];
-      for(int n = 0; n < ni; ++n) {
-        xi[n] = a + (b - a) / (ni - 1) * n;
+    }
+    else {
+      for (int m = int((wf.grid.nPoint+1)/2); m < wf.grid.nPoint; ++m) {
+        int Tindex = m-int((wf.grid.nPoint+1)/2);
+        double E = wf.E(m);
+        if (E - wf.epsilon >= 0.0){
+          double kprime = sqrt(2*wf.reducedMass*(E-wf.epsilon))/HBARC;
+          std::vector<int> interpIndices(2);
+          for (int k = int((wf.grid.nPoint+1)/2); k < wf.grid.nPoint; ++k) {
+            if (wf.grid.k(k) > kprime-wf.grid.kStep and wf.grid.k(k) < kprime+wf.grid.kStep){
+              interpIndices.push_back(k);
+            }
+          }
+          if (interpIndices.size() == 2){
+            T(Tindex) += wf.psiK.abs2()(interpIndices[0]) + (kprime - wf.grid.k(interpIndices[0]))*(wf.psiK.abs2()(interpIndices[1])-wf.psiK.abs2()(interpIndices[0]))/wf.grid.kStep; // Add interpolated value
+          }
+        }
       }
-
-      // Perform the interpolation
-      double yi[ni]; // Result is stored in this buffer
-      mlinterp::interp(
-          nd, ni, // Number of points
-          yd, yi, // Output axis (y)
-          xd, xi  // Input axis (x)
-      );
     }
   }
+  T = T/initialPsiKs[0].abs2();
+  return T;
 }

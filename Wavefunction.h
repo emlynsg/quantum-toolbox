@@ -37,6 +37,7 @@ class Wavefunction {
   cdArray psiK;
   /// For non-unit mass ///
   dArray E;
+  double eStep;
 
   /// Functions ///
   Wavefunction(const Grid &object, const double &ReducedMass, const double &Epsilon);
