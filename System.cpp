@@ -15,7 +15,7 @@ System::System(Wavefunction wf, Potential pot) {
 }
 
 System::~System() {
-  std::cout << "System deleted" << std::endl;
+//  std::cout << "System deleted" << std::endl;
 }
 
 void System::test() {
@@ -202,6 +202,7 @@ void System::evolveCCStep(){
 }
 
 void System::evolveCC(int nSteps) {
+  cout << "Starting new system" << endl;
   boost::progress_display show_progress(nSteps);
   for (int j = 0; j < nSteps; ++j) {
     evolveCCStep();
@@ -274,29 +275,53 @@ double System::hamiltonianElement(int indexI, int indexJ){
 
 dArray System::getTransmission(){
   /// TODO: Consider using Splinter for interpolation (easy splines to sample, but requires compilation)
-  dArray T(int((wavefunctions[0].grid.nPoint+1)/2));
+  cout << "Start transmission calc" << endl;
+  dArray T;
+  T.setZero(wavefunctions[0].grid.nPoint);
   for (auto wf: wavefunctions){
     if (wf.epsilon==0.0){
-      for (int m = int((wf.grid.nPoint+1)/2); m < wf.grid.nPoint; ++m) {
-        int Tindex = m-int((wf.grid.nPoint+1)/2);
-        T(Tindex) += wf.psiK.abs2()(m);
+      cout << "Epsilon == 0" << endl;
+      for (int m = int(1+(wf.grid.nPoint)/2); m < wf.grid.nPoint; ++m) {
+        T(m) += wf.psiK.abs2()(m);
       }
     }
     else {
-      for (int m = int((wf.grid.nPoint+1)/2); m < wf.grid.nPoint; ++m) {
-        int Tindex = m-int((wf.grid.nPoint+1)/2);
-        double E = wf.E(m);
+      for (int m = int(1+(wf.grid.nPoint)/2); m < wf.grid.nPoint; ++m) {
+        double E = wavefunctions[0].E(m);
+        cout << "Energy: " << E << endl;
         if (E - wf.epsilon >= 0.0){
-          double kprime = sqrt(2*wf.reducedMass*(E-wf.epsilon))/HBARC;
-          std::vector<int> interpIndices(2);
-          for (int k = int((wf.grid.nPoint+1)/2); k < wf.grid.nPoint; ++k) {
-            if (wf.grid.k(k) > kprime-wf.grid.kStep and wf.grid.k(k) < kprime+wf.grid.kStep){
-              interpIndices.push_back(k);
+          double kPrime = std::sqrt(2*wf.reducedMass*(E-wf.epsilon))/HBARC;
+          cout << "kPrime: " << kPrime << endl;
+          int before;
+          int after;
+          bool done = false;
+          bool found = false;
+          for (int k = int((wf.grid.nPoint)/2); k < wf.grid.nPoint; ++k) {
+            if (wf.grid.k(k) == kPrime){
+              cout << "Found matching k" << endl;
+              T(m) += wf.psiK.abs2()(kPrime);
+              done = true;
+              break;
+            }
+            else if (wf.grid.k(k) > kPrime){
+              cout << "Finding indices" << endl;
+              before = k-1;
+              after = k;
+              cout << "Indices: " << before << ", " << after << endl;
+              cout << "Assoc. ks: " << wf.grid.k(before) << ", " << wf.grid.k(after) << endl;
+              found = true;
+              break;
             }
           }
-          if (interpIndices.size() == 2){
-            T(Tindex) += wf.psiK.abs2()(interpIndices[0]) + (kprime - wf.grid.k(interpIndices[0]))*(wf.psiK.abs2()(interpIndices[1])-wf.psiK.abs2()(interpIndices[0]))/wf.grid.kStep; // Add interpolated value
+          if (found){
+            cout << "Interpolating" << endl;
+            cout << "Previous transmission: " << T(m) << endl;
+            cout << "Left density: " << wf.psiK.abs2()(before) << endl;
+            cout << "Rise: " << wf.psiK.abs2()(after)-wf.psiK.abs2()(before) << endl;
+            cout << "Interpolated value: " << wf.psiK.abs2()(before) + (kPrime - wf.grid.k(before))*((wf.psiK.abs2()(after)-wf.psiK.abs2()(before))/(wf.grid.k(after)-wf.grid.k(before))) << endl;
+            T(m) += wf.psiK.abs2()(before) + (kPrime - wf.grid.k(before))*((wf.psiK.abs2()(after)-wf.psiK.abs2()(before))/(wf.grid.k(after)-wf.grid.k(before))); // Add interpolated value
           }
+
         }
       }
     }

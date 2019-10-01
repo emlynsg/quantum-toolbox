@@ -33,19 +33,21 @@ int main() {
 
   string name = "DassoFig8";
 
-  int time = 2900;
-  double timestep = 0.1;
-//  double timestep = 0.01;
+  int time = 2600;
+//  double timestep = 1.0;
+  double timestep = 0.01;
 
-  std::vector<double> Qs = {-2.0, 0.0, 2.0};
-
-  unsigned int sizeN = 2047;
-//  unsigned int sizeN = 16383;
-  double xmin = -800.0;
-  double xmax = 800.0;
+  std::vector<double> Qs = {0.0, 2.0, -2.0};
+//  std::vector<double> Qs = {0.0};
+//  unsigned int sizeN = 4095;
+  unsigned int sizeN = 16383;
+  double xmin = -500.0;
+  double xmax = 500.0;
   double kscale = 1.0;
   Grid grid(sizeN, xmin, xmax, kscale);
-  for (int j = 0; j < Qs.size(); ++j) {
+#pragma omp parallel for
+  for (int j=0; j<Qs.size(); ++j) {
+    double Q = Qs[j];
     double mu = 29.0;
     double V1 = 100.0;
     double V2 = 100.0;
@@ -53,12 +55,11 @@ int main() {
     double sigma2 = 3.0;
     double sigmaF = 3.0;
     double F = 2.0; // coupling potential amplitude
-    double Q = Qs[j]; // Q-value
     std::ofstream Out("DassoFig8"+tostring(int(Q))+".csv");
 
     Wavefunction ground(grid, mu);
 
-    ground.initGaussian(-50.0, 5.0);
+    ground.initGaussian(-80.0, 5.0);
     ground.boostEnergy(V1);
     Wavefunction excited(grid, mu, Q);
     excited.initZero();
@@ -82,18 +83,19 @@ int main() {
     system.addPotential(U2, 1, 1);
 
     system.updateK();
-//    dArray groundPsiK_init = system.wavefunctions[0].psiK.abs();
-//    dArray excitedPsiK_init = system.wavefunctions[1].psiK.abs();
+    dArray groundPsiK_init = system.wavefunctions[0].psiK.abs();
+    dArray excitedPsiK_init = system.wavefunctions[1].psiK.abs();
 
     // CC Evolution
     system.initCC(timestep);
-//    system.evolveCC(int(time/timestep));
-//    system.updateFromCC();
+    system.evolveCC(int(time/timestep));
+    system.updateFromCC();
 //
-    Plotter plot(system);
-    plot.animateCC(int(time/timestep), 100, false, false, true);
+//    Plotter plot(system);
+//    plot.animateCC(int(time/timestep), 100, false, false, true);
 
-    dArray T = system.getTransmission();
+    dArray T = (system.wavefunctions[0].psiK.abs2() + system.wavefunctions[1].psiK.abs2())/(groundPsiK_init.abs2());
+    dArray T2 = system.getTransmission();
 
 //    Out << "E" << "," << "InitGround" << "," << "InitExcited" << "," << "FinalGround" << "," << "FinalExcited" << "," << "T\n";
     Out << "E" << "," << "T\n";
