@@ -34,18 +34,20 @@ int main() {
   string name = "DassoFig8";
 
   int time = 2600;
-  double timestep = 1.0;
-//  double timestep = 0.01;
+//  double timestep = 1.0;
+  double timestep = 0.1;
+  //  double timestep = 0.01;
 
   std::vector<double> Qs = {-2.0, 2.0, 0.0};
 //  std::vector<double> Qs = {0.0};
-  unsigned int sizeN = 8191;
+  unsigned int sizeN = 4095;
+//  unsigned int sizeN = 8191;
 //  unsigned int sizeN = 16383;
   double xmin = -500.0;
   double xmax = 500.0;
   double kscale = 1.0;
   Grid grid(sizeN, xmin, xmax, kscale);
-//#pragma omp parallel for
+#pragma omp parallel for
   for (int j=0; j<Qs.size(); ++j) {
     double Q = Qs[j];
     double mu = 29.0;
@@ -96,10 +98,8 @@ int main() {
 
     dArray T = system.getTransmission();
 
-//    Out << "E" << "," << "InitGround" << "," << "InitExcited" << "," << "FinalGround" << "," << "FinalExcited" << "," << "T\n";
     Out << "E" << "," << "T\n";
     for (int j = ((ground.grid.nPoint+1)/2); j < ground.grid.nPoint; ++j) {
-//      Out << system.wavefunctions[0].E(j) << "," << groundPsiK_init(j) << "," << excitedPsiK_init(j) << "," << abs(system.wavefunctions[0].psiK)(j) << "," << abs(system.wavefunctions[1].psiK)(j) << "," <<  T(j) << "\n";
       Out << system.wavefunctions[0].E(j) << "," << T(j) << "\n";
 
     }

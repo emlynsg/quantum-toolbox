@@ -114,7 +114,7 @@ void System::initCC(double tStep) {
     cdVectorTensor potChip = potentialTensor.chip(j,2);
     cdMatrix potMat = Tensor_to_Matrix(potChip, nChannel, nChannel);
     for (int m = 0; m < nChannel; ++m) {
-      potMat(m,m) += wavefunctions[m].epsilon;
+      potMat(m,m) += cd(wavefunctions[m].epsilon, 0.0);
     }
     ComplexEigenSolver<MatrixXcd> ces;
     // Threshold values
@@ -294,13 +294,11 @@ dArray System::getTransmission(){
           cout << "kPrime: " << kPrime << endl;
           int before;
           int after;
-          bool done = false;
           bool found = false;
-          for (int k = int((wf.grid.nPoint)/2); k < wf.grid.nPoint; ++k) {
+          for (int k = int(1+(wf.grid.nPoint)/2); k < wf.grid.nPoint; ++k) {
             if (wf.grid.k(k) == kPrime){
               cout << "Found matching k" << endl;
-              T(m) += wf.psiK.abs2()(kPrime);
-              done = true;
+              T(m) += wf.psiK.abs2()(k);
               break;
             }
             else if (wf.grid.k(k) > kPrime){
@@ -318,6 +316,8 @@ dArray System::getTransmission(){
             cout << "Previous transmission: " << T(m) << endl;
             cout << "Left density: " << wf.psiK.abs2()(before) << endl;
             cout << "Rise: " << wf.psiK.abs2()(after)-wf.psiK.abs2()(before) << endl;
+            cout << "Run: " << wf.grid.k(after)-wf.grid.k(before) << endl;
+            cout << "Step: " << kPrime - wf.grid.k(before) << endl;
             cout << "Interpolated value: " << wf.psiK.abs2()(before) + (kPrime - wf.grid.k(before))*((wf.psiK.abs2()(after)-wf.psiK.abs2()(before))/(wf.grid.k(after)-wf.grid.k(before))) << endl;
             T(m) += wf.psiK.abs2()(before) + (kPrime - wf.grid.k(before))*((wf.psiK.abs2()(after)-wf.psiK.abs2()(before))/(wf.grid.k(after)-wf.grid.k(before))); // Add interpolated value
           }

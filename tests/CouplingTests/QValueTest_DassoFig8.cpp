@@ -34,18 +34,18 @@ int main() {
   string name = "DassoFig8";
 
   int time = 2600;
-//  double timestep = 1.0;
-  double timestep = 0.01;
+  double timestep = 1.0;
+//  double timestep = 0.01;
 
-  std::vector<double> Qs = {0.0, 2.0, -2.0};
+  std::vector<double> Qs = {-2.0, 2.0, 0.0};
 //  std::vector<double> Qs = {0.0};
-//  unsigned int sizeN = 4095;
-  unsigned int sizeN = 16383;
+  unsigned int sizeN = 8191;
+//  unsigned int sizeN = 16383;
   double xmin = -500.0;
   double xmax = 500.0;
   double kscale = 1.0;
   Grid grid(sizeN, xmin, xmax, kscale);
-#pragma omp parallel for
+//#pragma omp parallel for
   for (int j=0; j<Qs.size(); ++j) {
     double Q = Qs[j];
     double mu = 29.0;
@@ -55,7 +55,7 @@ int main() {
     double sigma2 = 3.0;
     double sigmaF = 3.0;
     double F = 2.0; // coupling potential amplitude
-    std::ofstream Out("DassoFig8"+tostring(int(Q))+".csv");
+    std::ofstream Out("DassoFig8"+tostring(int(Qs[j]))+".csv");
 
     Wavefunction ground(grid, mu);
 
@@ -90,12 +90,11 @@ int main() {
     system.initCC(timestep);
     system.evolveCC(int(time/timestep));
     system.updateFromCC();
-//
+
 //    Plotter plot(system);
 //    plot.animateCC(int(time/timestep), 100, false, false, true);
 
-    dArray T = (system.wavefunctions[0].psiK.abs2() + system.wavefunctions[1].psiK.abs2())/(groundPsiK_init.abs2());
-    dArray T2 = system.getTransmission();
+    dArray T = system.getTransmission();
 
 //    Out << "E" << "," << "InitGround" << "," << "InitExcited" << "," << "FinalGround" << "," << "FinalExcited" << "," << "T\n";
     Out << "E" << "," << "T\n";
