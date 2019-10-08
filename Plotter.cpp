@@ -196,14 +196,14 @@ void Plotter::animateCC(int nSteps, int updateRate, bool logY = false, bool k = 
         VectorXd::Map(&psiImag2[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[1].getImag();
         VectorXd::Map(&pot[0], system.wavefunctions[0].grid.nPoint) = system.potentials[0].V.real().matrix().normalized().array();
 //        gp << "plot '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary', '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary'\n";
-//        gp << "plot '-' with lines title 'Ground', '-' with lines title 'Excited', '-' with lines title 'Potential'\n";
-        gp << "plot '-' with lines title 'G', '-' with lines title 'G_{Re}', '-' with lines title 'G_{Im}', '-' with lines title 'Ex', '-' with lines title 'Ex_{Re}', '-' with lines title 'Ex_{Im}', '-' with lines title 'Potential'\n";
+        gp << "plot '-' with lines title 'Ground', '-' with lines title 'Excited', '-' with lines title 'Potential'\n";
+//        gp << "plot '-' with lines title 'G', '-' with lines title 'G_{Re}', '-' with lines title 'G_{Im}', '-' with lines title 'Ex', '-' with lines title 'Ex_{Re}', '-' with lines title 'Ex_{Im}', '-' with lines title 'Potential'\n";
         gp.send(boost::make_tuple(xGrid, psiAbs));
-        gp.send(boost::make_tuple(xGrid, psiReal));
-        gp.send(boost::make_tuple(xGrid, psiImag));
+//        gp.send(boost::make_tuple(xGrid, psiReal));
+//        gp.send(boost::make_tuple(xGrid, psiImag));
         gp.send(boost::make_tuple(xGrid, psiAbs2));
-        gp.send(boost::make_tuple(xGrid, psiReal2));
-        gp.send(boost::make_tuple(xGrid, psiImag2));
+//        gp.send(boost::make_tuple(xGrid, psiReal2));
+//        gp.send(boost::make_tuple(xGrid, psiImag2));
         gp.send(boost::make_tuple(xGrid, pot));
         gp.flush();
       }

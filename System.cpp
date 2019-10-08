@@ -156,7 +156,12 @@ void System::initCC(double tStep) {
       potentialOperator.chip(k,0).chip(j,0) = (UexpD.chip(k,0)*Udagger.chip(j,1)).sum(rows);
     }
   }
-
+  for (int k = 0; k < nChannel; ++k) {
+    potentialOperator.chip(k,0) = (std::exp(-i*timeStep*(wavefunctions[k].epsilon)*0.25/HBARC))*potentialOperator.chip(k,0);
+  }
+  for (int k = 0; k < nChannel; ++k) {
+    potentialOperator.chip(k,1) = (std::exp(-i*timeStep*(wavefunctions[k].epsilon)*0.25/HBARC))*potentialOperator.chip(k,1);
+  }
   // Save the initial wavefunctions for Transmission computations
   for (auto wf: wavefunctions){
     wf.computePsiK();

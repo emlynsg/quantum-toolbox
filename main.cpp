@@ -38,7 +38,7 @@ int main() {
 //  double timestep = 0.1;
   //  double timestep = 0.01;
 
-  std::vector<double> Qs = {30.0, -30.0, 0.0};
+  std::vector<double> Qs = {2.0, -2.0, 0.0};
 //  std::vector<double> Qs = {0.0};
   unsigned int sizeN = 4095;
 //  unsigned int sizeN = 8191;
@@ -50,23 +50,19 @@ int main() {
 #pragma omp parallel for
   for (int j=0; j<Qs.size(); ++j) {
     double Q = Qs[j];
-//    double Q = 0;
     double mu = 29.0;
-//    double V1 = 100.0;
-//    double V2 = 100.0;
-    double V1 = 0.0;
-    double V2 = 0.0;
+    double V1 = 100.0;
+    double V2 = 100.0;
     double sigma1 = 3.0;
     double sigma2 = 3.0;
     double sigmaF = 3.0;
     double F = 2.0; // coupling potential amplitude
-//    std::ofstream Out("DassoFig8"+tostring(int(Qs[j]))+".csv");
+    std::ofstream Out("DassoFig8"+tostring(int(Qs[j]))+".csv");
 
     Wavefunction ground(grid, mu);
 
     ground.initGaussian(-80.0, 2.5);
-//    ground.boostEnergy(V1);
-    ground.boostEnergy(100.0);
+    ground.boostEnergy(V1);
     Wavefunction excited(grid, mu, Q);
     excited.initZero();
 
@@ -94,17 +90,17 @@ int main() {
 
     // CC Evolution
     system.initCC(timestep);
-//    system.evolveCC(int(time/timestep));
-//    system.updateFromCC();
+    system.evolveCC(int(time/timestep));
+    system.updateFromCC();
 //
-    Plotter plot(system);
-    plot.animateCC(int(time/timestep), 100, false, false, true);
+//    Plotter plot(system);
+//    plot.animateCC(int(time/timestep), 100, false, false, true);
 
-//    dArray T = system.getTransmission();
-//
-//    Out << "x" << "," << "x_g" << "," << "x_ex" << "," << "k" << "," << "init" << "," << "g" << "," << "ex" << "," << "E" << "," << "T\n";
-//    for (int j = 0; j < ground.grid.nPoint; ++j) {
-//      Out << system.wavefunctions[0].grid.x(j) << "," << system.wavefunctions[0].psi.abs2()(j) << "," << system.wavefunctions[1].psi.abs2()(j) << "," << system.wavefunctions[0].grid.k(j) << "," << groundPsiK_init.abs2()(j) << "," << system.wavefunctions[0].psiK.abs2()(j) << "," << system.wavefunctions[1].psiK.abs2()(j) << "," << system.wavefunctions[0].E(j) << "," << T(j) << "\n";
-//    }
+    dArray T = system.getTransmission();
+
+    Out << "x" << "," << "x_g" << "," << "x_ex" << "," << "k" << "," << "init" << "," << "g" << "," << "ex" << "," << "E" << "," << "T\n";
+    for (int j = 0; j < ground.grid.nPoint; ++j) {
+      Out << system.wavefunctions[0].grid.x(j) << "," << system.wavefunctions[0].psi.abs2()(j) << "," << system.wavefunctions[1].psi.abs2()(j) << "," << system.wavefunctions[0].grid.k(j) << "," << groundPsiK_init.abs2()(j) << "," << system.wavefunctions[0].psiK.abs2()(j) << "," << system.wavefunctions[1].psiK.abs2()(j) << "," << system.wavefunctions[0].E(j) << "," << T(j) << "\n";
+    }
   }
 }

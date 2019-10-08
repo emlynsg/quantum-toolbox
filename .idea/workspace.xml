@@ -17,17 +17,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plotter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plotter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/System.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/System.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/DassoFig8-2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/DassoFig8-2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/DassoFig80.csv" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/DassoFig80.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/DassoFig82.csv" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/DassoFig82.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/QuantumToolbox" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -119,7 +111,7 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="46658" />
+          <entry key="cpp" value="46725" />
           <entry key="gp" value="341" />
           <entry key="h" value="5071" />
           <entry key="py" value="55" />
@@ -130,7 +122,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="653" />
           <entry key="Doxygen file" value="40" />
-          <entry key="ObjectiveC" value="51719" />
+          <entry key="ObjectiveC" value="51786" />
           <entry key="PLAIN_TEXT" value="920" />
           <entry key="Python" value="55" />
         </counts>
@@ -178,11 +170,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="375">
+              <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
               <folding>
                 <element signature="e#109#126#0" expanded="true" />
               </folding>
@@ -205,8 +197,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Plotter.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="172" column="36" lean-forward="true" selection-start-line="172" selection-start-column="36" selection-end-line="172" selection-end-column="36" />
+            <state relative-caret-position="263">
+              <caret line="170" column="3" lean-forward="true" selection-start-line="170" selection-start-column="3" selection-end-line="170" selection-end-column="3" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -214,11 +206,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/System.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="153" column="3" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="3" />
+            <state relative-caret-position="333">
+              <caret line="157" column="3" lean-forward="true" selection-start-line="157" selection-start-column="3" selection-end-line="157" selection-end-column="3" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -362,9 +354,9 @@
         <option value="$PROJECT_DIR$/tests/CouplingTests/QValueTest_DassoFig8.cpp" />
         <option value="$PROJECT_DIR$/Wavefunction.cpp" />
         <option value="$PROJECT_DIR$/Plotter.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Plotter.cpp" />
         <option value="$PROJECT_DIR$/System.cpp" />
+        <option value="$PROJECT_DIR$/Plotter.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -466,12 +458,12 @@
       <workItem from="1568090046642" duration="64261000" />
       <workItem from="1568699318493" duration="45274000" />
       <workItem from="1569046553999" duration="106077000" />
-      <workItem from="1570157951907" duration="30377000" />
+      <workItem from="1570157951907" duration="31240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="559115000" />
+    <option name="totallyTimeSpent" value="559978000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -484,21 +476,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14040907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32814237" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2437972" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.11866235" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3840345" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.29234087" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.5458468" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.19309601" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3279396" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.3149946" />
@@ -848,32 +839,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/System.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="333">
+          <caret line="157" column="3" lean-forward="true" selection-start-line="157" selection-start-column="3" selection-end-line="157" selection-end-column="3" />
           <folding>
-            <element signature="e#109#126#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Plotter.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="172" column="36" lean-forward="true" selection-start-line="172" selection-start-column="36" selection-end-line="172" selection-end-column="36" />
+        <state relative-caret-position="263">
+          <caret line="170" column="3" lean-forward="true" selection-start-line="170" selection-start-column="3" selection-end-line="170" selection-end-column="3" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/System.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="153" column="3" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="3" />
+        <state relative-caret-position="375">
+          <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#109#126#0" expanded="true" />
           </folding>
         </state>
       </provider>
