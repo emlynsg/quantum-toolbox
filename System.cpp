@@ -10,7 +10,7 @@ System::System(Wavefunction wf, Potential pot) {
   addWavefunction(wf);
   addPotential(pot, 0, 0);
   timeStep = 0.0;
-  threshold = 1e-150;
+  threshold = 1e-20;
   nChannel = 1;
 }
 
@@ -50,6 +50,13 @@ void System::addPotential(Potential &pot, const int &j, const int &k) {
   potentialTensor = cdMatrixTensor(wavefunctions.size(), wavefunctions.size(), wavefunctions[0].grid.nPoint);
   potentialTensor.setZero();
   for (int l = 0; l < potentials.size(); ++l) {
+//    cdMatrix potL(wavefunctions[0].grid.nPoint, 1);
+//    if (potLeft[l] == potRight[l]) {
+//      potL = (potentials[l].V + wavefunctions[potLeft[l]].epsilon).matrix();
+//    }
+//    else {
+//      potL = potentials[l].V.matrix();
+//    }
     cdMatrix potL = potentials[l].V.matrix();
     (potentialTensor.chip(potLeft[l],0)).chip(potRight[l],0) = Matrix_to_Tensor(potL, wavefunctions[0].grid.nPoint);
   }
@@ -113,9 +120,9 @@ void System::initCC(double tStep) {
   for (int j = 0; j < wavefunctions[0].grid.nPoint; ++j){
     cdVectorTensor potChip = potentialTensor.chip(j,2);
     cdMatrix potMat = Tensor_to_Matrix(potChip, nChannel, nChannel);
-    for (int m = 0; m < nChannel; ++m) {
-      potMat(m,m) += cd(wavefunctions[m].epsilon, 0.0);
-    }
+//    for (int m = 0; m < nChannel; ++m) {
+//      potMat(m,m) += wavefunctions[m].epsilon;
+//    }
     ComplexEigenSolver<MatrixXcd> ces;
     // Threshold values
     for (int k = 0; k < nChannel; ++k) {
@@ -149,6 +156,7 @@ void System::initCC(double tStep) {
       potentialOperator.chip(k,0).chip(j,0) = (UexpD.chip(k,0)*Udagger.chip(j,1)).sum(rows);
     }
   }
+
   // Save the initial wavefunctions for Transmission computations
   for (auto wf: wavefunctions){
     wf.computePsiK();

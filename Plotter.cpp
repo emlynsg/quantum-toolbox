@@ -171,11 +171,14 @@ void Plotter::animateCC(int nSteps, int updateRate, bool logY = false, bool k = 
   }
   else if (cc){
     gp << "set yrange [-0.5:0.5]\n";
+//    gp << "set yrange [0.000000000000001:10]\n";
+//    gp << "set log y\n";
     for (int j = 0; j < nSteps; ++j) {
       system.evolveCCStep();
       if (j % updateRate == 0){
         system.log(j*system.timeStep);
-        gp << "set title 't="+tostring(j*system.timeStep)+"'\n";
+//        gp << "set title 't="+tostring(j*system.timeStep)+"'\n";
+        gp << "set title 'epsilon="+tostring(system.wavefunctions[1].epsilon)+" t="+tostring(j*system.timeStep)+"'\n";
         std::vector<double> xGrid(system.wavefunctions[0].grid.nPoint);
         std::vector<double> pot(system.wavefunctions[0].grid.nPoint);
         std::vector<double> psiAbs(system.wavefunctions[0].grid.nPoint);
@@ -193,13 +196,14 @@ void Plotter::animateCC(int nSteps, int updateRate, bool logY = false, bool k = 
         VectorXd::Map(&psiImag2[0], system.wavefunctions[0].grid.nPoint) = system.wavefunctions[1].getImag();
         VectorXd::Map(&pot[0], system.wavefunctions[0].grid.nPoint) = system.potentials[0].V.real().matrix().normalized().array();
 //        gp << "plot '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary', '-' with lines title 'Norm', '-' with lines title 'Real', '-' with lines title 'Imaginary'\n";
-        gp << "plot '-' with lines title 'Ground', '-' with lines title 'Excited', '-' with lines title 'Potential'\n";
+//        gp << "plot '-' with lines title 'Ground', '-' with lines title 'Excited', '-' with lines title 'Potential'\n";
+        gp << "plot '-' with lines title 'G', '-' with lines title 'G_{Re}', '-' with lines title 'G_{Im}', '-' with lines title 'Ex', '-' with lines title 'Ex_{Re}', '-' with lines title 'Ex_{Im}', '-' with lines title 'Potential'\n";
         gp.send(boost::make_tuple(xGrid, psiAbs));
-//        gp.send(boost::make_tuple(xGrid, psiReal));
-//        gp.send(boost::make_tuple(xGrid, psiImag));
+        gp.send(boost::make_tuple(xGrid, psiReal));
+        gp.send(boost::make_tuple(xGrid, psiImag));
         gp.send(boost::make_tuple(xGrid, psiAbs2));
-//        gp.send(boost::make_tuple(xGrid, psiReal2));
-//        gp.send(boost::make_tuple(xGrid, psiImag2));
+        gp.send(boost::make_tuple(xGrid, psiReal2));
+        gp.send(boost::make_tuple(xGrid, psiImag2));
         gp.send(boost::make_tuple(xGrid, pot));
         gp.flush();
       }
