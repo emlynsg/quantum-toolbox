@@ -52,7 +52,9 @@ class System {
   ~System();
   void test();
   void addWavefunction(Wavefunction &wf);
+  void addZeroWavefunction(const double &ReducedMass, const double &Epsilon);
   void addPotential(Potential &pot, const int &j, const int &k);
+  void addGaussianPotential(const double &xCentre, const cd &height, const cd &sigma, const int &j, const int &k);
   void evolveStep(int index, double timeStep, int maxOrder);
   void evolveAllStep(double timeStep, int maxOrder);
   void evolveAll(int nSteps, double timeStep, int maxOrder);
@@ -65,6 +67,7 @@ class System {
   double energy(int index);
   double hamiltonianElement(int indexI, int indexJ);
   dArray getTransmission();
+  dArray getReflection(int index);
 };
 
 #endif //SYSTEM_H

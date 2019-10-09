@@ -31,6 +31,17 @@ void System::addWavefunction(Wavefunction &wf) {
   nChannel += 1;
 }
 
+void System::addZeroWavefunction(const double &ReducedMass, const double &Epsilon) {
+  Wavefunction wf(wavefunctions[0].grid, ReducedMass, Epsilon);
+  wf.initZero();
+  wavefunctions.push_back(wf);
+  times.push_back(doubleVec());
+  energies.push_back(doubleVec());
+  norms.push_back(doubleVec());
+  averages.push_back(doubleVec());
+  nChannel += 1;
+}
+
 void System::addPotential(Potential &pot, const int &j, const int &k) {
   potentials.push_back(pot);
   potLeft.push_back(j);
@@ -60,6 +71,13 @@ void System::addPotential(Potential &pot, const int &j, const int &k) {
     cdMatrix potL = potentials[l].V.matrix();
     (potentialTensor.chip(potLeft[l],0)).chip(potRight[l],0) = Matrix_to_Tensor(potL, wavefunctions[0].grid.nPoint);
   }
+}
+
+void System::addGaussianPotential(const double &xCentre, const cd &height, const cd &sigma, const int &j, const int &k){
+  Potential pot(wavefunctions[0].grid);
+  pot.initZero();
+  pot.addGaussian(xCentre, height, sigma);
+  addPotential(pot, j, k);
 }
 
 void System::evolveStep(int index, double timeStep, int maxOrder){
@@ -288,12 +306,10 @@ double System::hamiltonianElement(int indexI, int indexJ){
 
 dArray System::getTransmission(){
   /// TODO: Consider using Splinter for interpolation (easy splines to sample, but requires compilation)
-  cout << "Start transmission calc" << endl;
   dArray T;
   T.setZero(wavefunctions[0].grid.nPoint);
   for (auto wf: wavefunctions){
     if (wf.epsilon==0.0){
-      cout << "Epsilon == 0" << endl;
       for (int m = int(1+(wf.grid.nPoint)/2); m < wf.grid.nPoint; ++m) {
         T(m) += wf.psiK.abs2()(m);
       }
@@ -301,40 +317,57 @@ dArray System::getTransmission(){
     else {
       for (int m = int(1+(wf.grid.nPoint)/2); m < wf.grid.nPoint; ++m) {
         double E = wavefunctions[0].E(m);
-        cout << "Energy: " << E << endl;
         if (E - wf.epsilon >= 0.0){
           double kPrime = std::sqrt(2*wf.reducedMass*(E-wf.epsilon))/HBARC;
-          cout << "kPrime: " << kPrime << endl;
           int before;
           int after;
-          bool found = false;
           for (int k = int(1+(wf.grid.nPoint)/2); k < wf.grid.nPoint; ++k) {
             if (wf.grid.k(k) == kPrime){
-              cout << "Found matching k" << endl;
               T(m) += wf.psiK.abs2()(k);
               break;
             }
             else if (wf.grid.k(k) > kPrime){
-              cout << "Finding indices" << endl;
               before = k-1;
               after = k;
-              cout << "Indices: " << before << ", " << after << endl;
-              cout << "Assoc. ks: " << wf.grid.k(before) << ", " << wf.grid.k(after) << endl;
-              found = true;
+              T(m) += wf.psiK.abs2()(before) + (kPrime - wf.grid.k(before))*((wf.psiK.abs2()(after)-wf.psiK.abs2()(before))/(wf.grid.k(after)-wf.grid.k(before))); // Add interpolated value
               break;
             }
           }
-          if (found){
-            cout << "Interpolating" << endl;
-            cout << "Previous transmission: " << T(m) << endl;
-            cout << "Left density: " << wf.psiK.abs2()(before) << endl;
-            cout << "Rise: " << wf.psiK.abs2()(after)-wf.psiK.abs2()(before) << endl;
-            cout << "Run: " << wf.grid.k(after)-wf.grid.k(before) << endl;
-            cout << "Step: " << kPrime - wf.grid.k(before) << endl;
-            cout << "Interpolated value: " << wf.psiK.abs2()(before) + (kPrime - wf.grid.k(before))*((wf.psiK.abs2()(after)-wf.psiK.abs2()(before))/(wf.grid.k(after)-wf.grid.k(before))) << endl;
-            T(m) += wf.psiK.abs2()(before) + (kPrime - wf.grid.k(before))*((wf.psiK.abs2()(after)-wf.psiK.abs2()(before))/(wf.grid.k(after)-wf.grid.k(before))); // Add interpolated value
-          }
+        }
+      }
+    }
+  }
+  T = T/initialPsiKs[0].abs2();
+  return T;
+}
 
+dArray System::getReflection(int index){
+  /// TODO: Consider using Splinter for interpolation (easy splines to sample, but requires compilation)
+  dArray T;
+  T.setZero(wavefunctions[0].grid.nPoint);
+  if (wavefunctions[index].epsilon==0.0){
+    for (int m = int(1+(wavefunctions[index].grid.nPoint)/2); m < wavefunctions[index].grid.nPoint; ++m) {
+      T(m) += wavefunctions[index].psiK.abs2()(m);
+    }
+  }
+  else {
+    for (int m = int(1+(wavefunctions[index].grid.nPoint)/2); m < wavefunctions[index].grid.nPoint; ++m) {
+      double E = wavefunctions[0].E(m);
+      if (E - wavefunctions[index].epsilon >= 0.0){
+        double kPrime = -std::sqrt(2*wavefunctions[index].reducedMass*(E-wavefunctions[index].epsilon))/HBARC;
+        int before;
+        int after;
+        for (int k = 0; k < (wavefunctions[index].grid.nPoint)/2; ++k) {
+          if (wavefunctions[index].grid.k(k) == kPrime){
+            T(m) += wavefunctions[index].psiK.abs2()(k);
+            break;
+          }
+          else if (wavefunctions[index].grid.k(k) > kPrime){
+            before = k-1;
+            after = k;
+            T(m) += wavefunctions[index].psiK.abs2()(before) + (kPrime - wavefunctions[index].grid.k(before))*((wavefunctions[index].psiK.abs2()(after)-wavefunctions[index].psiK.abs2()(before))/(wavefunctions[index].grid.k(after)-wavefunctions[index].grid.k(before))); // Add interpolated value
+            break;
+          }
         }
       }
     }

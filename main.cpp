@@ -11,6 +11,7 @@
 #include <cmath>
 #include "omp.h"
 #include <string>
+#include <chrono>
 
 #include "Grid.h"
 #include "Wavefunction.h"
@@ -29,78 +30,107 @@ int main() {
 /// TODO: Fix System so you can add potentials and wavefunctions freely
 /// Currently need to add wavefunctions first
 
-  // Figure 8 in Dasso et al. 1983 'Channel coupling effects in heavy ion fusion reactions'
+  // Linear scheme defined by
+  // N: Number of channels
+  // n \in {1,...,N}: Current channel
+  // V_{n->n+1}: n*VC Coupling strength
+  // Q_n: n*2 Relative energy
 
-  string name = "DassoFig8";
-
-  int time = 4000;
-  double timestep = 1.0;
-//  double timestep = 0.1;
-  //  double timestep = 0.01;
-
-  std::vector<double> Qs = {2.0, -2.0, 0.0};
-//  std::vector<double> Qs = {0.0};
-  unsigned int sizeN = 4095;
-//  unsigned int sizeN = 8191;
-//  unsigned int sizeN = 16383;
-  double xmin = -400.0;
-  double xmax = 400.0;
-  double kscale = 1.0;
-  Grid grid(sizeN, xmin, xmax, kscale);
+  std::vector<int> configs = {1, 2, 3, 4};
 #pragma omp parallel for
-  for (int j=0; j<Qs.size(); ++j) {
-    double Q = Qs[j];
-    double mu = 29.0;
-    double V1 = 100.0;
-    double V2 = 100.0;
-    double sigma1 = 3.0;
-    double sigma2 = 3.0;
-    double sigmaF = 3.0;
-    double F = 2.0; // coupling potential amplitude
-    std::ofstream Out("DassoFig8"+tostring(int(Qs[j]))+".csv");
+  for (int k = 0; k < configs.size(); ++k) {
+    int N = configs[k];
+    double F = 4.0; // Coupling height
+    double baseEpsilon = 2.0; // Standard multiplier for epsilon
+    std::vector<double> ns;
+    std::vector<double> vcs;
+    std::vector<double> epsilons;
+    for (int j = 0; j < N; ++j) {
+      ns.push_back(j);
+      vcs.push_back(j*F);
+      epsilons.push_back(j*baseEpsilon);
+    }
+    double mu = 1.0;
+    double V0 = 100.0;
+    double sigma = 5.0;
+    double sigmaF = 5.0;
+    double couplingCentre = 0.0;
+
+
+    int time = 8500;
+    double timestep = 1.0;
+//    double timestep = 0.1;
+    //  double timestep = 0.01;
+//  unsigned int sizeN = 4095;
+//  unsigned int sizeN = 8191;
+//    unsigned int sizeN = 16383;
+//    unsigned int sizeN = 32767;
+//    unsigned int sizeN = 65535;
+    unsigned int sizeN = 131071;
+    double xmin = -10000.0;
+    double xmax = 10000.0;
+    double kscale = 1.0;
+
+    Grid grid(sizeN, xmin, xmax, kscale);
 
     Wavefunction ground(grid, mu);
-
-    ground.initGaussian(-80.0, 2.5);
-    ground.boostEnergy(V1);
-    Wavefunction excited(grid, mu, Q);
-    excited.initZero();
+    ground.initGaussian(-100.0, 2.5);
+    ground.boostEnergy(V0);
 
     Potential U1(grid);
     U1.initZero();
-    U1.addGaussian(0.0, V1, sigma1);
-
-    Potential U2(grid);
-    U2.initZero();
-    U2.addGaussian(0.0, V2, sigma2);
-
-    Potential VC(grid);
-    VC.initZero();
-    VC.addGaussian(0.0, F, sigmaF);
+    U1.addGaussian(0.0, V0, sigma);
 
     System system(ground, U1);
-    system.addWavefunction(excited);
-    system.addPotential(VC, 0, 1);
-    system.addPotential(VC, 1, 0);
-    system.addPotential(U2, 1, 1);
+    for (int j = 1; j < N; ++j) {
+      system.addZeroWavefunction(mu, epsilons[j]);
+    }
+    for (int j = 1; j < N; ++j) {
+      system.addGaussianPotential(0.0, V0, sigma, j, j);
+    }
+    // Nearest neighbour coupling
+    for (int j = 1; j < N; ++j) {
+      system.addGaussianPotential(couplingCentre, vcs[j], sigma, j, j-1);
+      system.addGaussianPotential(couplingCentre, vcs[j], sigma, j-1, j);
+    }
 
-    system.updateK();
-    dArray groundPsiK_init = system.wavefunctions[0].psiK.abs();
-    dArray excitedPsiK_init = system.wavefunctions[1].psiK.abs();
-
-    // CC Evolution
+    // CC EvolutionC_
     system.initCC(timestep);
+
+    auto start = std::chrono::high_resolution_clock::now();
     system.evolveCC(int(time/timestep));
+    auto finish = std::chrono::high_resolution_clock::now();
+
     system.updateFromCC();
-//
+
 //    Plotter plot(system);
 //    plot.animateCC(int(time/timestep), 100, false, false, true);
 
+    std::chrono::duration<double> elapsed = finish - start;
+    std::cout << "Elapsed time for "+tostring(N)+" couplings: " << elapsed.count() << " s\n";
+
     dArray T = system.getTransmission();
 
-    Out << "x" << "," << "x_g" << "," << "x_ex" << "," << "k" << "," << "init" << "," << "g" << "," << "ex" << "," << "E" << "," << "T\n";
-    for (int j = 0; j < ground.grid.nPoint; ++j) {
-      Out << system.wavefunctions[0].grid.x(j) << "," << system.wavefunctions[0].psi.abs2()(j) << "," << system.wavefunctions[1].psi.abs2()(j) << "," << system.wavefunctions[0].grid.k(j) << "," << groundPsiK_init.abs2()(j) << "," << system.wavefunctions[0].psiK.abs2()(j) << "," << system.wavefunctions[1].psiK.abs2()(j) << "," << system.wavefunctions[0].E(j) << "," << T(j) << "\n";
+    std::vector<dArray> Rs;
+    for (int l = 0; l < N; ++l) {
+      Rs.push_back(system.getReflection(l));
+    }
+
+    std::ofstream Out("N_"+tostring(N)+".csv");
+    Out << "E,T,";
+    for (int l = 0; l < N; ++l) {
+      Out << "R"+tostring(l)+",";
+    }
+    Out << "R\n";
+    for (int j = 1+ground.grid.nPoint/2; j < ground.grid.nPoint; ++j) {
+      Out << system.wavefunctions[0].E(j) << "," << T(j) << ",";
+      double tot = 0.0;
+      for (int l = 0; l < N; ++l) {
+        double Rl = Rs[l](j);
+        Out << Rl << ",";
+        tot += Rl;
+      }
+      Out << tot << "\n";
     }
   }
 }

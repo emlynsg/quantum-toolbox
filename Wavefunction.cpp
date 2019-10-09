@@ -14,6 +14,7 @@ Wavefunction::Wavefunction(const Grid &object, const double &ReducedMass, const 
   epsilon = Epsilon;
   E = ((HBARC*grid.k).abs2())/(2.0*reducedMass);
   eStep = E(1) - E(0);
+  initZero();
 }
 
 Wavefunction::Wavefunction(const Grid &object, const double &ReducedMass) : grid(1, 0.0, 1.0, 1.0) {
@@ -24,6 +25,7 @@ Wavefunction::Wavefunction(const Grid &object, const double &ReducedMass) : grid
   epsilon = 0.0;
   E = ((HBARC*grid.k).abs2())/(2.0*reducedMass);
   eStep = E(1) - E(0);
+  initZero();
 }
 
 Wavefunction::~Wavefunction() {

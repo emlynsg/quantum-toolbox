@@ -56,12 +56,6 @@ gsl/gsl_complex_math.h
 eigen/Eigen/Dense
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/Dense
 
-/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp
-Plotter.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
-System.h
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-
 /home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
 System.h
 /home/exg103/Documents/Honours/CPP/CPP Code/System.h
@@ -1724,6 +1718,8 @@ cmath
 omp.h
 /home/exg103/Documents/Honours/CPP/CPP Code/omp.h
 string
+-
+chrono
 -
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
