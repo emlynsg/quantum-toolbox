@@ -347,25 +347,27 @@ dArray System::getReflection(int index){
   T.setZero(wavefunctions[0].grid.nPoint);
   if (wavefunctions[index].epsilon==0.0){
     for (int m = int(1+(wavefunctions[index].grid.nPoint)/2); m < wavefunctions[index].grid.nPoint; ++m) {
-      T(m) += wavefunctions[index].psiK.abs2()(m);
+      int minus = wavefunctions[index].grid.nPoint - m;
+      T(m) += wavefunctions[index].psiK.abs2()(minus);
     }
   }
   else {
     for (int m = int(1+(wavefunctions[index].grid.nPoint)/2); m < wavefunctions[index].grid.nPoint; ++m) {
       double E = wavefunctions[0].E(m);
       if (E - wavefunctions[index].epsilon >= 0.0){
-        double kPrime = -std::sqrt(2*wavefunctions[index].reducedMass*(E-wavefunctions[index].epsilon))/HBARC;
+        double kPrime = std::sqrt(2*wavefunctions[index].reducedMass*(E-wavefunctions[index].epsilon))/HBARC;
         int before;
         int after;
-        for (int k = 0; k < (wavefunctions[index].grid.nPoint)/2; ++k) {
+        for (int k = int(1+(wavefunctions[index].grid.nPoint)/2); k < wavefunctions[index].grid.nPoint; ++k) {
           if (wavefunctions[index].grid.k(k) == kPrime){
-            T(m) += wavefunctions[index].psiK.abs2()(k);
+            int minus = wavefunctions[index].grid.nPoint - k;
+            T(m) += wavefunctions[index].psiK.abs2()(minus);
             break;
           }
           else if (wavefunctions[index].grid.k(k) > kPrime){
-            before = k-1;
-            after = k;
-            T(m) += wavefunctions[index].psiK.abs2()(before) + (kPrime - wavefunctions[index].grid.k(before))*((wavefunctions[index].psiK.abs2()(after)-wavefunctions[index].psiK.abs2()(before))/(wavefunctions[index].grid.k(after)-wavefunctions[index].grid.k(before))); // Add interpolated value
+            before = wavefunctions[index].grid.nPoint - (k-1);
+            after = wavefunctions[index].grid.nPoint  - k;
+            T(m) += wavefunctions[index].psiK.abs2()(before) + (-kPrime - wavefunctions[index].grid.k(before))*((wavefunctions[index].psiK.abs2()(after)-wavefunctions[index].psiK.abs2()(before))/(wavefunctions[index].grid.k(after)-wavefunctions[index].grid.k(before))); // Add interpolated value
             break;
           }
         }

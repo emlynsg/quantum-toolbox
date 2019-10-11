@@ -40,7 +40,15 @@ int main() {
 #pragma omp parallel for
   for (int k = 0; k < configs.size(); ++k) {
     int N = configs[k];
-    double F = 4.0; // Coupling height
+    double mu = 1.0;
+    double V0 = 100.0;
+    double sigma = 5.0;
+    double sigmaF = 5.0;
+//    double sigmaF = 10.0;
+    double couplingCentre = 0.0;
+
+    double F = 8.0; // Coupling height
+//    double F = 4*5.0/sigmaF;
     double baseEpsilon = 2.0; // Standard multiplier for epsilon
     std::vector<double> ns;
     std::vector<double> vcs;
@@ -50,12 +58,6 @@ int main() {
       vcs.push_back(j*F);
       epsilons.push_back(j*baseEpsilon);
     }
-    double mu = 1.0;
-    double V0 = 100.0;
-    double sigma = 5.0;
-    double sigmaF = 5.0;
-    double couplingCentre = 0.0;
-
 
     int time = 8500;
     double timestep = 1.0;
@@ -65,8 +67,8 @@ int main() {
 //  unsigned int sizeN = 8191;
 //    unsigned int sizeN = 16383;
 //    unsigned int sizeN = 32767;
-//    unsigned int sizeN = 65535;
-    unsigned int sizeN = 131071;
+    unsigned int sizeN = 65535;
+//    unsigned int sizeN = 131071;
     double xmin = -10000.0;
     double xmax = 10000.0;
     double kscale = 1.0;
@@ -121,7 +123,11 @@ int main() {
     for (int l = 0; l < N; ++l) {
       Out << "R"+tostring(l)+",";
     }
-    Out << "R\n";
+    Out << "R,";
+    for (int l = 0; l < N; ++l) {
+      Out << "N_R"+tostring(l)+",";
+    }
+    Out << "E/V0\n";
     for (int j = 1+ground.grid.nPoint/2; j < ground.grid.nPoint; ++j) {
       Out << system.wavefunctions[0].E(j) << "," << T(j) << ",";
       double tot = 0.0;
@@ -130,7 +136,12 @@ int main() {
         Out << Rl << ",";
         tot += Rl;
       }
-      Out << tot << "\n";
+      Out << tot << ",";
+      for (int l = 0; l < N; ++l) {
+        double Rl = Rs[l](j);
+        Out << Rl/(tot+T(j)) << ",";
+      }
+      Out << system.wavefunctions[0].E(j)/V0 << "\n";
     }
   }
 }
