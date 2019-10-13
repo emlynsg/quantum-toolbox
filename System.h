@@ -5,6 +5,8 @@
 
 #include "eigen/unsupported/Eigen/CXX11/Tensor"
 
+#include <fstream>
+
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
@@ -61,6 +63,7 @@ class System {
   void initCC(double tStep);
   void evolveCCStep();
   void evolveCC(int nSteps);
+  void evolveCC(int nSteps, std::vector<double> energies, int interval, std::vector<std::vector<double>> &data);
   void updateFromCC();
   void updateK();
   void log(double time);

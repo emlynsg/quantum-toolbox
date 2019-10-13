@@ -241,6 +241,113 @@ void System::evolveCC(int nSteps) {
   }
 }
 
+void System::evolveCC(int nSteps, std::vector<double> energies, int interval, std::vector<std::vector<double>> &data) {
+  cout << "Starting new system" << endl;
+  std::vector<double> timeVector;
+  data.push_back(timeVector);
+  for (int l = 0; l < energies.size(); ++l) {
+    std::vector<double> totVec;
+    data.push_back(totVec);
+    for (int k = 0; k < nChannel; ++k) {
+      std::vector<double> wfVector;
+      data.push_back(wfVector);
+    }
+  }
+  boost::progress_display show_progress(nSteps);
+  for (int j = 0; j < nSteps; ++j) {
+    evolveCCStep();
+    ++show_progress;
+    if ((j%int(0.5+10/timeStep)==0 and j*timeStep < 500) or (j%int(0.5+100/timeStep)==0)){
+      updateFromCC();
+      data[0].push_back(j*timeStep);
+      // HELP
+      for (int l = 0; l < energies.size(); ++l) {
+        int dataIndex = (nChannel+1)*l+1;
+        double T = 0.0;
+        for (auto wf: wavefunctions) {
+          double kPrime = std::sqrt(2 * wf.reducedMass * (energies[l] - wf.epsilon)) / HBARC;
+          int before;
+          int after;
+          for (int k = int(1 + (wf.grid.nPoint) / 2); k < wf.grid.nPoint; ++k) {
+            if (wf.grid.k(k) == kPrime) {
+              T += norm(wf.psiK(k));
+              break;
+            } else if (wf.grid.k(k) > kPrime) {
+              before = k - 1;
+              after = k;
+              T += norm(wf.psiK(before)) + (kPrime - wf.grid.k(before))
+                  * ((norm(wf.psiK(after)) - norm(wf.psiK(before)))
+                      / (wf.grid.k(after) - wf.grid.k(before))); // Add interpolated value
+              break;
+            }
+          }
+        }
+        double kPrime = std::sqrt(2 * wavefunctions[0].reducedMass * (energies[l])) / HBARC;
+        int before;
+        int after;
+        for (int k = int(1 + (wavefunctions[0].grid.nPoint) / 2); k < wavefunctions[0].grid.nPoint; ++k) {
+          if (wavefunctions[0].grid.k(k) == kPrime) {
+            T = T/norm(initialPsiKs[0](k));
+            break;
+          } else if (wavefunctions[0].grid.k(k) > kPrime) {
+            before = k - 1;
+            after = k;
+            double orig = norm(initialPsiKs[0](before)) + (kPrime - wavefunctions[0].grid.k(before))
+                * ((norm(initialPsiKs[0](after)) - norm(initialPsiKs[0](before)))
+                    / (wavefunctions[0].grid.k(after) - wavefunctions[0].grid.k(before))); // Add interpolated value
+            T = T/orig;
+            break;
+          }
+        }
+        // Find reflections
+        std::vector<double> Rs(nChannel);
+        for (int n = 0; n < nChannel; ++n) {
+          double R = 0.0;
+          kPrime = std::sqrt(2 * wavefunctions[n].reducedMass * (energies[l] - wavefunctions[n].epsilon)) / HBARC;
+          for (int k = int(1 + (wavefunctions[n].grid.nPoint) / 2); k < wavefunctions[n].grid.nPoint; ++k) {
+            if (wavefunctions[n].grid.k(k) == kPrime) {
+              int minus = wavefunctions[n].grid.nPoint - k;
+              R += norm(wavefunctions[n].psiK(minus));
+              break;
+            } else if (wavefunctions[n].grid.k(k) > kPrime) {
+              before = wavefunctions[n].grid.nPoint - (k-1);
+              after = wavefunctions[n].grid.nPoint  - k;
+              R += norm(wavefunctions[n].psiK(before)) + (-kPrime - wavefunctions[n].grid.k(before))
+                  * ((norm(wavefunctions[n].psiK(after)) - norm(wavefunctions[n].psiK(before)))
+                      / (wavefunctions[n].grid.k(after) - wavefunctions[n].grid.k(before))); // Add interpolated value
+              break;
+            }
+          }
+          double kPrime = std::sqrt(2 * wavefunctions[0].reducedMass * (energies[l])) / HBARC;
+          int before;
+          int after;
+          for (int k = int(1 + (wavefunctions[0].grid.nPoint) / 2); k < wavefunctions[0].grid.nPoint; ++k) {
+            if (wavefunctions[0].grid.k(k) == kPrime) {
+              R = R/norm(initialPsiKs[0](k));
+              Rs[n] = R;
+              break;
+            } else if (wavefunctions[0].grid.k(k) > kPrime) {
+              before = k - 1;
+              after = k;
+              double orig = norm(initialPsiKs[0](before)) + (kPrime - wavefunctions[0].grid.k(before))
+                  * ((norm(initialPsiKs[0](after)) - norm(initialPsiKs[0](before)))
+                      / (wavefunctions[0].grid.k(after) - wavefunctions[0].grid.k(before))); // Add interpolated value
+              R = R/orig;
+              Rs[n] = R;
+              break;
+            }
+          }
+        }
+        double Rtot = std::accumulate(Rs.begin(), Rs.end(), double(0.0));
+        data[dataIndex].push_back(T+Rtot);
+        for (int m = 0; m < Rs.size(); ++m){
+          data[dataIndex+m+1].push_back(Rs[m]);
+        }
+      }
+    }
+  }
+}
+
 void System::updateFromCC(){
   for (int k = 0; k < nChannel; ++k) {
     Eigen::Tensor<cd, 1> psiTensorChip = psiTensor.chip(k,0);
@@ -343,12 +450,12 @@ dArray System::getTransmission(){
 
 dArray System::getReflection(int index){
   /// TODO: Consider using Splinter for interpolation (easy splines to sample, but requires compilation)
-  dArray T;
-  T.setZero(wavefunctions[0].grid.nPoint);
+  dArray R;
+  R.setZero(wavefunctions[0].grid.nPoint);
   if (wavefunctions[index].epsilon==0.0){
     for (int m = int(1+(wavefunctions[index].grid.nPoint)/2); m < wavefunctions[index].grid.nPoint; ++m) {
       int minus = wavefunctions[index].grid.nPoint - m;
-      T(m) += wavefunctions[index].psiK.abs2()(minus);
+      R(m) += wavefunctions[index].psiK.abs2()(minus);
     }
   }
   else {
@@ -361,19 +468,19 @@ dArray System::getReflection(int index){
         for (int k = int(1+(wavefunctions[index].grid.nPoint)/2); k < wavefunctions[index].grid.nPoint; ++k) {
           if (wavefunctions[index].grid.k(k) == kPrime){
             int minus = wavefunctions[index].grid.nPoint - k;
-            T(m) += wavefunctions[index].psiK.abs2()(minus);
+            R(m) += wavefunctions[index].psiK.abs2()(minus);
             break;
           }
           else if (wavefunctions[index].grid.k(k) > kPrime){
             before = wavefunctions[index].grid.nPoint - (k-1);
             after = wavefunctions[index].grid.nPoint  - k;
-            T(m) += wavefunctions[index].psiK.abs2()(before) + (-kPrime - wavefunctions[index].grid.k(before))*((wavefunctions[index].psiK.abs2()(after)-wavefunctions[index].psiK.abs2()(before))/(wavefunctions[index].grid.k(after)-wavefunctions[index].grid.k(before))); // Add interpolated value
+            R(m) += wavefunctions[index].psiK.abs2()(before) + (-kPrime - wavefunctions[index].grid.k(before))*((wavefunctions[index].psiK.abs2()(after)-wavefunctions[index].psiK.abs2()(before))/(wavefunctions[index].grid.k(after)-wavefunctions[index].grid.k(before))); // Add interpolated value
             break;
           }
         }
       }
     }
   }
-  T = T/initialPsiKs[0].abs2();
-  return T;
+  R = R/initialPsiKs[0].abs2();
+  return R;
 }

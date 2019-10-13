@@ -24,8 +24,8 @@ using namespace Eigen;
 using namespace std;
 
 int main() {
-  omp_set_num_threads(4);
-  Eigen::setNbThreads(4);
+//  omp_set_num_threads(4);
+//  Eigen::setNbThreads(4);
 //  Eigen::internal::set_is_malloc_allowed(false);
 /// TODO: Fix System so you can add potentials and wavefunctions freely
 /// Currently need to add wavefunctions first
@@ -36,7 +36,7 @@ int main() {
   // V_{n->n+1}: n*VC Coupling strength
   // Q_n: n*2 Relative energy
 
-  std::vector<int> configs = {1, 2, 3, 4};
+  std::vector<int> configs = {1, 2, 3 ,4};
 #pragma omp parallel for
   for (int k = 0; k < configs.size(); ++k) {
     int N = configs[k];
@@ -46,9 +46,10 @@ int main() {
     double sigmaF = 5.0;
 //    double sigmaF = 10.0;
     double couplingCentre = 0.0;
+//    double couplingCentre = -sqrt(2*log(2))*sigmaF;
 
-    double F = 8.0; // Coupling height
-//    double F = 4*5.0/sigmaF;
+//    double F = 8.0; // Coupling height
+    double F = 4*5.0/sigmaF;
     double baseEpsilon = 2.0; // Standard multiplier for epsilon
     std::vector<double> ns;
     std::vector<double> vcs;
@@ -60,15 +61,16 @@ int main() {
     }
 
     int time = 8500;
-    double timestep = 1.0;
-//    double timestep = 0.1;
-    //  double timestep = 0.01;
-//  unsigned int sizeN = 4095;
-//  unsigned int sizeN = 8191;
+//    int time = 700;
+//    double timestep = 1.0;
+    double timestep = 0.1;
+//    double timestep = 0.01;
+//    unsigned int sizeN = 4095;
+//    unsigned int sizeN = 8191;
 //    unsigned int sizeN = 16383;
 //    unsigned int sizeN = 32767;
-    unsigned int sizeN = 65535;
-//    unsigned int sizeN = 131071;
+//    unsigned int sizeN = 65535;
+    unsigned int sizeN = 131071;
     double xmin = -10000.0;
     double xmax = 10000.0;
     double kscale = 1.0;
@@ -98,15 +100,32 @@ int main() {
 
     // CC EvolutionC_
     system.initCC(timestep);
-
+    std::vector<std::vector<double>> timeData;
+    std::vector<double> timeEnergies = {0.5*V0, 0.9*V0, 1.0*V0, 1.2*V0, 2.0*V0};
     auto start = std::chrono::high_resolution_clock::now();
-    system.evolveCC(int(time/timestep));
+    system.evolveCC(int(time/timestep), timeEnergies, 20, timeData);
     auto finish = std::chrono::high_resolution_clock::now();
 
+    for (int m = 0; m < timeEnergies.size(); ++m) {
+      std::ofstream Out("N_"+tostring(N)+"_E_"+tostring(timeEnergies[m]/V0)+".csv");
+      int len = timeData[0].size();
+      Out << "t" << "," << "T+R";
+      for (int l = 0; l < system.nChannel; ++l) {
+        Out << "," << "N_"+tostring(l);
+      }
+      Out << "\n";
+      for (int j = 0; j < len; ++j) {
+        Out << timeData[0][j] << "," << timeData[1+m*(system.nChannel+1)][j];
+        for (int l = 0; l < system.nChannel; ++l) {
+          Out << "," << timeData[1+m*(system.nChannel+1)+1+l][j];
+        }
+        Out << "\n";
+      }
+    }
     system.updateFromCC();
 
 //    Plotter plot(system);
-//    plot.animateCC(int(time/timestep), 100, false, false, true);
+//    plot.animateCC(int(time/timestep), 100, false, false, false);
 
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Elapsed time for "+tostring(N)+" couplings: " << elapsed.count() << " s\n";
