@@ -60,93 +60,93 @@ include CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/main.cpp.o: CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/main.cpp.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/QuantumToolbox.dir/main.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/main.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/main.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp"
 
 CMakeFiles/QuantumToolbox.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuantumToolbox.dir/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp" > CMakeFiles/QuantumToolbox.dir/main.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp" > CMakeFiles/QuantumToolbox.dir/main.cpp.i
 
 CMakeFiles/QuantumToolbox.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuantumToolbox.dir/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp" -o CMakeFiles/QuantumToolbox.dir/main.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp" -o CMakeFiles/QuantumToolbox.dir/main.cpp.s
 
 CMakeFiles/QuantumToolbox.dir/Grid.cpp.o: CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/Grid.cpp.o: ../Grid.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/QuantumToolbox.dir/Grid.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Grid.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Grid.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp"
 
 CMakeFiles/QuantumToolbox.dir/Grid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuantumToolbox.dir/Grid.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp" > CMakeFiles/QuantumToolbox.dir/Grid.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp" > CMakeFiles/QuantumToolbox.dir/Grid.cpp.i
 
 CMakeFiles/QuantumToolbox.dir/Grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuantumToolbox.dir/Grid.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp" -o CMakeFiles/QuantumToolbox.dir/Grid.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Grid.cpp" -o CMakeFiles/QuantumToolbox.dir/Grid.cpp.s
 
 CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o: CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o: ../Wavefunction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp"
 
 CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp" > CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp" > CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.i
 
 CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp" -o CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.cpp" -o CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.s
 
 CMakeFiles/QuantumToolbox.dir/Potential.cpp.o: CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/Potential.cpp.o: ../Potential.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/QuantumToolbox.dir/Potential.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Potential.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Potential.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp"
 
 CMakeFiles/QuantumToolbox.dir/Potential.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuantumToolbox.dir/Potential.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp" > CMakeFiles/QuantumToolbox.dir/Potential.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp" > CMakeFiles/QuantumToolbox.dir/Potential.cpp.i
 
 CMakeFiles/QuantumToolbox.dir/Potential.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuantumToolbox.dir/Potential.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp" -o CMakeFiles/QuantumToolbox.dir/Potential.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Potential.cpp" -o CMakeFiles/QuantumToolbox.dir/Potential.cpp.s
 
 CMakeFiles/QuantumToolbox.dir/Extras.cpp.o: CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/Extras.cpp.o: ../Extras.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/QuantumToolbox.dir/Extras.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Extras.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Extras.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp"
 
 CMakeFiles/QuantumToolbox.dir/Extras.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuantumToolbox.dir/Extras.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp" > CMakeFiles/QuantumToolbox.dir/Extras.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp" > CMakeFiles/QuantumToolbox.dir/Extras.cpp.i
 
 CMakeFiles/QuantumToolbox.dir/Extras.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuantumToolbox.dir/Extras.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp" -o CMakeFiles/QuantumToolbox.dir/Extras.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Extras.cpp" -o CMakeFiles/QuantumToolbox.dir/Extras.cpp.s
 
 CMakeFiles/QuantumToolbox.dir/System.cpp.o: CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/System.cpp.o: ../System.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/QuantumToolbox.dir/System.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/System.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/System.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp"
 
 CMakeFiles/QuantumToolbox.dir/System.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuantumToolbox.dir/System.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp" > CMakeFiles/QuantumToolbox.dir/System.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp" > CMakeFiles/QuantumToolbox.dir/System.cpp.i
 
 CMakeFiles/QuantumToolbox.dir/System.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuantumToolbox.dir/System.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp" -o CMakeFiles/QuantumToolbox.dir/System.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp" -o CMakeFiles/QuantumToolbox.dir/System.cpp.s
 
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: CMakeFiles/QuantumToolbox.dir/flags.make
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o: ../Plotter.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/exg103/Documents/Honours/CPP/CPP Code/build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o -c "/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp"
 
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/QuantumToolbox.dir/Plotter.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp" > CMakeFiles/QuantumToolbox.dir/Plotter.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp" > CMakeFiles/QuantumToolbox.dir/Plotter.cpp.i
 
 CMakeFiles/QuantumToolbox.dir/Plotter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/QuantumToolbox.dir/Plotter.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp" -o CMakeFiles/QuantumToolbox.dir/Plotter.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp" -o CMakeFiles/QuantumToolbox.dir/Plotter.cpp.s
 
 # Object files for target QuantumToolbox
 QuantumToolbox_OBJECTS = \

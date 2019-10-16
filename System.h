@@ -57,13 +57,15 @@ class System {
   void addZeroWavefunction(const double &ReducedMass, const double &Epsilon);
   void addPotential(Potential &pot, const int &j, const int &k);
   void addGaussianPotential(const double &xCentre, const cd &height, const cd &sigma, const int &j, const int &k);
+  void addConstantPotential(const cd &c, const double &xmin, const double &xmax, const int &j, const int &k);
+  void addParabolicPotential(const double &xCentre, const cd &c, const int &j, const int &k);
   void evolveStep(int index, double timeStep, int maxOrder);
   void evolveAllStep(double timeStep, int maxOrder);
   void evolveAll(int nSteps, double timeStep, int maxOrder);
   void initCC(double tStep);
   void evolveCCStep();
   void evolveCC(int nSteps);
-  void evolveCC(int nSteps, std::vector<double> energies, int interval, std::vector<std::vector<double>> &data);
+  void evolveCC(int nSteps, std::vector<double> energies, std::vector<std::vector<double>> &data);
   void updateFromCC();
   void updateK();
   void log(double time);

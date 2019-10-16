@@ -1,0 +1,9 @@
+// Linear coupling scheme
+
+double mu = 1.0;
+double V0 = 100.0;
+double sigma = 5.0;
+double sigmaF = 10.0;
+double couplingCentre = 0.0;
+double F = 4*5.0/sigmaF;
+double baseEpsilon = 2.0;

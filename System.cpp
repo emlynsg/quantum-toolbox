@@ -80,6 +80,20 @@ void System::addGaussianPotential(const double &xCentre, const cd &height, const
   addPotential(pot, j, k);
 }
 
+void System::addConstantPotential(const cd &c, const double &xmin, const double &xmax, const int &j, const int &k){
+  Potential pot(wavefunctions[0].grid);
+  pot.initZero();
+  pot.addConstant(c, xmin, xmax);
+  addPotential(pot, j, k);
+}
+
+void System::addParabolicPotential(const double &xCentre, const cd &c, const int &j, const int &k){
+  Potential pot(wavefunctions[0].grid);
+  pot.initZero();
+  pot.addParabolic(xCentre, c);
+  addPotential(pot, j, k);
+}
+
 void System::evolveStep(int index, double timeStep, int maxOrder){
   /// Taylor expansion method
   /// TODO: Figure approach, label usefully.
@@ -241,7 +255,7 @@ void System::evolveCC(int nSteps) {
   }
 }
 
-void System::evolveCC(int nSteps, std::vector<double> energies, int interval, std::vector<std::vector<double>> &data) {
+void System::evolveCC(int nSteps, std::vector<double> energies, std::vector<std::vector<double>> &data) {
   cout << "Starting new system" << endl;
   std::vector<double> timeVector;
   data.push_back(timeVector);
@@ -257,8 +271,14 @@ void System::evolveCC(int nSteps, std::vector<double> energies, int interval, st
   for (int j = 0; j < nSteps; ++j) {
     evolveCCStep();
     ++show_progress;
-    if ((j%int(0.5+10/timeStep)==0 and j*timeStep < 500) or (j%int(0.5+100/timeStep)==0)){
+//    if ((j%int(0.5+5/timeStep)==0 and j*timeStep < 500) or (j%int(0.5+100/timeStep)==0))
+    if (j%int(0.5+1/timeStep)==0){
       updateFromCC();
+      for (int j = 0; j < nChannel; ++j) {
+        times[j].push_back(j*timeStep);
+        norms[j].push_back(wavefunctions[j].getNorm());
+        averages[j].push_back(wavefunctions[j].getAvgX());
+      }
       data[0].push_back(j*timeStep);
       // HELP
       for (int l = 0; l < energies.size(); ++l) {
@@ -345,6 +365,22 @@ void System::evolveCC(int nSteps, std::vector<double> energies, int interval, st
         }
       }
     }
+  }
+  updateFromCC();
+  std::ofstream Out2("ChannelsOverTime.csv");
+  Out2 << "t";
+  for (int l = 0; l < nChannel; ++l) {
+    Out2 << ",Norm_"+tostring(l);
+    Out2 << ",AvgX_"+tostring(l);
+  }
+  Out2 << "\n";
+  for (int l = 0; l < times[0].size(); ++l) {
+    Out2 << times[0][l];
+    for (int m = 0; m < nChannel; ++m) {
+      Out2 << "," << norms[m][l];
+      Out2 << "," << averages[m][l];
+    }
+    Out2 << "\n";
   }
 }
 

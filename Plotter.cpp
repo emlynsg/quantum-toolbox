@@ -170,10 +170,10 @@ void Plotter::animateCC(int nSteps, int updateRate, bool logY = false, bool k = 
     system.updateFromCC();
   }
   else if (cc){
-//    gp << "set yrange [-0.5:0.5]\n";
-    gp << "set yrange [0.000000000000001:10]\n";
-    gp << "set log y\n";
-    gp << "set format y '10^{%L}'\n";
+    gp << "set yrange [-0.5:0.5]\n";
+//    gp << "set yrange [0.000000000000001:10]\n";
+//    gp << "set log y\n";
+//    gp << "set format y '10^{%L}'\n";
     for (int j = 0; j < nSteps; ++j) {
       system.evolveCCStep();
       if (j % updateRate == 0){

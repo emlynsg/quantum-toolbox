@@ -28,139 +28,139 @@ double asymmGaussian(const double &x, const double &X0, const double &Sigma) {
 
 /// Vector functions
 
-doubleVec vectorComplexToDouble(const complexVec &a) {
-  doubleVec b(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), [](cd elt) { return elt.real(); });
-  return b;
-}
-
-complexVec vectorDoubleToComplex(const doubleVec &a) {
-  complexVec b(a.size());
-  std::transform(a.begin(), a.end(), std::back_inserter(b),
-                 [](double r) { return std::complex<double>(r, 0.0); });
-  return b;
-}
-
-complexVec vectorMultiply(const complexVec &a, const complexVec &b) {
-  assert(("Vector lengths don't match", a.size() == b.size()));
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::multiplies<>());
-  return c;
-}
-
-doubleVec vectorMultiply(const doubleVec &a, const doubleVec &b) {
-  assert(("Vector lengths don't match", a.size() == b.size()));
-  doubleVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::multiplies<>());
-  return c;
-}
-
-complexVec vectorExp(const complexVec &a) {
-  complexVec b(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), expVec());
-  return b;
-}
-
-complexVec vectorScale(const complexVec &a, const cd &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
-  return c;
-}
-
-complexVec vectorScale(const complexVec &a, const double &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
-  return c;
-}
-
-doubleVec vectorScale(const doubleVec &a, const double &b) {
-  doubleVec c(a.size());
-  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
-  return c;
-}
-
-complexVec vectorScale(const doubleVec &a, const cd &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
-  return c;
-}
-
-complexVec vectorAdd(const complexVec &a, const complexVec &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
-  return c;
-}
-
-complexVec vectorAdd(const complexVec &a, const doubleVec &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
-  return c;
-}
-
-complexVec vectorAdd(const doubleVec &a, const complexVec &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
-  return c;
-}
-
-complexVec vectorSubtract(const complexVec &a, const complexVec &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
-  return c;
-}
-
-complexVec vectorSubtract(const complexVec &a, const doubleVec &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
-  return c;
-}
-
-complexVec vectorSubtract(const doubleVec &a, const complexVec &b) {
-  complexVec c(a.size());
-  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
-  return c;
-}
-
-doubleVec fourierComplexToDouble(const complexVec &cdVector) {
-  doubleVec dvector;
-  dvector.reserve((2 * cdVector.size()));
-  for (auto j : cdVector) {
-    dvector.push_back(j.real());
-    dvector.push_back(j.imag());
-  }
-  return dvector;
-}
-
-dArray fourierComplexToDouble(cdArray &cdvector) {
-  dArray dvector;
-  dvector.resize(2*cdvector.size());
-  for (int k = 0; k < cdvector.size(); ++k) {
-    dvector[2*k] = (cdvector[k].real());
-    dvector[2*k+1] = (cdvector[k].imag());
-  }
-  return dvector;
-}
-
-complexVec fourierDoubleToComplex(const doubleVec &dvector) {
-  complexVec cdvector;
-  cdvector.reserve((dvector.size()) / 2);
-  int range = 0;
-  while (range < dvector.size()) {
-    cd c = cd(dvector[range], dvector[range + 1]);
-    cdvector.push_back(c);
-    range = range + 2;
-  }
-  return cdvector;
-}
-
-cdArray fourierDoubleToComplex(dArray &dvector) {
-  cdArray cdVector;
-  cdVector.resize(dvector.size()/2);
-  for (int k = 0; k < 2*cdVector.size(); k=k+2) {
-    cdVector[k] = cd(dvector[k], dvector[k+1]);
-  }
-  return cdVector;
-}
+//doubleVec vectorComplexToDouble(const complexVec &a) {
+//  doubleVec b(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), [](cd elt) { return elt.real(); });
+//  return b;
+//}
+//
+//complexVec vectorDoubleToComplex(const doubleVec &a) {
+//  complexVec b(a.size());
+//  std::transform(a.begin(), a.end(), std::back_inserter(b),
+//                 [](double r) { return std::complex<double>(r, 0.0); });
+//  return b;
+//}
+//
+//complexVec vectorMultiply(const complexVec &a, const complexVec &b) {
+//  assert(("Vector lengths don't match", a.size() == b.size()));
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::multiplies<>());
+//  return c;
+//}
+//
+//doubleVec vectorMultiply(const doubleVec &a, const doubleVec &b) {
+//  assert(("Vector lengths don't match", a.size() == b.size()));
+//  doubleVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::multiplies<>());
+//  return c;
+//}
+//
+//complexVec vectorExp(const complexVec &a) {
+//  complexVec b(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), expVec());
+//  return b;
+//}
+//
+//complexVec vectorScale(const complexVec &a, const cd &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
+//  return c;
+//}
+//
+//complexVec vectorScale(const complexVec &a, const double &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
+//  return c;
+//}
+//
+//doubleVec vectorScale(const doubleVec &a, const double &b) {
+//  doubleVec c(a.size());
+//  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
+//  return c;
+//}
+//
+//complexVec vectorScale(const doubleVec &a, const cd &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), c.begin(), [b](auto &elt) { return elt * b; });
+//  return c;
+//}
+//
+//complexVec vectorAdd(const complexVec &a, const complexVec &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
+//  return c;
+//}
+//
+//complexVec vectorAdd(const complexVec &a, const doubleVec &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
+//  return c;
+//}
+//
+//complexVec vectorAdd(const doubleVec &a, const complexVec &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::plus<>());
+//  return c;
+//}
+//
+//complexVec vectorSubtract(const complexVec &a, const complexVec &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
+//  return c;
+//}
+//
+//complexVec vectorSubtract(const complexVec &a, const doubleVec &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
+//  return c;
+//}
+//
+//complexVec vectorSubtract(const doubleVec &a, const complexVec &b) {
+//  complexVec c(a.size());
+//  std::transform(a.begin(), a.end(), b.begin(), c.begin(), std::minus<>());
+//  return c;
+//}
+//
+//doubleVec fourierComplexToDouble(const complexVec &cdVector) {
+//  doubleVec dvector;
+//  dvector.reserve((2 * cdVector.size()));
+//  for (auto j : cdVector) {
+//    dvector.push_back(j.real());
+//    dvector.push_back(j.imag());
+//  }
+//  return dvector;
+//}
+//
+//dArray fourierComplexToDouble(cdArray &cdvector) {
+//  dArray dvector;
+//  dvector.resize(2*cdvector.size());
+//  for (int k = 0; k < cdvector.size(); ++k) {
+//    dvector[2*k] = (cdvector[k].real());
+//    dvector[2*k+1] = (cdvector[k].imag());
+//  }
+//  return dvector;
+//}
+//
+//complexVec fourierDoubleToComplex(const doubleVec &dvector) {
+//  complexVec cdvector;
+//  cdvector.reserve((dvector.size()) / 2);
+//  int range = 0;
+//  while (range < dvector.size()) {
+//    cd c = cd(dvector[range], dvector[range + 1]);
+//    cdvector.push_back(c);
+//    range = range + 2;
+//  }
+//  return cdvector;
+//}
+//
+//cdArray fourierDoubleToComplex(dArray &dvector) {
+//  cdArray cdVector;
+//  cdVector.resize(dvector.size()/2);
+//  for (int k = 0; k < 2*cdVector.size(); k=k+2) {
+//    cdVector[k] = cd(dvector[k], dvector[k+1]);
+//  }
+//  return cdVector;
+//}
 
 double vectorTrapezoidIntegrate(doubleVec &vect, const double &h, const int &n) {
   assert(("Integration requires a minimum of 9 points", n > 9));

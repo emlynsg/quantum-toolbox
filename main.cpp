@@ -36,20 +36,18 @@ int main() {
   // V_{n->n+1}: n*VC Coupling strength
   // Q_n: n*2 Relative energy
 
-  std::vector<int> configs = {1, 2, 3 ,4};
-#pragma omp parallel for
+  // Parabolic potential with constant strength couplings
+  // Linear and doubling coupling strengths
+  // Start with wavefunction in centre and boost
+
+  std::vector<int> configs = {2, 4, 8};
+//#pragma omp parallel for
   for (int k = 0; k < configs.size(); ++k) {
     int N = configs[k];
     double mu = 1.0;
     double V0 = 100.0;
-    double sigma = 5.0;
-    double sigmaF = 5.0;
-//    double sigmaF = 10.0;
     double couplingCentre = 0.0;
-//    double couplingCentre = -sqrt(2*log(2))*sigmaF;
-
-//    double F = 8.0; // Coupling height
-    double F = 4*5.0/sigmaF;
+    double F = 4.0;
     double baseEpsilon = 2.0; // Standard multiplier for epsilon
     std::vector<double> ns;
     std::vector<double> vcs;
@@ -57,45 +55,46 @@ int main() {
     for (int j = 0; j < N; ++j) {
       ns.push_back(j);
       vcs.push_back(j*F);
+//      vcs.push_back(pow(2.0,j)*F);
       epsilons.push_back(j*baseEpsilon);
     }
 
-    int time = 8500;
+    int time = 5000;
 //    int time = 700;
 //    double timestep = 1.0;
+//    double timestep = 0.1;
     double timestep = 0.1;
-//    double timestep = 0.01;
 //    unsigned int sizeN = 4095;
 //    unsigned int sizeN = 8191;
-//    unsigned int sizeN = 16383;
+    unsigned int sizeN = 16383;
 //    unsigned int sizeN = 32767;
 //    unsigned int sizeN = 65535;
-    unsigned int sizeN = 131071;
-    double xmin = -10000.0;
-    double xmax = 10000.0;
+//    unsigned int sizeN = 131071;
+    double xmin = -1000.0;
+    double xmax = 1000.0;
     double kscale = 1.0;
 
     Grid grid(sizeN, xmin, xmax, kscale);
 
     Wavefunction ground(grid, mu);
-    ground.initGaussian(-100.0, 2.5);
+    ground.initGaussian(0.0, 2.5);
     ground.boostEnergy(V0);
 
     Potential U1(grid);
     U1.initZero();
-    U1.addGaussian(0.0, V0, sigma);
+    U1.addParabolic(0.0, 0.001);
 
     System system(ground, U1);
     for (int j = 1; j < N; ++j) {
       system.addZeroWavefunction(mu, epsilons[j]);
     }
     for (int j = 1; j < N; ++j) {
-      system.addGaussianPotential(0.0, V0, sigma, j, j);
+      system.addParabolicPotential(0.0, 0.001, j, j);
     }
     // Nearest neighbour coupling
     for (int j = 1; j < N; ++j) {
-      system.addGaussianPotential(couplingCentre, vcs[j], sigma, j, j-1);
-      system.addGaussianPotential(couplingCentre, vcs[j], sigma, j-1, j);
+      system.addConstantPotential(vcs[j], xmin, xmax, j, j-1);
+      system.addConstantPotential(vcs[j], xmin, xmax, j-1, j);
     }
 
     // CC EvolutionC_
@@ -103,7 +102,7 @@ int main() {
     std::vector<std::vector<double>> timeData;
     std::vector<double> timeEnergies = {0.5*V0, 0.9*V0, 1.0*V0, 1.2*V0, 2.0*V0};
     auto start = std::chrono::high_resolution_clock::now();
-    system.evolveCC(int(time/timestep), timeEnergies, 20, timeData);
+    system.evolveCC(int(time/timestep), timeEnergies, timeData);
     auto finish = std::chrono::high_resolution_clock::now();
 
     for (int m = 0; m < timeEnergies.size(); ++m) {
@@ -123,9 +122,9 @@ int main() {
       }
     }
     system.updateFromCC();
-
+//
 //    Plotter plot(system);
-//    plot.animateCC(int(time/timestep), 100, false, false, false);
+//    plot.animateCC(int(time/timestep), 100, false, false, true);
 
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Elapsed time for "+tostring(N)+" couplings: " << elapsed.count() << " s\n";
