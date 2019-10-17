@@ -367,21 +367,6 @@ void System::evolveCC(int nSteps, std::vector<double> energies, std::vector<std:
     }
   }
   updateFromCC();
-  std::ofstream Out2("ChannelsOverTime.csv");
-  Out2 << "t";
-  for (int l = 0; l < nChannel; ++l) {
-    Out2 << ",Norm_"+tostring(l);
-    Out2 << ",AvgX_"+tostring(l);
-  }
-  Out2 << "\n";
-  for (int l = 0; l < times[0].size(); ++l) {
-    Out2 << times[0][l];
-    for (int m = 0; m < nChannel; ++m) {
-      Out2 << "," << norms[m][l];
-      Out2 << "," << averages[m][l];
-    }
-    Out2 << "\n";
-  }
 }
 
 void System::updateFromCC(){

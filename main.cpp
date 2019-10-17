@@ -125,6 +125,21 @@ int main() {
 //
 //    Plotter plot(system);
 //    plot.animateCC(int(time/timestep), 100, false, false, true);
+    std::ofstream Out2("N_"+tostring(N)+"ChannelsOverTime.csv");
+    Out2 << "t";
+    for (int l = 0; l < system.nChannel; ++l) {
+      Out2 << ",Norm_"+tostring(l);
+      Out2 << ",AvgX_"+tostring(l);
+    }
+    Out2 << "\n";
+    for (int l = 0; l < system.times[0].size(); ++l) {
+      Out2 << system.times[0][l];
+      for (int m = 0; m < system.nChannel; ++m) {
+        Out2 << "," << system.norms[m][l];
+        Out2 << "," << system.averages[m][l];
+      }
+      Out2 << "\n";
+    }
 
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Elapsed time for "+tostring(N)+" couplings: " << elapsed.count() << " s\n";

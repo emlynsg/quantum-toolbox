@@ -5,7 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="QuantumToolbox" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="133" />
+    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="148" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -20,76 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/4_Couplings_VC_4_sigmaC_5_FWHM/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/4_Couplings_VC_4_sigmaC_5_FWHM/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/4_Couplings_VC_4_sigmaC_5_FWHM/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/4_Couplings_VC_4_sigmaC_5_FWHM/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Coupling integral same as VC_4_sigmaC_5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/QuantumToolbox" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_2_sigmaC_10/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_4_sigmaC_5/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/QuantumToolbox" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HighT/4_Couplings_VC_8_sigmaC_5/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extras.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Extras.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extras.h" beforeDir="false" afterPath="$PROJECT_DIR$/Extras.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plotter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/System.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/System.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.h" beforeDir="false" afterPath="$PROJECT_DIR$/System.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/QuantumToolbox.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/QuantumToolbox.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Extras.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Extras.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/QuantumToolbox" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/QuantumToolbox.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -182,7 +113,7 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="51066" />
+          <entry key="cpp" value="51095" />
           <entry key="gp" value="341" />
           <entry key="h" value="5307" />
           <entry key="py" value="55" />
@@ -193,7 +124,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="719" />
           <entry key="Doxygen file" value="41" />
-          <entry key="ObjectiveC" value="56362" />
+          <entry key="ObjectiveC" value="56391" />
           <entry key="PLAIN_TEXT" value="920" />
           <entry key="Python" value="55" />
         </counts>
@@ -243,11 +174,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
+            <state relative-caret-position="210">
+              <caret line="125" column="27" lean-forward="true" selection-start-line="125" selection-start-column="27" selection-end-line="125" selection-end-column="27" />
               <folding>
                 <element signature="e#109#126#0" expanded="true" />
               </folding>
@@ -306,11 +237,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/System.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="379" column="33" lean-forward="true" selection-start-line="379" selection-start-column="33" selection-end-line="379" selection-end-column="33" />
+            <state relative-caret-position="122">
+              <caret line="368" column="17" selection-start-line="368" selection-start-column="17" selection-end-line="368" selection-end-column="17" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#470#702#0" />
@@ -465,8 +396,8 @@
         <option value="$PROJECT_DIR$/System.h" />
         <option value="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" />
         <option value="$PROJECT_DIR$/Plotter.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/System.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -581,12 +512,12 @@
       <workItem from="1570157951907" duration="48367000" />
       <workItem from="1570596726040" duration="19449000" />
       <workItem from="1570936425716" duration="24777000" />
-      <workItem from="1571195365874" duration="6913000" />
+      <workItem from="1571195365874" duration="7627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="628244000" />
+    <option name="totallyTimeSpent" value="628958000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,19 +532,19 @@
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13875069" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13875069" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32814237" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36245954" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36245954" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3840345" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.29234087" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.19201726" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19201726" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002764" side_tool="true" weight="0.3149946" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3279396" />
       <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.4997236" weight="0.3149946" />
@@ -927,20 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="110" column="33" lean-forward="true" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
-          <folding>
-            <element signature="e#109#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/System.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="379" column="33" lean-forward="true" selection-start-line="379" selection-start-column="33" selection-end-line="379" selection-end-column="33" />
+        <state relative-caret-position="122">
+          <caret line="368" column="17" selection-start-line="368" selection-start-column="17" selection-end-line="368" selection-end-column="17" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#470#702#0" />
@@ -954,6 +875,16 @@
             <element signature="e#3713#3862#0" />
             <element signature="e#3864#6847#0" />
             <element signature="e#6849#8857#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="125" column="27" lean-forward="true" selection-start-line="125" selection-start-column="27" selection-end-line="125" selection-end-column="27" />
+          <folding>
+            <element signature="e#109#126#0" expanded="true" />
           </folding>
         </state>
       </provider>
