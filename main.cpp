@@ -40,8 +40,8 @@ int main() {
   // Linear and doubling coupling strengths
   // Start with wavefunction in centre and boost
 
-  std::vector<int> configs = {2, 4, 8};
-//#pragma omp parallel for
+  std::vector<int> configs = {4, 8};
+#pragma omp parallel for
   for (int k = 0; k < configs.size(); ++k) {
     int N = configs[k];
     double mu = 1.0;

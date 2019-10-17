@@ -274,10 +274,10 @@ void System::evolveCC(int nSteps, std::vector<double> energies, std::vector<std:
 //    if ((j%int(0.5+5/timeStep)==0 and j*timeStep < 500) or (j%int(0.5+100/timeStep)==0))
     if (j%int(0.5+1/timeStep)==0){
       updateFromCC();
-      for (int j = 0; j < nChannel; ++j) {
-        times[j].push_back(j*timeStep);
-        norms[j].push_back(wavefunctions[j].getNorm());
-        averages[j].push_back(wavefunctions[j].getAvgX());
+      for (int k = 0; k < nChannel; ++k) {
+        times[k].push_back(j*timeStep);
+        norms[k].push_back(wavefunctions[k].getNorm());
+        averages[k].push_back(wavefunctions[k].getAvgX());
       }
       data[0].push_back(j*timeStep);
       // HELP
