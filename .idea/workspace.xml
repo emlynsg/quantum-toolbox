@@ -5,7 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="QuantumToolbox" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="148" />
+    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="133" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -20,37 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/Base.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/Base.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/FWHM.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/FWHM.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/HeightX2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/HeightX2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/WidthX2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/WidthX2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/WidthX2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/WidthX2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/DoubCouplings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_8.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_8_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_8_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_8_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_8_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_8_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/LinCouplings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_8.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_8_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_8_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_8_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_8_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_8_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/System.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DissipationStudies/DoublingTreeCoupling.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FusionStudies/2TreeParabolic.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FusionStudies/3TreeParabolic.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FusionStudies/4TreeParabolic.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/DoubCoup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/LinCoup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -124,9 +120,9 @@
     <session id="1509149086">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="2" />
@@ -135,7 +131,7 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -143,7 +139,7 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="51107" />
+          <entry key="cpp" value="51562" />
           <entry key="gp" value="341" />
           <entry key="h" value="5307" />
           <entry key="py" value="55" />
@@ -154,13 +150,14 @@
         <counts>
           <entry key="CMakeLists.txt" value="719" />
           <entry key="Doxygen file" value="41" />
-          <entry key="ObjectiveC" value="56403" />
+          <entry key="ObjectiveC" value="56858" />
           <entry key="PLAIN_TEXT" value="920" />
           <entry key="Python" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="2TreeParabolic" value="1" />
           <entry key="Build All (disassembly)" value="39" />
           <entry key="CoupledWFcsv" value="2" />
           <entry key="FFT" value="5" />
@@ -172,7 +169,7 @@
           <entry key="Tensor" value="6" />
           <entry key="cmake" value="2" />
           <entry key="complex" value="7" />
-          <entry key="cpp" value="197" />
+          <entry key="cpp" value="204" />
           <entry key="csv" value="67" />
           <entry key="gnuplot" value="1" />
           <entry key="gp" value="3" />
@@ -189,8 +186,8 @@
           <entry key="CMakeLists.txt" value="22" />
           <entry key="CSV" value="65" />
           <entry key="Disassembly" value="115" />
-          <entry key="ObjectiveC" value="486" />
-          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="ObjectiveC" value="493" />
+          <entry key="PLAIN_TEXT" value="24" />
           <entry key="Python" value="2" />
           <entry key="SVG" value="2" />
         </counts>
@@ -204,11 +201,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="127" column="63" lean-forward="true" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
+            <state relative-caret-position="336">
+              <caret line="98" column="7" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
               <folding>
                 <element signature="e#109#126#0" expanded="true" />
               </folding>
@@ -217,34 +214,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp">
+        <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-922">
-              <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Plotter.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-              <folding>
-                <element signature="e#95#142#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2136">
+              <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -252,40 +225,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="123" column="26" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Potential.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/System.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="271" column="19" lean-forward="true" selection-start-line="271" selection-start-column="19" selection-end-line="271" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#470#702#0" />
-                <element signature="e#704#1053#0" />
-                <element signature="e#1055#2257#0" />
-                <element signature="e#2259#2509#0" />
-                <element signature="e#2511#2631#0" />
-                <element signature="e#2749#2853#0" />
-                <element signature="e#2511#3555#0" />
-                <element signature="e#3557#3711#0" />
-                <element signature="e#3713#3862#0" />
-                <element signature="e#3864#6847#0" />
-                <element signature="e#6849#8857#0" />
-              </folding>
+            <state relative-caret-position="1131">
+              <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -379,11 +320,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.cpp" />
-        <option value="$PROJECT_DIR$/Templates.cpp" />
-        <option value="$PROJECT_DIR$/Variables.cpp" />
-        <option value="$PROJECT_DIR$/eigen/unsupported/Eigen/FFT" />
-        <option value="/usr/local/include/eigen/unsupported/Eigen/CXX11/Tensor" />
         <option value="$PROJECT_DIR$/eigen/unsupported/Eigen/CXX11/Tensor" />
         <option value="$PROJECT_DIR$/stylefile.gp" />
         <option value="$PROJECT_DIR$/Potential.h" />
@@ -417,17 +353,24 @@
         <option value="$PROJECT_DIR$/Plotter.h" />
         <option value="$PROJECT_DIR$/Wavefunction.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearCoupling.cpp" />
-        <option value="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearCouplingShifted.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearVsTriangular.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Extras.cpp" />
         <option value="$PROJECT_DIR$/Extras.h" />
         <option value="$PROJECT_DIR$/System.h" />
-        <option value="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" />
         <option value="$PROJECT_DIR$/Plotter.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/System.cpp" />
+        <option value="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" />
+        <option value="$PROJECT_DIR$/DissipationStudies/DoublingTreeCoupling.cpp" />
+        <option value="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" />
+        <option value="$PROJECT_DIR$/FusionStudies/2TreeParabolic.cpp" />
+        <option value="$PROJECT_DIR$/FusionStudies/3TreeParabolic.cpp" />
+        <option value="$PROJECT_DIR$/FusionStudies/4TreeParabolic.cpp" />
+        <option value="$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp" />
+        <option value="$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp" />
+        <option value="$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -436,10 +379,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="false" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="64" />
-    <option name="y" value="-4" />
+    <option name="x" value="1984" />
+    <option name="y" value="-11" />
     <option name="width" value="1857" />
-    <option name="height" value="1085" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -447,6 +390,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -473,7 +417,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -542,12 +485,13 @@
       <workItem from="1570157951907" duration="48367000" />
       <workItem from="1570596726040" duration="19449000" />
       <workItem from="1570936425716" duration="24777000" />
-      <workItem from="1571195365874" duration="9178000" />
+      <workItem from="1571195365874" duration="14287000" />
+      <workItem from="1571454704764" duration="7539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="630509000" />
+    <option name="totallyTimeSpent" value="643157000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,10 +503,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13875069" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14040907" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -573,8 +517,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.29234087" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19201726" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.29234087" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.19201726" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002764" side_tool="true" weight="0.3149946" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3279396" />
       <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.4997236" weight="0.3149946" />
@@ -630,40 +574,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/UncoupledWF.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="388">
-          <caret line="4097" lean-forward="true" selection-start-line="4097" selection-end-line="4097" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/x86_64-linux-gnu/bits/string3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/CoupledWFcsv" />
-    <entry file="file://$PROJECT_DIR$/build-release/CoupledWF.csv" />
-    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/DassoFig20.csv" />
-    <entry file="file://$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="82" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Grid.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -730,9 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="e#84#103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -842,7 +749,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Plotter.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
+        <state relative-caret-position="3816">
           <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -850,30 +757,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Potential.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="123" column="26" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/System.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
+        <state relative-caret-position="576">
           <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
           <folding>
             <element signature="e#95#142#0" expanded="true" />
@@ -883,38 +769,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-922">
-          <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
+        <state relative-caret-position="-692">
+          <caret line="50" column="40" selection-end-line="165" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/Potential.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="127" column="63" lean-forward="true" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
-          <folding>
-            <element signature="e#109#126#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="24">
+          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/System.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="271" column="19" lean-forward="true" selection-start-line="271" selection-start-column="19" selection-end-line="271" selection-end-column="19" />
+        <state relative-caret-position="259">
+          <caret line="438" column="31" selection-start-line="438" selection-start-column="31" selection-end-line="438" selection-end-column="31" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#470#702#0" />
             <element signature="e#704#1053#0" />
             <element signature="e#1055#2257#0" />
             <element signature="e#2259#2509#0" />
-            <element signature="e#2511#2631#0" />
-            <element signature="e#2749#2853#0" />
-            <element signature="e#2511#3555#0" />
-            <element signature="e#3557#3711#0" />
-            <element signature="e#3713#3862#0" />
-            <element signature="e#3864#6847#0" />
-            <element signature="e#6849#8857#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2136">
+          <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FusionStudies/2TreeParabolic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="159" column="56" lean-forward="true" selection-start-line="159" selection-start-column="56" selection-end-line="159" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FusionStudies/3TreeParabolic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FusionStudies/4TreeParabolic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="83" column="46" lean-forward="true" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="205" column="3" lean-forward="true" selection-start-line="205" selection-start-column="3" selection-end-line="205" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="185" column="46" lean-forward="true" selection-start-line="185" selection-start-column="46" selection-end-line="185" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="168" column="69" lean-forward="true" selection-start-line="168" selection-start-column="69" selection-end-line="168" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DissipationStudies/DoublingTreeCoupling.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2092">
+          <caret line="109" column="44" lean-forward="true" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1131">
+          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="98" column="7" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+          <folding>
+            <element signature="e#109#126#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -43,10 +43,10 @@ int main() {
     double mu = 1.0;
     double V0 = 100.0;
     double sigma = 5.0;
-    double sigmaF = 5.0;
-//    double sigmaF = 10.0;
-//    double couplingCentre = 0.0;
-    double couplingCentre = -sqrt(2*log(2))*sigmaF;
+//    double sigmaF = 5.0;
+    double sigmaF = 10.0;
+    double couplingCentre = 0.0;
+//    double couplingCentre = -sqrt(2*log(2))*sigmaF;
 
 //    double F = 8.0; // Coupling height
     double F = 4*5.0/sigmaF;
@@ -93,16 +93,34 @@ int main() {
     }
     // Nearest neighbour coupling
     for (int j = 1; j < N; ++j) {
-      system.addGaussianPotential(couplingCentre, vcs[j], sigma, j, j-1);
-      system.addGaussianPotential(couplingCentre, vcs[j], sigma, j-1, j);
+      system.addGaussianPotential(couplingCentre, vcs[j], sigmaF, j, j-1);
+      system.addGaussianPotential(couplingCentre, vcs[j], sigmaF, j-1, j);
     }
 
     // CC EvolutionC_
     system.initCC(timestep);
-
+    std::vector<std::vector<double>> timeData;
+    std::vector<double> timeEnergies = {0.5*V0, 0.9*V0, 1.0*V0, 1.2*V0, 2.0*V0};
     auto start = std::chrono::high_resolution_clock::now();
-    system.evolveCC(int(time/timestep));
+    system.evolveCC(int(time/timestep), timeEnergies, timeData);
     auto finish = std::chrono::high_resolution_clock::now();
+
+    for (int m = 0; m < timeEnergies.size(); ++m) {
+      std::ofstream Out("N_"+tostring(N)+"_E_"+tostring(timeEnergies[m]/V0)+".csv");
+      int len = timeData[0].size();
+      Out << "t" << "," << "T+R";
+      for (int l = 0; l < system.nChannel; ++l) {
+        Out << "," << "N_"+tostring(l);
+      }
+      Out << "\n";
+      for (int j = 0; j < len; ++j) {
+        Out << timeData[0][j] << "," << timeData[1+m*(system.nChannel+1)][j];
+        for (int l = 0; l < system.nChannel; ++l) {
+          Out << "," << timeData[1+m*(system.nChannel+1)+1+l][j];
+        }
+        Out << "\n";
+      }
+    }
 
     system.updateFromCC();
 
