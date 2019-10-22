@@ -1,6 +1,7 @@
 load "stylefile.gp"
 set xrange [0.1:4.5]
 set yrange [0:1]
+set log x
 set xlabel "E/V0"
 set ylabel "R"
 #plot "N_1.csv" using "E/V0":"N_R0" w l title "Channel 1"

@@ -96,12 +96,6 @@ gsl/gsl_fft_complex.h
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
 
-/home/exg103/Documents/Honours/CPP/CPP Code/System.cpp
-System.h
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-eigen/unsupported/Eigen/FFT
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/FFT
-
 /home/exg103/Documents/Honours/CPP/CPP Code/System.h
 eigen/unsupported/Eigen/CXX11/Tensor
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/CXX11/Tensor
@@ -1618,24 +1612,6 @@ array
 
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/CXX11/src/util/MaxSizeVector.h
 
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/FFT
-complex
--
-vector
--
-map
--
-eigen/Eigen/Core
--
-fftw3.h
--
-src/FFT/ei_fftw_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_fftw_impl.h
-src/FFT/ei_imklfft_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_imklfft_impl.h
-src/FFT/ei_kissfft_impl.h
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
-
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/SpecialFunctions
 math.h
 -
@@ -1657,10 +1633,6 @@ src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
 ../../Eigen/src/Core/util/ReenableStupidWarnings.h
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/src/Core/util/ReenableStupidWarnings.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_fftw_impl.h
-
-/home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
 
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsArrayAPI.h
 
@@ -1750,8 +1722,6 @@ omp.h
 string
 -
 chrono
--
-random
 -
 Grid.h
 /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h

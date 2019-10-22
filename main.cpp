@@ -12,7 +12,6 @@
 #include "omp.h"
 #include <string>
 #include <chrono>
-#include <random>
 
 #include "Grid.h"
 #include "Wavefunction.h"
@@ -40,8 +39,8 @@ int main() {
   // Parabolic potential with constant strength couplings
   // Linear and doubling coupling strengths
   // Start with wavefunction in centre and boost
-  srand(time(NULL));
-  std::vector<int> configs = {2,3,4,5,6};
+
+  std::vector<int> configs = {3,4,5};
 #pragma omp parallel for
   for (int k = 0; k < configs.size(); ++k) {
     int N = configs[k];
@@ -92,16 +91,14 @@ int main() {
     for (int j = 1; j < N; ++j) {
       system.addParabolicPotential(0.0, 0.001, j, j);
     }
-//    // Nearest neighbour coupling
-//    for (int j = 1; j < N; ++j) {
-//      system.addConstantPotential(4.0, xmin, xmax, j, j-1);
-//      system.addConstantPotential(4.0, xmin, xmax, j-1, j);
-//    }
-    // Nearest neighbour coupling
-    for (int j = 1; j < N; ++j) {
-      for (int l = 1; l < N; ++l) {
-        if (j != l){
-          system.addConstantPotential(4.0*rand()/RAND_MAX, xmin, xmax, j, l);
+    // All coupled
+    for (int j = 0; j < N; ++j) {
+      for (int l = 0; l < N; ++l) {
+        if (j>l){
+          double randval = rand()/5.0;
+          system.addConstantPotential(randval, xmin, xmax, j, l);
+          system.addConstantPotential(randval, xmin, xmax, l, j);
+          cout << "Coupling " << j << " " << l << " is " << randval << endl;
         }
       }
     }

@@ -1,6 +1,6 @@
 load "stylefile.gp"
 set xrange [80:150]
-set yrange [0.0001:1]
+set yrange [0.000000000000001:1]
 set log y
 set xlabel "E/V0"
 set ylabel "T"

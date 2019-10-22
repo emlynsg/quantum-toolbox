@@ -1,5 +1,6 @@
 load "stylefile.gp"
 set xrange [70:200]
+set log y
 set xlabel "E/V0"
 set ylabel "Barrier Distribution"
 x0=NaN

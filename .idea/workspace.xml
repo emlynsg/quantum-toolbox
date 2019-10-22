@@ -5,7 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="QuantumToolbox" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="133" />
+    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="126" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -20,33 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissipationStudies/DoublingTreeCoupling.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FusionStudies/2TreeParabolic.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FusionStudies/3TreeParabolic.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FusionStudies/4TreeParabolic.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/DoubCoup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingCouplingStrength/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/LinCoup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearCouplingStrength/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BDist.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Base/BDist.gp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.gp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1ChannelsOverTime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1ChannelsOverTime.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2ChannelsOverTime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2ChannelsOverTime.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3ChannelsOverTime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3ChannelsOverTime.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot.gp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/SeparateCoupling" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/SeparateCoupling" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.gp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/out.out" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/out.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Extras.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Extras.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-debug/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/QuantumToolbox" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/QuantumToolbox" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -139,7 +135,7 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="51562" />
+          <entry key="cpp" value="51782" />
           <entry key="gp" value="341" />
           <entry key="h" value="5307" />
           <entry key="py" value="55" />
@@ -150,7 +146,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="719" />
           <entry key="Doxygen file" value="41" />
-          <entry key="ObjectiveC" value="56858" />
+          <entry key="ObjectiveC" value="57078" />
           <entry key="PLAIN_TEXT" value="920" />
           <entry key="Python" value="55" />
         </counts>
@@ -169,8 +165,8 @@
           <entry key="Tensor" value="6" />
           <entry key="cmake" value="2" />
           <entry key="complex" value="7" />
-          <entry key="cpp" value="204" />
-          <entry key="csv" value="67" />
+          <entry key="cpp" value="207" />
+          <entry key="csv" value="86" />
           <entry key="gnuplot" value="1" />
           <entry key="gp" value="3" />
           <entry key="h" value="264" />
@@ -178,15 +174,15 @@
           <entry key="py" value="2" />
           <entry key="svg" value="2" />
           <entry key="tcc" value="7" />
-          <entry key="txt" value="27" />
+          <entry key="txt" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CMakeLists.txt" value="22" />
-          <entry key="CSV" value="65" />
+          <entry key="CMakeLists.txt" value="23" />
+          <entry key="CSV" value="84" />
           <entry key="Disassembly" value="115" />
-          <entry key="ObjectiveC" value="493" />
+          <entry key="ObjectiveC" value="496" />
           <entry key="PLAIN_TEXT" value="24" />
           <entry key="Python" value="2" />
           <entry key="SVG" value="2" />
@@ -204,8 +200,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="98" column="7" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+            <state relative-caret-position="1680">
+              <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
               <folding>
                 <element signature="e#109#126#0" expanded="true" />
               </folding>
@@ -214,10 +210,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2136">
-              <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+            <state relative-caret-position="236">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -225,8 +221,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1131">
-              <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+            <state relative-caret-position="106">
+              <caret line="81" selection-end-line="180" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/System.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="280" column="7" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#470#702#0" />
+                <element signature="e#704#1053#0" />
+                <element signature="e#1055#2257#0" />
+                <element signature="e#2259#2509#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -355,7 +367,6 @@
         <option value="$PROJECT_DIR$/DissipationStudies/LinearCoupling.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearCouplingShifted.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearVsTriangular.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Extras.cpp" />
         <option value="$PROJECT_DIR$/Extras.h" />
         <option value="$PROJECT_DIR$/System.h" />
@@ -370,6 +381,7 @@
         <option value="$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
@@ -379,8 +391,8 @@
   </component>
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="false" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1984" />
-    <option name="y" value="-11" />
+    <option name="x" value="64" />
+    <option name="y" value="1069" />
     <option name="width" value="1857" />
     <option name="height" value="1092" />
   </component>
@@ -486,12 +498,12 @@
       <workItem from="1570596726040" duration="19449000" />
       <workItem from="1570936425716" duration="24777000" />
       <workItem from="1571195365874" duration="14287000" />
-      <workItem from="1571454704764" duration="7539000" />
+      <workItem from="1571454704764" duration="19721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="643157000" />
+    <option name="totallyTimeSpent" value="655339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,7 +515,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="7" />
+    <frame x="64" y="1069" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14040907" />
@@ -511,13 +523,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32814237" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36245954" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36245954" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3840345" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.29234087" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.29234087" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.19201726" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002764" side_tool="true" weight="0.3149946" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3279396" />
@@ -574,59 +586,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Grid.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CouplingTests/CoupledGaussianBarrier_Transmissions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1293">
-          <caret line="87" column="28" lean-forward="true" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/stylefile.gp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/DassoFig82.csv" />
-    <entry file="file://$PROJECT_DIR$/tests/SquareBarrier.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2688">
-          <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_0.001.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="192">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CouplingTests/QValueTest_DassoFig8.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wavefunction.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -716,13 +675,6 @@
     <entry file="file://$PROJECT_DIR$/build-release/N_1.csv" />
     <entry file="file://$PROJECT_DIR$/build-release/N_1_E_0.5.csv" />
     <entry file="file://$PROJECT_DIR$/build-release/N_1_E_2.csv" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Extras.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
@@ -781,20 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/System.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="438" column="31" selection-start-line="438" selection-start-column="31" selection-end-line="438" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#470#702#0" />
-            <element signature="e#704#1053#0" />
-            <element signature="e#1055#2257#0" />
-            <element signature="e#2259#2509#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2136">
@@ -823,20 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="205" column="3" lean-forward="true" selection-start-line="205" selection-start-column="3" selection-end-line="205" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="185" column="46" lean-forward="true" selection-start-line="185" selection-start-column="46" selection-end-line="185" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -851,17 +775,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="205" column="3" lean-forward="true" selection-start-line="205" selection-start-column="3" selection-end-line="205" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="280" column="7" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#470#702#0" />
+            <element signature="e#704#1053#0" />
+            <element signature="e#1055#2257#0" />
+            <element signature="e#2259#2509#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_3_E_90.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-104619" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_50.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_200.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-debug/N_4_E_100.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-debug/N_4ChannelsOverTime.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+        <state relative-caret-position="106">
+          <caret line="81" selection-end-line="180" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_3ChannelsOverTime.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-4248" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_100.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_3_E_120.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_4ChannelsOverTime.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="98" column="7" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+        <state relative-caret-position="1680">
+          <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
           <folding>
             <element signature="e#109#126#0" expanded="true" />
           </folding>
