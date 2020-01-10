@@ -1,0 +1,38 @@
+nohup: ignoring input
+Coupling 1 0 is 3.36075
+Coupling 2 0 is 1.57753
+Coupling 2 1 is 3.1324
+Coupling 1 0 is 3.19376
+Coupling 1 0 is 3.64659
+Coupling 2 0 is 0.790205
+Coupling 2 0 is 1.34089
+Coupling 2 1 is 3.07292
+Coupling 2 1 is 1.1111
+Coupling 3 0 is 2.21588
+Coupling 3 0 is 1.90959
+Coupling 3 1 is 2.51548
+Coupling 3 1 is 1.45914
+Coupling 3 2 is 2.0536
+Coupling 3 2 is 3.80892
+Coupling 4 0 is 3.66478
+Coupling 4 1 is 2.54285
+Starting new system
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+Coupling 4 2 is 2.86919
+Coupling 4 3 is 0.56641
+*Starting new system
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+*Starting new system
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************************************************************************************************
+Elapsed time for 3 couplings: 6948.33 s
+*****
+Elapsed time for 4 couplings: 7298.34 s
+***********
+Elapsed time for 5 couplings: 9277.63 s
