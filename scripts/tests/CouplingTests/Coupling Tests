@@ -1,0 +1,8 @@
+Quantum Toolbox - Coupling Tests
+
+All tests based on those in C. H. Dasso et al. / Channel-coupling effects (1983).
+
+Given analytic results in this paper, can prove that Quantum Toolbox can accurately handle:
+ - Couplings
+ - Non-degenerate energies
+ - Various reduced masses
