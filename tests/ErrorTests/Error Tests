@@ -1,9 +1,0 @@
-Quantum Toolbox - Error Tests
-
-Tests based upon observation and analytic results for plane wave and square barrier (e.g. https://en.wikipedia.org/wiki/Rectangular_potential_barrier)
-
-Testing for two types of error:
- - Hardcoded numerical error
-	- That produced by C++, the library Eigen and others through storage accuracy and under-the-hood efficiency measures (do log plot and look at small values)
- - Softcoded numerical error (methodological)
-	- Error produced by my own methods. This mainly involves error in the propagation, dependent on the time and position resolution (deltaT and deltaX), as well as the total run time (T).

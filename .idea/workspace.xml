@@ -5,7 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="QuantumToolbox" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="126" />
+    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="26" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -21,29 +21,743 @@
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BDist.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/Base/BDist.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1ChannelsOverTime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1ChannelsOverTime.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2ChannelsOverTime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2ChannelsOverTime.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3ChannelsOverTime.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3ChannelsOverTime.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/SeparateCoupling" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/SeparateCoupling" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.gp" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.gp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/out.out" beforeDir="false" afterPath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/out.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Extras.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Extras.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Grid.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Potential.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/Wavefunction.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-debug/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/build-debug/QuantumToolbox" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BDist.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BelowBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Inputs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.5nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.9nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.5nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.9nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.5nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.9nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.5nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.9nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_2nonlog.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/PlotAll_nonlog.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Tplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/Base.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/FWHM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/HeightX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/WidthX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/Base.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/FWHM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/HeightX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/WidthX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/Base.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/FWHM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/HeightX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/WidthX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/Base.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/Explanation" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/FWHM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/HeightX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/WidthX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/Base.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/FWHM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/HeightX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/WidthX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/Base.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/Base.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/FWHM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/HeightX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/WidthX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/FWHM.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/HeightX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/WidthX2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/DoublingTreeCoupling.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BDist.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BelowBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/FWHM" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Inputs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Tplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BelowBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/DoubleHeight" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Inputs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Tplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCoupling.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCouplingShifted.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/AboveBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/BelowBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Rplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Tplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/AboveBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BDist.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BelowBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/NewWider" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Tplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/AboveBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BDist.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BelowBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/SeparateCoupling" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/2LevelTreeGaussianBarrier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/Rplot2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/3LevelTreeGaussianBarrier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/4LevelTreeGaussianBarrier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/TriangularCoupling.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BDist.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BDist.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BelowBarrier.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BelowBarrier.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/DoubleWidth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Inputs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.9.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Tplot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Tplot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/2TreeParabolic.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/3TreeParabolic.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/4TreeParabolic.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/ConstantCoup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3AllConstant.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5AllConstant.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3AllRandom.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5AllRandom.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/DoublingScheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_3ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_4_around1200.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_5ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_6.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_6ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_6_around1600.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_7ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_7_around350.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_8.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_8ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_8_around170.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/LinearScheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_3ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_4ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_5ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_6.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_6ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_7ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_7_near3800.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_8.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_8ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_8_near1300.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/SingleDirectionCoupling" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/2LevelTreeParabolic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2ChannelsOverTime_Tree.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_Levels.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/3TreeParabolic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3ChannelsOverTime_Tree.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_Levels.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/PlotAll.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/4LevelTreeParabolic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2ChannelsOverTime.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_120.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_200.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_90.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/out.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plotter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plotter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/System.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/System.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/Progress/6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/Progress/count.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/QuantumToolbox" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qmtoybox tests/qmtoybox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qmtoybox tests/squarebarrier.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CoupledSquareBarrier.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CoupledWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/CoupledGaussianBarrier_Transmissions.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/Coupling Tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig20.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig22.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig8-2.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig80.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig82.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/QValueTest_DassoFig8.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/plot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/BasicError_FinalWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/BasicError_InitWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/BasicError_OneStepWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_0.01.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_0.1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.0732467.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.146502.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.29304.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.586224.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_1.17302.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/Error Tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_DeltaX_DeltaT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_0.001.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_0.01.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_0.1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FourierError" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/MachineErrorTest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_1143.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_1400.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_808.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_885.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_989.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/plot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/GaussianBarrierWithAbsorbingPotential.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/SquareBarrier.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/SquareBarrierIncomingWave.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_40.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_75.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_40.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_75.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_40.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_75.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_100.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_40.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_75.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_40.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_75.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/plot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/transmission.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_10.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_100" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_100_analytic.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_10_analytic.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_40.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_40_analytic.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_75.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_75_analytic.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/plot.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/stylefile.gp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Transmission Tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/UncoupledWF.csv" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
@@ -116,18 +830,20 @@
     <session id="1509149086">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="2" />
-          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.22" value="2" />
+          <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -135,18 +851,18 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="51782" />
+          <entry key="cpp" value="51923" />
           <entry key="gp" value="341" />
-          <entry key="h" value="5307" />
+          <entry key="h" value="5346" />
           <entry key="py" value="55" />
-          <entry key="txt" value="996" />
+          <entry key="txt" value="997" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CMakeLists.txt" value="719" />
+          <entry key="CMakeLists.txt" value="720" />
           <entry key="Doxygen file" value="41" />
-          <entry key="ObjectiveC" value="57078" />
+          <entry key="ObjectiveC" value="57258" />
           <entry key="PLAIN_TEXT" value="920" />
           <entry key="Python" value="55" />
         </counts>
@@ -165,24 +881,24 @@
           <entry key="Tensor" value="6" />
           <entry key="cmake" value="2" />
           <entry key="complex" value="7" />
-          <entry key="cpp" value="207" />
+          <entry key="cpp" value="220" />
           <entry key="csv" value="86" />
           <entry key="gnuplot" value="1" />
           <entry key="gp" value="3" />
-          <entry key="h" value="264" />
+          <entry key="h" value="275" />
           <entry key="pal" value="3" />
           <entry key="py" value="2" />
           <entry key="svg" value="2" />
           <entry key="tcc" value="7" />
-          <entry key="txt" value="28" />
+          <entry key="txt" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CMakeLists.txt" value="23" />
+          <entry key="CMakeLists.txt" value="24" />
           <entry key="CSV" value="84" />
           <entry key="Disassembly" value="115" />
-          <entry key="ObjectiveC" value="496" />
+          <entry key="ObjectiveC" value="520" />
           <entry key="PLAIN_TEXT" value="24" />
           <entry key="Python" value="2" />
           <entry key="SVG" value="2" />
@@ -197,13 +913,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+            <state relative-caret-position="259">
+              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
               <folding>
                 <element signature="e#109#126#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Extras.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+              <folding>
+                <element signature="e#141#160#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Extras.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Potential.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Plotter.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Plotter.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding>
+                <element signature="e#84#103#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -213,32 +983,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="81" selection-end-line="180" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/System.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="280" column="7" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#470#702#0" />
-                <element signature="e#704#1053#0" />
-                <element signature="e#1055#2257#0" />
-                <element signature="e#2259#2509#0" />
-              </folding>
+              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -332,7 +1077,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eigen/unsupported/Eigen/CXX11/Tensor" />
         <option value="$PROJECT_DIR$/stylefile.gp" />
         <option value="$PROJECT_DIR$/Potential.h" />
         <option value="$PROJECT_DIR$/Grid.h" />
@@ -362,7 +1106,6 @@
         <option value="$PROJECT_DIR$/tests/CouplingTests/CoupledGaussianBarrier_Transmissions.cpp" />
         <option value="$PROJECT_DIR$/build-release/stylefile.gp" />
         <option value="$PROJECT_DIR$/tests/CouplingTests/QValueTest_DassoFig8.cpp" />
-        <option value="$PROJECT_DIR$/Plotter.h" />
         <option value="$PROJECT_DIR$/Wavefunction.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearCoupling.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearCouplingShifted.cpp" />
@@ -370,8 +1113,6 @@
         <option value="$PROJECT_DIR$/Extras.cpp" />
         <option value="$PROJECT_DIR$/Extras.h" />
         <option value="$PROJECT_DIR$/System.h" />
-        <option value="$PROJECT_DIR$/Plotter.cpp" />
-        <option value="$PROJECT_DIR$/System.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/DoublingTreeCoupling.cpp" />
         <option value="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" />
@@ -381,8 +1122,12 @@
         <option value="$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp" />
         <option value="$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/System.cpp" />
+        <option value="$PROJECT_DIR$/Plotter.h" />
+        <option value="$PROJECT_DIR$/scripts/tests/test.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Plotter.cpp" />
       </list>
     </option>
   </component>
@@ -392,7 +1137,7 @@
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="false" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="64" />
-    <option name="y" value="1069" />
+    <option name="y" value="-11" />
     <option name="width" value="1857" />
     <option name="height" value="1092" />
   </component>
@@ -410,21 +1155,6 @@
               <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
-              <item name="build-release" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
-              <item name="DissipationStudies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="QuantumToolbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CPP Code" type="462c0819:PsiDirectoryNode" />
-              <item name="FusionStudies" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -440,6 +1170,9 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/tests/CouplingTests" />
@@ -498,12 +1231,16 @@
       <workItem from="1570596726040" duration="19449000" />
       <workItem from="1570936425716" duration="24777000" />
       <workItem from="1571195365874" duration="14287000" />
-      <workItem from="1571454704764" duration="19721000" />
+      <workItem from="1571454704764" duration="26027000" />
+      <workItem from="1571896798274" duration="15000" />
+      <workItem from="1578617660309" duration="125000" />
+      <workItem from="1578617822680" duration="397000" />
+      <workItem from="1578618824933" duration="8547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="655339000" />
+    <option name="totallyTimeSpent" value="670729000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,22 +1252,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="1069" width="1857" height="1092" extended-state="6" />
-    <editor active="true" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14040907" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14704256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32814237" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36245954" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36245954" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3840345" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.29234087" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.19201726" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19201726" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002764" side_tool="true" weight="0.3149946" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3279396" />
       <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.4997236" weight="0.3149946" />
@@ -586,58 +1322,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Wavefunction.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="51" column="20" lean-forward="true" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/DassoFig8-2.csv" />
-    <entry file="file://$PROJECT_DIR$/build-release/DassoFig80.csv" />
-    <entry file="file://$PROJECT_DIR$/Plotter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Potential.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_3.csv" />
-    <entry file="file://$PROJECT_DIR$/DissipationStudies/LinearCoupling.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DissipationStudies/LinearCouplingShifted.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Grid.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eigen/Eigen/src/Core/Assign.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eigen/Eigen/src/Core/AssignEvaluator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -675,23 +1359,6 @@
     <entry file="file://$PROJECT_DIR$/build-release/N_1.csv" />
     <entry file="file://$PROJECT_DIR$/build-release/N_1_E_0.5.csv" />
     <entry file="file://$PROJECT_DIR$/build-release/N_1_E_2.csv" />
-    <entry file="file://$PROJECT_DIR$/Extras.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="68" column="2" selection-start-line="68" selection-start-column="2" selection-end-line="68" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Extras.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3048">
-          <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
-          <folding>
-            <element signature="e#141#160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DissipationStudies/TriangularCoupling.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="811">
@@ -699,44 +1366,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Plotter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3816">
-          <caret line="159" column="53" selection-start-line="159" selection-start-column="53" selection-end-line="159" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/System.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-          <folding>
-            <element signature="e#95#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-692">
           <caret line="50" column="40" selection-end-line="165" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Potential.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2136">
-          <caret line="89" column="14" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -789,107 +1422,176 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_3_E_90.csv" />
+    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_50.csv" />
+    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_200.csv" />
+    <entry file="file://$PROJECT_DIR$/build-debug/N_4_E_100.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-debug/N_4ChannelsOverTime.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build-release/N_3ChannelsOverTime.csv" />
+    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_100.csv" />
+    <entry file="file://$PROJECT_DIR$/build-release/N_3_E_120.csv" />
+    <entry file="file://$PROJECT_DIR$/build-release/N_4ChannelsOverTime.csv" />
+    <entry file="file://$PROJECT_DIR$/Grid.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wavefunction.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="60" column="41" lean-forward="true" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grid.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Potential.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/System.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wavefunction.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/System.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="280" column="7" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
+        <state relative-caret-position="-710">
+          <caret line="203" column="13" selection-start-line="203" selection-start-column="13" selection-end-line="203" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plotter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#470#702#0" />
-            <element signature="e#704#1053#0" />
-            <element signature="e#1055#2257#0" />
-            <element signature="e#2259#2509#0" />
+            <element signature="e#84#103#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_3_E_90.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-104619" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_50.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_200.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-debug/N_4_E_100.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-debug/N_4ChannelsOverTime.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp">
+    <entry file="file://$PROJECT_DIR$/scripts/tests/test.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="81" selection-end-line="180" selection-end-column="1" />
+        <state relative-caret-position="172">
+          <caret line="141" column="37" lean-forward="true" selection-start-line="141" selection-start-column="37" selection-end-line="141" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/tests/SquareBarrier.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="38" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/QuantumToolbox/include/Plotter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OldPlotter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OldPlotter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_3ChannelsOverTime.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-4248" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_4_E_100.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_3_E_120.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build-release/N_4ChannelsOverTime.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+    <entry file="file://$PROJECT_DIR$/Plotter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+        <state relative-caret-position="259">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
           <folding>
             <element signature="e#109#126#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Potential.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extras.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="62" column="15" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="15" />
+          <folding>
+            <element signature="e#141#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Extras.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>

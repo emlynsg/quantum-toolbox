@@ -120,20 +120,23 @@ void System::evolveStep(int index, double timeStep, int maxOrder){
 }
 
 void System::evolveAllStep(double timeStep, int maxOrder){
+  // Evolve all wavefunctions one step
   for (int j = 0; j < wavefunctions.size(); ++j) {
     evolveStep(j, timeStep, maxOrder);
   }
 }
 
 void System::evolveAll(int nSteps, double timeStep, int maxOrder) {
+  // Evolve all wavefunctions by nSteps
   for (int j = 0; j < nSteps; ++j) {
     evolveAllStep(timeStep, maxOrder);
   }
 }
 
 void System::initCC(double tStep) {
-  /// Assuming all based on the same grid, with same size
-  /// Initialise with the timestep that will be used for evolution
+  /// Setting up tensor to apply to wavefunctions
+  // Assuming all based on the same grid, with same size
+  // Initialise with the timestep that will be used for evolution
   timeStep = tStep;
   nChannel = unsigned(wavefunctions.size());
   psiTensor = cdVectorTensor(nChannel, wavefunctions[0].grid.nPoint);
@@ -152,9 +155,6 @@ void System::initCC(double tStep) {
   for (int j = 0; j < wavefunctions[0].grid.nPoint; ++j){
     cdVectorTensor potChip = potentialTensor.chip(j,2);
     cdMatrix potMat = Tensor_to_Matrix(potChip, nChannel, nChannel);
-//    for (int m = 0; m < nChannel; ++m) {
-//      potMat(m,m) += wavefunctions[m].epsilon;
-//    }
     ComplexEigenSolver<MatrixXcd> ces;
     // Threshold values
     for (int k = 0; k < nChannel; ++k) {

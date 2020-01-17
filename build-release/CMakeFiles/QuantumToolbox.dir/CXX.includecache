@@ -56,11 +56,19 @@ gsl/gsl_complex_math.h
 eigen/Eigen/Dense
 /home/exg103/Documents/Honours/CPP/CPP Code/eigen/Eigen/Dense
 
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.cpp
+Plotter.h
+/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
+System.h
+/home/exg103/Documents/Honours/CPP/CPP Code/System.h
+
 /home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
 System.h
 /home/exg103/Documents/Honours/CPP/CPP Code/System.h
 gnuplot-iostream/gnuplot-iostream.h
 /home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-iostream/gnuplot-iostream.h
+madplotlib/Madplotlib.h
+/home/exg103/Documents/Honours/CPP/CPP Code/madplotlib/Madplotlib.h
 windows.h
 -
 unistd.h
@@ -1702,35 +1710,5 @@ blitz/array.h
 windows.h
 -
 
-/home/exg103/Documents/Honours/CPP/CPP Code/main.cpp
-vector
--
-algorithm
--
-iostream
--
-iterator
--
-vector
--
-fstream
--
-cmath
--
-omp.h
-/home/exg103/Documents/Honours/CPP/CPP Code/omp.h
-string
--
-chrono
--
-Grid.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
-Wavefunction.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Wavefunction.h
-Potential.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Potential.h
-System.h
-/home/exg103/Documents/Honours/CPP/CPP Code/System.h
-Plotter.h
-/home/exg103/Documents/Honours/CPP/CPP Code/Plotter.h
+/home/exg103/Documents/Honours/CPP/CPP Code/madplotlib/Madplotlib.h
 

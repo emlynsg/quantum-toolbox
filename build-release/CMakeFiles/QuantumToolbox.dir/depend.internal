@@ -926,6 +926,7 @@ CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o
  /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsPacketMath.h
  /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
  /home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-iostream/gnuplot-iostream.h
+ /home/exg103/Documents/Honours/CPP/CPP Code/madplotlib/Madplotlib.h
 CMakeFiles/QuantumToolbox.dir/Potential.cpp.o
  /home/exg103/Documents/Honours/CPP/CPP Code/Extras.h
  /home/exg103/Documents/Honours/CPP/CPP Code/Grid.h
@@ -2169,4 +2170,5 @@ CMakeFiles/QuantumToolbox.dir/main.cpp.o
  /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsPacketMath.h
  /home/exg103/Documents/Honours/CPP/CPP Code/eigen/unsupported/Eigen/src/SpecialFunctions/arch/CUDA/CudaSpecialFunctions.h
  /home/exg103/Documents/Honours/CPP/CPP Code/gnuplot-iostream/gnuplot-iostream.h
+ /home/exg103/Documents/Honours/CPP/CPP Code/madplotlib/Madplotlib.h
  /home/exg103/Documents/Honours/CPP/CPP Code/main.cpp

@@ -45,7 +45,7 @@ void Plotter::test(){
   gp << "set xlabel 'x axis label'\n";
   gp << "set ylabel 'y axis label'\n";
   gp << "set key top right\n";
-  gp << "plot [-pi/2:pi] cos(x),-(sin(x) > sin(x+1) ? sin(x) : sin(x+1)))\n";
+  gp << "plot [-pi/2:pi] cos(x),-(sin(x) > sin(x+1) ? sin(x) : sin(x+1))\n";
   gp << "set terminal pop\n";
   gp << "set output\n";
   gp << "replot\n";
