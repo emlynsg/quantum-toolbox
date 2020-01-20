@@ -20,744 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e36c847-6d89-475c-84a2-605f478db37a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/2TreeGaussian.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/3TreeGaussian.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/4TreeGaussian.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/AboveBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BDist.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/BelowBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Inputs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.5nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_0.9nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_1nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_1_E_2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.5nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_0.9nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_1nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_2_E_2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.5nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_0.9nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_1nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_3_E_2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.5nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_0.9nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_1nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/N_4_E_2nonlog.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/PlotAll_nonlog.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Base/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/Base.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/FWHM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/HeightX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/2 Channel Reflections/WidthX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/Base.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/FWHM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/HeightX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/3 Channel Reflections/WidthX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/Base.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/FWHM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/HeightX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/4 Channel Reflections/WidthX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/Base.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/Explanation" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/FWHM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/HeightX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/BarrierDistributions/WidthX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/Base.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/FWHM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/HeightX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/AboveBarrier/WidthX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/Base.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/Base.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/FWHM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/HeightX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/BelowBarrier/WidthX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/FWHM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/HeightX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/Comparisons/Transmissions/WidthX2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/DoublingTreeCoupling.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/AboveBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BDist.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/BelowBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/FWHM" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Inputs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_1_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_2_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_3_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/N_4_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/FWHM/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/AboveBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BDist.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/BelowBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/DoubleHeight" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Inputs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_1_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_2_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_3_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/N_4_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/HeightX2/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCoupling.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCouplingShifted.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/LinearCouplingWider.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/AboveBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/BelowBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_10_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Rplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/ManyCouplings/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/AboveBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BDist.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/BelowBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_1_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_2_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_3_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/N_4_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/NewWider" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/NewDoubleWidth/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/AboveBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BDist.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/BelowBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_1_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_2_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_3_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/N_4_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/SeparateCoupling" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/SeparateCoupling/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/2LevelTreeGaussianBarrier" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/N_2_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/2Levels/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/3LevelTreeGaussianBarrier" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/N_2_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/3Levels/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/4LevelTreeGaussianBarrier" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/N_2_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TreeScheme/4Levels/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/TriangularCoupling.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/AboveBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BDist.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BDist.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BelowBarrier.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/BelowBarrier.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/DoubleWidth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Inputs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_1_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_2_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_3_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.9.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_0.9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/N_4_E_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Rplot4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Tplot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/Tplot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissipationStudies/WidthX2/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/2TreeParabolic.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/3TreeParabolic.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/4TreeParabolic.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/ConstantCoup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3AllConstant.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_3_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_4_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5AllConstant.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/N_5_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Constant/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3AllRandom.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_3_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_4_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5AllRandom.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/N_5_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/AllCoupled/Random/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/DoublingScheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_3ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_4_around1200.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_5ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_6ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_6_around1600.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_7ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_7_around350.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_8ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/N_8_around170.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/DoublingScheme/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/LinearScheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_3ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_4ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_5ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_6ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_7ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_7_near3800.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_8ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/N_8_near1300.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/LinearScheme/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/ParabolicPotential.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/N_3_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/SingleDirectionCoupling" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/SingleDirectionCoupling/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/2LevelTreeParabolic" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2ChannelsOverTime_Tree.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/N_2_Levels.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/2Level/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/3TreeParabolic" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3ChannelsOverTime_Tree.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/N_3_Levels.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/PlotAll.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/3Level/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/4LevelTreeParabolic" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2ChannelsOverTime.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_120.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_200.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/N_2_E_90.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FusionStudies/TreeScheme/4Level/out.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plotter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plotter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/System.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/Progress/6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/Plotter.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/System.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/CMakeFiles/QuantumToolbox.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build-release/QuantumToolbox" beforeDir="false" afterPath="$PROJECT_DIR$/build-release/QuantumToolbox" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qmtoybox tests/qmtoybox.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/qmtoybox tests/squarebarrier.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CoupledSquareBarrier.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CoupledWF.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/CoupledGaussianBarrier_Transmissions.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/Coupling Tests" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig20.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig22.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig8-2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig80.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/DassoFig82.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/QValueTest_DassoFig8.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/plot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CouplingTests/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/BasicError_FinalWF.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/BasicError_InitWF.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/BasicError_OneStepWF.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_0.01.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_0.1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaT_10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.0732467.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.146502.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.29304.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_0.586224.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/DeltaX_1.17302.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/Error Tests" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_DeltaX_DeltaT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_Transmission_DeltaT_DeltaX.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_0.001.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_0.01.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_0.1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FFTError_dX_1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/FourierError" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/MachineErrorTest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_1143.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_1400.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_808.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_885.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/TotalT_989.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/plot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ErrorTests/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/GaussianBarrierWithAbsorbingPotential.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/SquareBarrier.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/SquareBarrierIncomingWave.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_100.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Energies_V0_75.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_100.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Norms_V0_75.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_100.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Reflections_V0_75.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_100.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_40.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/SQ_Barrier_Transmissions_V0_75.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_40.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/V0_75.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/plot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Bulk Transmission/transmission.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_10.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_100_analytic.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_10_analytic.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_40" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_40.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_40_analytic.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_75" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_75.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/V0_75_analytic.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/plot.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Proper Transmission/stylefile.gp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TransmissionTests/Transmission Tests" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/UncoupledWF.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Potential.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Potential.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-release/" />
@@ -851,7 +114,7 @@
           <entry key="FFT" value="6" />
           <entry key="Tensor" value="24" />
           <entry key="cmake" value="302" />
-          <entry key="cpp" value="51923" />
+          <entry key="cpp" value="51933" />
           <entry key="gp" value="341" />
           <entry key="h" value="5346" />
           <entry key="py" value="55" />
@@ -862,7 +125,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="720" />
           <entry key="Doxygen file" value="41" />
-          <entry key="ObjectiveC" value="57258" />
+          <entry key="ObjectiveC" value="57268" />
           <entry key="PLAIN_TEXT" value="920" />
           <entry key="Python" value="55" />
         </counts>
@@ -937,20 +200,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Extras.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            <state relative-caret-position="384">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Potential.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+            <state relative-caret-position="465">
+              <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -1095,7 +358,6 @@
         <option value="$PROJECT_DIR$/tests/SquareBarrierIncomingWave.cpp" />
         <option value="$PROJECT_DIR$/tests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" />
         <option value="$PROJECT_DIR$/tests/TransmissionTests/CoupledSquareBarrier_Transmissions.cpp" />
-        <option value="$PROJECT_DIR$/Potential.cpp" />
         <option value="$PROJECT_DIR$/tests/TransmissionTests/SquareBarrier_Transmissions.cpp" />
         <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FourierTransform.cpp" />
         <option value="$PROJECT_DIR$/tests/ErrorTests/ErrorTest_FreeSpaceGaussianWavepacket.cpp" />
@@ -1128,6 +390,7 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Plotter.cpp" />
+        <option value="$PROJECT_DIR$/Potential.cpp" />
       </list>
     </option>
   </component>
@@ -1235,12 +498,12 @@
       <workItem from="1571896798274" duration="15000" />
       <workItem from="1578617660309" duration="125000" />
       <workItem from="1578617822680" duration="397000" />
-      <workItem from="1578618824933" duration="8547000" />
+      <workItem from="1578618824933" duration="13426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="670729000" />
+    <option name="totallyTimeSpent" value="675608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1253,8 +516,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14704256" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14704256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1266,7 +530,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.29234087" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19201726" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19201726" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002764" side_tool="true" weight="0.3149946" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3279396" />
       <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.4997236" weight="0.3149946" />
@@ -1571,13 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Potential.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Extras.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -1590,8 +847,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Extras.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="384">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Potential.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
         </state>
       </provider>
     </entry>

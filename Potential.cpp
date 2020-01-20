@@ -66,7 +66,7 @@ void Potential::addWoodsSaxon(const double &xCentre,
                               const double &height,
                               const double &xSize,
                               const double &diffuseness) {
-  V += 1+exp(((grid.x-xCentre).abs() - xSize)/diffuseness);
+  V += -height/(1+exp(((grid.x-xCentre).abs() - xSize)/diffuseness));
 }
 
 void Potential::addCoulomb(const double &Z1Z2, const double &xCentre, const double &xSize) {
