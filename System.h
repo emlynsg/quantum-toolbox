@@ -3,7 +3,7 @@
 // System class for performing system evolution.
 //
 
-#include "eigen/unsupported/Eigen/CXX11/Tensor"
+#include <eigen3/unsupported/Eigen/CXX11/Tensor>
 
 #include <fstream>
 

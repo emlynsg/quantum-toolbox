@@ -1,0 +1,17 @@
+__pycache__
+*.so
+*.o
+*~
+*.pyc
+fort.*
+._*
+*.png
+*.log
+*.aux
+*.py.lprof
+*/.*
+#*
+qmtoybox.zip
+*.m4v
+*.mp4
+build*

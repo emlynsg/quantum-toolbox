@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <complex>
-#include "eigen/Eigen/Core"
-#include "eigen/unsupported/Eigen/FFT"
+#include <eigen3/Eigen/Core>
+#include <eigen3/unsupported/Eigen/FFT>
 #define EIGEN_FFTW_DEFAULT
 #include "Wavefunction.h"
 

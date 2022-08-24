@@ -22,8 +22,8 @@
 //#include "eigen/unsupported/Eigen/CXX11/Tensor"
 //#include "Eigen/Dense"
 //#include "unsupported/Eigen/CXX11/Tensor"
-#include "eigen/Eigen/Dense"
-#include "eigen/unsupported/Eigen/CXX11/Tensor"
+#include <eigen3/Eigen/Dense>
+#include <eigen3/unsupported/Eigen/CXX11/Tensor>
 
 #ifndef EXTRAS_H
 #define EXTRAS_H

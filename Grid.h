@@ -16,7 +16,7 @@
 #include <gsl/gsl_blas.h>
 #include <gsl/gsl_complex_math.h>
 
-#include "eigen/Eigen/Dense"
+#include <eigen3/Eigen/Dense>
 
 using namespace Eigen;
 using namespace std;
