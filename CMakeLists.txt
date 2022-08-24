@@ -31,7 +31,7 @@ include_directories(/eigen)
 
 #find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 find_package(GSL REQUIRED)
-find_package(Boost REQUIRED COMPONENTS system regex iostreams)
+find_package(Boost REQUIRED COMPONENTS system regex iostreams filesystem)
 find_package(OpenMP REQUIRED) # Find the package
 
 #target_link_libraries(${PROJECT_NAME} Eigen3::Eigen GSL::gsl GSL::gslcblas ${Boost_LIBRARIES})

@@ -16,6 +16,7 @@ Packages:
 cmake
 libgsl-dev
 libboost-dev
+libboost-filesytem-dev
 libboost-system-dev
 libboost-regex-dev
 libboost-iostreams-dev
