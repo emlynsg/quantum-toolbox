@@ -22,7 +22,8 @@ endif()
 #set(CMAKE_CXX_FLAGS " -g -O0" )
 
 add_executable(${PROJECT_NAME} main.cpp Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h Potential.cpp Potential.h Extras.cpp Extras.h System.cpp System.h Plotter.cpp Plotter.h)
-#add_library(${PROJECT_NAME} Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h Potential.cpp Potential.h Extras.cpp Extras.h System.cpp System.h Plotter.cpp Plotter.h)
+
+add_library(TDCC Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h Potential.cpp Potential.h Extras.cpp Extras.h System.cpp System.h Plotter.cpp Plotter.h)
 
 #include_directories ($ENV{EIGEN3_INCLUDE_DIR})
 include_directories(${Boost_INCLUDE_DIRS})
