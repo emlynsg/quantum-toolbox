@@ -26,8 +26,6 @@ To do - repository and git tree
 
 @ QTPlotter appears to be no longer used - superseded by gnuplot. Remove from tree.
 
-@ Fix boost header errors
-
 
 To do - physics
 ---------------
