@@ -248,7 +248,7 @@ void System::evolveCCStep(){
 
 void System::evolveCC(int nSteps) {
   cout << "Starting new system" << endl;
-  boost::progress_display show_progress(nSteps);
+  boost::timer::progress_display show_progress(nSteps);
   for (int j = 0; j < nSteps; ++j) {
     evolveCCStep();
     ++show_progress;
@@ -267,7 +267,7 @@ void System::evolveCC(int nSteps, std::vector<double> energies, std::vector<std:
       data.push_back(wfVector);
     }
   }
-  boost::progress_display show_progress(nSteps);
+  boost::timer::progress_display show_progress(nSteps);
   for (int j = 0; j < nSteps; ++j) {
     evolveCCStep();
     ++show_progress;

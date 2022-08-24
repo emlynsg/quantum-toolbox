@@ -13,14 +13,7 @@ For Ubuntu 22.04.
 
 Packages:
 
-cmake
-libgsl-dev
-libboost-dev
-libboost-filesytem-dev
-libboost-system-dev
-libboost-regex-dev
-libboost-iostreams-dev
-libeigen3-dev
+sudo apt install cmake libgsl-dev libboost-dev libboost-filesystem-dev libboost-system-dev libboost-regex-dev libboost-iostreams-dev libeigen3-dev
 
 To do - repository and git tree
 -------------------------------
@@ -32,6 +25,8 @@ To do - repository and git tree
 @ Create generic cmake build script for projects (i.e. scripts).
 
 @ QTPlotter appears to be no longer used - superseded by gnuplot. Remove from tree.
+
+@ Fix boost header errors
 
 
 To do - physics

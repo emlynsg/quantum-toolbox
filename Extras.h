@@ -16,7 +16,7 @@
 #include <functional>
 #include <algorithm>
 
-#include <boost/progress.hpp>
+#include <boost/timer/progress_display.hpp>
 
 //#include "eigen/Eigen/Dense"
 //#include "eigen/unsupported/Eigen/CXX11/Tensor"
