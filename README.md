@@ -15,8 +15,8 @@ Packages:
 
 sudo apt install cmake libgsl-dev libboost-dev libboost-filesystem-dev libboost-system-dev libboost-regex-dev libboost-iostreams-dev libeigen3-dev
 
-To do - repository and git tree
--------------------------------
+To do - repository, git tree and build system
+---------------------------------------------
 
 @ Remove gnuplot-iostream from the tree and use git version. With instructions for installing.
 
@@ -25,6 +25,12 @@ To do - repository and git tree
 @ Create generic cmake build script for projects (i.e. scripts).
 
 @ QTPlotter appears to be no longer used - superseded by gnuplot. Remove from tree.
+
+@ Revise main source directories to use src/ inc/ and lib/
+
+@ Create separate CMakeLists to build the library
+
+@ Revise the scripts build system to link to the library and not rebuild everything.
 
 
 To do - physics

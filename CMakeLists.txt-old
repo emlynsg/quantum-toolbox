@@ -2,15 +2,10 @@ cmake_minimum_required(VERSION 2.8.12)
 
 ##project(QuantumToolbox)
 
-option(MAIN "Project name" main)
-project(${MAIN})
+project(library)
 
-# This adds the root source directory
-include_directories("${PROJECT_SOURCE_DIR}")
-
-# This adds the source directory for the current project
-include_directories("${CMAKE_CURRENT_BINARY_DIR}/../inc/")
-
+option(LIBRARY "Build library only" OFF)
+option(PROJ "Project name" OFF)
 
 set(CMAKE_CXX_STANDARD 17)
 include(CheckCXXCompilerFlag)
@@ -29,11 +24,19 @@ else()
     endif()
 endif()
 
+#set(CMAKE_CXX_FLAGS " -g -O0" )
+
 message("${PROJECT_NAME}")
 
-if(NOT ${MAIN} MATCHES "OFF")
-  message("${MAIN} match")
-  add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_BINARY_DIR}/../src/${MAIN}.cpp Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h Potential.cpp Potential.h Extras.cpp Extras.h System.cpp System.h Plotter.cpp Plotter.h)
+if(NOT ${PROJ} MATCHES "OFF")
+  message("${PROJ} match")
+  project(${PROJ})
+  add_executable(${PROJECT_NAME} main.cpp Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h Potential.cpp Potential.h Extras.cpp Extras.h System.cpp System.h Plotter.cpp Plotter.h)
+endif()
+
+if(NOT ${LIBRARY} MATCHES "OFF")
+  message("${LIBRARY} match")
+  add_library(TDCC Grid.cpp Grid.h Wavefunction.cpp Wavefunction.h Potential.cpp Potential.h Extras.cpp Extras.h System.cpp System.h Plotter.cpp Plotter.h)
 endif()
 
 include_directories(${Boost_INCLUDE_DIRS})
@@ -47,8 +50,7 @@ find_package(OpenMP REQUIRED) # Find the package
 #target_link_libraries(${PROJECT_NAME} Eigen3::Eigen GSL::gsl GSL::gslcblas ${Boost_LIBRARIES})
 #target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_CXX ${Boost_LIBRARIES} ${OpenMP_CXX_LIBRARIES})
 
-if(NOT ${MAIN} MATCHES "OFF")
-  message("Adding libraries to link")
+if(NOT ${PROJECT} MATCHES "OFF")
   target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_CXX GSL::gsl GSL::gslcblas ${Boost_LIBRARIES} ${OpenMP_CXX_LIBRARIES})
 endif()
 
